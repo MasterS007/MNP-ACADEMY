@@ -1,9 +1,6 @@
 <?php
- include_once 'dbconnection.php';
-?>
-
-<?php
-
+ 
+ require_once('../../services/userService.php');
     if(isset($_REQUEST['submit']))
     {
      
@@ -102,12 +99,23 @@
           {
             $Dateob = date_create($year.'-'.$month.'-'.$date);
             $Date =date_format($Dateob,"Y-m-d");
-            $sql = "INSERT INTO users (u_name, username, u_password, email, gender, user_type, date_of_birth) VALUES ('$name','$uname','$password','$email','$gender','$user','$Date')";
+          
+              $user=[
+                  'name'=>$name,
+                  'uname'=>$uname,
+                  'password'=>$password,
+                  'email'=>$email,
+                  'gender'=>$gender,
+                  'user' => $user,
+                  'Date'>$Date
 
-            if(mysqli_query($conn, $sql))
+              ];
+
+              $validReg=insert($user);
+            if($validReg)
             {
                
-                header('location:login.php');
+                header('location:../../view/login.php');
                 echo "Insert successfull";
                
             }
@@ -117,11 +125,10 @@
              
              // $svalid =FALSE;
              echo "Insert unsuccessfull";
-             echo '<br>'.mysqli_errno($conn).'<br>';
-             print_r(mysqli_error_list($conn));
+             
               
             }
-            mysqli_close($conn);
+          
             
            
          }
@@ -129,7 +136,7 @@
           else
           {
            
-            header('location:registration.html');
+            header('location:../../view/registration.html');
           }
         
       
@@ -137,7 +144,7 @@
       
 
         else{
-            header('location:registration.html');
+            header('location:../../view/registration.html');
         }    
     
 ?>

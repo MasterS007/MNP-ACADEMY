@@ -47,7 +47,7 @@
                 <hr>
                 <input  type="checkbox" name="checkRemember"><i class="RememberMe">Remember Me</i>
                 <br><br>
-                <input type="submit" name="submit" value="Login"> <a href="view/registration.html">Register</a>
+                <input type="submit" name="submit" value="Login"> <a href="/registration.html">Register</a>
             </fieldset>
         </form>
       </main>
@@ -57,5 +57,5 @@
     </footer>
 </body>
 </html>
-<?php
+
    
