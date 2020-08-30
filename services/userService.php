@@ -3,7 +3,6 @@
 
 	
 
-	
 
 	function getByID($id){
 		$conn = dbConnection();
@@ -64,12 +63,14 @@
 			echo "DB connection error";
 		}
 
-		$sql = "insert into users values('', '{$user['username']}','{$user['password']}', '{$user['email']}', 'admin')";
+		$sql = "INSERT INTO users (u_name, username, u_password, email, gender, user_type, date_of_birth) VALUES ('{$user['name']}','{$user['uname']}','{$user['password']}','{$user['email']}','{$user['gender']}','{$user['user']}','{$user['Date']}')";
 		if(mysqli_query($conn, $sql)){
+
 			return true;
 		}else{
 			return false;
 		}
+		  mysqli_close($conn);
 	}
 
 
