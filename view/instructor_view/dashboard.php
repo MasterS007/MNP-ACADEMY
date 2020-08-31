@@ -1,14 +1,15 @@
 <?php
+    
+    require_once('../php_and_js/php/session_header.php');
 
-    // if(isset($_COOKIE['status'] )|| isset($_COOKIE['remstatus']))
-    // {
-        ?> 
-        <!DOCTYPE html>
+
+ ?> 
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="all_designs/dashboard1.css"> 
+    <link rel="stylesheet" href="all_designs/instructor_designs/dashboard1.css"> 
     <title>Class</title>
 </head>
 <body>
@@ -51,7 +52,7 @@
 
     <main>
        
-        <h4 class="section-heading"><a href="dashboard.php"><?php echo $_COOKIE['name'];?></a></h4>
+        <h4 class="section-heading"><a href="dashboard.php"><?php echo $_SESSION['name'];?></a></h4>
             <div class="accountStuff">
                 <ul class="stuff">
                     <li><a href="../view/profile.php">Profile</a></li>
@@ -61,7 +62,7 @@
                 </ul>
             </div>
             <section>
-                <h2 class="welcomeheading">Welcome <?php echo $_COOKIE['name'];?></h2>
+                <h2 class="welcomeheading">Welcome <?php echo $_SESSION['name'];?></h2>
                 
             </section>
 

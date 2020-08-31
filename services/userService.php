@@ -1,7 +1,7 @@
 <?php
 	require_once('../../databaseConn/dbCon.php');
 
-	
+	session_start();
 
 
 	function getByID($id){
@@ -46,6 +46,7 @@
 		$sql = "select * from users where username='{$user['username']}' and u_password ='{$user['password']}'";
 		$result = mysqli_query($conn, $sql);
 		$user = mysqli_fetch_assoc($result);
+		$_SESSION['name']=$user['u_name'];
 		mysqli_close($conn);
 
 		if(count($user) > 0 ){

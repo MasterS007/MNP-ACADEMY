@@ -29,7 +29,7 @@
 
             if($data['user_type']=='Instructor')
             {
-                header("location:../../view/dashboard.php");
+                header("location:../../view/instructor_view/dashboard.php");
                //echo "user is instructor";
                 
             }
