@@ -7,7 +7,7 @@ require_once('../../php_and_js/php/session_header.php');
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="all_designs/profileview.css"> <link rel>
+        <link rel="stylesheet" href="../all_designs/instructor_designs/profileview.css"> <link rel>
         <title>Profile</title>
     </head>
     <body>

@@ -40,7 +40,7 @@
              </select>
              <ul class="navigation">
                  <li class="searchBox"><input type="text" name="search" placeholder="Search.."></li>
-                 <li class="logo"><a href="../view/instructor_view/dashboard.php">MNP Academy</a></li>
+                 <li class="logo"><a href="dashboard.php">MNP Academy</a></li>
              </ul>
          </nav>
     </header>
@@ -49,7 +49,7 @@
 
     <main>
        
-        <h4 class="section-heading"><a href="../instructor_view/dashboard.php"><?php echo $_SESSION['name'];?></a></h4>
+        <h4 class="section-heading"><a href="dashboard.php"><?php echo $_SESSION['name'];?></a></h4>
             <div class="accountStuff">
                 <ul class="stuff">
                     <li><a href="profile.php">Profile</a></li>
