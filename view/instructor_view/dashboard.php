@@ -1,15 +1,13 @@
 <?php
     
-    require_once('../../php_and_js/php/session_header.php');
-   
-
+    require_once('../../php_and_js/php/session_header.php'); 
  ?> 
  <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../all_designs/instructor_designs/dashboard1.css"> 
+    <link rel="stylesheet" href="../all_designs/instructor_designs/dashboarddes.css"> 
     <title>Class</title>
 </head>
 <body>
@@ -21,8 +19,7 @@
                         <option value="Physics">Physics</option>
                         <option value="Chemistry">Chemistry</option>
                         <option value="Biology">Biology</option>
-                        <option value="Mathematics">Mathematics</option>
-                    
+                        <option value="Mathematics">Mathematics</option> 
                  </optgroup>
                  <optgroup label="Computer Science">
                      <option value="Algorithm">Algorithm</option>
@@ -55,10 +52,10 @@
         <h4 class="section-heading"><a href="../instructor_view/dashboard.php"><?php echo $_SESSION['name'];?></a></h4>
             <div class="accountStuff">
                 <ul class="stuff">
-                    <li><a href="../view/instructor_view/profile.php">Profile</a></li>
-                    <li><a href="../view/instructor_view/mycourse.php">Courses</a></li>
-                    <li><a href="../view/instructor_view/blog.php">Blogs</a></li>
-                    <li><a href="../php_and_js/php/logout.php">Logout</a></li>
+                    <li><a href="profile.php">Profile</a></li>
+                    <li><a href="mycourse.php">Courses</a></li>
+                    <li><a href="blog.php">Blogs</a></li>
+                    <li><a href="logout.php">Logout</a></li>
                 </ul>
             </div>
             <section>
@@ -69,8 +66,8 @@
             <div class="wel">  
                   
                 <ul class="wlist">
-                    <li><a href="../view/instructor_view/dashboard.php">Classes</a></li>
-                    <li><a href="../view/instructor_view/allstudent.php">Students</a></li>
+                    <li><a href="dashboard.php">Classes</a></li>
+                    <li><a href="allstudent.php">Students</a></li>
                     <li><a href="#">Tips</a></li>
                 </ul> 
                 <hr>
@@ -82,9 +79,9 @@
             </div>
            <div class="classes">
                    <ul class="myClass">
-                   <li><a href="../view/instructor_view/insideClass.php">Class:Physics</a></li><br>
-                   <li><a href="../view/instructor_view/insideClass.php">Class:C/C++</a></li><br>
-                   <li><a href="../view/instructor_view/insideClass.php">Class:Algorithm</a></li>
+                   <li><a href="insideClass.php">Class:Physics</a></li><br>
+                   <li><a href="insideClass.php">Class:C/C++</a></li><br>
+                   <li><a href="insideClass.php">Class:Algorithm</a></li>
                </ul>
            </div>
             
