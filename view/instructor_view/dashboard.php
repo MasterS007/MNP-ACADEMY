@@ -43,7 +43,7 @@
              </select>
              <ul class="navigation">
                  <li class="searchBox"><input type="text" name="search" placeholder="Search.."></li>
-                 <li class="logo"><a href="../view/dashboard.php">MNP Academy</a></li>
+                 <li class="logo"><a href="../view/instructor_view/dashboard.php">MNP Academy</a></li>
              </ul>
          </nav>
     </header>
@@ -52,12 +52,12 @@
 
     <main>
        
-        <h4 class="section-heading"><a href="dashboard.php"><?php echo $_SESSION['name'];?></a></h4>
+        <h4 class="section-heading"><a href="../instructor_view/dashboard.php"><?php echo $_SESSION['name'];?></a></h4>
             <div class="accountStuff">
                 <ul class="stuff">
-                    <li><a href="../view/profile.php">Profile</a></li>
-                    <li><a href="../view/mycourse.php">Courses</a></li>
-                    <li><a href="../view/blog.php">Blogs</a></li>
+                    <li><a href="../view/instructor_view/profile.php">Profile</a></li>
+                    <li><a href="../view/instructor_view/mycourse.php">Courses</a></li>
+                    <li><a href="../view/instructor_view/blog.php">Blogs</a></li>
                     <li><a href="../php_and_js/php/logout.php">Logout</a></li>
                 </ul>
             </div>
@@ -69,8 +69,8 @@
             <div class="wel">  
                   
                 <ul class="wlist">
-                    <li><a href="../view/dashboard.php">Classes</a></li>
-                    <li><a href="../view/allstudent.php">Students</a></li>
+                    <li><a href="../view/instructor_view/dashboard.php">Classes</a></li>
+                    <li><a href="../view/instructor_view/allstudent.php">Students</a></li>
                     <li><a href="#">Tips</a></li>
                 </ul> 
                 <hr>
@@ -82,9 +82,9 @@
             </div>
            <div class="classes">
                    <ul class="myClass">
-                   <li><a href="../view/insideClass.php">Class:Physics</a></li><br>
-                   <li><a href="../view/insideClass.php">Class:C/C++</a></li><br>
-                   <li><a href="../view/insideClass.php">Class:Algorithm</a></li>
+                   <li><a href="../view/instructor_view/insideClass.php">Class:Physics</a></li><br>
+                   <li><a href="../view/instructor_view/insideClass.php">Class:C/C++</a></li><br>
+                   <li><a href="../view/instructor_view/insideClass.php">Class:Algorithm</a></li>
                </ul>
            </div>
             
@@ -94,11 +94,4 @@
     </body>
 </html>
 
-<?php
-    // }
-    // else
-    // {
-    //     header("location:../view/login.php");
-    // }
 
-?>

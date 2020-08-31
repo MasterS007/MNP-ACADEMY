@@ -68,7 +68,7 @@ ul.navigation li.searchBox
 
 .searchBox input[type=text]
  {
-     background-image: url('images/searching.png');
+     background-image: url('../images/searching.png');
      background-position: 4px 2px; 
      background-repeat: no-repeat;
      box-sizing:border-box;
@@ -109,8 +109,8 @@ ul.navigation li.searchBox
   }
   .section-heading a
   {
-      color: #5899; 
-      text-decoration-style: none;
+    color: #5899; 
+    text-decoration-style: none;
     text-decoration-line: none; 
 
   }
