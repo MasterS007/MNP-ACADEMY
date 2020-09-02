@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="all_designs/login.css">
+    <link rel="stylesheet" href="../asset/all_designs/login.css">
     <title>login</title>
 </head>
 <body>
@@ -23,7 +23,7 @@
     </header>
 
     <main>
-        <form action="../php_and_js/php/logcheck.php" method="POST">
+        <form action="../php/logcheck.php" method="POST">
             <fieldset>
                 <legend>LOGIN</legend>
                 <br/>

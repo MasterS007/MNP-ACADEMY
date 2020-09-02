@@ -1,5 +1,4 @@
 <?php
-
 require_once('../../php_and_js/php/session_header.php');     
 ?>
     <!DOCTYPE html>
@@ -7,7 +6,8 @@ require_once('../../php_and_js/php/session_header.php');
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../all_designs/instructor_designs/profileview.css"> <link rel>
+        <link type ="text/css" rel="stylesheet" href="../all_designs/instructor_designs/profileview.css"> <link rel>
+        
         <title>Profile</title>
     </head>
     <body>
@@ -20,15 +20,14 @@ require_once('../../php_and_js/php/session_header.php');
                             <option value="Chemistry">Chemistry</option>
                             <option value="Biology">Biology</option>
                             <option value="Mathematics">Mathematics</option>
-                        
                      </optgroup>
+
                      <optgroup label="Computer Science">
                          <option value="Algorithm">Algorithm</option>
                          <option value="Data Structure">Data Structure</option>
                          <option value="Computer Fundamentals">Computer Fundamentals</option>
                          <option value="Introdouction to Programing Language">Introdouction to Programing Language</option>
                          <option value="Introduction to Database">Introduction to Database</option>
-    
                      </optgroup>
                      <optgroup label="Programming Language">
                          <option value="C/C++">C/C++</option>
@@ -67,7 +66,7 @@ require_once('../../php_and_js/php/session_header.php');
                             <tr>
                                 <td>Name</td>
                                 <td>:</td>
-                                <td><?php echo $_COOKIE['name'];?></td>
+                                <td><?php echo $_SESSION['name'];?></td>
                                 <td rowspan="7">	
                                       
                                 <?php

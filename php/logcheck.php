@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once('../../services/userService.php');
+    require_once('../services/userService.php');
 
     if(isset($_POST['submit']))
     {
@@ -29,7 +29,7 @@
 
             if($data['user_type']=='Instructor')
             {
-                header("location:../../view/instructor_view/dashboard.php");
+                header("location:../view/instructor_view/dashboard.php");
                //echo "user is instructor";
                 
             }
@@ -53,7 +53,7 @@
         }
         else
         {
-            header('location: ../../view/login.php?error=invalid_user');
+            header('location: ../view/login.php?error=invalid_user');
         }
             
         }
@@ -63,7 +63,7 @@
 
 
 else{
-    header("location: ../../view/login.php");
+    header("location: ../view/login.php");
 }
 
 ?>

@@ -102,7 +102,7 @@ ul.navigation li.searchBox
   {
     background-color: white;
     margin-left: 12%;
-    margin-top: 40px;
+    margin-top: 20px;
     height:750px;
     overflow:auto;
     
@@ -142,13 +142,16 @@ ul.navigation li.searchBox
 
   h2.welcomeheading
   {
-      margin-top: -265px;    
+    position: relative;
+      margin-top:-210px;    
       margin-left:75%;
+      color: #589; 
   }
   a
   {
     text-decoration-line: none;
     text-decoration: none;
+    
   }
 
   div hr

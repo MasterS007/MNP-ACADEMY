@@ -1,6 +1,6 @@
 <?php
  
- require_once('../../services/userService.php');
+ require_once('../services/userService.php');
     if(isset($_REQUEST['submit']))
     {
      

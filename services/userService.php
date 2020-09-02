@@ -1,5 +1,5 @@
 <?php
-	require_once('../../databaseConn/dbCon.php');
+	require_once('../databaseConn/dbCon.php');
 
 	session_start();
 
