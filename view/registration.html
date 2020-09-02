@@ -25,73 +25,74 @@
 				<tr>
 					<td>Name</td>
 					<td>:</td>
-					<td><input name="name" type="text"></td>
-					<td></td>
+					<td><input id="name" name="name" type="text"></td>
+					<td><i  id="nameMsg" style="color:red;"></i></td>
 				</tr>		
 				<tr><td colspan="4"><hr/></td></tr>
 				<tr>
 					<td>Email</td>
 					<td>:</td>
 					<td>
-						<input name="email" type="text">
+						<input id="email" name="email" type="text" onkeyup="eRemover()" onblur="EeMpty()">
 						<abbr title="hint: sample@example.com"><b>i</b></abbr>
 					</td>
-					<td></td>
+					<td ><i id="emailMsg" style="color:red;" ></i></td>
 				</tr>		
 				<tr><td colspan="4"><hr/></td></tr>
 				<tr>
 					<td>User Name</td>
 					<td>:</td>
-					<td><input name="userName" type="text"></td>
-					<td></td>
+					<td><input id="uname" name="userName" type="text" onkeyup="nRemover()" onblur="neMpty()"></td>
+					<td id="unameMsg"></td>
 				</tr>		
 				<tr><td colspan="4"><hr/></td></tr>
 				<tr>
 					<td>Password</td>
 					<td>:</td>
-					<td><input name="password" type="password"></td>
-					<td></td>
+					<td><input id="password" name="password" type="password" onkeyup="pRemover()" onblur="PeMpty()"></td>
+					<td><i id="passMsg" style="color:red;"></i></td>
 				</tr>		
 				<tr><td colspan="4"><hr/></td></tr>
 				<tr>
 					<td>Confirm Password</td>
 					<td>:</td>
-					<td><input name="confirmPassword" type="password"></td>
-					<td></td>
+					<td><input id="conpassword" name="confirmPassword" type="password" onkeyup="pconRemover()" onblur="PconeMpty()"></td>
+					<td><i id="conpassMsg" style="color:red;"></i></td>
 				</tr>		
 				<tr><td colspan="4"><hr/></td></tr>
 				<tr>
 					<td colspan="3">
 						<fieldset class="innerField">
 							<legend class="innerLegend">Gender</legend>    
-							        <input  name="gender" type="radio" value="Male">Male
-									<input  name="gender" type="radio" value="Female">Female
-									<input  name="gender" type="radio" value="Other">Other
+							        <input  name="gender" id="Male" type="radio" value="Male" onclick="Remover()" onmouseover="gRemover()" onmouseout="geMpty()">Male
+									<input  name="gender" id="Female"  type="radio" value="Female" onclick="Remover()" onmouseover="gRemover()" onmouseout="geMpty()">Female
+									<input  name="gender" id="Other" type="radio" value="Other" onclick="Remover()" onmouseover="gRemover()" onmouseout="geMpty()">Other
 						</fieldset>
 					</td>
-					<td></td>
+					<td ><i id="genderMsg" style="color:red"></i></td>
 				</tr>		
 				<tr><td colspan="4"><hr/></td></tr>
 				<tr>
 					<td colspan="3">
 						<fieldset class="innerField">
 							<legend class="innerLegend">Date of Birth</legend>    
-							<input type="text" size="2" name="date" />/
-							<input type="text" size="2" name ="month" />/
-							<input type="text" size="4" name = "year"/>
+							<input id="date" type="text" size="2" name="date" onkeyup="dRemover()" onblur="deMpty()" onclick="dRemover()" />/
+							<input id="month" type="text" size="2" name ="month" onkeyup="dRemover()" onblur="deMpty()" onclick="dRemover()"/>/
+							<input id="year" type="text" size="4" name = "year" onkeyup="dRemover()" onblur="deMpty()" onclick="dRemover()"/>
 							<font size="2"><i>(dd/mm/yyyy)</i></font>
 						</fieldset>
 					</td>
-                    <td></td>
+                    <td ><i id="dobMsg" style="color:red;"></i></td>
                 </tr>
                 <tr>
                     <td colspan="4"><hr>
                         User Type <br>
-                        <select class="userType" name="user"> 
+                        <select id="userType" class="userType" name="user"> 
                             <option name="user" Value=""></option>
 							<option name="user" value="Instructor">Instructor</option>
 							<option name="user" value="Learner">Learner</option>
-                        </select>
+						</select>
+						<i id="utypeMsg"></i>
                     </td>
                 </tr>	
 			</table>
