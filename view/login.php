@@ -16,7 +16,7 @@
           <nav>
               <ul class="navigation">
                   <li class="links"><a href="view/login.php">Login</a></li>
-                  <li class="links"><a href="view/registration.html">Sign Up</a></li>
+                  <li class="links"><a href="view/registration.php">Sign Up</a></li>
               </ul>
           </nav>
 
@@ -47,7 +47,7 @@
                 <hr>
                 <input  type="checkbox" name="checkRemember"><i class="RememberMe">Remember Me</i>
                 <br><br>
-                <input type="submit" name="submit" value="Login"> <a href="/registration.html">Register</a>
+                <input type="submit" name="submit" value="Login"> <a href="view/registration.php">Register</a>
             </fieldset>
         </form>
       </main>

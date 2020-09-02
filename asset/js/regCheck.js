@@ -3,8 +3,14 @@
 window.nvalid=false;
 window.evalid=false;
 window.gvalid=false;
+window.pconvalid=false;
+window.uvalid =false;
+window.dvalid =false;
+window.pvalid=false;
+
 var i;
  
+//name validation
  function neMpty()
  {
     var name = document.getElementById("name").value;
@@ -12,14 +18,14 @@ var i;
     
     if(name == "")
     {  
-        document.getElementById("nameMsg").innerHTML="field can't be empty";
+        document.getElementById("nameMsg").innerHTML="*field can't be empty!";
         
         window.nvalid =false;
     }
 
     else if( (name>='A' && name<='Z' || name>='a'&& name<='z') && lent< 2)
     {   
-         document.getElementById("nameMsg").innerHTML="length can't be less then 2";  
+         document.getElementById("nameMsg").innerHTML="*length can't be less then 2!";  
          window.nvalid =false;
         
     }
@@ -27,7 +33,7 @@ var i;
     else if(name>= '0' && name<= '9'||name=='+'||name=='-'||name=='*'||name=='/'||name=='='||name=='@'||name=='$'||name=='%'||name=='!'||name=='|'||name=='?' )
     {
         
-        document.getElementById("nameMsg").innerHTML="name must be characters (a-z,A-Z, dot(.) or dash(-)) ";
+        document.getElementById("nameMsg").innerHTML="*name must be characters (a-z,A-Z,dot(.) or dash(-)) ";
         
         window.nvalid =false;
     }
@@ -49,22 +55,41 @@ function nRemover()
     
 }
 
+//email validation
  function EeMpty()
  {
     var email = document.getElementById("email").value;
+   
+    var email_data ='check_email=' + window.encodeURIComponent('ON')
+    + '&emailId=' + window.encodeURIComponent(email);
+    let xhttp = new XMLHttpRequest();
     var pos =email.search("@");
     var pos1 = email.search(".com");
-
     if(email=="")
     {
-       document.getElementById("emailMsg").innerHTML="field can't be empty";
+       document.getElementById("emailMsg").innerHTML="*field can't be empty!";
         window.evalid=false;
     }
     else if (pos==-1 || pos1==-1|| pos1 < pos) 
     {
-        document.getElementById("emailMsg").innerHTML="invalid email must be like (sample@example.com)";
+        document.getElementById("emailMsg").innerHTML="*invalid email! must be like (sample@example.com)";
         window.evalid=false;
     }
+    else if(email!="")
+    {
+        xhttp.open('POST', '../../php/reg.php', true);
+		            xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhttp.send(email_data);
+		xhttp.onreadystatechange = function (){
+					if(this.readyState == 4 && this.status == 200){
+
+                        document.getElementById("emailMsg").innerHTML=this.responseText;
+						
+						
+					}	
+        }
+    }
+
     else
     {
         window.evalid=true;
@@ -77,7 +102,31 @@ function nRemover()
     
 }
 
+function ueMpty()
+{
+   var uname = document.getElementById("uname").value;
+   
+   if(uname == "")
+   {  
+       document.getElementById("unameMsg").innerHTML="*field can't be empty!";
+       
+       window.uvalid =false;
+   }
 
+   else
+   {
+       window.uvalid =true;
+   }  
+  
+
+   
+}
+
+function uRemover()
+{
+    document.getElementById('unameMsg').innerHTML = "";
+    
+}
 
 
 function geMpty()
@@ -96,7 +145,7 @@ function geMpty()
     }
     else
     {
-        document.getElementById("genderMsg").innerHTML="please choose a gender";
+        document.getElementById("genderMsg").innerHTML="*please choose a gender!";
         window.gvalid=false;
        
     }
@@ -116,23 +165,23 @@ function deMpty()
    
    if(date ==null|| month==null||year==null)
    {  
-       document.getElementById("dobMsg").innerHTML="field can't be empty";
+       document.getElementById("dobMsg").innerHTML="*field can't be empty!";
        
-       window.nvalid =false;
+       window.dvalid =false;
    }
 
    else if((date>=1 && date<=31) && (month >=1 && month<=12) && (year >=1900 && year <=2016))
    {   
         
-        window.nvalid =true;
+        window.dvalid =true;
        
    }
    
 
    else 
    {
-       document.getElementById("dobMsg").innerHTML="must be a valid number (dd: 0-31, mm: 1-12, yyyy: 1900-2016)";  
-       window.nvalid =false;
+       document.getElementById("dobMsg").innerHTML="*must be a valid number (dd: 0-31, mm: 1-12, yyyy: 1900-2016)!";  
+       window.dvalid =false;
    } 
 
    
@@ -152,7 +201,7 @@ function uTeMpty()
 
     if(userType=="")
     {
-        document.getElementById("utypeMsg").innerHTML="please choose at least one";
+        document.getElementById("utypeMsg").innerHTML="*please choose at least one.";
         window.gvalid=false;
        
     }
@@ -168,3 +217,58 @@ function uTRemover()
 }
 
 
+function PeMpty()
+{ 
+    var password = document.getElementById("password").value;
+    if(password=="")
+    {
+        document.getElementById("passMsg").innerHTML="*password field can't be empty!";
+        window.pvalid=false;
+
+    }
+
+    
+    else
+    {
+        window.pvalid=true;
+       
+    }
+}
+
+function pRemover()
+{
+    document.getElementById("passMsg").innerHTML="";
+}
+
+
+function PconeMpty()
+{ 
+    var password = document.getElementById("password").value;
+    var conpassword = document.getElementById("conpassword").value;
+
+    if(conpassword=="")
+    {
+        document.getElementById("conpassMsg").innerHTML="*password field can't be empty!";
+        window.pconvalid=false;
+
+    }
+
+    if(conpassword!=password)
+    {
+        document.getElementById("conpassMsg").innerHTML="*password and confirmpassword is not maching!";
+        window.pconvalid=false;
+
+    }
+
+    
+    else
+    {
+        window.pconvalid=true;
+       
+    }
+}
+
+function pconRemover()
+{
+    document.getElementById("conpassMsg").innerHTML="";
+}

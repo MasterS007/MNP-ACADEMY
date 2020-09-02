@@ -1,5 +1,5 @@
 <?php
-    $host="127.0.0.1";
+    $host="localhost";
     $dbuser="root";
     $dbpass="";
     $dbName="webtech_mid_project";

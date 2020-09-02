@@ -1,8 +1,19 @@
+<?php
+
+	if (isset($_GET['error'])) {
+		
+		if($_GET['error'] == 'db_error'){
+			echo "Something went wrong...please try again";
+		}
+	}
+
+?>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../asset/all_designs/register.css">
+	<link rel="stylesheet" href="../asset/all_designs/register.css">
+	<script type="text/javascript" src="../asset/js/regCheck.js"></script>
     <title>registration</title>
 </head>
 <body>
@@ -11,7 +22,7 @@
           <nav>
               <ul class="navigation">
                   <li class="links"><a href="../view/login.php">Login</a></li>
-                  <li class="links"><a href="../view/registration.html">Sign Up</a></li>
+                  <li class="links"><a href="../view/registration.php">Sign Up</a></li>
               </ul>
           </nav>
 
@@ -25,8 +36,8 @@
 				<tr>
 					<td>Name</td>
 					<td>:</td>
-					<td><input id="name" name="name" type="text"></td>
-					<td><i  id="nameMsg" style="color:red;"></i></td>
+					<td><input id="name" name="name" type="text" onkeyup="nRemover()" onblur="neMpty()"></td>
+					<td><i  id="nameMsg" style="color:red; font-size: 9px;"></i></td>
 				</tr>		
 				<tr><td colspan="4"><hr/></td></tr>
 				<tr>
@@ -36,28 +47,28 @@
 						<input id="email" name="email" type="text" onkeyup="eRemover()" onblur="EeMpty()">
 						<abbr title="hint: sample@example.com"><b>i</b></abbr>
 					</td>
-					<td ><i id="emailMsg" style="color:red;" ></i></td>
+					<td ><i id="emailMsg" style="color:red;font-size: 9px; white-space: pre-line;"  ></i></td>
 				</tr>		
 				<tr><td colspan="4"><hr/></td></tr>
 				<tr>
 					<td>User Name</td>
 					<td>:</td>
-					<td><input id="uname" name="userName" type="text" onkeyup="nRemover()" onblur="neMpty()"></td>
-					<td id="unameMsg"></td>
+					<td><input id="uname" name="userName" type="text" onkeyup="uRemover()" onblur="ueMpty()"></td>
+					<td><i id="unameMsg"  style="color:red;font-size: 9px;"></i></td>
 				</tr>		
 				<tr><td colspan="4"><hr/></td></tr>
 				<tr>
 					<td>Password</td>
 					<td>:</td>
 					<td><input id="password" name="password" type="password" onkeyup="pRemover()" onblur="PeMpty()"></td>
-					<td><i id="passMsg" style="color:red;"></i></td>
+					<td><i id="passMsg" style="color:red; font-size: 9px;"></i></td>
 				</tr>		
 				<tr><td colspan="4"><hr/></td></tr>
 				<tr>
 					<td>Confirm Password</td>
 					<td>:</td>
 					<td><input id="conpassword" name="confirmPassword" type="password" onkeyup="pconRemover()" onblur="PconeMpty()"></td>
-					<td><i id="conpassMsg" style="color:red;"></i></td>
+					<td><i id="conpassMsg" style="color:red; font-size: 9px;"></i></td>
 				</tr>		
 				<tr><td colspan="4"><hr/></td></tr>
 				<tr>
@@ -69,7 +80,7 @@
 									<input  name="gender" id="Other" type="radio" value="Other" onclick="Remover()" onmouseover="gRemover()" onmouseout="geMpty()">Other
 						</fieldset>
 					</td>
-					<td ><i id="genderMsg" style="color:red"></i></td>
+					<td ><i id="genderMsg" style="color:red; font-size: 9px;"></i></td>
 				</tr>		
 				<tr><td colspan="4"><hr/></td></tr>
 				<tr>
@@ -82,17 +93,17 @@
 							<font size="2"><i>(dd/mm/yyyy)</i></font>
 						</fieldset>
 					</td>
-                    <td ><i id="dobMsg" style="color:red;"></i></td>
+                    <td ><i id="dobMsg" style="color:red; font-size: 9px;"></i></td>
                 </tr>
                 <tr>
                     <td colspan="4"><hr>
                         User Type <br>
-                        <select id="userType" class="userType" name="user"> 
+                        <select id="userType" class="userType" name="user" onmouseout=" uTeMpty()" onclick=" uTRemover()" onmouseover=" uTRemover()"> 
                             <option name="user" Value=""></option>
 							<option name="user" value="Instructor">Instructor</option>
 							<option name="user" value="Learner">Learner</option>
 						</select>
-						<i id="utypeMsg"></i>
+						<i id="utypeMsg" style="color:red; font-size: 9px;"></i>
                     </td>
                 </tr>	
 			</table>

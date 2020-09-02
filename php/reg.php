@@ -1,5 +1,30 @@
 <?php
+    require_once('../services/userService.php');
+
+    if(isset($_POST['check_email']))
+    {
+        $email= $_POST['emailId'];
+
+        echo $email;
+        if(isset($email))
+        {
+            $getemail = getEmail($email);
+            if(!empty($getemail))
+            {
+                echo "email already exists!";
+            }
+
+            else
+            {
+                echo "seems good!";
+            }
+        }
+    }
+
+?>
+<?php
  
+ session_start();
  require_once('../services/userService.php');
     if(isset($_REQUEST['submit']))
     {
@@ -65,13 +90,22 @@
             $valid = TRUE;
          }
 
+         else if(isset($email))
+         {
+             $getemail = getEmail($email);
+             if($getemail)
+             {
+              $valid = FALSE;;
+             }
+         }
+
         else if(($date>=1 && $date<=31) && ($month >=1 && $month<=12) && ($year >=1900 && $year <=2016))
         {
             echo "Successful Submit!";
             $valid = TRUE;
         }
 
-
+        
         else 
         {
 
@@ -115,7 +149,7 @@
             if($validReg)
             {
                
-                header('location:../../view/login.php');
+                header('location:../view/login.php');
                 echo "Insert successfull";
                
             }
@@ -136,7 +170,7 @@
           else
           {
            
-            header('location:../../view/registration.html');
+            header('location:../view/registration.php');
           }
         
       
@@ -144,7 +178,7 @@
       
 
         else{
-            header('location:../../view/registration.html');
+            header('location:../../view/registration.php');
         }    
     
 ?>
