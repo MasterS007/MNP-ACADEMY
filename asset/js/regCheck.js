@@ -56,30 +56,26 @@ function nRemover()
 }
 
 //email validation
- function EeMpty()
+ function eEMpty()
  {
     var email = document.getElementById("email").value;
    
-    var email_data ='check_email=' + window.encodeURIComponent('ON')
+    var email_datas =''
+    +'check_email=' + window.encodeURIComponent('ON')
     + '&emailId=' + window.encodeURIComponent(email);
     let xhttp = new XMLHttpRequest();
     var pos =email.search("@");
     var pos1 = email.search(".com");
     if(email=="")
     {
-       document.getElementById("emailMsg").innerHTML="*field can't be empty!";
-        window.evalid=false;
-    }
-    else if (pos==-1 || pos1==-1|| pos1 < pos) 
-    {
-        document.getElementById("emailMsg").innerHTML="*invalid email! must be like (sample@example.com)";
+       document.getElementById("emailMsg").innerHTML="  *field can't be empty!";
         window.evalid=false;
     }
     else if(email!="")
     {
-        xhttp.open('POST', '../../php/reg.php', true);
-		            xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        xhttp.send(email_data);
+        xhttp.open('POST','../php/reg.php', true);
+		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(email_datas);
 		xhttp.onreadystatechange = function (){
 					if(this.readyState == 4 && this.status == 200){
 
@@ -88,7 +84,15 @@ function nRemover()
 						
 					}	
         }
+
+        window.evalid=false;
     }
+    else if (pos==-1 || pos1==-1|| pos1 < pos) 
+    {
+        document.getElementById("emailMsg").innerHTML="  *invalid email! must be like (sample@example.com)";
+        window.evalid=false;
+    }
+    
 
     else
     {
@@ -102,17 +106,37 @@ function nRemover()
     
 }
 
+// username validation
+
 function ueMpty()
 {
    var uname = document.getElementById("uname").value;
+   var username_datas =''
+    +'check_user=' + window.encodeURIComponent('ON')
+    + '&userName=' + window.encodeURIComponent(uname);
+    let xhttp = new XMLHttpRequest();
    
    if(uname == "")
    {  
-       document.getElementById("unameMsg").innerHTML="*field can't be empty!";
+       document.getElementById("unameMsg").innerHTML="  *field can't be empty!";
        
        window.uvalid =false;
    }
 
+   else if(uname!="")
+   {
+    xhttp.open('POST','../php/reg.php', true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send(username_datas);
+    xhttp.onreadystatechange = function (){
+                if(this.readyState == 4 && this.status == 200){
+
+                    document.getElementById("unameMsg").innerHTML=this.responseText;
+                    
+                    
+                }	
+    }
+   }
    else
    {
        window.uvalid =true;
@@ -128,6 +152,7 @@ function uRemover()
     
 }
 
+// gender validation
 
 function geMpty()
 { 
@@ -145,7 +170,7 @@ function geMpty()
     }
     else
     {
-        document.getElementById("genderMsg").innerHTML="*please choose a gender!";
+        document.getElementById("genderMsg").innerHTML="  *please choose a gender!";
         window.gvalid=false;
        
     }
@@ -156,6 +181,7 @@ function gRemover()
     document.getElementById("genderMsg").innerHTML="";
 }
 
+//date of birth validation
 
 function deMpty()
 {
@@ -165,7 +191,7 @@ function deMpty()
    
    if(date ==null|| month==null||year==null)
    {  
-       document.getElementById("dobMsg").innerHTML="*field can't be empty!";
+       document.getElementById("dobMsg").innerHTML="  *field can't be empty!";
        
        window.dvalid =false;
    }
@@ -194,7 +220,7 @@ function dRemover()
    
 }
 
-
+//user type  validation
 function uTeMpty()
 { 
     var userType= document.getElementById("userType").value;
@@ -216,7 +242,7 @@ function uTRemover()
     document.getElementById("utypeMsg").innerHTML="";
 }
 
-
+//password validation
 function PeMpty()
 { 
     var password = document.getElementById("password").value;
@@ -271,4 +297,17 @@ function PconeMpty()
 function pconRemover()
 {
     document.getElementById("conpassMsg").innerHTML="";
+}
+
+function validation()
+{
+    if(window.nvalid==true && window.evalid==true &&  window.gvalid==true && window.pconvalid==true && window.uvalid ==true &&
+        window.dvalid ==true &&  window.pvalid==true )
+        {
+            return true;
+        }
+    else
+    {
+        return false;
+    }
 }

@@ -1,31 +1,44 @@
-<?php
-    require_once('../services/userService.php');
 
-    if(isset($_POST['check_email']))
+<?php
+ 
+ session_start();
+ require_once('../services/userService.php');
+ if(isset($_POST['check_email']))
     {
         $email= $_POST['emailId'];
-
-        echo $email;
         if(isset($email))
         {
             $getemail = getEmail($email);
             if(!empty($getemail))
             {
-                echo "email already exists!";
+                echo "   *email already exists!";
             }
 
             else
             {
-                echo "seems good!";
+                echo "";
             }
         }
     }
 
-?>
-<?php
- 
- session_start();
- require_once('../services/userService.php');
+    if(isset($_POST['check_user']))
+    {
+        $uname= $_POST['userName'];
+        if(isset($uname))
+        {
+            $getuname = getUsername($uname);
+            if(!empty($getuname))
+            {
+                echo "    *username already exists!";
+            }
+
+            else
+            {
+                echo "";
+            }
+        }
+    }
+
     if(isset($_REQUEST['submit']))
     {
      
@@ -96,6 +109,10 @@
              if($getemail)
              {
               $valid = FALSE;;
+             }
+             else
+             {
+               $valid=TRUE;
              }
          }
 
@@ -170,15 +187,9 @@
           else
           {
            
-            header('location:../view/registration.php');
-          }
-        
-      
+            header('location:../view/registration.html');
+          }       
     }
-      
-
-        else{
-            header('location:../../view/registration.php');
-        }    
+         
     
 ?>

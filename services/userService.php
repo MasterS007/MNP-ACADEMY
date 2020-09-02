@@ -1,8 +1,5 @@
 <?php
 	require_once('../databaseConn/dbCon.php');
-
-	session_start();
-
 	function getEmail($email)
     {
         $conn = dbConnection();
@@ -18,6 +15,21 @@
         return $userEmail;
 	}
 	
+	
+	function getUsername($username){
+		$conn = dbConnection();
+
+		if(!$conn){
+			echo "DB connection error";
+		}
+
+		$sql = "select username from users where username like '%{$username}%'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+		mysqli_close($conn);
+		return $row;
+	}
+
 	function getByID($id){
 		$conn = dbConnection();
 
