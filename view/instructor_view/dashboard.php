@@ -1,5 +1,5 @@
 <?php
-    
+    require_once('../../php/session_header.php');
     require_once('../../php/session_header.php'); 
  ?> 
  <!DOCTYPE html>
@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../asset/all_designs/instructor_designs/dashboardDes.css"> 
+    <link rel="stylesheet" type="text/css" href="../../asset/all_designs/instructor_designs/dashBoard.css"> 
     <script type="text/javascript" src="../../php_and_js/js/instructor_js/dashboardview.js"></script>
     <title>Class</title>
 </head>
@@ -112,9 +112,9 @@
 
            <div class="titleb">
                <h4 class="titleC">My Class</h4>
-               <button type="button" class="addClass" onclick=createClassList()>Add class</button>   
+               <button type="button" class="addClass" ><a href="addClass.php" >Add class</a></button>   
 
-               <!-- <a href="addClass.php">Add class</a> -->
+               <!--  -->
             </div>
 
            <div class="classes" id="classes" >

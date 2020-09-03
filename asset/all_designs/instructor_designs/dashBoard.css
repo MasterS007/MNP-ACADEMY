@@ -151,6 +151,7 @@ ul.navigation li.searchBox
   {
     text-decoration-line: none;
     text-decoration: none;
+    text-decoration-color:#666 ;
     
   }
 
@@ -200,7 +201,7 @@ ul.navigation li.searchBox
       color: #589;
   }
 
-  div.titleb button.addClass
+  button.addClass
   {
     border: 1px solid #ddd;
     box-sizing: border-box;
@@ -213,7 +214,10 @@ ul.navigation li.searchBox
     position: relative;
   }
 
-  
+  button.addClass a
+  {
+    text-decoration-color:darkcyan;
+  }
   button.addClass:hover
   {
       color: darkcyan;

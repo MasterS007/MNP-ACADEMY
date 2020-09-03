@@ -187,7 +187,7 @@
           else
           {
            
-            header('location:../view/registration.html');
+            header('location:../view/registration.html?nullSubmission');
           }       
     }
          

@@ -9,8 +9,7 @@
         $password 	= $_POST['password'];
 
         if(empty($uname) || empty($password)){
-            echo "null submission";
-
+            header('location: ../view/login.php?nullSubmission');
         }
         else if(!empty($uname) && !empty($password))
         {
