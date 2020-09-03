@@ -1,13 +1,18 @@
 <?php
-    require_once('../../php/session_header.php');
-    require_once('../../php/session_header.php'); 
+   	session_start();
+
+       if(!isset($_SESSION['username'])){
+   
+           header('location: ../login.php?error=invalid_request');
+       }
+    
  ?> 
  <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../asset/all_designs/instructor_designs/dashBoard.css"> 
+    <link rel="stylesheet" type="text/css" href="../../asset/all_designs/instructor_designs/dashboardDes.css"> 
     <script type="text/javascript" src="../../php_and_js/js/instructor_js/dashboardview.js"></script>
     <title>Class</title>
 </head>
@@ -112,7 +117,7 @@
 
            <div class="titleb">
                <h4 class="titleC">My Class</h4>
-               <button type="button" class="addClass" ><a href="addClass.php" >Add class</a></button>   
+               <button type="button" class="addClass" ><a href="addClass.php" style="color: #589;">Add class</a></button>   
 
                <!--  -->
             </div>
