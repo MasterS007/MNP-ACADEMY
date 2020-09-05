@@ -5,7 +5,7 @@
    
            header('location: ../login.php?error=invalid_request');
        }
-    
+
  ?> 
  <!DOCTYPE html>
 <html lang="en">
@@ -13,46 +13,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../../asset/all_designs/instructor_designs/dashboardDes.css"> 
-    <script type="text/javascript" src="../../php_and_js/js/instructor_js/dashboardview.js"></script>
+  
     <title>Class</title>
 </head>
 <body>
-<script>
-        var classes = document.getElementById("classes");
-        var classList=[];
-        classList=["Class:Physics","Class:C/C++","Class:Algorithm" ];
-
-        function createClassList()
-        {
-            var listLength= classList.length;
-
-            if(listLength>0)
-            {
-                var myClass= document.createElement("ul");
-                myClass.className="myClass";
-
-                for(var i=0; i<listLength; i++)
-                {
-                    var listItem = document.createElement("li");
-                    var linkItem = document.createElement("a");
-                    var classItem = document.createTextNode(classList[i]);
-                    linkItem.appendChild(classItem);
-                    listItem.appendChild(linkItem);
-                    myClass.appendChild(listItem);
-
-                }
-                classes.appendChild(myClass);
-                //document.getElementById("classes")="hi";
-            }
-            else
-            {
-                var message = document.createTextNode("No class is added");
-                // classes.appendChild(message);
-                document.getElementById("classes").innerHTML="hi";
-            }
-            //window.onload = createClassList;
-        }
-    </script>
     <header>
          <nav>
              <select class="comboBox">
@@ -117,26 +81,23 @@
 
            <div class="titleb">
                <h4 class="titleC">My Class</h4>
-               <button type="button" class="addClass" ><a href="addClass.php" style="color: #589;">Add class</a></button>   
-
-               <!--  -->
+               <button type="button" class="addClass" onclick= openpopup() >Add Class</button>
             </div>
-
-           <div class="classes" id="classes" >
-                   <!-- <ul class="myClass" id="myClass">
-                   <li><a href="insideClass.php">Class:Physics</a></li><br>
-                   <li><a href="insideClass.php">Class:C/C++</a></li><br>
-                   <li><a href="insideClass.php">Class:Algorithm</a></li>
-               </ul> -->
-           </div>
-          
-
-
             
+            <!-- <form method="POST"> -->
+           <div id="divClasses" class="divclasses">
+
+                  <p id="peraG" style="color:red;"></p>
+                  <script type="text/javascript" src="../../asset/js/instructor_js/popupClassadd.js"></script>
+                  
+           </div>
+           <!-- </form> -->
     </main> 
     <footer>
     </footer>
-    </body>
-</html>
+    <!--  -->
 
+    </body>
+    
+</html>
 

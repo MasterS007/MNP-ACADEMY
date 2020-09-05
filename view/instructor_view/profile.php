@@ -1,5 +1,5 @@
 <?php
-require_once('../../php_and_js/php/session_header.php');     
+  
 ?>
     <!DOCTYPE html>
     <html lang="en">

@@ -171,7 +171,7 @@ h4.titleC {
     color: #589;
 }
 
-button.addClass {
+.addClass {
     border: 1px solid #ddd;
     box-sizing: border-box;
     border-radius: 5px;
@@ -184,11 +184,17 @@ button.addClass {
     cursor: pointer;
 }
 
-button.addClass:hover {
+.addClass:hover {
     color: darkcyan;
 }
 
-ul.myClass li {
+.divclasses {
+    border: 1px solid black;
+    margin-left: 14%;
+}
+
+
+/* ul.myClass li {
     border: 1px solid #ddd;
     width: 80%;
     height: 35px;
@@ -209,7 +215,7 @@ ul.myClass :hover {
 
 ul.myClass li a:active {
     color: #585;
-}
+} */
 
 
 /*Footer*/
