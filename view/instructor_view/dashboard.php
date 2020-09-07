@@ -101,7 +101,7 @@
                     {
                         $courseName =getByCourseId($courseId[$i]['course_id']);
                         ?>
-                     <li><a href="../view/insideClass.php">Class: <?php echo $courseName['course_name']; ?></a></li><br>
+                     <li><a href="insideClass.php">Class: <?php echo $courseName['course_name']; ?></a></li><br>
 
                     <?php    
                     }
