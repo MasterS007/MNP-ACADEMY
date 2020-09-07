@@ -19,4 +19,25 @@ function insertIC($data)
     }
         mysqli_close($conn);
 }
+
+function getInsCourse($id)
+{
+    
+    $conn = dbConnection();
+
+    if(!$conn){
+        echo "DB connection error";
+    }
+
+    $sql = "Select course_id from instructor_course Where instructor_id={$id}";
+    $result = mysqli_query($conn, $sql);
+	$courses = [];
+
+    while($row = mysqli_fetch_assoc($result)){
+        array_push($courses, $row);
+    }
+
+    return $courses;
+    mysqli_close($conn);
+}
 ?>

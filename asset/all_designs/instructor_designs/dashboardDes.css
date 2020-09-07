@@ -188,18 +188,7 @@ h4.titleC {
     color: darkcyan;
 }
 
-.divclasses {
-    border: 1px solid black;
-    margin-left: 14%;
-    margin-top: 50px;
-}
-
-.divclasses h4 {
-    border: 1px solid black;
-}
-
-
-/* ul.myClass li {
+ul.myClass li {
     border: 1px solid #ddd;
     width: 80%;
     height: 35px;
@@ -220,9 +209,9 @@ ul.myClass :hover {
 
 ul.myClass li a:active {
     color: #585;
-} */
+}
 
-
+*/
 /*Footer*/
 
 footer {
@@ -231,6 +220,8 @@ footer {
     color: white;
 }
 
+
+/* 
 @media screen and (max-width: 1327px) {
     .comboBox {
         margin-left: 600px;
@@ -288,4 +279,4 @@ footer {
         margin-left: 65%;
         font-size: 12px;
     }
-}
+} */

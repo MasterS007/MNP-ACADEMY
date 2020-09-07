@@ -1,7 +1,7 @@
 <?php
        session_start();
        require_once('../../services/courseService.php');
-
+       require_once('../../services/instructor_service/course_instructorService.php');
        if(!isset($_SESSION['username'])){
    
            header('location: ../login.php?error=invalid_request');
@@ -93,6 +93,20 @@
             
             <!-- <form method="POST"> -->
            <div id="divClasses" class="divclasses">
+           <ul class="myClass">
+                <?php
+                    $Cid=$_SESSION['userid'];
+                    $courseId=getInsCourse($Cid);
+                    for($i=0; $i<count($courseId); $i++)
+                    {
+                        $courseName =getByCourseId($courseId[$i]['course_id']);
+                        ?>
+                     <li><a href="../view/insideClass.php">Class: <?php echo $courseName['course_name']; ?></a></li><br>
+
+                    <?php    
+                    }
+                    ?>
+               </ul>
                   
            </div>
            <!-- </form> -->

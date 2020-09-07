@@ -53,6 +53,19 @@
 		return $row;
 	}
 
+	function getByCourseId($course_id){
+		$conn = dbConnection();
+
+		if(!$conn){
+			echo "DB connection error";
+		}
+
+		$sql = "select *  from all_courses where course_id={$course_id} ";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+		return $row;
+	}
+
 //INSERT METHOD
 	// function insert($course){
 	// 	$conn = dbConnection();
