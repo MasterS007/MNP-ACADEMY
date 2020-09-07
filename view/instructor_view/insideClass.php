@@ -1,4 +1,12 @@
-
+<?php
+     session_start();
+     require_once('../../services/courseService.php');
+     require_once('../../services/instructor_service/course_instructorService.php');
+     if(!isset($_SESSION['username'])){
+ 
+         header('location: ../login.php?error=invalid_request');
+     }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,26 +21,32 @@
             <select class="comboBox">
                 <option value="Course" selected disabled hidden>Cources</option>
                 <optgroup label="Science">
-                       <option value="Physics">Physics</option>
-                       <option value="Chemistry">Chemistry</option>
-                       <option value="Biology">Biology</option>
-                       <option value="Mathematics">Mathematics</option>
-                   
-                </optgroup>
+                <?php
+                    $courseN = getByCategory('Science');
+                    for ($i=0; $i<count($courseN); $i++)
+                    { ?>
+                        <option value="<?php echo $courseN[$i];?>"><?php echo $courseN[$i]['course_name'];?>
+                        </option>
+                    <?php }?>
+                    </optgroup>
                 <optgroup label="Computer Science">
-                    <option value="Algorithm">Algorithm</option>
-                    <option value="Data Structure">Data Structure</option>
-                    <option value="Computer Fundamentals">Computer Fundamentals</option>
-                    <option value="Introdouction to Programing Language">Introdouction to Programing Language</option>
-                    <option value="Introduction to Database">Introduction to Database</option>
+                <?php
+                    $courseN = getByCategory('Computer Science');
+                    for ($i=0; $i<count($courseN); $i++)
+                    { ?>
+                        <option value="<?php echo $courseN[$i];?>"><?php echo$courseN[$i]['course_name'];?>
+                        </option>
+                    <?php }?>
 
                 </optgroup>
                 <optgroup label="Programming Language">
-                    <option value="C/C++">C/C++</option>
-                    <option value="JAVA">JAVA</option>
-                    <option value="PHYTHON">PHYTHON</option>
-                    <option value="C#">C#</option>
-                    <option value="PHP">PHP</option>
+                <?php
+                    $courseN = getByCategory('Programming Language');
+                    for ($i=0; $i<count($courseN); $i++)
+                    { ?>
+                        <option value="<?php echo $courseN[$i];?>"><?php echo$courseN[$i]['course_name'];?>
+                        </option>
+                    <?php }?>
 
                 </optgroup>
             </select>
@@ -46,7 +60,7 @@
        <div class="verticleLine"></div>
     <main>
         <div>
-            <h4 class="class_headeing">Class:Programming Language</h4>
+            <h4 class="class_headeing"><?= 'Class:'.$_GET['courseName']?></h4>
         </div>
 
         <div class="class_materials">
