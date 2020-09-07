@@ -91,7 +91,7 @@
                <button type="button" class="addClass" onclick= openpopup() >Add Class</button>
             </div>
             
-            <!-- <form method="POST"> -->
+            <!-- <form method="POST">  -->
            <div id="divClasses" class="divclasses">
            <ul class="myClass">
                 <?php
@@ -100,8 +100,9 @@
                     for($i=0; $i<count($courseId); $i++)
                     {
                         $courseName =getByCourseId($courseId[$i]['course_id']);
+                        $_SESSION['courseName']=$courseName['course_name'];
                         ?>
-                     <li><a href="insideClass.php">Class: <?php echo $courseName['course_name']; ?></a></li><br>
+                     <li><a href="insideClass.php?courseName=<?=$courseName['course_name']?>">Class: <?php echo $courseName['course_name']; ?></a></li><br>
 
                     <?php    
                     }
@@ -109,7 +110,7 @@
                </ul>
                   
            </div>
-           <!-- </form> -->
+           <!-- </form>  -->
     </main> 
     <footer>
     </footer>
