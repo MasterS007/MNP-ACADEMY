@@ -68,7 +68,7 @@
                     <li><a href="profile.php">Profile</a></li>
                     <li><a href="mycourse.php">Courses</a></li>
                     <li><a href="blog.php">Blogs</a></li>
-                    <li><a href="logout.php">Logout</a></li>
+                    <li><a href="../../php/logout.php">Logout</a></li>
                 </ul>
             </div>
             <section>
