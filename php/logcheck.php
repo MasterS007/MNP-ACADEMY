@@ -24,6 +24,7 @@
         if($data!="No user found"){
             $_SESSION['username'] = $uname;
             $_SESSION['name']=$data['u_name'];
+            $_SESSION['userid']=$data['id'];
             //echo $data['user_type'];
 
             if($data['user_type']=='Instructor')

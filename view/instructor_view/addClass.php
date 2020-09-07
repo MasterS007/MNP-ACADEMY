@@ -83,7 +83,8 @@
     <script>
             function closePopup() {
                 var class_name = document.getElementById("class_name").value;
-                var chooseCourse = document.getElementById("chooseCourse").value;
+                var chooseCourse = document.getElementById("chooseCourse");
+                var course = chooseCourse.options[chooseCourse.selectedIndex].text;
 
                 if (class_name == "" || chooseCourse == "") {
                     document.getElementById("emptMsg").innerHTML = "*Please fill all the field first!"
@@ -91,7 +92,7 @@
                 } else {
                 
                     
-                    createClass(class_name);
+                    createClass(class_name, course);
                     // var addClass_data =''
                     // +'check_class=' + window.encodeURIComponent('ON')
                     // + '&className=' + window.encodeURIComponent(class_name);

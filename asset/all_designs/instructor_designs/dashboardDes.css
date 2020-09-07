@@ -191,6 +191,11 @@ h4.titleC {
 .divclasses {
     border: 1px solid black;
     margin-left: 14%;
+    margin-top: 50px;
+}
+
+.divclasses h4 {
+    border: 1px solid black;
 }
 
 

@@ -1,5 +1,6 @@
 <?php
-   	session_start();
+       session_start();
+       require_once('../../services/courseService.php');
 
        if(!isset($_SESSION['username'])){
    
@@ -13,7 +14,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../../asset/all_designs/instructor_designs/dashboardDes.css"> 
-  
+    <script type="text/javascript" src="../../asset/js/instructor_js/popupClassadd.js"></script>
     <title>Class</title>
 </head>
 <body>
@@ -22,27 +23,34 @@
              <select class="comboBox">
                  <option value="Course" selected disabled hidden>Cources</option>
                  <optgroup label="Science">
-                        <option value="Physics">Physics</option>
-                        <option value="Chemistry">Chemistry</option>
-                        <option value="Biology">Biology</option>
-                        <option value="Mathematics">Mathematics</option> 
-                 </optgroup>
-                 <optgroup label="Computer Science">
-                     <option value="Algorithm">Algorithm</option>
-                     <option value="Data Structure">Data Structure</option>
-                     <option value="Computer Fundamentals">Computer Fundamentals</option>
-                     <option value="Introdouction to Programing Language">Introdouction to Programing Language</option>
-                     <option value="Introduction to Database">Introduction to Database</option>
+                <?php
+                    $courseN = getByCategory('Science');
+                    for ($i=0; $i<count($courseN); $i++)
+                    { ?>
+                        <option value="<?php echo $courseN[$i];?>"><?php echo $courseN[$i]['course_name'];?>
+                        </option>
+                    <?php }?>
+                    </optgroup>
+                <optgroup label="Computer Science">
+                <?php
+                    $courseN = getByCategory('Computer Science');
+                    for ($i=0; $i<count($courseN); $i++)
+                    { ?>
+                        <option value="<?php echo $courseN[$i];?>"><?php echo$courseN[$i]['course_name'];?>
+                        </option>
+                    <?php }?>
 
-                 </optgroup>
-                 <optgroup label="Programming Language">
-                     <option value="C/C++">C/C++</option>
-                     <option value="JAVA">JAVA</option>
-                     <option value="PHYTHON">PHYTHON</option>
-                     <option value="C#">C#</option>
-                     <option value="PHP">PHP</option>
+                </optgroup>
+                <optgroup label="Programming Language">
+                <?php
+                    $courseN = getByCategory('Programming Language');
+                    for ($i=0; $i<count($courseN); $i++)
+                    { ?>
+                        <option value="<?php echo $courseN[$i];?>"><?php echo$courseN[$i]['course_name'];?>
+                        </option>
+                    <?php }?>
 
-                 </optgroup>
+                </optgroup>
              </select>
              <ul class="navigation">
                  <li class="searchBox"><input type="text" name="search" placeholder="Search.."></li>
@@ -52,7 +60,6 @@
     </header>
 
         <div class="verticleLine"></div>
-
     <main>
        
         <h4 class="section-heading"><a href="dashboard.php"><?php echo $_SESSION['name'];?></a></h4>
@@ -86,9 +93,6 @@
             
             <!-- <form method="POST"> -->
            <div id="divClasses" class="divclasses">
-
-                  <p id="peraG" style="color:red;"></p>
-                  <script type="text/javascript" src="../../asset/js/instructor_js/popupClassadd.js"></script>
                   
            </div>
            <!-- </form> -->

@@ -40,6 +40,19 @@
 		return $courses;
 	}
 
+	function getByCourseName($courseName){
+		$conn = dbConnection();
+
+		if(!$conn){
+			echo "DB connection error";
+		}
+
+		$sql = "select *  from all_courses where course_name like '%{$courseName}%' ";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+		return $row;
+	}
+
 //INSERT METHOD
 	// function insert($course){
 	// 	$conn = dbConnection();

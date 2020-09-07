@@ -7,11 +7,11 @@
  }
  //var class_name;
 
- function createClass(class_name) {
-
+ function createClass(class_name, chooseCourse) {
      var addClass_datas = '' +
          'check_class=' + window.encodeURIComponent('ON') +
-         '&className=' + window.encodeURIComponent(class_name);
+         '&className=' + window.encodeURIComponent(class_name) +
+         '&courseName=' + window.encodeURIComponent(chooseCourse);
      let xhttp = new XMLHttpRequest();
 
      if (class_name != "") {
@@ -21,7 +21,7 @@
          xhttp.onreadystatechange = function() {
              if (this.readyState == 4 && this.status == 200) {
 
-                 document.getElementById("peraG").innerHTML = this.responseText;
+                 return true;
              }
          }
 
