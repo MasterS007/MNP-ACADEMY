@@ -10,7 +10,7 @@ function insertIC($data)
         echo "DB connection error";
     }
 
-    $sql = "INSERT INTO instructor_course (instructor_id, course_id) VALUES ('{$data['instructor_id']}','{$data['instructor_id']}')";
+    $sql = "INSERT INTO instructor_course (instructor_id, course_id) VALUES ('{$data['instructor_id']}','{$data['course_id']}')";
     if(mysqli_query($conn, $sql)){
 
         return true;

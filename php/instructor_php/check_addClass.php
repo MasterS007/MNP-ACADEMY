@@ -12,12 +12,12 @@ $insertValid=false;
 
         if(isset($Nameclass) && isset($isntructor_id) && isset($courseName))
         {
-            $courseId= getByCourseName($courseName);
-            
+            $courseId= getByCourseName($courseName); //courseService
+           
             $course_instr =
             [
                 'instructor_id'=>$isntructor_id,
-                'course_id'=>$courseId
+                'course_id'=>$courseId['course_id']
 
             ];
 
@@ -25,21 +25,19 @@ $insertValid=false;
 
             if( $isInserted)
             {
-                //echo "inserted";
+               echo "inserted";
                 $insertValid=true;
                 
             }
 
             else
             {
+               echo "not inserted";
                 $insertValid=false;
             }
         }
        
     }
-
-
-
 
  
 ?>

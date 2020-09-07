@@ -188,11 +188,15 @@ h4.titleC {
     color: darkcyan;
 }
 
+.divclasses {
+    margin-left: 10%;
+}
+
 ul.myClass li {
     border: 1px solid #ddd;
-    width: 80%;
+    width: 95%;
     height: 35px;
-    top: -50px;
+    top: -40px;
     display: block;
     padding-left: 20px;
     padding-top: 20px;
