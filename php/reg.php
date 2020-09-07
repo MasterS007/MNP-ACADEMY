@@ -152,13 +152,13 @@
             $Date =date_format($Dateob,"Y-m-d");
           
               $user=[
-                  'name'=>$name,
+                  'nameU'=>$name,
                   'uname'=>$uname,
                   'password'=>$password,
                   'email'=>$email,
                   'gender'=>$gender,
                   'user' => $user,
-                  'Date'>$Date
+                  'DoB'=>$Date
 
               ];
 
@@ -167,7 +167,7 @@
             {
                
                 header('location:../view/login.php');
-                echo "Insert successfull";
+                //echo $user['DoB'];
                
             }
                

@@ -89,9 +89,9 @@
 			echo "DB connection error";
 		}
 
-		$sql = "INSERT INTO users (u_name, username, u_password, email, gender, user_type, date_of_birth) VALUES ('{$user['name']}','{$user['uname']}','{$user['password']}','{$user['email']}','{$user['gender']}','{$user['user']}','{$user['Date']}')";
+		$sql = "INSERT INTO users (u_name, username, u_password, email, gender, user_type, date_of_birth) VALUES ('{$user['nameU']}','{$user['uname']}','{$user['password']}','{$user['email']}','{$user['gender']}','{$user['user']}','{$user['DoB']}')";
 		if(mysqli_query($conn, $sql)){
-
+			
 			return true;
 		}else{
 			return false;
