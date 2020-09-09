@@ -44,7 +44,6 @@ ul.navigation li.logo a {
     border-top: none;
     border-radius: 5px;
     font-size: 14px;
-    cursor: pointer;
 }
 
 ul.navigation li.searchBox {
@@ -75,44 +74,78 @@ ul.navigation li.searchBox input[type=text]:focus {
     width: 75%;
 }
 
+
+/*Middle Part*/
+
 div.verticleLine {
     border-left: 2px solid #ddd;
-    height: 700px;
+    height: 800px;
     position: absolute;
-    left: 20%;
+    left: 22%;
     margin-left: -3px;
     top: 88px;
 }
 
-
-/*Main */
-
 main {
     background-color: white;
-    background-size: 100%;
-    margin-left: 40px;
+    margin-left: 12%;
     margin-top: 40px;
-    height: 750px;
+    height: auto;
     overflow: auto;
 }
 
-h4.class_headeing {
+.section-heading a {
     color: #5899;
-    margin-left: 4%;
+    text-decoration-style: none;
+    text-decoration-line: none;
 }
 
-div.class_materials ul li {
-    margin-left: 25px;
+ul.stuff li {
+    margin-left: -40px;
     position: relative;
     list-style-type: none;
     padding-bottom: 20px;
-    top: 0px;
 }
 
-div.class_materials ul li a {
-    text-decoration-line: none;
+ul.stuff li a {
+    padding: 0px 20px;
     color: darkgoldenrod;
+    text-decoration-style: none;
+    text-decoration-line: none;
+}
+
+ul.stuff li a:hover {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration-line: none;
+}
+
+div hr {
+    width: 96%;
+    border: 1px solid #ddd;
+}
+
+div.wel {
+    margin-left: 10%;
+    margin-top: -180px;
+}
+
+ul.wlist li {
+    display: inline-block;
+    padding-right: 20px;
     position: relative;
+}
+
+ul.wlist li a {
+    color: #666;
+}
+
+ul.wlist li a:active {
+    border-bottom: 3px solid darkcyan;
 }
 
 legend.title {
@@ -120,28 +153,40 @@ legend.title {
     font-weight: bold;
 }
 
-div.students form fieldset {
-    margin-left: 21%;
-    margin-top: -240px;
-    position: relative;
+div.students-list form fieldset {
+    margin-left: 15%;
+    margin-top: 40px;
     height: 500px;
-    width: 75%;
+    width: 80%;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
 
 table.student_table td hr {
-    width: 980px;
+    width: 123%;
+    margin-left: -50px;
 }
 
-table.student_table td {
+table.student_table th {
+    padding-left: 55px;
     border-collapse: collapse;
     position: relative;
     text-align: center;
     top: 30px;
-    padding-right: 50px;
+    padding-right: 150px;
+    padding-bottom: 5px;
+    color: #579;
+}
+
+table.student_table td {
+    padding-left: 55px;
+    border-collapse: collapse;
+    position: relative;
+    top: 30px;
+    padding-right: 150px;
     padding-bottom: 5px;
     color: #666;
+    text-align: center;
 }
 
 
@@ -150,6 +195,6 @@ table.student_table td {
 footer {
     background: darkcyan;
     padding: 40px;
+    margin-top: 100px;
     color: white;
-    margin-top: 70px;
 }
