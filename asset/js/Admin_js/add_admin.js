@@ -1,14 +1,26 @@
 "use strict"
 
-function popup_open() {
-    var open_popup = document.getElementById('bg-modal');
-    open_popup.style.display = 'block';
+function add_admin_popup_open() {
+    var add_open_popup = document.getElementById('bg-modal');
+    add_open_popup.style.display = 'block';
 
 }
 
-function popup_close() {
-    var open_popup = document.getElementById('bg-modal');
-    open_popup.style.display = 'none';
+function add_admin_popup_close() {
+    var add_open_popup = document.getElementById('bg-modal');
+    add_open_popup.style.display = 'none';
+}
+
+
+function view_admin_popup_open() {
+    var view_open_popup = document.getElementById('bg-modal_view');
+    view_open_popup.style.display = 'block';
+
+}
+
+function view_admin_popup_close() {
+    var view_open_popup = document.getElementById('bg-modal_view');
+    view_open_popup.style.display = 'none';
 }
 
 

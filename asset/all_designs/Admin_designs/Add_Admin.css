@@ -101,18 +101,18 @@
     }
     
     main div.Gridviewdiv:nth-child(odd) {
-        background-color: black;
+        background-color: rgb(49, 47, 47);
     }
     
     main div.Gridviewdiv:nth-child(even) {
-        background-color: rgba(247, 251, 253, 0.774);
+        background-color: rgba(175, 172, 171, 0.034);
     }
     
     .bg-modal {
         width: 100%;
         height: 100%;
         background-color: black;
-        opacity: 0.7;
+        opacity: 0.8;
         position: absolute;
         top: 0;
         display: flex;
@@ -125,6 +125,32 @@
         margin-top: 100px;
         margin-left: 30%;
         width: 300px;
+        height: 400px;
+        background-color: rgb(26, 23, 23);
+        opacity: 1;
+        border-radius: 10px;
+        text-align: center;
+        padding: 20px;
+        position: relative;
+    }
+    
+    .bg-modal_view {
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0.9;
+        position: absolute;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+    }
+    
+    .modal-content_view {
+        margin-top: 100px;
+        margin-left: 10%;
+        width: 800px;
         height: 400px;
         background-color: rgb(26, 23, 23);
         opacity: 1;
@@ -148,4 +174,26 @@
         font-size: 30px;
         transform: rotate(45deg);
         cursor: pointer;
+    }
+    
+    .Table {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    .Table th {
+        margin: 5px;
+        padding: 12px;
+        text-align: center;
+        background-color: #a16f7e;
+        color: white;
+    }
+    
+    .Table th:nth-child(even) {
+        background-color: #9a97a7;
+    }
+    
+    .Table th:hover {
+        background-color: rgb(19, 17, 17);
     }

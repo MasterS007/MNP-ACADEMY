@@ -53,20 +53,46 @@
                     <div class="button_div">
                             
                             <input type="button" name="Admin_Profile" style="cursor:pointer;" class="button" value="Admin Profile">
-                            <input type="button" name="Add_New_Admin" style="cursor:pointer;" id="add_admin" class="button"  value="Add New Admin" onclick="popup_open()">
-                            <input type="button" name="View_Admin_List" style="cursor:pointer;" class="button"value="View Admin List">
+                            <input type="button" name="Add_New_Admin" style="cursor:pointer;" id="add_admin" class="button"  value="Add New Admin" onclick="add_admin_popup_open()">
+                            <input type="button" name="View_Admin_List" style="cursor:pointer;" class="button"value="View Admin List" onclick="view_admin_popup_open()">
 
-                    </div>
+					</div>
+					
+                    <div class= "bg-modal_view"  id="bg-modal_view">
+					<div class = "modal-content_view">
+							<div class="close" onclick="view_admin_popup_close()">+</div>
+							<div>
+								<table border= "1px" class="Table" >
+									<tr>
+										<th>Admin Id</th>
+										<th>Admin Name</th>
+										<th>User Name</th>
+										<th>Password</th>
+										<th>Email</th>
+										<th>Date Of Birth</th>
+									 </tr>
+									 <tr>
+										<td>9</td>
+										<td>Sabikunnahar Pyaasa</td>
+										<td>Pyaasa20</td>
+										<td>1234</td>
+										<td>pyaasa15@gmail.com</td>
+										<td>01/14/1998</td>
+	                                 </tr>
+	                            </table>
+							</div>
+					</div>
+	                </div>
                     <div class= "bg-modal"  id="bg-modal">
                         <div class = "modal-content">
-                            <div class="close" onclick="popup_close()">+</div>
-                        <form action="">
+                            <div class="close" onclick="add_admin_popup_close()">+</div>
+						<form action="../php/reg.php" onsubmit=return validation() method="post">
                         <table class="table1" cellpadding="0" cellspacing="0">
 				<tr>
 					<td>Name</td>
 					<td>:</td>
 					<td><input id="name" name="name" type="text" onkeyup="nRemover()" onblur="neMpty()"></td>
-					<td><i  id="nameMsg" style="color:red; font-size: 10px;"></i></td>
+					<td><i  id="nameMsg" style="color:white; font-size: 10px;"></i></td>
 				</tr>		
 				<tr><td colspan="4"><hr/></td></tr>
 				<tr>
@@ -76,28 +102,28 @@
 						<input type="text" id="email" name="email"  onkeyup="eRemover()" onblur="eEMpty()">
 						<abbr title="hint: sample@example.com"><b>i</b></abbr>
 					</td>
-					<td ><i id="emailMsg" style="color:red;font-size: 10px; white-space: pre;"  ></i></td>
+					<td ><i id="emailMsg" style="color:white;font-size: 10px; white-space: pre;"  ></i></td>
 				</tr>		
 				<tr><td colspan="4"><hr/></td></tr>
 				<tr>
 					<td>User Name</td>
 					<td>:</td>
 					<td><input id="uname" name="userName" type="text" onkeyup="uRemover()" onblur="ueMpty()"></td>
-					<td><i id="unameMsg"  style="color:red;font-size: 10px;"></i></td>
+					<td><i id="unameMsg"  style="color:white;font-size: 10px;"></i></td>
 				</tr>		
 				<tr><td colspan="4"><hr/></td></tr>
 				<tr>
 					<td>Password</td>
 					<td>:</td>
 					<td><input id="password" name="password" type="password" onkeyup="pRemover()" onblur="PeMpty()"></td>
-					<td><i id="passMsg" style="color:red; font-size: 10px;"></i></td>
+					<td><i id="passMsg" style="color:white; font-size: 10px;"></i></td>
 				</tr>		
 				<tr><td colspan="4"><hr/></td></tr>
 				<tr>
 					<td>Confirm Password</td>
 					<td>:</td>
 					<td><input id="conpassword" name="confirmPassword" type="password" onkeyup="pconRemover()" onblur="PconeMpty()"></td>
-					<td><i id="conpassMsg" style="color:red; font-size: 10px;"></i></td>
+					<td><i id="conpassMsg" style="color:white; font-size: 10px;"></i></td>
 				</tr>		
 				<tr><td colspan="4"><hr/></td></tr>
 				<tr>
@@ -109,7 +135,7 @@
 									<input  name="gender" id="Other" type="radio" value="Other" onclick="Remover()" onmouseover="gRemover()" onmouseout="geMpty()">Other
 						</fieldset>
 					</td>
-					<td ><i id="genderMsg" style="color:red; font-size: 9px;"></i></td>
+					<td ><i id="genderMsg" style="color:white; font-size: 9px;"></i></td>
 				</tr>		
 				<tr><td colspan="4"><hr/></td></tr>
 				<tr>
@@ -122,7 +148,7 @@
 							<font size="2"><i>(dd/mm/yyyy)</i></font>
 						</fieldset>
 					</td>
-                    <td ><i id="dobMsg" style="color:red; font-size: 10px;"></i></td>
+                    <td ><i id="dobMsg" style="color:white; font-size: 10px;"></i></td>
                 </tr>
                 <tr>
                     <td colspan="4"><hr>
@@ -130,7 +156,7 @@
                     </td>
                 </tr>	
 			</table>
-                              <input type="button" class="Submitbtn" value="Submit">
+                              <input type="button" class="Submitbtn" name="submit" value="Submit">
                          </form>                           
                          </div>                       
                     </div>               
