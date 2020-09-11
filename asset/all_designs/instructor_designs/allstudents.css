@@ -79,7 +79,7 @@ ul.navigation li.searchBox input[type=text]:focus {
 
 div.verticleLine {
     border-left: 2px solid #ddd;
-    height: 800px;
+    height: 400px;
     position: absolute;
     left: 22%;
     margin-left: -3px;
@@ -96,7 +96,6 @@ main {
 
 .section-heading a {
     color: #5899;
-    text-decoration-style: none;
     text-decoration-line: none;
 }
 
@@ -110,7 +109,6 @@ ul.stuff li {
 ul.stuff li a {
     padding: 0px 20px;
     color: darkgoldenrod;
-    text-decoration-style: none;
     text-decoration-line: none;
 }
 

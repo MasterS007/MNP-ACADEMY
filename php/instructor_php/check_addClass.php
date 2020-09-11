@@ -6,11 +6,14 @@ require_once('../../services/instructor_service/course_instructorService.php');
 $insertValid=false;
     if(isset($_POST['check_class']))
     {
-        $Nameclass = $_POST['className'];
+        $alldata=json_decode($_POST['check_class']);
+        $Nameclass = $alldata->className;
         $isntructor_id = $_SESSION['userid'];
-        $courseName= $_POST['courseName'];
+        $courseName= $alldata->courseName;
 
-        if(isset($Nameclass) && isset($isntructor_id) && isset($courseName))
+      // echo $courseName;
+
+         if(!empty($Nameclass) && !empty($isntructor_id) && !empty($courseName))
         {
             $courseId= getByCourseName($courseName); //courseService
            
@@ -23,16 +26,16 @@ $insertValid=false;
 
             $isInserted=insertIC($course_instr);  //method of course_instructorService.php 
 
-            if( $isInserted)
+            if($isInserted)
             {
-               echo "inserted";
+               // echo "inserted";
                 $insertValid=true;
                 
             }
 
             else
             {
-               echo "not inserted";
+              // echo "not inserted";
                 $insertValid=false;
             }
         }

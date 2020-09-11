@@ -1,4 +1,5 @@
 <?php
+	//require_once('../../databaseConn/dbCon.php');
 	require_once('../databaseConn/dbCon.php');
 	function getEmail($email)
     {

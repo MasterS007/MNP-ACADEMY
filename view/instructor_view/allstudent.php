@@ -1,11 +1,13 @@
 <?php
      session_start();
+     require_once('../../services/instructor_service/learner_instructorService.php');
      require_once('../../services/courseService.php');
+     
+     $instructor_id= $_SESSION['userid'];
      if(!isset($_SESSION['username'])){
  
          header('location: ../login.php?error=invalid_request');
      }
-    $instructor_id= $_SESSION['userid'];
 
 ?>
 <!DOCTYPE html>
@@ -82,7 +84,7 @@
            </div>
 
            <div class="students-list">
-            <form onload=showAllStudent(<?php echo $instructor_id;?>)>
+            <form >
                 <fieldset>
                     <legend class="title">Students List</legend>
                    <table class="student_table">
@@ -94,14 +96,25 @@
                     <tr>
                         <td colspan="3"><hr></td>
                     </tr>
-                    <tr>
-                        <td>Kakashi Hatake</td>
-                        <td>hatake12@gmail.com</td>
-                        <td>Science</td>
-                    </tr>
-                    <tr>
-                        <td colspan="3"><hr></td>
-                    </tr>
+                 
+                     <?php
+                         $learners = getLearnerId($instructor_id);
+                         for($i=0; $i< count($learners);$i++)
+                    {        $learners_info=getByID($learners[$i]['learner_id']); //from users table of learner_instructorService.php
+                             $courseName =getByCourseId($learners[$i]['course_id']);// from courseService.php?>
+                        <tr>
+                            <td><?= $learners_info['u_name'] ?></td>
+                            <td><?= $learners_info['email'] ?></td>
+                            <td><?=$courseName['course_name']?></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><hr></td>
+                        </tr>
+
+                  <?php  }
+
+                      
+                    ?> 
                    </table>
              </form>
             
