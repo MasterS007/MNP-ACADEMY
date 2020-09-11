@@ -35,7 +35,7 @@
             }
             else if($data['user_type']=='Admin')
             {
-                echo "User is Admin";
+                header("location:../view/Admin_view/AdminHome.php");
             }
 
             else if($data['user_type']=='Learner')
