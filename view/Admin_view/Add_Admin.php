@@ -15,11 +15,12 @@
             MY Page
         </title>
         <link rel="stylesheet" type="text/css" href="../../asset/all_designs/Admin_designs/Add_Admin.css">
+        <script type="text/javascript" src="../../asset/js/Admin_js/add_admin.js"></script>
         <meta charset = "UTF-8"/>
       
         <body>
             <header>
-                <p class="logo">MNP Academy</p>
+                <p class="logo">MNP ACADEMY</p>
                 <nav>
                     <ul class="nav-links">
                         <li><a href="#">Home</a></li>
@@ -30,12 +31,12 @@
                 <nav>
                     <ul class="nav-links">
                     <a  href="#"><buttonp> </buttonp></a>
-                    <a  href="#"><button>Signup</button></a>
+                    <a  href="#"><button>logout</button></a>
                    </ul>
             </nav>
             </header>
-            <main>
-                <div>
+            <main >
+                <div class="Gridviewdiv">
                 	<ul>
                 		<li><a href="#">Dashboard</a></li>
                 		<li><a href="Add_Admin">Admin Profile</a></li>
@@ -47,22 +48,89 @@
                 	</ul>
 
                 </div>
-                <div >
+                <div class="Gridviewdiv" >
                     
-                    <div id="div1">
-                            <a href="#" id="add_admin" class="button">Add New Admin</a>
-                            <input type="button" name="Admin_Profile" value="Admin Profile">
-                            <input type="button" name="Add_New_Admin" value="Add New Admin">
-                            <input type="button" name="View_Admin_List" value="View Admin List">
+                    <div class="button_div">
+                            
+                            <input type="button" name="Admin_Profile" style="cursor:pointer;" class="button" value="Admin Profile">
+                            <input type="button" name="Add_New_Admin" style="cursor:pointer;" id="add_admin" class="button"  value="Add New Admin" onclick="popup_open()">
+                            <input type="button" name="View_Admin_List" style="cursor:pointer;" class="button"value="View Admin List">
 
                     </div>
-                    <div class= "bg-modal">
+                    <div class= "bg-modal"  id="bg-modal">
                         <div class = "modal-content">
-                            <div class="close">+</div>
+                            <div class="close" onclick="popup_close()">+</div>
                         <form action="">
-                              Name: <input type="text" placeholder="Name"></br>
-                              Email:<input type="text" placeholder="Email"></br>
-                              <a href="" class="button">Submit</a>
+                        <table class="table1" cellpadding="0" cellspacing="0">
+				<tr>
+					<td>Name</td>
+					<td>:</td>
+					<td><input id="name" name="name" type="text" onkeyup="nRemover()" onblur="neMpty()"></td>
+					<td><i  id="nameMsg" style="color:red; font-size: 10px;"></i></td>
+				</tr>		
+				<tr><td colspan="4"><hr/></td></tr>
+				<tr>
+					<td>Email</td>
+					<td>:</td>
+					<td>
+						<input type="text" id="email" name="email"  onkeyup="eRemover()" onblur="eEMpty()">
+						<abbr title="hint: sample@example.com"><b>i</b></abbr>
+					</td>
+					<td ><i id="emailMsg" style="color:red;font-size: 10px; white-space: pre;"  ></i></td>
+				</tr>		
+				<tr><td colspan="4"><hr/></td></tr>
+				<tr>
+					<td>User Name</td>
+					<td>:</td>
+					<td><input id="uname" name="userName" type="text" onkeyup="uRemover()" onblur="ueMpty()"></td>
+					<td><i id="unameMsg"  style="color:red;font-size: 10px;"></i></td>
+				</tr>		
+				<tr><td colspan="4"><hr/></td></tr>
+				<tr>
+					<td>Password</td>
+					<td>:</td>
+					<td><input id="password" name="password" type="password" onkeyup="pRemover()" onblur="PeMpty()"></td>
+					<td><i id="passMsg" style="color:red; font-size: 10px;"></i></td>
+				</tr>		
+				<tr><td colspan="4"><hr/></td></tr>
+				<tr>
+					<td>Confirm Password</td>
+					<td>:</td>
+					<td><input id="conpassword" name="confirmPassword" type="password" onkeyup="pconRemover()" onblur="PconeMpty()"></td>
+					<td><i id="conpassMsg" style="color:red; font-size: 10px;"></i></td>
+				</tr>		
+				<tr><td colspan="4"><hr/></td></tr>
+				<tr>
+					<td colspan="3">
+						<fieldset class="innerField">
+							<legend class="innerLegend">Gender</legend>    
+							        <input  name="gender" id="Male" type="radio" value="Male" onclick="Remover()" onmouseover="gRemover()" onmouseout="geMpty()">Male
+									<input  name="gender" id="Female"  type="radio" value="Female" onclick="Remover()" onmouseover="gRemover()" onmouseout="geMpty()">Female
+									<input  name="gender" id="Other" type="radio" value="Other" onclick="Remover()" onmouseover="gRemover()" onmouseout="geMpty()">Other
+						</fieldset>
+					</td>
+					<td ><i id="genderMsg" style="color:red; font-size: 9px;"></i></td>
+				</tr>		
+				<tr><td colspan="4"><hr/></td></tr>
+				<tr>
+					<td colspan="3">
+						<fieldset class="innerField">
+							<legend class="innerLegend">Date of Birth</legend>    
+							<input id="date" type="text" size="2" name="date" onkeyup="dRemover()" onblur="deMpty()" onclick="dRemover()" />/
+							<input id="month" type="text" size="2" name ="month" onkeyup="dRemover()" onblur="deMpty()" onclick="dRemover()"/>/
+							<input id="year" type="text" size="4" name = "year" onkeyup="dRemover()" onblur="deMpty()" onclick="dRemover()"/>
+							<font size="2"><i>(dd/mm/yyyy)</i></font>
+						</fieldset>
+					</td>
+                    <td ><i id="dobMsg" style="color:red; font-size: 10px;"></i></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><hr>
+						
+                    </td>
+                </tr>	
+			</table>
+                              <input type="button" class="Submitbtn" value="Submit">
                          </form>                           
                          </div>                       
                     </div>               
