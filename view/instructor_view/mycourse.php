@@ -13,7 +13,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="all_designs/cources_design.css"> <link rel> -->
+    <link rel="stylesheet" href="../../asset/all_designs/instructor_designs/cources_design.css"> <link rel>
     <title>My Course</title>
 </head>
 <body>
@@ -53,7 +53,7 @@
              </select>
              <ul class="navigation">
                  <li class="searchBox"><input type="text" name="search" placeholder="Search.."></li>
-                 <li class="logo"><a href="../view/dashboard.php">MNP Academy</a></li>
+                 <li class="logo"><a href="dashboard.php">MNP Academy</a></li>
              </ul>
          </nav>
     </header>
@@ -61,7 +61,7 @@
     <div class="verticleLine"></div>
 
     <main>
-        <h4 class="section-heading"><a href="../view/dashboard.php"><?=$_SESSION['name'] ?></a></h4>
+        <h4 class="section-heading"><a href="dashboard.php"><?=$_SESSION['name'] ?></a></h4>
             <div class="accountStuff">
                 <ul class="stuff">
                     <li><a href="profile.php">Profile</a></li>
@@ -81,13 +81,21 @@
                 <h3 class="heading">My Cources</h3>
             </section>
             <div class="myCources">
-                <ul class="science">
-                    <h5>Science</h5>
-                    <li>Physics</li>
-                    <li>Mathematics</li>
-                    <li>Chemistry</li>
+            <ul class="courses">
+                <?php
+                    $Cid=$_SESSION['userid'];
+                    $courseId=getInsCourse($Cid); //from course_instructorService.php
+                    for($i=0; $i<count($courseId); $i++)
+                    {
+                        $courseName =getByCourseId($courseId[$i]['course_id']);
+                        $courseCategory=$courseName['course_category'];
+                        $_SESSION['courseName']=$courseName['course_name'];
+                        ?>
+                        <li><?=$courseName['course_name']?></li></br>
+                    <?php }?>
+                        
                 </ul>
-                <ul class="programming language">
+                <!-- <ul class="programming language">
                     <h5>Programming Language</h5>
                     <li>C/C++</li>
                     <li>Python</li>
@@ -96,7 +104,7 @@
                     <h5>Computer Science</h5>
                     <li>Introduction to Database</li>
                     <li>Introdouction to Programming Language</li>
-                </ul>
+                </ul> -->
             </div>
         </main> 
 

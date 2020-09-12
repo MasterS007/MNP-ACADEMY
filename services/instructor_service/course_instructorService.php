@@ -29,7 +29,7 @@ function getInsCourse($id)
         echo "DB connection error";
     }
 
-    $sql = "Select course_id from instructor_course Where instructor_id={$id}";
+    $sql = "Select course_id from instructor_course Where instructor_id={$id} order by course_id";
     $result = mysqli_query($conn, $sql);
 	$courses = [];
 
