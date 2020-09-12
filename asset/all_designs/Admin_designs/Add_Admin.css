@@ -15,7 +15,7 @@
     header {
         display: flex;
         justify-content: space-between;
-        background-color: darkcyan;
+        background-color: grey;
         align-items: center;
         top: 0;
         height: 10px;
@@ -40,7 +40,7 @@
     }
     
     .nav-links li a:hover {
-        color: red;
+        color: black;
         margin: 0 15px;
     }
     
@@ -71,12 +71,12 @@
     main {
         display: grid;
         grid-template-columns: 1fr 5fr;
-        background-color: rgb(230, 192, 116);
+        background-color: rgb(211, 209, 205);
         height: 600px;
     }
     
     main div.Gridviewdivodd {
-        background-color: rgb(230, 192, 116);
+        background-color: rgb(211, 209, 205);
         height: 600px;
         padding: 20px;
     }
@@ -94,10 +94,11 @@
     }
     
     .button {
-        background-color: rgb(184, 144, 144);
+        background-color: grey;
         border-radius: 5px;
         margin: 10px;
         padding: 20px;
+        color: white;
     }
     
     main div.Gridviewdiv:nth-child(odd) {

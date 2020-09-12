@@ -1,30 +1,5 @@
 "use strict"
 
-function add_admin_popup_open() {
-    var add_open_popup = document.getElementById('bg-modal');
-    add_open_popup.style.display = 'block';
-
-}
-
-function add_admin_popup_close() {
-    var add_open_popup = document.getElementById('bg-modal');
-    add_open_popup.style.display = 'none';
-}
-
-
-function view_admin_popup_open() {
-    var view_open_popup = document.getElementById('bg-modal_view');
-    view_open_popup.style.display = 'block';
-
-}
-
-function view_admin_popup_close() {
-    var view_open_popup = document.getElementById('bg-modal_view');
-    view_open_popup.style.display = 'none';
-}
-
-
-
 window.nvalid = false;
 window.evalid = false;
 window.gvalid = false;
@@ -81,7 +56,7 @@ function eEMpty() {
         document.getElementById("emailMsg").innerHTML = "  *field can't be empty!";
         window.evalid = false;
     } else if (email != "") {
-        xhttp.open('POST', '../php/reg.php', true);
+        xhttp.open('POST', '../../php/add_admin.php', true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhttp.send(email_datas);
         xhttp.onreadystatechange = function() {
@@ -121,7 +96,7 @@ function ueMpty() {
 
         window.uvalid = false;
     } else if (uname != "") {
-        xhttp.open('POST', '../php/reg.php', true);
+        xhttp.open('POST', '../../php/add_admin.php', true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhttp.send(username_datas);
         xhttp.onreadystatechange = function() {
@@ -245,4 +220,26 @@ function validation() {
     } else {
         return false;
     }
+}
+
+function add_admin_popup_open() {
+    var add_open_popup = document.getElementById('bg-modal');
+    add_open_popup.style.display = 'block';
+}
+
+function add_admin_popup_close() {
+    var add_open_popup = document.getElementById('bg-modal');
+    add_open_popup.style.display = 'none';
+}
+
+
+function view_admin_popup_open() {
+    var view_open_popup = document.getElementById('bg-modal_view');
+    view_open_popup.style.display = 'block';
+
+}
+
+function view_admin_popup_close() {
+    var view_open_popup = document.getElementById('bg-modal_view');
+    view_open_popup.style.display = 'none';
 }

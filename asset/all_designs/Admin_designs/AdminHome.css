@@ -15,7 +15,7 @@ button {
 header {
     display: flex;
     justify-content: space-between;
-    background-color: darkcyan;
+    background-color: grey;
     align-items: center;
     top: 0;
     height: 10px;
@@ -75,7 +75,7 @@ main {
 }
 
 main>div {
-    background-color: orange;
+    background-color: rgb(211, 209, 205);
     height: 600px;
     padding: 20px;
 }

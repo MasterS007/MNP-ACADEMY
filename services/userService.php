@@ -100,6 +100,23 @@
 		  mysqli_close($conn);
 	}
 
+	function insertAdmin($user){
+		$conn = dbConnection();
+
+		if(!$conn){
+			echo "DB connection error";
+		}
+
+		$sql = "INSERT INTO users (u_name, username, u_password, email, gender, user_type, date_of_birth) VALUES ('{$user['nameU']}','{$user['uname']}','{$user['password']}','{$user['email']}','{$user['gender']}','Admin','{$user['DoB']}')";
+		if(mysqli_query($conn, $sql)){
+			
+			return true;
+		}else{
+			return false;
+		}
+		  mysqli_close($conn);
+	}
+
 
 	function update($user){
 		$conn = dbConnection();

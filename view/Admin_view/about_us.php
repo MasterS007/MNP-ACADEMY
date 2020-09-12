@@ -19,7 +19,7 @@
       
         <body>
             <header>
-                <p class="logo">MNP Academy</p>
+                <p class="logo">MNP ACADEMY</p>
                 <nav>
                     <ul class="nav-links">
                         <li><a href="#">Home</a></li>

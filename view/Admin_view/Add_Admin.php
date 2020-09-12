@@ -1,38 +1,36 @@
-<?php
+<!-- <?php
        session_start();
-       require_once('../../services/courseService.php');
-       require_once('../../services/instructor_service/course_instructorService.php');
        if(!isset($_SESSION['username'])){
    
            header('location: ../login.php?error=invalid_request');
        }
 
- ?> 
+ ?>  -->
 <!DOCTYPE html>
 <html>
     <head>
-        <title>
-            MY Page
-        </title>
-        <link rel="stylesheet" type="text/css" href="../../asset/all_designs/Admin_designs/Add_Admin.css">
+		<meta charset = "UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="../../asset/all_designs/Admin_designs/Add_Admin.css">
         <script type="text/javascript" src="../../asset/js/Admin_js/add_admin.js"></script>
-        <meta charset = "UTF-8"/>
-      
-        <body>
-            <header>
-                <p class="logo">MNP ACADEMY</p>
-                <nav>
-                    <ul class="nav-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Service</a></li>
-                    </ul>
-                </nav>
-                <nav>
-                    <ul class="nav-links">
-                    <a  href="#"></a>
-                    <a  href="#"><button>logout</button></a>
-                   </ul>
+		<title>
+            MY Page
+		</title>
+	</head>
+<body>
+    <header>
+        <p class="logo">MNP ACADEMY</p>
+		<nav>
+			<ul class="nav-links">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Service</a></li>
+			</ul>
+		</nav>
+		<nav>
+			<ul class="nav-links">
+			<a  href="#"></a>
+			<a  href="#"><button>logout</button></a>
+			</ul>
             </nav>
             </header>
             <main >
@@ -44,8 +42,9 @@
                 		<li>Manage Users</li>
                 		<li>Courses</li>
                 		<li>Learners</li>
-                		<li>Students</li>
+                		<li><a href="about_us.php">About Us</a></li>
                 		<li><a href="Manage_Blog.php">Manage Blog</a></li>
+                		
                 	</ul>
 
                 </div>
@@ -87,8 +86,8 @@
                     <div class= "bg-modal"  id="bg-modal">
                         <div class = "modal-content">
                             <div class="close" onclick="add_admin_popup_close()">+</div>
-						<form action="../php/reg.php" onsubmit=return validation() method="post">
-                        <table class="table1" cellpadding="0" cellspacing="0">
+		<form action="../../php/add_admin.php" onsubmit="return validation()" method="POST">
+			<table class="table1" cellpadding="0" cellspacing="0">
 				<tr>
 					<td>Name</td>
 					<td>:</td>
@@ -131,9 +130,9 @@
 					<td colspan="3">
 						<fieldset class="innerField">
 							<legend class="innerLegend">Gender</legend>    
-							        <input  name="gender" id="Male" type="radio" value="Male" onclick="Remover()" onmouseover="gRemover()" onmouseout="geMpty()">Male
-									<input  name="gender" id="Female"  type="radio" value="Female" onclick="Remover()" onmouseover="gRemover()" onmouseout="geMpty()">Female
-									<input  name="gender" id="Other" type="radio" value="Other" onclick="Remover()" onmouseover="gRemover()" onmouseout="geMpty()">Other
+							        <input  name="gender" id="Male" type="radio" value="Male" onclick="gRemover()" onmouseover="gRemover()" onmouseout="geMpty()">Male
+									<input  name="gender" id="Female"  type="radio" value="Female" onclick="gRemover()" onmouseover="gRemover()" onmouseout="geMpty()">Female
+									<input  name="gender" id="Other" type="radio" value="Other" onclick="gRemover()" onmouseover="gRemover()" onmouseout="geMpty()">Other
 						</fieldset>
 					</td>
 					<td ><i id="genderMsg" style="color:white; font-size: 9px;"></i></td>
@@ -157,13 +156,13 @@
                     </td>
                 </tr>	
 			</table>
-                              <input type="button" class="Submitbtn" name="submit" value="Submit">
-                         </form>                           
+                <input type="submit" class="Submitbtn" name="submit" value="Submit" >
+            </form>                           
                          </div>                       
                     </div>               
                 </div>              
             </main>
         
         </body>
-    </head>
+   
 </html>
