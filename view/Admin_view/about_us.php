@@ -58,6 +58,10 @@
                               <div class="button-container-div">
                                   <input type="button" value="About Us">
                                   <input type="button" value="Add">
+                                  <input type="button" name="View" value="View click" onclick="load()">
+                              </div>
+                              <div id="Table">
+                                  
                               </div>
 
                               <div class="Table">
