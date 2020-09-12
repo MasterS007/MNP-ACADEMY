@@ -14,7 +14,7 @@
         <title>
             MY Page
         </title>
-        <link rel="stylesheet" type="text/css" href="../../asset/all_designs/Admin_designs/AdminHome.css">
+        <link rel="stylesheet" type="text/css" href="../../asset/all_designs/Admin_designs/about_us.css">
         <meta charset = "UTF-8"/>
       
         <body>
@@ -34,8 +34,8 @@
                    </ul>
             </nav>
             </header>
-            <main>
-                <div>
+            <main >
+                <div class="Gridviewdiv" >
                 	<ul>
                     <li class="imgbtn">jsbujruer</li>
                     <li><?php echo $_SESSION['name'];?></li>
@@ -46,12 +46,39 @@
                 		<li>Learners</li>
                 		<li><a href="about_us.php">About Us</a></li>
                 		<li><a href="Manage_Blog.php">Manage Blog</a></li>
-                	</ul>
+                    </ul>
+                    </div>
+                    <div >
+                        <div class="div-search">
+                        <input type="text" name="search" placeholder="Search by title">
+                        <input type="button">
+                        </div>
 
-                </div>
-                <div>
+                        <div class="div-show">
+                              <div class="button-container-div">
+                                  <input type="button" value="About Us">
+                                  <input type="button" value="Add">
+                              </div>
 
-                </div>
+                              <div class="Table">
+                                  <table>
+                                      <tr>
+                                          <th>Id</th>
+                                          <th>Title</th>
+                                          <th>Sub Title</th>
+                                          <th>Descriptions</th>
+                                          <th>Actions</th>
+                                
+                                      </tr>
+                                  </table>
+                              </div>
+                        </div>
+                   </div>
+                    
+                 </div> 
+                
+
+                
                 
             </main>
         

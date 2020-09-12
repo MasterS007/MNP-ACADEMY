@@ -30,7 +30,7 @@
                 </nav>
                 <nav>
                     <ul class="nav-links">
-                    <a  href="#"><buttonp> </buttonp></a>
+                    <a  href="#"></a>
                     <a  href="#"><button>logout</button></a>
                    </ul>
             </nav>
@@ -38,6 +38,7 @@
             <main >
                 <div class="Gridviewdiv">
                 	<ul>
+					<li>Welcome <?php echo $_SESSION['name'];?></li>
                 		<li><a href="#">Dashboard</a></li>
                 		<li><a href="Add_Admin">Admin Profile</a></li>
                 		<li>Manage Users</li>
