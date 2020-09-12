@@ -110,6 +110,70 @@
                </ul>
                   
            </div>
+
+           <div id="divAddingClasses" class="addingClass">  
+                  <form  action="" method="POST">
+                    <fieldset>
+                        <legend>Add new class</legend>
+                        <table class="new_class">
+                            <tr>
+                                <td>Choose Course</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <select class="chooseCourse" id="chooseCourse" name="choose_course" onclick= emptyMsg()>
+                                        <option value="Course" selected disabled hidden>Courses</option>
+                                        <optgroup label="Science">
+                                        <?php
+                                            $courseN = getByCategory('Science');
+                                            for ($i=0; $i<count($courseN); $i++)
+                                            { ?>
+                                                <option value="<?php echo $courseN[$i];?>"><?php echo $courseN[$i]['course_name'];?>
+                                                </option>
+                                           <?php }?>
+                                           </optgroup>
+                                        <optgroup label="Computer Science">
+                                        <?php
+                                            $courseN = getByCategory('Computer Science');
+                                            for ($i=0; $i<count($courseN); $i++)
+                                            { ?>
+                                                <option value="<?php echo $courseN[$i];?>"><?php echo$courseN[$i]['course_name'];?>
+                                                </option>
+                                           <?php }?>
+                       
+                                        </optgroup>
+                                        <optgroup label="Programming Language">
+                                        <?php
+                                            $courseN = getByCategory('Programming Language');
+                                            for ($i=0; $i<count($courseN); $i++)
+                                            { ?>
+                                                <option value="<?php echo $courseN[$i];?>"><?php echo$courseN[$i]['course_name'];?>
+                                                </option>
+                                           <?php }?>
+                       
+                                        </optgroup>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Class Name</td>
+                            </tr>
+                            <tr>
+                                <td><input class="class_name" id="class_name" type="text" name="class_name" placeholder="e.g,Class:Computer Fundamental" 
+                                onkeyup= emptyMsg()></td>
+                            </tr>
+                            <tr>
+                                <td id="emptMsg" style="color:red; font-size:10px;"></td>
+                            </tr>
+                        </table>
+                     </fieldset>
+                     <div id="confirmBtn" class="confirmBtn" >
+                        <input type="button" name= "submit" value="Confirm Class" onclick="closePopup()">
+			           <input type="reset" >
+                     </div>
+                        
+                  </form>
+           </div>
            <!-- </form>  -->
     </main> 
     <footer>

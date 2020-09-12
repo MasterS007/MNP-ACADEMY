@@ -2,7 +2,15 @@
 
 
  function openpopup() {
-     window.myWindow = window.open('../../view/instructor_view/addClass.php', '_blank', 'height=400, width=500, resizable=no');
+     //window.myWindow = window.open('../../view/instructor_view/addClass.php', '_blank', 'height=400, width=500, resizable=no');
+     var divclasses = document.getElementById('divClasses');
+     var divAddingClasses = document.getElementById('divAddingClasses');
+     var confirmBtn = document.getElementById('confirmBtn');
+
+
+     divclasses.style.display = 'none';
+     divAddingClasses.style.display = 'block';
+     confirmBtn.style.display = 'block';
 
  }
  //var class_name;
@@ -23,8 +31,8 @@
          xhttp.onreadystatechange = function() {
              if (this.readyState == 4 && this.status == 200) {
 
-                 window.opener.location.reload();
-                 window.close();
+                 // window.opener.location.reload();
+                 //window.close();
                  return true;
                  // alert(this.responseText);
 
