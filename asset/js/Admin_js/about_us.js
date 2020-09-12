@@ -1,8 +1,8 @@
 function load() {
     {
         var xhttp = new XMLHttpRequest();
-        xhttp.open("Get", "../../../php/admin_php/about_us.php", true);
-        xhttp.send();
+        xhttp.open("POST", "../../../php/admin_php/about_us.php", true);
+        xhttp.send("check=" + 'ON');
         xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
         xhttp.onreadystatechange = function() {

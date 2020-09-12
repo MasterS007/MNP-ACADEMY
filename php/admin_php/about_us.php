@@ -1,34 +1,23 @@
 <?php
-	require_once('../../db/db.php');
+	// require_once('../../services/Admin_Service/about_us.php');
 
-	function getByID($id){
-		$conn = dbConnection();
+    // if(isset($_POST['check']))
+    // {
+    //     $aboutData=getAboutUs();
 
-		if(!$conn){
-			echo "DB connection error";
-		}
+    //     $data="
+        
+               
 
-		$sql = "select * from about_us where id={$id}";
-        $result = mysqli_query($conn, $sql);
-        $data="<table>
-                <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                </tr>";
-		while($row = mysqli_fetch_assoc($result)){
-            $data .="<tr>
-                 <td>{$row['Id']}</td>
-                <td>{$row['Title']}</td>
-                <td>{$row['sub title']}</td>
-                <td>{$row['Description']}</td>
-                <td>Action</td>
-                </tr>";
-        }
-        $data .="</table>";
-        echo $data;
-    }
+
+    // }
+	
+        
+	// 	while($row = mysqli_fetch_assoc($result)){
+            
+        
+    //     $data .="</table>";
+    //     echo $data;
+    // }
        
 ?>
