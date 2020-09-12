@@ -58,7 +58,7 @@
 
 		</div>
 					
-		<!-- <div class= "bg-modal_view"  id="bg-modal_view">
+		<div class= "bg-modal_view"  id="bg-modal_view">
 			<div class = "modal-content_view">
 				<div class="close" onclick="view_admin_popup_close()">+</div>
 				<div>
@@ -82,7 +82,7 @@
 					</table>
 				</div>
 			</div>
-		</div> -->
+		</div>
 
 		<div class= "bg-modal"  id="bg-modal">
 			<div class = "modal-content">
