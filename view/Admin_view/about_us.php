@@ -1,7 +1,6 @@
 <?php
        session_start();
-       require_once('../../services/courseService.php');
-       require_once('../../services/instructor_service/course_instructorService.php');
+       require_once('../../services/Admin_Service/about_us.php');
        if(!isset($_SESSION['username'])){
    
            header('location: ../login.php?error=invalid_request');
@@ -60,20 +59,38 @@
                                   <input type="button" value="Add">
                                   <input type="button" name="View" value="View click" onclick="load()">
                               </div>
-                              <div id="Table">
-                                  
-                              </div>
-
+                              
+                               
+                    
                               <div class="Table">
                                   <table>
                                       <tr>
-                                          <th>Id</th>
+                                          <th >Id</th>
                                           <th>Title</th>
                                           <th>Sub Title</th>
                                           <th>Descriptions</th>
                                           <th>Actions</th>
                                 
                                       </tr>
+                                      <?php
+                                          $aboutData=getAboutUs();
+                                          for($i=0; $i<count( $aboutData);$i++)
+                                          {
+                                              ?>
+                                            <tr>
+                                                <td><?=$aboutData[$i]['Id']?></td>
+                                                <td><?=$aboutData[$i]['Title']?></td>
+                                                <td><?=$aboutData[$i]['SubTitle']?></td>
+                                                <td><?=$aboutData[$i]['Descriptions']?></td>
+                                               
+                                          <td><a href="#">Edit</a>
+                                          <a href="#">Delete</a>
+                                          </td>
+                                          </tr><?php
+                                          }
+
+                                 
+                                         ?>
                                   </table>
                               </div>
                         </div>

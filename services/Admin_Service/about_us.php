@@ -1,15 +1,21 @@
 <?php
-	require_once('../../db/db.php');
+	require_once('../../databaseConn/dbCon.php');
 
-	function getByID($id){
+	function getAboutUs(){
 		$conn = dbConnection();
 
 		if(!$conn){
 			echo "DB connection error";
 		}
 
-		$sql = "select * from about_us where id={$id}";
+		$sql = "select * from about_us";
 		$result = mysqli_query($conn, $sql);
-		$row = mysqli_fetch_assoc($result);
-		return $row;
+		$aboutUs=[];
+
+		while($row = mysqli_fetch_assoc($result))
+		{
+			array_push($aboutUs,$row);
+		}
+		
+		return $aboutUs;
 	}
