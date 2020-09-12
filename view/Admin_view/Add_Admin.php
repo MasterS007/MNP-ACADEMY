@@ -1,5 +1,6 @@
 <?php
-       session_start();
+	   session_start();
+	   require_once("../../services/Admin_Service/admin_service.php");
        if(!isset($_SESSION['username'])){
    
            header('location: ../login.php?error=invalid_request');
@@ -69,16 +70,30 @@
 							<th>User Name</th>
 							<th>Password</th>
 							<th>Email</th>
+							<th>Gender</th>
 							<th>Date Of Birth</th>
+							<th>Actions</th>
 							</tr>
+							<?php
+							$allAdmin=getAllAdmin();
+							for($i=0; $i<count($allAdmin); $i++)
+							{
+						    ?>
 							<tr>
-							<td>9</td>
-							<td>Sabikunnahar Pyaasa</td>
-							<td>Pyaasa20</td>
-							<td>1234</td>
-							<td>pyaasa15@gmail.com</td>
-							<td>01/14/1998</td>
-							</tr>
+							   <td><?=$allAdmin[$i]['id']?></td>
+							   <td><?=$allAdmin[$i]['u_name']?></td>
+							   <td><?=$allAdmin[$i]['username']?></td>
+							   <td><?=$allAdmin[$i]['u_password']?></td>
+							   <td><?=$allAdmin[$i]['email']?></td>
+							   <td><?=$allAdmin[$i]['gender']?></td>
+							   <td><?=$allAdmin[$i]['date_of_birth']?></td>
+							   <td> <a href="#">Edit></a>
+							   <a href="#">Delete></a>
+							</td>
+							</tr><?php
+							}?>
+							
+							
 					</table>
 				</div>
 			</div>
