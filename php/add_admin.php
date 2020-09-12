@@ -10,7 +10,7 @@
             $getemail = getEmail($email);
             if(!empty($getemail))
             {
-                echo "   *email already exists!";
+                echo "*email already exists!";
             }
 
             else
@@ -19,23 +19,6 @@
             }
         }
     }
- if(isset($_POST['check_email']))
-    {
-        $email= $_POST['emailId'];
-        if(isset($email))
-        {
-            $getemail = getEmail($email);
-            if(!empty($getemail))
-            {
-                echo "  *email already exists!";
-            }
-
-            else
-            {
-                echo "";
-            }
-        }
-  }
 
     if(isset($_POST['check_user']))
   {
@@ -45,7 +28,7 @@
             $getuname = getUsername($uname);
             if(!empty($getuname))
             {
-                echo "    *username already exists!";
+                echo " *username already exists!";
             }
 
             else
@@ -55,12 +38,12 @@
         }
     }
 
-    if(isset($_POST['submit']))
-    {
+if(isset($_POST['submit']))
+{
      
       $name = $_POST['name'];
       $uname = $_POST['userName'];
-	    $email = $_POST['email'];
+	  $email = $_POST['email'];
       $password = $_POST['password'];
       $conpassword = $_POST['confirmPassword'];
       $date =$_POST['date'];
@@ -69,11 +52,8 @@
       $len = strlen($name);
       $gender=$_POST['gender'];
       
-       
         $pos =strpos($email, '@');
         $pos1 = strpos($email, ".com");
-       
-
 
         $valid = FALSE; //For user data
         $svalid =FALSE; //for insert data
@@ -158,15 +138,14 @@
         
             $valid =TRUE; 
       
-            
-          }
+        }
+        
 
-          if($valid==TRUE)
-          {
+        if($valid==TRUE)
+        {
             $Dateob = date_create($year.'-'.$month.'-'.$date);
             $Date =date_format($Dateob,"Y-m-d");
-          
-              $user=[
+              $users=[
                   'nameU'=>$name,
                   'uname'=>$uname,
                   'password'=>$password,
@@ -175,12 +154,12 @@
                   'DoB'=>$Date
               ];
 
-            $validReg=insertAdmin($user);
-            if($validReg)
+             $validReg=insertAdmin($users);
+            if($validReg==TRUE)
             {
                
-                echo "inserted";
-              //  header('location:../view/Admin_view/Add_Admin.php');
+               // echo "inserted";
+                header('location:../view/Admin_view/Add_Admin.php?message=Inserted');
                 //echo $user['DoB'];
                 
                
@@ -191,20 +170,21 @@
              
              // $svalid =FALSE;
              echo "Insert unsuccessfull";
+             header('location:../view/Admin_view/Add_Admin.php?message=Failed to Insert');
              
               
             }
+        }
           
             
            
-         }
-
-          else
-          {
+        else
+        {
            
-            header('location:../view/Admin_view/Add_Admin.php');
-          }       
-    }
+            header('location:../view/Admin_view/Add_Admin.php?nullSubmission');
+        }       
+}
+
          
     
 ?>

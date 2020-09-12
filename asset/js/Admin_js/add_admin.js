@@ -213,11 +213,14 @@ function pconRemover() {
     document.getElementById("conpassMsg").innerHTML = "";
 }
 
-function validation() {
+function validation(){
     if (window.nvalid == true && window.evalid == true && window.gvalid == true && window.pconvalid == true && window.uvalid == true &&
-        window.dvalid == true && window.pvalid == true) {
+        window.dvalid == true && window.pvalid == true) 
+    {
         return true;
-    } else {
+    } 
+    else 
+    {
         return false;
     }
 }

@@ -1,6 +1,5 @@
 
 <?php
- 
  session_start();
  require_once('../services/userService.php');
  if(isset($_POST['check_email']))
