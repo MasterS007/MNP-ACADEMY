@@ -217,11 +217,12 @@ ul.myClass li a:active {
 }
 
 div.addingClass {
+    position: relative;
     display: none;
 }
 
 div.addingClass form fieldset {
-    position: relative;
+    
     margin-left: 36%;
     margin-top: -50px;
     margin-right: 8%;
