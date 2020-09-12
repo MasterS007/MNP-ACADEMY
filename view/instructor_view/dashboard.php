@@ -115,6 +115,7 @@
                   <form  action="" method="POST">
                     <fieldset>
                         <legend>Add new class</legend>
+                        <input type='button' class="close" value="x" onclick=closePopupcross()>
                         <table class="new_class">
                             <tr>
                                 <td>Choose Course</td>
@@ -166,12 +167,15 @@
                                 <td id="emptMsg" style="color:red; font-size:10px;"></td>
                             </tr>
                         </table>
+                        
                      </fieldset>
                      <div id="confirmBtn" class="confirmBtn" >
+                     
                         <input type="button" name= "submit" value="Confirm Class" onclick="closePopup()">
-			           <input type="reset" >
+                       <input type="reset" >
+                      
                      </div>
-                        
+                     
                   </form>
            </div>
            

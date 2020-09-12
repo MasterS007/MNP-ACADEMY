@@ -79,7 +79,7 @@ ul.navigation li.searchBox input[type=text]:focus {
 
 div.verticleLine {
     border-left: 2px solid #ddd;
-    height: 400px;
+    height: 600px;
     position: absolute;
     left: 22%;
     margin-left: -3px;

@@ -191,7 +191,6 @@ h4.titleC {
 
 .divclasses {
     margin-left: 10%;
-    /* opacity: 100%; */
 }
 
 ul.myClass li {
@@ -232,14 +231,29 @@ div.addingClass form fieldset {
     border-radius: 5px;
 }
 
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 20px;
+    padding: 0px 6px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 legend {
     color: #567;
     font-weight: bold;
 }
 
 .confirmBtn {
-    margin-left: 48%;
-    margin-top: 20px;
+    margin-left: 50.5%;
+    margin-top: 8px;
     display: none;
 }
 

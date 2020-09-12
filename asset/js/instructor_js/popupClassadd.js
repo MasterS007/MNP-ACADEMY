@@ -1,4 +1,4 @@
- //"use strict"
+ "use strict"
 
 
  function openpopup() {
@@ -7,11 +7,22 @@
      var divAddingClasses = document.getElementById('divAddingClasses');
      var confirmBtn = document.getElementById('confirmBtn');
 
-
      divclasses.style.display = 'none';
      divAddingClasses.style.display = 'block';
      confirmBtn.style.display = 'block';
 
+ }
+
+ function closePopupcross() {
+
+     var divclasses = document.getElementById('divClasses');
+     var divAddingClasses = document.getElementById('divAddingClasses');
+     var confirmBtn = document.getElementById('confirmBtn');
+
+     divclasses.style.display = 'block';
+     divAddingClasses.style.display = 'none';
+     confirmBtn.style.display = 'none';
+     // window.location.reload();
  }
 
  function closePopup() {
