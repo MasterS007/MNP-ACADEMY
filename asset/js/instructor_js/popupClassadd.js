@@ -13,6 +13,26 @@
      confirmBtn.style.display = 'block';
 
  }
+
+ function closePopup() {
+     var class_name = document.getElementById("class_name").value;
+     var chooseCourse = document.getElementById("chooseCourse");
+     var course = chooseCourse.options[chooseCourse.selectedIndex].text;
+
+
+     if (class_name == "" || chooseCourse == "") {
+         document.getElementById("emptMsg").innerHTML = "*Please fill all the field first!"
+
+     } else {
+
+         //window.close();
+         createClass(class_name, course);
+
+
+     }
+
+
+ }
  //var class_name;
 
  function createClass(class_name, chooseCourse) {
@@ -31,7 +51,15 @@
          xhttp.onreadystatechange = function() {
              if (this.readyState == 4 && this.status == 200) {
 
-                 // window.opener.location.reload();
+                 var divclasses = document.getElementById('divClasses');
+                 var divAddingClasses = document.getElementById('divAddingClasses');
+                 var confirmBtn = document.getElementById('confirmBtn');
+
+
+                 divclasses.style.display = 'block';
+                 divAddingClasses.style.display = 'none';
+                 confirmBtn.style.display = 'none';
+                 window.location.reload();
                  //window.close();
                  return true;
                  // alert(this.responseText);
