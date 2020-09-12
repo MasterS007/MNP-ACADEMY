@@ -113,9 +113,10 @@ main div.Gridviewdiv:nth-child(odd) {
     padding: 2px;
 }
 
-.Table th {
+.Table table th {
     margin: 20px;
     padding: 12px;
+    padding-right: 30px;
     text-align: center;
     background-color: #a16f7e;
     color: white;
@@ -127,6 +128,14 @@ main div.Gridviewdiv:nth-child(odd) {
 
 .Table th:hover {
     background-color: rgb(19, 17, 17);
+}
+
+.Table table td {
+    margin-right: 20px;
+    margin-left: 10px;
+    text-align: center;
+    background-color: #302a2c;
+    color: white;
 }
 
 .button {
