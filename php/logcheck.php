@@ -40,8 +40,8 @@
 
             else if($data['user_type']=='Learner')
             {   
-                echo "User is Learner";
-               
+                //echo "User is Learner";
+               header("location:../view/learner_view/dashboard.php");
             }
 
             else
