@@ -1,3 +1,14 @@
+<?php
+       session_start();
+       require_once('../../services/courseService.php');
+
+       $id= $_SESSION['userid'];
+       if(!isset($_SESSION['username'])){
+   
+           header('location: ../login.php?error=invalid_request');
+       }
+
+ ?> 
 
 <!DOCTYPE html>
 <html>
@@ -5,7 +16,9 @@
     <title>Profile Page</title>
     
     <link rel="stylesheet" type="text/css" href="../../asset/all_designs/learner_designs/learner_Profile.css">
-   
+
+    <script type="text/javascript" src="../../asset/js/learner_js/learnerProfile.js"></script>
+    <!-- <script type="test/javascript" src="../../asset/js//learner_js/learnerProfile.js">   </script> -->
     
    
 </head>
@@ -35,6 +48,18 @@
     </nav>
     </header>
 <div class ="card-container ">
+
+<div class ="bg-model" id="bg-model">
+
+       <div class="model-content" >
+           <div class="close" onclick="edit_popup_close()">+
+           </div>
+       </div>
+    
+    
+    </div>
+
+
     
     <div class="upper-container">
         <div class ="image-container ">
@@ -47,7 +72,7 @@
     <div class="lower-container">
       
 
-        <div
+        <div>
         <h3> Nila</h3> 
         <h4>CSE Student</h4>
 
@@ -73,11 +98,15 @@
 
     </div>
     <div class="lower-container">
-        <a href ="#" class="btn " style=""> Edit Profile </a>
+        <input type="button" class="btn " name="" style="cursor:pointer;"   value="Edit Profile" onclick="edit_popup_open()">
+        <input type="button" value="Add" onclick="edit_popup_open()">
+        
+
         <a href ="dashboard.php" class="btn"> Go Back </a>
 
 
     </div>
+    
 
     
 
