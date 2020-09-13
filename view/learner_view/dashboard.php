@@ -87,9 +87,10 @@
                 <h4><?php echo $_SESSION['name'];?></h4>
             </center>
          
-         <a href="#"><i class="fa fa-desktop"></i><span>Dashboard</span></a>
-         <a href="#"><i class="fa fa-desktop"></i><span>profile</span></a>
+         <a href="dashboard.php"><i class="fa fa-desktop"></i><span>Dashboard</span></a>
+         <a href="learner_Profile.php"><i class="fa fa-desktop"></i><span>profile</span></a>
          <a href="#"><i class="fa fa-cogs"></i><span>Courses</span></a>
+         <a href="#"><i class="fa fa-th"></i><span>My Course</span></a>
          <a href="#"><i class="fa fa-table"></i><span>Tips</span></a>
          <a href="#"><i class="fa fa-th"></i><span>Forum</span></a>
          <a href="#"><i class="fa fa-info-circle"></i><span>About us</span></a>
