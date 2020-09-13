@@ -2,6 +2,7 @@
      session_start();
      require_once('../../services/courseService.php');
      require_once('../../services/instructor_service/course_instructorService.php');
+     require_once('../../services/instructor_service/learner_instructorService.php');
      if(!isset($_SESSION['username'])){
  
          header('location: ../login.php?error=invalid_request');
@@ -70,6 +71,7 @@
                 <li><a href="../view/files.php">Files</a></li>
                 <li><a href="#">Assignments</a></li>
                 <li><a href="../view/grade.php">Grades</a></li>
+                <li><a href="../view/grade.php">Settings</a></li>
              
             </ul>
         </div>
@@ -82,20 +84,30 @@
                     <tr>
                         <td>Student Name</td>
                         <td>Email</td>
-                        <td>Enrolled Date</td>
 
                     <tr>
                     <tr>
                         <td colspan="3"><hr></td>
                     </tr>
-                    <tr>
-                        <td>Kakashi Hatake</td>
-                        <td>hatake12@gmail.com</td>
-                        <td>12/09/2019</td>
+                    <?php
+                     $Insid=$_SESSION['userid'];
+                     $courseName=$_GET['courseName'];
+                     $learnersId=showLearners($Insid, $courseName);
+                     for($i=0; $i<count($learnersId);$i++)
+                     {
+                        $learners_info=getByID($learnersId[$i]['learner_id']);
+                        ?>
+                        <tr>
+                        <td><?=$learners_info['u_name']?></td>
+                        <td><?=$learners_info['email']?></td>
                     </tr>
                     <tr>
                         <td colspan="3"><hr></td>
                     </tr>
+                    <?php
+                     }
+                    
+                    ?>
                    </table>        
                 </fieldset>
             </form>
