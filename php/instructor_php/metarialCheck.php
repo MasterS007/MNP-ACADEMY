@@ -2,7 +2,8 @@
 
     session_start();
 
-    // require_once('../../services/instructor_service/')
+     require_once('../../services/instructor_service/course_instructorService.php');
+     require_once('../../services/courseService.php');
     //$filName= $_FILES['allfiles']['name'];
     //echo $filename;
     if(isset($_POST['checkInfo']))
@@ -26,7 +27,28 @@
         
         if(move_uploaded_file($_FILES['allfiles']['tmp_name'], $file_dir))
         {
+            $courseName=$_SESSION['courseName'];
+            $courseId=getByCourseName($courseName);
+            $course_id= $courseId['course_id'];
+            echo $file_dir;
+            $materials=[
+                'filesdir'=> $file_dir,
+                'instructorId'=> $_SESSION['instructorId'],
+                'courseId'=> $course_id
+            ];
+           $validInsert =insertCourseMaterial($materials);
+           if( $validInsert)
+           {
             header("location:../../view/instructor_view/files.php?courseName={$_SESSION['courseName']}");
+           }
+
+           else
+           {
+           
+           // header("location:../../view/instructor_view/files.php?courseName={$_SESSION['courseName']}&&Error=UnsecseefulInsert");
+            echo "jjja";
+           }
+           
         }
         else
         {

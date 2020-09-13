@@ -1,6 +1,23 @@
 <?php
 
 require_once('../../databaseConn/dbCon.php');
+function insertCourseMaterial($materials)
+	{
+		$conn = dbConnection();
+
+		if(!$conn){
+			echo "DB connection error";
+		}
+
+	$sql = "INSERT INTO class_materials (items_name, instructor_id, course_id) VALUES ('{$materials['filesdir']}', '{$materials['instructorId']}','{$materials['instructorId']}')";
+	if(mysqli_query($conn, $sql)){
+			
+			return true;
+		}else{
+			return false;
+		}
+	mysqli_close($conn);
+	}
 
 function insertIC($data)
 {
