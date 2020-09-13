@@ -19,3 +19,21 @@
 		
 		return $aboutUs;
 	}
+
+
+
+
+	function getSubTitle($sub_Title_Id)
+    {
+        $conn = dbConnection();
+
+		if(!$conn){
+			echo "DB connection error";
+		}
+
+		$sql = "select SubTitle from about_us where SubTitle like '%{$sub_Title_Id}%'";
+		$result = mysqli_query($conn, $sql);
+        $SubTitle = mysqli_fetch_assoc($result);
+        
+        return $SubTitle;
+	}
