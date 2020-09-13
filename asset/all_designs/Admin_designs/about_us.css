@@ -171,6 +171,14 @@ main div.Gridviewdiv:nth-child(odd) {
     position: relative;
 }
 
+.Sub-Title {
+    height: 20%;
+}
+
+.Description {
+    height: 35%;
+}
+
 .bg-modal_view {
     width: 100%;
     height: 100%;
