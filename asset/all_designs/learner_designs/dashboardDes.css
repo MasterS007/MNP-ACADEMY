@@ -1,18 +1,17 @@
-body{
-    margin:0;
-    padding:0;
-    font-family:Arial, Helvetica, sans-serif ;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-
-header{
-    background: grey ;
-    padding:9px;
+header {
+    background: grey;
+    padding: 9px;
     width: 100%;
-    height:100px;
+    height: 100px;
     position: fixed;
-
 }
+
 
 /* nav {
     color: white;
@@ -20,8 +19,8 @@ header{
 } */
 
 .comboBox {
-    margin-left:76%;
-    margin-top:-10px;
+    margin-left: 76%;
+    margin-top: -10px;
     position: relative;
     width: 6%;
     height: 26px;
@@ -62,140 +61,121 @@ ul.navigation li.searchBox input[type=text]:focus {
     width: 75%;
 }
 
-
-.left_area h3{
- 
-    color:white;
-    margin:0;
+.left_area h3 {
+    color: white;
+    margin: 0;
     text-transform: uppercase;
-    font-size:22px;
+    font-size: 22px;
     font-weight: 900;
-
 }
 
-.left_area span{
+.left_area span {
     color: #1DC4E7
-
 }
 
-.logout_btn{
+.logout_btn {
     padding: 5px;
     background: rgb(117, 137, 190);
     text-decoration: none;
     float: right;
     margin-right: 40px;
     border-radius: 2px;
-    font-size:15px;
+    font-size: 15px;
     font-weight: 600;
     color: rgb(61, 79, 128);
     transition: 0.5s;
     transition-property: background;
-
-
 }
 
-.logout_btn:hover{
-background:  rgba(37, 114, 165, 0.349);
+.logout_btn:hover {
+    background: rgba(37, 114, 165, 0.349);
 }
 
-.sidebar{
-
-    background: rgb(42, 43, 51) ;
-    margin-top:118px;
-    padding-top:30px;
-    position:fixed;
-    left:0;
+.sidebar {
+    background: rgb(42, 43, 51);
+    margin-top: 118px;
+    padding-top: 30px;
+    position: fixed;
+    left: 0;
     width: 250px;
     height: 100%;
-    transition: 0.5s ;
+    transition: 0.5s;
     transition-property: left;
-
-}
-.sidebar .profile_image{
-width:100px;
-height:100px;
-border-radius: 100px;
-margin-bottom: 10px;
-
-
 }
 
-.sidebar h4{
-    color:rgb(187, 184, 184);
-    margin-top:0;
-    margin-bottom:20px;
-
+.sidebar .profile_image {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    margin-bottom: 10px;
 }
 
-.sidebar a{
-    color:rgb(187, 184, 184); 
-    display:block;
+.sidebar h4 {
+    color: rgb(187, 184, 184);
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.sidebar a {
+    color: rgb(187, 184, 184);
+    display: block;
     width: 100%;
     line-height: 60px;
     text-decoration: none;
-    padding-left:40px;
+    padding-left: 40px;
     box-sizing: border-box;
     transition: 0.5s;
-    transition-property: background ;
-
+    transition-property: background;
 }
 
-.sidebar a:hover{
+.sidebar a:hover {
     background: rgb(9, 116, 165)
 }
 
-.sidebar i{
-    padding-right:10px;
+.sidebar i {
+    padding-right: 10px;
 }
 
-label #sidebar_btn{
-
+label #sidebar_btn {
     z-index: 1;
     color: white;
-    position:fixed;
-    cursor:pointer;
-    left:300px;
-    font-size:20px;
-    margin:5px 0;
+    position: fixed;
+    cursor: pointer;
+    left: 300px;
+    font-size: 20px;
+    margin: 5px 0;
     transition: 0.5s;
-    transition-property: color ;
-
+    transition-property: color;
 }
 
-label #sidebar_btn:hover{
-    color:rgb(9, 116, 165);
-
+label #sidebar_btn:hover {
+    color: rgb(9, 116, 165);
 }
 
-#check:checked ~ .sidebar{
-
-    left:-190px;
+#check:checked~.sidebar {
+    left: -190px;
 }
 
-#check:checked ~ .sidebar a span{
-    display:none;
+#check:checked~.sidebar a span {
+    display: none;
 }
-#check:checked ~ .sidebar a{
-    font-size:20px ;
-    margin-left:170px;
+
+#check:checked~.sidebar a {
+    font-size: 20px;
+    margin-left: 170px;
     width: 80px;
 }
 
-.content{
-
-    margin-left:250px;
-    background: url(background.jpg) no-repeat;
+.content {
+    margin-left: 250px;
+    /* background: url(background.jpg) no-repeat; */
     background-position: center;
-    background-size:cover;
+    background-size: cover;
     height: 100vh;
-    transition:0.5s;
-    
-
-
+    transition: 0.5s;
+    background-color: #ccc;
 }
 
-#check:checked ~ .content{
+#check:checked~.content {
     margin-left: 60px;
-
 }
-

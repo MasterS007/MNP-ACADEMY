@@ -2,10 +2,14 @@
      session_start();
      require_once('../../services/courseService.php');
      require_once('../../services/instructor_service/course_instructorService.php');
+     require_once('../../services/instructor_service/learner_instructorService.php');
      if(!isset($_SESSION['username'])){
  
          header('location: ../login.php?error=invalid_request');
      }
+
+     $_SESSION['courseName']=$_GET['courseName'];
+     
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +17,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../asset/all_designs/instructor_designs/insideclassdesign.css">
+
     <title>Class Materials</title>
 </head>
 <body>
@@ -25,7 +30,7 @@
                     $courseN = getByCategory('Science');
                     for ($i=0; $i<count($courseN); $i++)
                     { ?>
-                        <option value="<?php echo $courseN[$i];?>"><?php echo $courseN[$i]['course_name'];?>
+                        <option value="<?php echo $courseN[$i]['course_name'];?>"><?php echo $courseN[$i]['course_name'];?>
                         </option>
                     <?php }?>
                     </optgroup>
@@ -34,7 +39,7 @@
                     $courseN = getByCategory('Computer Science');
                     for ($i=0; $i<count($courseN); $i++)
                     { ?>
-                        <option value="<?php echo $courseN[$i];?>"><?php echo$courseN[$i]['course_name'];?>
+                        <option value="<?php echo $courseN[$i]['course_name'];?>"><?php echo$courseN[$i]['course_name'];?>
                         </option>
                     <?php }?>
 
@@ -44,7 +49,7 @@
                     $courseN = getByCategory('Programming Language');
                     for ($i=0; $i<count($courseN); $i++)
                     { ?>
-                        <option value="<?php echo $courseN[$i];?>"><?php echo$courseN[$i]['course_name'];?>
+                        <option value="<?php echo $courseN[$i]['course_name'];?>"><?php echo$courseN[$i]['course_name'];?>
                         </option>
                     <?php }?>
 
@@ -60,16 +65,17 @@
        <div class="verticleLine"></div>
     <main>
         <div>
-            <h4 class="class_headeing"><?= 'Class:'.$_GET['courseName']?></h4>
+            <h4 class="class_headeing" id="class_heading">Class: <?= $_SESSION['courseName']?></h4>
         </div>
 
         <div class="class_materials">
             <ul>
-                <li><a href="../view/insideClass.php">Students</a></li>
-                <li><a href="../view/postComment.php">Post</a></li>
-                <li><a href="../view/files.php">Files</a></li>
+                <li><a href="insideClass.php?courseName=<?= $_SESSION['courseName']?>">Learnerss</a></li>
+                <li><a href="postComment.php?courseName=<?= $_SESSION['courseName']?>">Post</a></li>
+                <li><a href="files.php?courseName=<?= $_SESSION['courseName']?>">Class Materials</a></li>
                 <li><a href="#">Assignments</a></li>
-                <li><a href="../view/grade.php">Grades</a></li>
+                <li><a href="grade.php?courseName=<?= $_SESSION['courseName']?>">Grades</a></li>
+                <li><a href="#">Settings</a></li>
              
             </ul>
         </div>
@@ -77,25 +83,35 @@
         <div class="students">
             <form>
                 <fieldset>
-                   <legend class="title">Enrolled Students List</legend>
+                   <legend class="title">Enrolled Learners List</legend>
                    <table class="student_table">
                     <tr>
-                        <td>Student Name</td>
-                        <td>Email</td>
-                        <td>Enrolled Date</td>
+                        <td style="color:#589; font-size:17px; text-decoration: solid;">Learner Name</td>
+                        <td style="color:#589; font-size:17px;">Email</td>
 
                     <tr>
                     <tr>
                         <td colspan="3"><hr></td>
                     </tr>
-                    <tr>
-                        <td>Kakashi Hatake</td>
-                        <td>hatake12@gmail.com</td>
-                        <td>12/09/2019</td>
+                    <?php
+                     $Insid=$_SESSION['userid'];
+                     $courseName=$_SESSION['courseName'];
+                     $learnersId=showLearners($Insid, $courseName);
+                     for($i=0; $i<count($learnersId);$i++)
+                     {
+                        $learners_info=getByID($learnersId[$i]['learner_id']);
+                        ?>
+                        <tr>
+                        <td><?=$learners_info['u_name']?></td>
+                        <td><?=$learners_info['email']?></td>
                     </tr>
                     <tr>
                         <td colspan="3"><hr></td>
                     </tr>
+                    <?php
+                     }
+                    
+                    ?>
                    </table>        
                 </fieldset>
             </form>
