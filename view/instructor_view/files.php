@@ -17,7 +17,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="../../asset/all_designs/instructor_designs/fileupload_design.css"> -->
+    <link rel="stylesheet" href="../../asset/all_designs/instructor_designs/fileuploaddesign.css">
     <script type="text/javascript" src="../../asset/js/instructor_js/classMaterials.js"></script> 
     <title>Class Files</title>
 </head>
@@ -82,7 +82,7 @@
     </div>
 
     <div class="files">
-        <form action="../ph_and_js/php/fileupload_check.php" method="POST" enctype="multipart/form-data">
+        <form action="../../php/instructor_php/metarialCheck.php" method="POST" enctype="multipart/form-data">
            <fieldset class="upload_files">  
                <legend class="title_file">File</legend> 
 
@@ -99,10 +99,10 @@
                     }
                ?>
             </fieldset>
-            <input type="file" name="allfiles" class="uploadbox" id="uploadbox" style="display: none">
+            <input type="file" name="allfiles" class="uploadbox" id="uploadbox" >
             <input type="text" id="spnFilePath" value="<?= $_SESSION['courseName']?>" style="display: none" >
         
-             <input type="button" name="submit" value="Upload" class="btn_upload" id="btn_upload" onclick="UploadFile(<?=$_SESSION['userid']?>)">
+             <input type="submit" name="submit" value="Upload" class="btn_upload" id="btn_upload" onclick="UploadFile(<?=$_SESSION['userid']?>)">
         </form>
     </div>
 </main>
