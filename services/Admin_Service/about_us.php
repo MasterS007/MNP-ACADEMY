@@ -37,3 +37,24 @@
         
         return $SubTitle;
 	}
+
+
+
+
+	
+	function insertAbout($about){
+		$conn = dbConnection();
+
+		if(!$conn){
+			echo "DB connection error";
+		}
+
+		$sql = "INSERT INTO about_us (Title, SubTitle, Descriptions) VALUES ('{$about['title']}','{$about['sub_title']}','{$about['descriptions']}')";
+		if(mysqli_query($conn, $sql)){
+			
+			return true;
+		}else{
+			return false;
+		}
+		  mysqli_close($conn);
+	}

@@ -121,7 +121,7 @@
 							<td>Descriptions</td>
 							<td>:</td>
 							<td><input id="descriptions"  name="descriptions" type="text" onkeyup="des_Remover()" onblur="des_eMpty()"></td>
-							<td><i id="descriptions"  style="color:white;font-size: 10px;"></i></td>
+							<td><i id="descriptionMsg"  style="color:white;font-size: 10px;"></i></td>
 						</tr>		
 						<tr><td colspan="4"><hr/></td></tr>
 					 </table>

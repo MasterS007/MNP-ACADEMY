@@ -69,20 +69,20 @@ function ST_Remover() {
 function des_eMpty() {
     var description = document.getElementById("descriptions").value;
     if (description == "") {
-        document.getElementById("descriptions").innerHTML = "Title Can't be empty";
-        window.T_Valid = false;
+        document.getElementById("descriptionMsg").innerHTML = "Description Can't be empty";
+        window.D_Valid = false;
     } else {
-        window.T_Valid = true;
+        window.D_Valid = true;
     }
 }
 
 function des_Remover() {
-    document.getElementById('descriptions').innerHTML = "";
+    document.getElementById('descriptionMsg').innerHTML = "";
 
 }
 
 function validation() {
-    if (window.T_Valid == true && window.ST_Valid == true) {
+    if (window.T_Valid == true && window.ST_Valid == true && window.D_Valid == true) {
         return true;
     } else {
         return false;
