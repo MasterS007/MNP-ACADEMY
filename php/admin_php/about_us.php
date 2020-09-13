@@ -24,7 +24,7 @@
     if (isset($_POST['submit']))
     {
         $title = $_POST['title'];
-        $sub_title = $POST['sub_title'];
+        $sub_title = $_POST['sub_title'];
         $descriptions = $_POST['descriptions'];
         $valid = false;
 
