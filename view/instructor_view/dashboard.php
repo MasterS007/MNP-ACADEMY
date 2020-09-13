@@ -7,6 +7,11 @@
            header('location: ../login.php?error=invalid_request');
        }
 
+     //  if(isset($_GET['courseName']))
+       //{
+           
+      // }
+
  ?> 
  <!DOCTYPE html>
 <html lang="en">
@@ -100,7 +105,7 @@
                         $courseName =getByCourseId($courseId[$i]['course_id']);
                         $_SESSION['courseName']=$courseName['course_name'];
                         ?>
-                     <li><a href="insideClass.php?courseName=<?=$courseName['course_name']?>">Class: <?php echo $courseName['course_name']; ?></a></li><br>
+                     <li><a href="insideClass.php?courseName=<?=$courseName['course_name']?>" id="courseName"onclick="fetchClassName()">Class: <?php echo $courseName['course_name']; ?></a></li><br>
 
                     <?php    
                     }
@@ -127,7 +132,7 @@
                                         $courseN = getByCategory('Science');
                                         for ($i=0; $i<count($courseN); $i++)
                                         { ?>
-                                            <option value="<?php echo $courseN[$i];?>"><?php echo $courseN[$i]['course_name'];?>
+                                            <option value="<?php echo $courseN[$i]['course_name'];?>"><?php echo $courseN[$i]['course_name'];?>
                                             </option>
                                         <?php }?>
                                         </optgroup>
@@ -136,7 +141,7 @@
                                         $courseN = getByCategory('Computer Science');
                                         for ($i=0; $i<count($courseN); $i++)
                                         { ?>
-                                            <option value="<?php echo $courseN[$i];?>"><?php echo$courseN[$i]['course_name'];?>
+                                            <option value="<?php echo $courseN[$i]['course_name'];?>"><?php echo$courseN[$i]['course_name'];?>
                                             </option>
                                         <?php }?>
 
@@ -146,7 +151,7 @@
                                         $courseN = getByCategory('Programming Language');
                                         for ($i=0; $i<count($courseN); $i++)
                                         { ?>
-                                            <option value="<?php echo $courseN[$i];?>"><?php echo$courseN[$i]['course_name'];?>
+                                            <option value="<?php echo $courseN[$i]['course_name'];?>"><?php echo$courseN[$i]['course_name'];?>
                                             </option>
                                         <?php }?>
 
