@@ -65,16 +65,16 @@
        <div class="verticleLine"></div>
     <main>
         <div>
-            <h4 class="class_headeing" id="class_heading"><?= $_SESSION['courseName']?></h4>
+            <h4 class="class_headeing" id="class_heading">Class: <?= $_SESSION['courseName']?></h4>
         </div>
 
         <div class="class_materials">
             <ul>
                 <li><a href="insideClass.php?courseName=<?= $_SESSION['courseName']?>">Learnerss</a></li>
-                <li><a href="postComment.php">Post</a></li>
-                <li><a href="files.php">Files</a></li>
+                <li><a href="postComment.php?courseName=<?= $_SESSION['courseName']?>">Post</a></li>
+                <li><a href="files.php?courseName=<?= $_SESSION['courseName']?>">Class Materials</a></li>
                 <li><a href="#">Assignments</a></li>
-                <li><a href="grade.php">Grades</a></li>
+                <li><a href="grade.php?courseName=<?= $_SESSION['courseName']?>">Grades</a></li>
                 <li><a href="#">Settings</a></li>
              
             </ul>
