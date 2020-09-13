@@ -15,12 +15,27 @@
         $_SESSION['instructorId']=$instructor_id;
         $_SESSION['courseName']=$courseName;
         
-        
+
 
     }
-  echo $_SESSION['instructorId'];
- $fileName  =$_FILES['allfiles']['name'];
- echo $fileName;
+
+    if(isset($_POST['submit']))
+    {
+        $file_dir='../../asset/Class_Materials/'.$_FILES['allfiles']['name'];
+        //print_r($_FILES);
+        
+        if(move_uploaded_file($_FILES['allfiles']['tmp_name'], $file_dir))
+        {
+            header("location:../../view/instructor_view/files.php?courseName={$_SESSION['courseName']}");
+        }
+        else
+        {
+            echo "Upload Failed";
+        }
+    }
+//   echo $_SESSION['instructorId'];
+//  $fileName  =$_FILES['allfiles']['name'];
+//  echo $fileName;
   
 
 ?>
