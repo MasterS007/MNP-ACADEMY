@@ -87,15 +87,21 @@
                <legend class="title_file">File</legend> 
 
                <?php
+                $courseId=  $courseId=getByCourseName($_SESSION['courseName']);
+                $id =$_SESSION['userid'];
 
-                    $file_dir=scandir("Class_Materials");
-                    for($i=2; $i<count($file_dir); $i++)
+                    $courseMaterials= getCourseMaterial($id, $courseId['course_id']);
+                    
+                    for($i=0; $i<count($courseMaterials); $i++)
                     {
-                        ?>
-                        <p>
-                        <a href="../view/Class_Materials/<?php echo $file_dir[$i]?>"><?php echo $file_dir[$i]?><hr></a>
-                    </p>
-                        <?php
+                        // for($i=2; $i<count($file_dir); $i++)
+                        // {
+                            ?>
+                            <p>
+                            <a href="<?php echo $courseMaterials[$i]['items_name']?>"><?php echo $courseMaterials[$i]['items_name']?><hr></a>
+                        </p>
+                            <?php
+                       // }
                     }
                ?>
             </fieldset>

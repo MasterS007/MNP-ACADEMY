@@ -1,6 +1,27 @@
 <?php
 
 require_once('../../databaseConn/dbCon.php');
+
+function getCourseMaterial($id, $courseId) //by course id and instructor id
+{
+    $conn = dbConnection();
+
+    if(!$conn){
+        echo "DB connection error";
+    }
+
+    $sql = "SELECT items_name FROM class_materials  Where instructor_id={$id} AND course_id={$courseId}";
+    $result = mysqli_query($conn, $sql);
+	$courses = [];
+
+    while($row = mysqli_fetch_assoc($result)){
+        array_push($courses, $row);
+    }
+
+    return $courses;
+    mysqli_close($conn);
+
+}
 function insertCourseMaterial($materials)
 	{
 		$conn = dbConnection();

@@ -30,7 +30,8 @@
             $courseName=$_SESSION['courseName'];
             $courseId=getByCourseName($courseName);
             $course_id= $courseId['course_id'];
-            echo $file_dir;
+           
+           // echo $file_dir;
             $materials=[
                 'filesdir'=> $file_dir,
                 'instructorId'=> $_SESSION['instructorId'],
