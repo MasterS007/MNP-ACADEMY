@@ -14,6 +14,7 @@
             MY Page
         </title>
         <link rel="stylesheet" type="text/css" href="../../asset/all_designs/Admin_designs/about_us.css">
+        <script type="text/javascript" src="../../asset/js/Admin_js/about_us.js"></script>
         <meta charset = "UTF-8"/>
       
         <body>
@@ -56,8 +57,7 @@
                         <div class="div-show">
                               <div class="button-container-div">
                                   <input type="button" value="About Us">
-                                  <input type="button" value="Add">
-                                  <input type="button" name="View" value="View click" onclick="load()">
+                                  <input type="button" value="Add" onclick="about_popup_open()">
                               </div>
                               
                                
@@ -93,6 +93,46 @@
                                          ?>
                                   </table>
                               </div>
+
+
+
+                        <div class= "bg-modal"  id="bg-modal">
+			            <div class = "modal-content">
+				         <div class="close" onclick="about_popup_close()">+</div>
+                            <form action="../../php/admin_php/about_us.php" onsubmit=return validation() method="post">
+					        <table>
+						    <tr >
+							<td>Title</td>
+							<td>:</td>
+							<td><input id="title" name="title" type="text" onkeyup="Title_Remover()" onblur="Title_empty()"></td>
+							<td><i  id="titleMsg" style="color:white; font-size: 10px;"></i></td>
+						</tr>		
+						<tr><td colspan="4"><hr/></td></tr>
+						<tr>
+							<td>Sub Title</td>
+							<td>:</td>
+							<td>
+								<input type="text" class= "Sub-Title" id="sub_title" name="sub_title"  onkeyup="ST_Remover()" onblur="ST_empty()">
+							</td>
+							<td ><i id="ST_Msg" style="color:white;font-size: 10px; white-space: pre;"  ></i></td>
+						</tr>		
+						<tr><td colspan="4"><hr/></td></tr>
+						<tr class= "Description">
+							<td>Descriptions</td>
+							<td>:</td>
+							<td><input id="descriptions"  name="descriptions" type="text" onkeyup="des_Remover()" onblur="des_eMpty()"></td>
+							<td><i id="descriptionMsg"  style="color:white;font-size: 10px;"></i></td>
+						</tr>		
+						<tr><td colspan="4"><hr/></td></tr>
+					 </table>
+                	  <input type="submit"  name="submit" value="Submit" class="Submitbtn" >
+            		</form> 
+                    </div>
+                    </div>
+
+
+
+                              
                         </div>
                    </div>
                     
