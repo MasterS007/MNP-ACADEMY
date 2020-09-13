@@ -7,11 +7,6 @@
            header('location: ../login.php?error=invalid_request');
        }
 
-     //  if(isset($_GET['courseName']))
-       //{
-           
-      // }
-
  ?> 
  <!DOCTYPE html>
 <html lang="en">
