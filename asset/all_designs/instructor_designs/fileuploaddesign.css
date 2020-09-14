@@ -164,15 +164,19 @@ fieldset.upload_files {
 
 .materialsTable td {
     padding-bottom: 12px;
+    margin-left: 20%;
 }
 
-input.deleteFile[type='button'] {
-    margin-left: 90%;
+.materialsTable td input.deleteFile[type='button'] {
+    margin-left: 50%;
+    margin-right: 30%;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    width: 8%;
-    padding: 3px 5px;
+    width: 10%;
+    padding: 3px 0px;
+    padding-left: 20px;
+    padding-right: 60px;
     border: 1px solid #ddd;
     color: #666;
     position: relative;

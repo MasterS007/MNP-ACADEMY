@@ -1,7 +1,6 @@
 <?php
 
     session_start();
-
      require_once('../../services/instructor_service/course_instructorService.php');
      require_once('../../services/instructor_service/classmaterialService.php');
      require_once('../../services/courseService.php');
@@ -107,7 +106,7 @@ if(isset($_REQUEST['FileName']))
                 }
 
            }
-           
+
            else
            {
             header("location:../../view/instructor_view/files.php?courseName={$_SESSION['courseName']}&&ERROR=FAILEDtoDELETE");
