@@ -89,22 +89,31 @@ if(isset($_REQUEST['FileName']))
         $fileInfo=getCourseMaterialInfo($fileName);
         if(file_exists($file_dir))
         {
-            unlink(realpath($fileName));
+            echo "exist";
+           if(unlink($file_dir)) 
+           {
+                $valideDelete= deleteFile($fileName);
 
-            $valideDelete= deleteFile($fileName);
+                if($valideDelete)
+                {
+                    header("location:../../view/instructor_view/files.php?courseName={$_SESSION['courseName']}&&Message=DeleteSuccessfull");
+                    //echo 1;
 
-            if($valideDelete)
-            {
-                header("location:../../view/instructor_view/files.php?courseName={$_SESSION['courseName']}&&Message=DeleteSuccessfull");
-                //echo 1;
+                }
 
-            }
+                else
+                {
+                    header("location:../../view/instructor_view/files.php?courseName={$_SESSION['courseName']}&&ERROR=FAILEDtoDELETE");
+                }
 
-            else
-            {
-                header("location:../../view/instructor_view/files.php?courseName={$_SESSION['courseName']}&&ERROR=FAILEDtoDELETE");
-            }
+           }
+           
+           else
+           {
+            header("location:../../view/instructor_view/files.php?courseName={$_SESSION['courseName']}&&ERROR=FAILEDtoDELETE");
+           }
 
+            
         }
         
     }
