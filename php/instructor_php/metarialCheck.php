@@ -16,13 +16,14 @@
         $_SESSION['instructorId']=$instructor_id;
         $_SESSION['courseName']=$courseName;
         
-
+        //echo $courseName;
 
     }
 
     if(isset($_POST['submit']))
     {
         $file_dir='../../asset/Class_Materials/'.$_FILES['allfiles']['name'];
+        $fileName=$_FILES['allfiles']['name'];
         //print_r($_FILES);
         
         if(move_uploaded_file($_FILES['allfiles']['tmp_name'], $file_dir))
@@ -33,32 +34,32 @@
            
            // echo $file_dir;
             $materials=[
-                'filesdir'=> $file_dir,
+                'filesName'=>  $fileName,
                 'instructorId'=> $_SESSION['instructorId'],
                 'courseId'=> $course_id
             ];
            $validInsert =insertCourseMaterial($materials);
            if( $validInsert)
            {
+              // echo $courseName;
+               //echo "courseId: ". $course_id;
             header("location:../../view/instructor_view/files.php?courseName={$_SESSION['courseName']}");
            }
 
            else
            {
            
-           // header("location:../../view/instructor_view/files.php?courseName={$_SESSION['courseName']}&&Error=UnsecseefulInsert");
-            echo "jjja";
+           header("location:../../view/instructor_view/files.php?courseName={$_SESSION['courseName']}&&Error=UnsecseefulInsert");
+            //echo "jjja";
            }
            
         }
         else
         {
-            echo "Upload Failed";
+            header("location:../../view/instructor_view/files.php?courseName={$_SESSION['courseName']}&&Error=UploadFaield");
+            //echo "Upload Failed";
         }
     }
-//   echo $_SESSION['instructorId'];
-//  $fileName  =$_FILES['allfiles']['name'];
-//  echo $fileName;
-  
+
 
 ?>

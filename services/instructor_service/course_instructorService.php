@@ -30,7 +30,7 @@ function insertCourseMaterial($materials)
 			echo "DB connection error";
 		}
 
-	$sql = "INSERT INTO class_materials (items_name, instructor_id, course_id) VALUES ('{$materials['filesdir']}', '{$materials['instructorId']}','{$materials['instructorId']}')";
+	$sql = "INSERT INTO class_materials (items_name, instructor_id, course_id) VALUES ('{$materials['filesName']}', '{$materials['instructorId']}','{$materials['courseId']}')";
 	if(mysqli_query($conn, $sql)){
 			
 			return true;

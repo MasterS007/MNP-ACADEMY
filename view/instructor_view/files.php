@@ -88,26 +88,31 @@
 
                <?php
                 $courseId=  $courseId=getByCourseName($_SESSION['courseName']);
+                // echo $_SESSION['courseName'];
+                // echo $courseId['course_id'];
                 $id =$_SESSION['userid'];
 
                     $courseMaterials= getCourseMaterial($id, $courseId['course_id']);
-                    
+                    $file_dir=scandir("../../asset/Class_Materials");
                     for($i=0; $i<count($courseMaterials); $i++)
                     {
-                        // for($i=2; $i<count($file_dir); $i++)
-                        // {
+                           for($j=2; $j<count($file_dir); $j++)
+                           { 
+                            if($file_dir[$j]==$courseMaterials[$i]['items_name'])
+                             {
                             ?>
                             <p>
-                            <a href="<?php echo $courseMaterials[$i]['items_name']?>"><?php echo $courseMaterials[$i]['items_name']?><hr></a>
-                        </p>
-                            <?php
-                       // }
+                            <a href="../../asset/Class_Materials/<?php echo $file_dir[$j]?>"><?php echo $file_dir[$j]?><hr></a>
+                        </p><?php
+                        }
+                            
+                         }
                     }
                ?>
+                <i id="uploadMsg"></i>
             </fieldset>
             <input type="file" name="allfiles" class="uploadbox" id="uploadbox" >
-            <input type="text" id="spnFilePath" value="<?= $_SESSION['courseName']?>" style="display: none" >
-        
+            <input type="text" id="spnFilePath" value="<?= $_SESSION['courseName']?>" style="display:none" >
              <input type="submit" name="submit" value="Upload" class="btn_upload" id="btn_upload" onclick="UploadFile(<?=$_SESSION['userid']?>)">
         </form>
     </div>

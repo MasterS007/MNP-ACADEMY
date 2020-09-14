@@ -34,8 +34,18 @@ function clickButton(instructor_id) {
     xttp.send('checkInfo=' + allInfo);
     xttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            alert(this.responseText);
+            
+            let xhttp = new XMLHttpRequest();
+            xhttp.open('POST', '../../view/instructor_view/files.php', true);
+            xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhttp.send('checkInfo=' + courseName);
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    
+                    document.getElementById('uploadMsg').innerHTML = "Upload Successfull";
 
+                }
+            }
         }
     }
 }
