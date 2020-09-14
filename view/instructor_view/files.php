@@ -4,6 +4,7 @@
     require_once('../../services/courseService.php');
     require_once('../../services/instructor_service/course_instructorService.php');
     require_once('../../services/instructor_service/learner_instructorService.php');
+    require_once('../../services/instructor_service/classmaterialService.php');
     if(!isset($_SESSION['username'])){
 
         header('location: ../login.php?error=invalid_request');
@@ -22,7 +23,7 @@
     <script type="text/javascript" src="../../asset/js/instructor_js/classMaterials.js"></script> 
     <title>Class Files</title>
 </head>
-<body onload="deleteFile()" >
+<body>
     <header id="myHeader" >
         <nav>
         <select class="comboBox">
@@ -106,8 +107,8 @@
                                 <tr>
                                     <td><a href="../../asset/Class_Materials/<?php echo $courseMaterials[$i]['items_name']?>" class="fileName" ><?php echo $courseMaterials[$i]['items_name']?></a></td>
                                     <td>
-                                        <a href="../../view/instructor_view/files.php?FileName=<?=$courseMaterials[$i]['items_name']?>&&courseName=<?= $_SESSION['courseName']?>" class="deleteFile">
-                                          <input type="button" value="Delete" >
+                                        <a href="../../php/instructor_php/metarialCheck.php?FileName=<?=$courseMaterials[$i]['items_name']?>&&courseName=<?= $_SESSION['courseName']?>" class="deleteFile">
+                                          <input type="button" value="Delete" onclick="return confirm('Are you want to delete <?=$courseMaterials[$i]['items_name']?>?')" >
                                           
                                         </a>
                                     </td>
@@ -147,6 +148,6 @@
 <footer>
 
 </footer>
-
+<!-- <script type="text/javascript" src="../../asset/js/instructor_js/classMaterials.js"></script>  -->
 </body>
 </html>
