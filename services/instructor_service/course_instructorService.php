@@ -10,7 +10,7 @@ function getCourseMaterial($id, $courseId) //by course id and instructor id
         echo "DB connection error";
     }
 
-    $sql = "SELECT items_name FROM class_materials  Where instructor_id={$id} AND course_id={$courseId}";
+    $sql = "SELECT * FROM class_materials  Where instructor_id={$id} AND course_id={$courseId} ORDER BY items_name DESC";
     $result = mysqli_query($conn, $sql);
 	$courses = [];
 

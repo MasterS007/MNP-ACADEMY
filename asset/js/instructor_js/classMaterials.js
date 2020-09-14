@@ -34,17 +34,26 @@ function clickButton(instructor_id) {
     xttp.send('checkInfo=' + allInfo);
     xttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            
-            let xhttp = new XMLHttpRequest();
-            xhttp.open('POST', '../../view/instructor_view/files.php', true);
-            xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhttp.send('checkInfo=' + courseName);
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    
-                    document.getElementById('uploadMsg').innerHTML = "Upload Successfull";
 
-                }
+            // alert(this.responseText); 
+
+        }
+    }
+}
+
+function deleteFile() {
+    var selectedFile = document.getElementById('fileName').value;
+    var xttps = new XMLHttpRequest();
+
+    if (selectedFile != "") {
+        xttps.open('POST', '../../php/instructor_php/metarialCheck.php', true);
+        xttps.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xttps.send('checkFile=' + selectedFile);
+        xttps.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+
+                alert(this.responseText);
+
             }
         }
     }

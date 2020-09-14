@@ -10,6 +10,7 @@
     }
 
     $_SESSION['courseName']=$_GET['courseName'];
+    
 
 ?>
 <!DOCTYPE html>
@@ -21,7 +22,7 @@
     <script type="text/javascript" src="../../asset/js/instructor_js/classMaterials.js"></script> 
     <title>Class Files</title>
 </head>
-<body >
+<body onload="deleteFile()" >
     <header id="myHeader" >
         <nav>
         <select class="comboBox">
@@ -85,31 +86,56 @@
         <form action="../../php/instructor_php/metarialCheck.php" method="POST" enctype="multipart/form-data">
            <fieldset class="upload_files">  
                <legend class="title_file">File</legend> 
-
-               <?php
-                $courseId=  $courseId=getByCourseName($_SESSION['courseName']);
-                // echo $_SESSION['courseName'];
-                // echo $courseId['course_id'];
-                $id =$_SESSION['userid'];
-
-                    $courseMaterials= getCourseMaterial($id, $courseId['course_id']);
-                    $file_dir=scandir("../../asset/Class_Materials");
-                    for($i=0; $i<count($courseMaterials); $i++)
-                    {
-                           for($j=2; $j<count($file_dir); $j++)
-                           { 
-                            if($file_dir[$j]==$courseMaterials[$i]['items_name'])
-                             {
-                            ?>
-                            <p>
-                            <a href="../../asset/Class_Materials/<?php echo $file_dir[$j]?>"><?php echo $file_dir[$j]?><hr></a>
-                        </p><?php
-                        }
+                    <table class="materialsTable">
+                        <tr>
+                            <th colspan="2">File Name</th>
                             
-                         }
-                    }
-               ?>
-                <i id="uploadMsg"></i>
+                        </tr>
+                        <tr><td colspan="2"><hr></td></tr>
+                        <?php
+                        $courseId=  $courseId=getByCourseName($_SESSION['courseName']);
+                        // echo $_SESSION['courseName'];
+                        // echo $courseId['course_id'];
+                        $id =$_SESSION['userid'];
+
+                            $courseMaterials= getCourseMaterial($id, $courseId['course_id']);
+                            //$file_dir=scandir("../../asset/Class_Materials");
+                            for($i=0; $i<count($courseMaterials); $i++)
+                            {
+                                ?>
+                                <tr>
+                                    <td><a href="../../asset/Class_Materials/<?php echo $courseMaterials[$i]['items_name']?>" class="fileName" ><?php echo $courseMaterials[$i]['items_name']?></a></td>
+                                    <td>
+                                        <a href="../../view/instructor_view/files.php?FileName=<?=$courseMaterials[$i]['items_name']?>&&courseName=<?= $_SESSION['courseName']?>" class="deleteFile">
+                                          <input type="button" value="Delete" >
+                                          
+                                        </a>
+                                    </td>
+                                        
+                                </tr>
+                                <tr><td colspan="2"><hr></td>
+                                 
+                                 </tr>
+                                    
+                                  <?php       
+                            }
+                            if(isset($_GET['FileName']))
+                            {
+                             ?>
+                             <input type="text" id="fileName" value="<?=$_GET['FileName'] ?> " style="display:none;" >
+                             <?php
+                            }
+                            else
+                            {?>
+                                <input type="text" id="fileName" style="display: none;" >
+
+                                <?php
+                            }
+                            
+                            ?>
+        
+                    </table>
+              
             </fieldset>
             <input type="file" name="allfiles" class="uploadbox" id="uploadbox" >
             <input type="text" id="spnFilePath" value="<?= $_SESSION['courseName']?>" style="display:none" >
@@ -121,5 +147,6 @@
 <footer>
 
 </footer>
+
 </body>
 </html>

@@ -146,12 +146,49 @@ div.files form {
 fieldset.upload_files {
     margin-top: 10px;
     margin-left: 2%;
-    height: 400px;
+    height: 550px;
     width: 90%;
     border: 1px solid #ddd;
     border-radius: 5px;
     position: relative;
     overflow: auto;
+}
+
+.materialsTable {
+    width: 100%;
+}
+
+.materialsTable th {
+    padding-bottom: 12px;
+}
+
+.materialsTable td {
+    padding-bottom: 12px;
+}
+
+input.deleteFile[type='button'] {
+    margin-left: 90%;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    width: 8%;
+    padding: 3px 5px;
+    border: 1px solid #ddd;
+    color: #666;
+    position: relative;
+    top: -20px;
+    cursor: pointer;
+}
+
+.materialsTable td hr {
+    position: relative;
+    top: -20px;
+    color: #ddd;
+}
+
+.fileName {
+    text-decoration: none;
+    color: cadetblue;
 }
 
 .btn_upload {
@@ -165,6 +202,7 @@ fieldset.upload_files {
     border: 1px solid #ddd;
     color: #666;
     position: relative;
+    cursor: pointer;
 }
 
 .uploadbox {
