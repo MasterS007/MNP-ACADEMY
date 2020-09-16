@@ -3,6 +3,23 @@
 require_once('../../databaseConn/dbCon.php');
 
 
+function deleteCourseInstr($instructorId, $courseId )
+{
+		$conn = dbConnection();
+
+		if(!$conn){
+			echo "DB connection error";
+		}
+
+    $sql ="DELETE FROM instructor_course WHERE instructor_id={$instructorId} AND course_id={$courseId}";
+		if(mysqli_query($conn, $sql)){
+
+			return true;
+		}else{
+			return false;
+		}
+			mysqli_close($conn);
+}
 
 function insertIC($data)
 {

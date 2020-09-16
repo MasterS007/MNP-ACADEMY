@@ -92,7 +92,7 @@ $_SESSION['courseName']=$_GET['courseName'];
                         <h4 >Danger Zone</h4>
                         <span style="color:red;">Delete this class</span> 
                         <input id="className" value="<?=$_SESSION['courseName']?>" style="display:none;">
-                        <input type="button" id="deleteButton" class="deleteButton" value="Delete " onclick="classDelete(<?=$_SESSION['userid']?>) " > 
+                        <input type="button" id="deleteButton" class="deleteButton" value="Delete " onclick=" confirmDelete(<?=$_SESSION['userid']?>) " > 
                     </fieldset>  
                 </form>
         </div>

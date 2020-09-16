@@ -155,9 +155,10 @@ fieldset.upload_files {
 }
 
 .materialsTable {
-    width: 50%;
-    /* overflow-y: auto;
-    overflow-x: hidden; */
+    width: 95%;
+    margin-left: 2%;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .materialsTable th {
@@ -166,12 +167,12 @@ fieldset.upload_files {
 
 .materialsTable td {
     padding-bottom: 12px;
-    margin-left: 20%;
+    margin-left: 40%;
 }
 
 .materialsTable td input.deleteFile[type='button'] {
-    margin-left: 50%;
-    margin-right: 30%;
+    margin-left: 30%;
+    /* margin-right: 30%; */
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;

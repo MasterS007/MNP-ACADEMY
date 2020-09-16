@@ -18,18 +18,61 @@ if(isset($_POST['checkInfo']))
    $courseId=  getByCourseName($courseName); //from courseService.php
    //echo $courseId['course_id'];
    $learnersId= showLearners($_SESSION['instructorId'], $courseName); //from learner_instructorService.php
-   $classMaterials = getCourseMaterial($_SESSION['instructorId'], $courseId); //from classmaterialService
-
-   for($i=0; $i<count($learnersId);$i++)
-   {
-      // echo $learnersId[$i]['learner_id'];
-   }
-
-   for($i=0; $i<count($classMaterials);$i++)
-   {
-       echo  $classMaterials[$i]['info_id'];
-   }
+   $classMaterials = getCourseMaterial($_SESSION['instructorId'], $courseId['course_id']); //from classmaterialService
+   //echo $_SESSION['instructorId'];
+   $valid=false;
    
+  // if($learnersId!=false)
+  // {
+//       for($i=0; $i<count($learnersId);$i++)
+//    {
+//       $deleteValid =deleteLearnerInstructor($_SESSION['instructorId'], $learnersId[$i]['learner_id'], $courseId['course_id']);
+//       if($deleteValid)
+//       {
+//          $valid=true;
+//       }
+//       // echo $learnersId[$i]['learner_id'];
+//    }
+
+//   // }
+   
+//    // if($classMaterials!=false)
+//   // {
+//       for($i=0; $i<count($classMaterials);$i++)
+//       {
+//          $validdelMat= deleteMaterials($_SESSION['instructorId'], $courseId['course_id']);
+//         //echo  $classMaterials[$i]['info_id'];
+//         if($validdelMat)
+//         {
+//            $valid=true;
+//         }
+//       }
+  // }
+   
+   
+   $valDeleteClass= deleteCourseInstr($_SESSION['instructorId'], $courseId['course_id']); //from course_instructorService.php
+
+   if($valid==true)
+   {
+      echo "class material r learner delete successful";
+   }
+
+   if($valDeleteClass==true)
+   {
+      echo "course from instructor delete hyse";
+
+   }
+
+   else if($valDeleteClass==false)
+   {
+      echo "course from instructor delete hytese NA";
+
+   }
+   // else
+   // {
+   //    echo "delete UNsuccessful";
+   // }
+
 }
 
 ?>
