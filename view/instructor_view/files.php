@@ -78,7 +78,7 @@
                 <li><a href="files.php?courseName=<?= $_SESSION['courseName']?>">Class Materials</a></li>
                 <li><a href="#">Assignments</a></li>
                 <li><a href="grade.php?courseName=<?= $_SESSION['courseName']?>">Grades</a></li>
-                <li><a href="#">Settings</a></li>
+                <li><a href="classSettings.php?courseName=<?= $_SESSION['courseName']?>">Settings</a></li>
     
         </ul>
     </div>

@@ -100,7 +100,7 @@
                         $courseName =getByCourseId($courseId[$i]['course_id']);
                         $_SESSION['courseName']=$courseName['course_name'];
                         ?>
-                     <li><a href="insideClass.php?courseName=<?=$courseName['course_name']?>" id="courseName"onclick="fetchClassName()">Class: <?php echo $courseName['course_name']; ?></a></li><br>
+                     <li><a href="insideClass.php?courseName=<?=$courseName['course_name']?>" id="courseName">Class: <?php echo $courseName['course_name']; ?></a></li><br>
 
                     <?php    
                     }
