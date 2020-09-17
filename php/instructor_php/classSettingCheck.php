@@ -48,26 +48,32 @@ if(isset($_POST['checkInfo']))
 //         }
 //       }
   // }
+  //;
+   // $_SESSION['deleteclass']=="deletekorsi";
+   // header("location:../../view/instructor_view/classSettings.php?deleteclass=OK && course_id={$courseId['course_id']}&& courseName=$courseName");
    
-   
-   $valDeleteClass= deleteCourseInstr($_SESSION['instructorId'], $courseId['course_id']); //from course_instructorService.php
+  $valDeleteClass= courseDeleteInstructor($_SESSION['instructorId'], $courseId['course_id']); //from course_instructorService.php
 
-   if($valid==true)
-   {
-      echo "class material r learner delete successful";
-   }
+   // if($valid==true)
+   // {
+     // echo "class material r learner delete successful";
+   // }
+
 
    if($valDeleteClass==true)
    {
       echo "course from instructor delete hyse";
+      header("location:../../view/instructor_view/dashboard.php");
 
    }
 
-   else if($valDeleteClass==false)
+   else 
    {
       echo "course from instructor delete hytese NA";
+     
+    // header("location:../../php/instructor_php/classSettingCheck.php");
 
-   }
+  }
    // else
    // {
    //    echo "delete UNsuccessful";
