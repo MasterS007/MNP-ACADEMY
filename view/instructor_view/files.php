@@ -106,6 +106,7 @@
                                 ?>
                                 <tr>
                                     <td><a href="../../asset/Class_Materials/<?php echo $courseMaterials[$i]['items_name']?>" class="fileName" ><?php echo $courseMaterials[$i]['items_name']?></a></td>
+                                    <td><?php echo $courseMaterials[$i]['dateNtime']?></td>
                                     <td>
                                         <a href="../../php/instructor_php/metarialCheck.php?FileName=<?=$courseMaterials[$i]['items_name']?>&&courseName=<?= $_SESSION['courseName']?>">
                                           <input type="button"  value="Delete" class="deleteFile" onclick="return confirm('Are you want to delete <?=$courseMaterials[$i]['items_name']?>?')" >

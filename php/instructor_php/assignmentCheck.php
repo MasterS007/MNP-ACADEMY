@@ -35,7 +35,7 @@
             $course_id= $courseId['course_id'];
             $date = new DateTime('now', new DateTimeZone('Asia/Dhaka'));
             $dte =$date->format('Y-m-d H:i:s a');
-            echo $dte;
+            //echo $dte;
 
            
            // echo $file_dir;

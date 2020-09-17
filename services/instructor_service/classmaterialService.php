@@ -62,7 +62,7 @@ function getCourseMaterial($id, $courseId) //by course id and instructor id
         echo "DB connection error";
     }
 
-    $sql = "SELECT * FROM class_materials  Where instructor_id={$id} AND course_id={$courseId} ORDER BY items_name DESC";
+    $sql = "SELECT * FROM class_materials  Where instructor_id={$id} AND course_id={$courseId} ORDER BY dateNtime DESC";
     $result = mysqli_query($conn, $sql);
 	$courses = [];
 
@@ -82,7 +82,7 @@ function insertCourseMaterial($materials)
 			echo "DB connection error";
 		}
 
-	$sql = "INSERT INTO class_materials (items_name, instructor_id, course_id) VALUES ('{$materials['filesName']}', '{$materials['instructorId']}','{$materials['courseId']}')";
+	$sql = "INSERT INTO class_materials (items_name, instructor_id, course_id, dateNtime) VALUES ('{$materials['filesName']}', '{$materials['instructorId']}','{$materials['courseId']}','{$materials['dateNtime']}')";
 	if(mysqli_query($conn, $sql)){
 			
 			return true;

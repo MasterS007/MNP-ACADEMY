@@ -62,7 +62,7 @@ function getAssignment($id, $courseId) //by course id and instructor id
         echo "DB connection error";
     }
 
-    $sql = "SELECT * FROM assignment  Where instructor_id={$id} AND course_id={$courseId} ORDER BY assignment_name DESC";
+    $sql = "SELECT * FROM assignment  Where instructor_id={$id} AND course_id={$courseId} ORDER BY dateNtime DESC";
     $result = mysqli_query($conn, $sql);
 	$courses = [];
 

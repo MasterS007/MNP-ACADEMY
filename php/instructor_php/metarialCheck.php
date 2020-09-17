@@ -33,13 +33,15 @@
             $courseName=$_SESSION['courseName'];
             $courseId=getByCourseName($courseName);
             $course_id= $courseId['course_id'];
-           
+            $date = new DateTime('now', new DateTimeZone('Asia/Dhaka'));
+            $dte =$date->format('Y-m-d H:i:s a');
            
            // echo $file_dir;
             $materials=[
                 'filesName'=>  $fileName,
                 'instructorId'=> $_SESSION['instructorId'],
-                'courseId'=> $course_id
+                'courseId'=> $course_id,
+                'dateNtime'=>$dte
             ];
 
             // $showAllFiles=getCourseMaterial( $instructor_id, $course_id);
