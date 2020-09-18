@@ -31,7 +31,7 @@ function profileEdit() {
         '&learnerId=' + window.encodeURIComponent(learnerId) +
         '&username=' + window.encodeURIComponent(username) +
         '&lname=' + window.encodeURIComponent(lname) +
-        '&emailId=' + window.encodeURIComponent(email) +
+        '&email=' + window.encodeURIComponent(email) +
         '&password=' + window.encodeURIComponent(password) +
         '&conpassword=' + window.encodeURIComponent(conpassword);
     // var myObj = {
@@ -52,6 +52,8 @@ function profileEdit() {
         if (this.readyState == 4 && this.status == 200) {
 
             alert(this.responseText);
+            edit_popup_close();
+            window.location.reload();
 
         }
     }
