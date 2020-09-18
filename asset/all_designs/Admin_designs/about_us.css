@@ -179,11 +179,10 @@ main div.Gridviewdiv:nth-child(odd) {
     height: 35%;
 }
 
-.bg-modal-edit {
+.bg-modal_edit {
     width: 100%;
     height: 100%;
     background-color: black;
-    opacity: 0.9;
     position: absolute;
     top: 0;
     display: flex;
@@ -192,13 +191,12 @@ main div.Gridviewdiv:nth-child(odd) {
     display: none;
 }
 
-.modal-content-edit {
-    margin-top: 100px;
+.modal-content_edit {
+    margin-top: 50px;
     margin-left: 10%;
     width: 800px;
     height: 400px;
-    background-color: rgb(26, 23, 23);
-    opacity: 1;
+    background-color: rgba(243, 240, 240, 0.486);
     border-radius: 10px;
     text-align: center;
     padding: 20px;

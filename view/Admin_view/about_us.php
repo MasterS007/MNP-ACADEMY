@@ -83,7 +83,7 @@
                                                 <td><?=$aboutData[$i]['SubTitle']?></td>
                                                 <td><?=$aboutData[$i]['Descriptions']?></td>
                                                
-                                          <td><input type="button" value="Edit" onclick="about_edit_open() "> 
+                                          <td><input type="button" value="Edit" onclick="edit_popup_open()"> 
                                           <a href="#">Delete</a>
                                           </td>
                                           </tr><?php
@@ -130,39 +130,12 @@
                     </div>
                     </div>
 
-
 <!-- for edit post and open modal -->
                         <div class= "bg-modal_edit"  id="bg-modal_edit">
 			            <div class = "modal-content_edit">
-				         <div class="close" onclick="about_edit_close()">+</div>
-                            <form action="../../php/admin_php/about_us.php" onsubmit=return validation() method="post">
-					        <table>
-						    <tr >
-							<td>Title</td>
-							<td>:</td>
-							<td><input id="title" name="title" type="text" onkeyup="Title_Remover()" onblur="Title_empty()"></td>
-							<td><i  id="titleMsg" style="color:white; font-size: 10px;"></i></td>
-						</tr>		
-						<tr><td colspan="4"><hr/></td></tr>
-						<tr>
-							<td>Sub Title</td>
-							<td>:</td>
-							<td>
-								<input type="text" class= "Sub-Title" id="sub_title" name="sub_title"  onkeyup="ST_Remover()" onblur="ST_empty()">
-							</td>
-							<td ><i id="ST_Msg" style="color:white;font-size: 10px; white-space: pre;"  ></i></td>
-						</tr>		
-						<tr><td colspan="4"><hr/></td></tr>
-						<tr class= "Description">
-							<td>Descriptions</td>
-							<td>:</td>
-							<td><input id="descriptions"  name="descriptions" type="text" onkeyup="des_Remover()" onblur="des_eMpty()"></td>
-							<td><i id="descriptionMsg"  style="color:white;font-size: 10px;"></i></td>
-						</tr>		
-						<tr><td colspan="4"><hr/></td></tr>
-					 </table>
-                	  <input type="submit"  name="submit" value="Submit" class="Submitbtn" >
-            		</form> 
+				         <div class="close" onclick="edit_popup_close()">+</div>
+                         uguvuigbubg
+                            
                     </div>
                     </div>
                               
