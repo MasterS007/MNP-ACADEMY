@@ -10,7 +10,7 @@ $insertValid=false;
         $Nameclass = $alldata->className;
         $isntructor_id = $_SESSION['userid'];
         $courseName= $alldata->courseName;
-
+        $_SESSION['courseName']=$courseName;
       // echo $courseName;
 
          if(!empty($Nameclass) && !empty($isntructor_id) && !empty($courseName))
@@ -24,6 +24,7 @@ $insertValid=false;
 
             ];
 
+          
             $isInserted=insertIC($course_instr);  //method of course_instructorService.php 
 
             if($isInserted)
