@@ -22,6 +22,24 @@
 		return $courses;
     }
 
+	function getAllCategory()
+	{
+		$conn = dbConnection();
+
+		if(!$conn){
+			echo "DB connection error";
+		}
+
+		$sql = "select * from course_category";
+		$result = mysqli_query($conn, $sql);
+		$courses = [];
+
+		while($row = mysqli_fetch_assoc($result)){
+			array_push($courses, $row);
+		}
+
+		return $courses;
+	}
 	function getAllCourse(){
 		$conn = dbConnection();
 

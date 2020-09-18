@@ -38,7 +38,7 @@ function Learner_update($user){
 			echo "DB connection error";
 		}
 
-		$sql = "update users set u_name='{$user['name']}', username='{$user['username']}', password='{$user['password']}', email='{$user['email']}' where id={$user['id']}";
+		$sql = "UPDATE users SET u_name='{$user['nameU']}', username='{$user['uname']}', u_password='{$user['password']}', email='{$user['email']}' where id={$user['learnerId']}";
 
 		if(mysqli_query($conn, $sql)){
 			return true;

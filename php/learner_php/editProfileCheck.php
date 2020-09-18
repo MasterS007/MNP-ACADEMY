@@ -54,14 +54,28 @@
     $learnerId=$_POST['learnerId'];
     $learnerName= $_POST['lname'];
     $learnerUsername=$_POST['username'];
-    $learnerEmail=$_POST['emailId'];
+    $learnerEmail=$_POST['email'];
     $newPassword =$_POST['password'];
     $conPassword=$_POST['conpassword'];
 
-
-        echo   $learnerName ;
-
-
+    $learner=[
+        'nameU'=>$learnerName,
+        'uname'=>$learnerUsername,
+        'password'=>$newPassword,
+        'email'=>$learnerEmail,
+        'learnerId'=>$learnerId
+        
+    ];
+    $validEdit = Learner_update($learner);
+    if( $validEdit)
+    {
+        echo "Update Successfully!";
+    }
+    else
+    {
+        echo "Something went wrong!";
+    }
+      //  echo   $learnerName ;
 
 
     }

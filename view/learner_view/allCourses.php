@@ -1,6 +1,6 @@
 <?php
        session_start();
-       require_once('../../services/learner_service/courseService.php');
+       require_once('../../services/courseService.php');
 
        $id= $_SESSION['userid'];
        if(!isset($_SESSION['username'])){
@@ -54,11 +54,25 @@
 <br>
 
 <div class="row">
+
   <div class="column" style="background-color:#aaa;">
-    <h2><a href="addCourses.php">Science</a></h2>
+       
+  <?php
+
+    $courseInfo =getAllCategory();
+
+    for($i=0; $i<count($courseInfo); $i++)
+    {
+      ?>
+      
+    <h2><a href="addCourses.php?courseCategory=<?=$courseInfo[$i]['category_name']?>"><?=$courseInfo[$i]['category_name']?></a></h2>
     <p>Some text..</p>
+      <?php
+    }
+?>
+   
   </div>
-  <div class="column" style="background-color:#bbb;">
+  <!-- <div class="column" style="background-color:#bbb;">
     <h2>Computer Science</h2>
     <p>Some text..</p>
   </div>
@@ -68,7 +82,7 @@
   <div class="column" style="background-color:#ccc;">
     <h2>Programming Language</h2>
     <p>Some text..</p>
-  </div>
+  </div> -->
   
 </div>
 

@@ -1,12 +1,14 @@
 <?php
        session_start();
-       require_once('../../services/learner_service/courseService.php');
+       require_once('../../services/courseService.php');
 
        $id= $_SESSION['userid'];
        if(!isset($_SESSION['username'])){
    
            header('location: ../login.php?error=invalid_request');
        }
+
+       $categoryName =$_GET['courseCategory'];
 
  ?> 
 <!DOCTYPE html>
@@ -42,7 +44,7 @@
 </nav>
 </header>
 
-<h2>Science</h2>
+<h2><?= $categoryName?></h2>
 
 <p>These are the courses available right now on MNP Academy</p>
 
@@ -54,11 +56,18 @@
 
 <div class="row">
     <div class="column" style="background-color:#aaa;">
+
+    <?php
+
+      $courseInfo= getByCategory($categoryName);
+
+      for($i=0; $i<count( $courseInfo);)
+    ?>
       <h2>Physics </h2>
       <p>Some text..</p>
-      <form action="">
-        <label for="cars">Choose a Instructor:</label>
-        <select name="List of instructor " id="cars">
+      
+        <label>Choose a Instructor:</label>
+        <select name="List of instructor ">
           <option value="volvo">Siam</option>
           <option value="saab">Saab</option>
           <option value="opel">Parthib</option>
@@ -66,7 +75,7 @@
         </select>
         <br><br>
         <input type="submit" value="Enroll now">
-      </form>
+   
      
       
     </div>
