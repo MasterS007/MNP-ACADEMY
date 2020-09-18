@@ -179,7 +179,7 @@ main div.Gridviewdiv:nth-child(odd) {
     height: 35%;
 }
 
-.bg-modal_view {
+.bg-modal-edit {
     width: 100%;
     height: 100%;
     background-color: black;
@@ -192,7 +192,7 @@ main div.Gridviewdiv:nth-child(odd) {
     display: none;
 }
 
-.modal-content_view {
+.modal-content-edit {
     margin-top: 100px;
     margin-left: 10%;
     width: 800px;
