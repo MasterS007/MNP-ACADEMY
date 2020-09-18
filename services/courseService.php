@@ -9,7 +9,7 @@
 		if(!$conn){
 			echo "DB connection error";
 		}
-		$sql = "select course_name from all_courses where course_category='$category'";
+		$sql = "select * from all_courses where course_category='$category'";
 		$result = mysqli_query($conn, $sql);
         $courses = [];
         while($row = mysqli_fetch_assoc($result)){

@@ -1,6 +1,9 @@
 <?php
        session_start();
        require_once('../../services/courseService.php');
+       require_once('../../services/instructor_service/course_instructorService.php');
+       require_once('../../services/instructor_service/instructorService.php');
+       
 
        $id= $_SESSION['userid'];
        if(!isset($_SESSION['username'])){
@@ -54,82 +57,53 @@
 </div>
 <br>
 
-<div class="row">
-    <div class="column" style="background-color:#aaa;">
+
 
     <?php
 
-      $courseInfo= getByCategory($categoryName);
+      $courseInfo= getByCategory($categoryName); //from
 
-      for($i=0; $i<count( $courseInfo);)
-    ?>
-      <h2>Physics </h2>
-      <p>Some text..</p>
-      
-        <label>Choose a Instructor:</label>
+    
+
+      for($i=0; $i<count($courseInfo);$i++)
+      {
+        
+        ?>
+        <div class="row">
+        <div class="column" style="background-color:#aaa;">
+         <h2><?=$courseInfo[$i]['course_name']?> </h2>
+         <p>Some text..</p>
+         <label>Choose a Instructor:</label>
         <select name="List of instructor ">
-          <option value="volvo">Siam</option>
-          <option value="saab">Saab</option>
-          <option value="opel">Parthib</option>
-          <option value="audi">Tuhin</option>
-        </select>
-        <br><br>
-        <input type="submit" value="Enroll now">
-   
-     
-      
-    </div>
-    <div class="column" style="background-color:#bbb;">
-      <h2>Chemistry</h2>
-      <p>Some text..</p>
-      <form action="">
-        <label for="cars">Choose a Instructor:</label>
-        <select name="List of instructor " id="cars">
-          <option value="volvo">Siam</option>
-          <option value="saab">Saab</option>
-          <option value="opel">Parthib</option>
-          <option value="audi">Tuhin</option>
-        </select>
-        <br><br>
-        <input type="submit" value="Enroll now">
-      </form>
-    </div>
-  </div>
-  
-  <div class="row">
-    <div class="column" style="background-color:#ccc;">
-      <h2>Biology</h2>
-      <form action="">
-        <label for="cars">Choose a Instructor:</label>
-        <select name="List of instructor " id="cars">
-          <option value="volvo">Siam</option>
-          <option value="saab">Saab</option>
-          <option value="opel">Parthib</option>
-          <option value="audi">Tuhin</option>
-        </select>
-        <br><br>
-        <input type="submit" value="Enroll now">
-      </form>
-    </div>
-  </div>
-  <div class="column" style="background-color:#bbb;">
-    <h2>Math</h2>
-    <p>Some text..</p>
-    <form action="">
-      <label for="cars">Choose a Instructor:</label>
-      <select name="List of instructor " id="cars">
-        <option value="volvo">Siam</option>
-        <option value="saab">Saab</option>
-        <option value="opel">Parthib</option>
-        <option value="audi">Tuhin</option>
-      </select>
-      <br><br>
-      <input type="submit" value="Enroll now">
-    </form>
-  </div>
-</div>
-  
+        <?php
 
+        $getInstructor= courseidget($courseInfo[$i]['course_id']);//from course_instructorService.php
+          for($j=0; $j<count( $getInstructor); $j++)
+          {
+
+             $instructorId=$getInstructor[$j]['instructor_id']; 
+             $instructorInfo= getByID( $instructorId); //from userService.php
+            ?>
+
+                <option value="<?= $instructorInfo['u_name']?>"><?= $instructorInfo['u_name']?></option>
+
+            <?php
+          }
+          ?>
+          
+      
+        </select>
+        <br><br>
+        <input type="submit" value="Enroll now">
+        </div>
+        <?php
+        
+      }
+    ?>      
+
+    
+   
+    
 
 
 
