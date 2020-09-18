@@ -26,9 +26,7 @@
 </head>
 <body>
     <input type="checkbox" id="check" style="display:none;">
- 
-    
-        <header> 
+     <header> 
             <label for="check">
 
                 <i class="fa fa-bars" id="sidebar_btn" ></i>
@@ -101,7 +99,7 @@
          
         </div>
      
-    <div class="content"></div>
+    
     
 </body>
 </html>
