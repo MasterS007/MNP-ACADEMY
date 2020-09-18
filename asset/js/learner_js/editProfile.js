@@ -1,13 +1,10 @@
 "use strict"
+// window.nvalid = false;
+// window.evalid = false;
+// window.uvalid = false;
+// window.pvalid = false;
+// window.pconvalid = false;
 
-window.nvalid = false;
-window.evalid = false;
-window.uvalid = false;
-window.pvalid = false;
-
-var i;
-
-//popup function
 function edit_popup_open() {
     var edit = document.getElementById('bg-modal');
     edit.style.display = 'block';
@@ -19,6 +16,49 @@ function edit_popup_close() {
     var close = document.getElementById('bg-modal');
     close.style.display = 'none';
 }
+
+function profileEdit() {
+    var learnerId = document.getElementById("learnerid").value;
+    var username = document.getElementById("username").value;
+    //alert(username);
+    var lname = document.getElementById("lname").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var conpassword = document.getElementById("conpassword").value;
+
+    var lernerInfo = '' +
+        'check_info=' + window.encodeURIComponent('ON') +
+        '&learnerId=' + window.encodeURIComponent(learnerId) +
+        '&username=' + window.encodeURIComponent(username) +
+        '&lname=' + window.encodeURIComponent(lname) +
+        '&emailId=' + window.encodeURIComponent(email) +
+        '&password=' + window.encodeURIComponent(password) +
+        '&conpassword=' + window.encodeURIComponent(conpassword);
+    // var myObj = {
+    //     'learnerId': learnerId,
+    //     'username ': username,
+    //     'lname ': lname,
+    //     'email': email,
+    //     'password': password,
+    //     'conpassword': conpassword
+    // };
+
+    // var lernerInfo = JSON.stringify(myObj);
+    var xttp = new XMLHttpRequest();
+    xttp.open("POST", "../../php/learner_php/editProfileCheck.php", true);
+    xttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xttp.send(lernerInfo);
+    xttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+
+            alert(this.responseText);
+
+        }
+    }
+
+}
+
+
 //name validation
 function neMpty() {
     var name = document.getElementById("lname").value;
@@ -174,46 +214,12 @@ function pconRemover() {
     document.getElementById("conpassMsg").innerHTML = "";
 }
 
-
-function profileEdit() {
-    var learnerId = document.getElementById("learnerid").value;
-    var username = document.getElementById("username").value;
-    //alert(username);
-    var lname = document.getElementById("lname").value;
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
-    var conpassword = document.getElementById("conpassword").value;
-
-    var myObj = {
-        'learnerId': learnerId,
-        'username ': username,
-        'lname ': lname,
-        'email': email,
-        'password': password,
-        'conpassword': conpassword
-    };
-
-    var lernerInfo = JSON.stringify(myObj);
-    var xttp = new XMLHttpRequest();
-    xttp.open("POST", "../../php/learner_php/editProfileCheck.php", true);
-    xttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xttp.send("checkId=" + lernerInfo);
-    xttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-
-            alert(this.responseText);
-
-        }
-    }
-
-}
-
 function validation() {
-    if (window.nvalid == true && window.evalid == true && window.gvalid == true && window.pconvalid == true && window.uvalid == true &&
-        window.dvalid == true && window.pvalid == true) {
-        return true;
+    if (window.nvalid == true && window.evalid == true && window.pconvalid == true && window.uvalid == true && window.pvalid == true) {
 
+
+        ;
     } else {
-        return false;
+        alert("Validate hoy nai");
     }
 }
