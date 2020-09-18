@@ -109,7 +109,7 @@
 							</td>
 						</tr>	
 					 </table>
-                	  <input type="button"  name="edit" value="Submit" class="Submitbtn" onclick="validation()" >
+                	  <input type="button"  name="edit" value="Submit" class="Submitbtn" onclick="profileEdit()" >
             		</form>    
            
        </div>

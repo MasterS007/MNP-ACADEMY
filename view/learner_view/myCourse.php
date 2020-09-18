@@ -11,14 +11,13 @@
            header('location: ../login.php?error=invalid_request');
        }
 
-       $categoryName =$_GET['courseCategory'];
 
  ?> 
 <!DOCTYPE html>
 <html>
 <head>
   <title>Science</title>
-<link rel="stylesheet" href="../../asset/all_designs/learner_designs/addCoursesStyle.css">
+<link rel="stylesheet" href="../../asset/all_designs/learner_designs/myCoursesStyle.css">
 
 <script type="text/javascript" src="../../asset/js/learner_js/addCoursesScript.js"></script>
 
@@ -100,11 +99,6 @@
         
       }
     ?>      
-
-    
-   
-    
-
 
 
 

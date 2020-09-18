@@ -16,6 +16,27 @@
 //     }
 
 // }
+
+
+function about_popup_open() {
+    var open = document.getElementById('bg-modal');
+    open.style.display = 'block';
+}
+
+function about_popup_close() {
+    var close = document.getElementById('bg-modal');
+    close.style.display = 'none';
+}
+
+function edit_popup_open() {
+    var edit = document.getElementById('bg-modal_edit');
+    edit.style.display = 'block';
+}
+
+function edit_popup_close() {
+    var edit_close = document.getElementById('bg-modal_edit');
+    edit_close.style.display = 'none';
+}
 "use strict"
 window.T_Valid = false;
 window.ST_Valid = false;
@@ -87,29 +108,4 @@ function validation() {
     } else {
         return false;
     }
-}
-
-
-
-
-
-
-function about_popup_open() {
-    var open = document.getElementById('bg-modal');
-    open.style.display = 'block';
-}
-
-function about_popup_close() {
-    var close = document.getElementById('bg-modal');
-    close.style.display = 'none';
-}
-
-function about_edit_open() {
-    var edit = document.getElementById('bg-modal_edit');
-    edit.style.display = 'block';
-}
-
-function about_edit_close() {
-    var edit_close = document.getElementById('bg-modal_edit');
-    edit_close.style.display = 'none';
 }

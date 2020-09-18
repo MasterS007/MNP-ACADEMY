@@ -2,6 +2,26 @@
 
 require_once("../../databaseConn/dbCon.php");
 
+function courseidget($id)
+{
+    $conn = dbConnection();
+
+    if(!$conn){
+        echo "DB connection error";
+    }
+
+    $sql = "SELECT instructor_id from instructor_course Where course_id={$id}";
+    $result = mysqli_query($conn, $sql);
+	$courses = [];
+
+    while($row = mysqli_fetch_assoc($result)){
+        array_push($courses, $row);
+    }
+
+    return $courses;
+    mysqli_close($conn);
+}
+
 function courseDeleteInstructor($instructorId, $courseId )
 {
 		$conn = dbConnection();
