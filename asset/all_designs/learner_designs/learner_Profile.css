@@ -10,7 +10,7 @@ box-sizing: border-box;
  .card-container{ 
     width: 54%;
     height:80%;
-    background:rgb(170, 164, 164);
+    background:rgb(253, 253, 253);
     border-radius: 6px;
     position: absolute;
     top: 50%;
@@ -95,7 +95,7 @@ box-sizing: border-box;
 
 .lower-container h4{
 
-   color: #7f00ff;
+   color: #4b4a4d;
    opacity: .6;
    font-weight: bold;
 
@@ -239,7 +239,7 @@ background:  rgba(37, 114, 165, 0.349);
     width: 100%;
     height: 100%;
     background-color: black;
-    opacity: 0.8;
+    opacity: 0.9;
     position: absolute;
     top: 0;
     display: flex;
@@ -249,12 +249,12 @@ background:  rgba(37, 114, 165, 0.349);
 }
 
 .modal-content {
-    margin-top: 100px;
-    margin-left: 20%;
+    margin-top: 250px;
+    margin-left: 30%;
     width: 350px;
     height: 450px;
     background-color: rgb(26, 23, 23);
-    opacity: 1;
+    opacity: 2;
     border-radius: 15px;
     text-align: center;
     padding: 20px;

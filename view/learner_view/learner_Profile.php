@@ -1,10 +1,9 @@
 <?php
        session_start();
-       require_once('../../services/courseService.php');
+       require_once('../../services/learner_service/EditProfileService.php');
 
        $id= $_SESSION['userid'];
-       if(!isset($_SESSION['username'])){
-   
+       if(!isset($_SESSION['username'])){  
            header('location: ../login.php?error=invalid_request');
        }
 
@@ -49,11 +48,66 @@
     </header>
 <div class ="card-container ">
 
-<div class ="bg-model" id="bg-model">
+<div class ="bg-modal" id="bg-modal">
 
-       <div class="model-content" >
-           <div class="close" onclick="edit_popup_close()">+
-           </div>
+       <div class="modal-content" >
+           <div class="close" onclick="edit_popup_close()">+</div>
+       
+           <form action="../../php/learner_php/edit_learner_profile.php" onsubmit=return validation() method="post">
+					<table cellpadding="9"  style="color:white" cellspacing="0">
+						<tr>
+                            
+							<td>Name</td>
+                            <td>:</td>
+                           
+							<td><input id="name" name="name"  type="text" onkeyup="nRemover()" onblur="neMpty()"></td>
+							<td><i  id="nameMsg" style="color:white; font-size: 10px;"></i></td>
+						</tr>		
+						<tr><td colspan="4"><hr/></td></tr>
+						<tr>
+							<td>Email</td>
+							<td>:</td>
+							<td>
+								<input type="text" id="email"  name="email"  onkeyup="eRemover()" onblur="eEMpty()">
+								<abbr title="hint: sample@example.com"><b>i</b></abbr>
+							</td>
+							<td ><i id="emailMsg" style="color:white;font-size: 10px; white-space: pre;"  ></i></td>
+						</tr>		
+						<tr><td colspan="4"><hr/></td></tr>
+						<tr>
+							<td>User Name</td>
+							<td>:</td>
+							<td><input id="uname" name="userName" type="text"  onkeyup="uRemover()" onblur="ueMpty()"></td>
+							<td><i id="unameMsg"  style="color:white;font-size: 10px;"></i></td>
+						</tr>		
+						<tr><td colspan="4"><hr/></td></tr>
+						<tr>
+							<td>Password</td>
+							<td>:</td>
+							<td><input id="password" name="password" type="password" value=" onkeyup="pRemover()" onblur="PeMpty()"></td>
+							<td><i id="passMsg" style="color:white; font-size: 10px;"></i></td>
+						</tr>		
+						<tr><td colspan="4"><hr/></td></tr>
+						<tr>
+							<td>Confirm Password</td>
+							<td>:</td>
+							<td><input id="conpassword" name="confirmPassword" type="password"  onkeyup="pconRemover()" onblur="PconeMpty()"></td>
+							<td><i id="conpassMsg" style="color:white; font-size: 10px;"></i></td>
+                        </tr>
+                        <tr>
+							<td></td>
+							<td>:</td>
+							<td><input  type="hidden"  ></td>
+							<td></td>
+						</tr>		
+						
+							<td colspan="4"><hr>	
+							</td>
+						</tr>	
+					 </table>
+                	  <input type="submit"  name="edit" value="Submit" class="Submitbtn" >
+            		</form>    
+           
        </div>
     
     
@@ -74,9 +128,9 @@
 
         <div>
         <h3> Nila</h3> 
-        <h4>CSE Student</h4>
+        <h4>Username :nila1313</h4>
 
-        <h5>Username :nila1313</h5>
+        <h5>CSE Student</h5>
         <h5>Email Adress :chaity13x@gmail.com</h5>
 
         
@@ -99,9 +153,7 @@
     </div>
     <div class="lower-container">
         <input type="button" class="btn " name="" style="cursor:pointer;"   value="Edit Profile" onclick="edit_popup_open()">
-        <input type="button" value="Add" onclick="edit_popup_open()">
         
-
         <a href ="dashboard.php" class="btn"> Go Back </a>
 
 
