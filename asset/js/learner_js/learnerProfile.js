@@ -56,7 +56,7 @@ function eEMpty() {
         document.getElementById("emailMsg").innerHTML = "  *field can't be empty!";
         window.evalid = false;
     } else if (email != "") {
-        xhttp.open('POST', '../../php/add_admin.php', true);
+        xhttp.open('POST', '../../php/editProfileCheck.php', true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhttp.send(email_datas);
         xhttp.onreadystatechange = function() {
@@ -96,7 +96,7 @@ function ueMpty() {
 
         window.uvalid = false;
     } else if (uname != "") {
-        xhttp.open('POST', '../../php/learner_php/edit_learner_profile.php', true);
+        xhttp.open('POST', '../../php/learner_php/editProfileCheck.php', true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhttp.send(username_datas);
         xhttp.onreadystatechange = function() {
@@ -213,20 +213,52 @@ function pconRemover() {
     document.getElementById("conpassMsg").innerHTML = "";
 }
 
+
+function editOk()
+{
+    var learnerId =document.getElementById("learnerid").value;
+        var username = document.getElementById("uname").value;
+        alert(username);
+        var lname = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var conpassword = document.getElementById("conpassword").value;
+        
+       var myObj = {
+           'learnerId': learnerId,
+           'username ': username,
+           'lname ': lname ,
+           'email':email,
+           'password':password,
+           'conpassword':conpassword
+       };
+
+       var lernerInfo = JSON.stringify(myObj);
+        var xttp = new XMLHttpRequest();
+        xttp.open("POST","../../php/learner_php/editProfileCheck.php", true);
+        xttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xttp.send("checkId="+lernerInfo);
+        xttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+    
+                alert(this.responseText); 
+    
+            }
+        }
+
+}
 function validation(){
     if (window.nvalid == true && window.evalid == true && window.gvalid == true && window.pconvalid == true && window.uvalid == true &&
         window.dvalid == true && window.pvalid == true) 
     {
         return true;
-    } 
+
+        } 
     else 
     {
         return false;
     }
 }
-
-
-
 
 
 

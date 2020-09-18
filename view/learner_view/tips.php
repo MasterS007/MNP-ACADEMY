@@ -68,7 +68,7 @@
     </div>
     <div class="lower-container">
        
-        <a href ="#" class="btn"> Go Back </a>
+        <a href ="dashboard.php" class="btn"> Go Back </a>
 
 
     </div>
