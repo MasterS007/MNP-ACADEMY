@@ -1,12 +1,10 @@
 
-
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>About Us</title>
     
-    <link rel="stylesheet" type="text/css" href="../../asset/all_designs/learner_designs/aboutUsStyle.css">
+    <link rel="stylesheet" type="text/css" href="../../asset/all_designs/learner_designs/tipsStyle.css">
     
    
 </head>
@@ -39,7 +37,7 @@
     
     <div class="upper-container">
         
-            <h1> About Us</h1> 
+            <h1> Tips For Students</h1> 
             <h4>Intro</h4>
     
           
@@ -58,7 +56,7 @@
         </div>
 
         <div>
-        <p>Please insert ABOUT US </p>
+        <p>Please insert Tips </p>
 
         </div>
 
@@ -70,7 +68,7 @@
     </div>
     <div class="lower-container">
        
-        <a href ="dashboard.php" class="btn"> Go Back </a>
+        <a href ="#" class="btn"> Go Back </a>
 
 
     </div>
