@@ -97,7 +97,7 @@
 
          <a href="#"><i class="fa fa-table"></i><span>Tips</span></a>
          <a href="#"><i class="fa fa-th"></i><span>Forum</span></a>
-         <a href="#"><i class="fa fa-info-circle"></i><span>About us</span></a>
+         <a href="aboutUs.php"><i class="fa fa-info-circle"></i><span>About us</span></a>
          
         </div>
      
