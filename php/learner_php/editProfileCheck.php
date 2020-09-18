@@ -41,18 +41,25 @@
     }
 
 
-    if(isset($_POST['checkId']))
+    if(isset($_POST['check_info']))
     {
-        $learnerInfo = json_decode($_POST['checkId']);
-        $learnerId= $learnerInfo ->learnerId;
-        $learnerUname = $learnerInfo->username;
-        $learnerName = $learnerInfo ->lname;
+    //     $learnerInfo = json_decode($_POST['checkId']);
+    //     $learnerId= $learnerInfo->learnerId;
+    //    //$learnerName = $learnerInfo->lname;
        
-        $learnerEmail = $learnerInfo->email;
-        $newPassword =$learnerInfo->password;
-        $conPassword=$learnerInfo->conpassword;
+    //     $learnerEmail = $learnerInfo->email;
+    //     $newPassword =$learnerInfo->password;
+    //     $conPassword=$learnerInfo->conpassword;
 
-        echo $learnerName;
+    $learnerId=$_POST['learnerId'];
+    $learnerName= $_POST['lname'];
+    $learnerUsername=$_POST['username'];
+    $learnerEmail=$_POST['emailId'];
+    $newPassword =$_POST['password'];
+    $conPassword=$_POST['conpassword'];
+
+
+        echo   $learnerName ;
 
 
 

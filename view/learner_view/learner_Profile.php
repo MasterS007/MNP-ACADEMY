@@ -12,13 +12,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Profile Page</title>
+   
     
     <link rel="stylesheet" type="text/css" href="../../asset/all_designs/learner_designs/learner_Profile.css">
 
-    <script type="text/javascript" src="../../asset/js/learner_js/learnerProfile.js"></script>
-    <!-- <script type="test/javascript" src="../../asset/js//learner_js/learnerProfile.js">   </script> -->
-    
+    <script type="text/javascript" src="../../asset/js/learner_js/editProfile.js"></script>
+    <title>Profile Page</title>
    
 </head>
 
@@ -62,11 +61,10 @@
                         $learnersInfo = getById($id);
                         ?> 
 						<tr>
-                            
 							<td>Name</td>
                             <td>:</td>
                            
-							<td><input type="text" id="name" name="name" value="<?=$learnersInfo['u_name']?>"  onkeyup="nRemover()" onblur="neMpty()"></td>
+							<td><input type="text" id="lname" name="name" value="<?=$learnersInfo['u_name']?>"  onkeyup="nRemover()" onblur="neMpty()"></td>
 							<td><i  id="nameMsg" style="color:white; font-size: 10px;"></i></td>
 						</tr>		
 						<tr><td colspan="4"><hr/></td></tr>
@@ -83,7 +81,7 @@
 						<tr>
 							<td>User Name</td>
 							<td>:</td>
-							<td><input type="text"  id="uname" name="userName" value="<?=$learnersInfo['username']?>"  onkeyup="uRemover()" onblur="ueMpty()"></td>
+							<td><input type="text"  id="username" name="userName" value="<?=$learnersInfo['username']?>"  onkeyup="uRemover()" onblur="ueMpty()"></td>
 							<td><i id="unameMsg"  style="color:white;font-size: 10px;"></i></td>
 						</tr>		
 						<tr><td colspan="4"><hr/></td></tr>
@@ -111,7 +109,7 @@
 							</td>
 						</tr>	
 					 </table>
-                	  <input type="button"  name="edit" value="Submit" class="Submitbtn" onclick=editOk() >
+                	  <input type="button"  name="edit" value="Submit" class="Submitbtn" onclick="validation()" >
             		</form>    
            
        </div>
@@ -166,9 +164,6 @@
 
     </div>
     
-
-    
-
 
     
 
