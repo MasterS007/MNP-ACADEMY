@@ -134,7 +134,7 @@
                         <div class= "bg-modal_edit"  id="bg-modal_edit">
 			            <div class = "modal-content_edit">
 				         <div class="close" onclick="edit_popup_close()">+</div>
-                         uguvuigbubg
+                         
                             
                     </div>
                     </div>
