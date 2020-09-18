@@ -4,16 +4,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-<<<<<<< HEAD
-
-header{
-
-    position:fixed ;
-    background: grey ;
-    padding:9px;
-    width: 100%;
-    height:30 px;
-=======
 header {
     background: grey;
     padding: 9px;
@@ -66,20 +56,14 @@ ul.navigation li.searchBox {
     /*-webkit-transition: width 0.4s ease-in-out;
      transition: width 0.4s ease-in-out;*/
 }
->>>>>>> 961b7c31ab239b143ec0f05535910a58ea1e733b
 
+ul.navigation li.searchBox input[type=text]:focus {
+    width: 75%;
 }
 
-<<<<<<< HEAD
-.left_area h3{
- 
-    color:white;
-    margin:0;
-=======
 .left_area h3 {
     color: white;
     margin: 0;
->>>>>>> 961b7c31ab239b143ec0f05535910a58ea1e733b
     text-transform: uppercase;
     font-size: 22px;
     font-weight: 900;
@@ -107,22 +91,12 @@ ul.navigation li.searchBox {
     background: rgba(37, 114, 165, 0.349);
 }
 
-<<<<<<< HEAD
-.sidebar{
-
-    background: rgb(42, 43, 51) ;
-    margin-top:70px;
-    padding-top:30px;
-    position:fixed;
-    left:0;
-=======
 .sidebar {
     background: rgb(42, 43, 51);
     margin-top: 118px;
     padding-top: 30px;
     position: fixed;
     left: 0;
->>>>>>> 961b7c31ab239b143ec0f05535910a58ea1e733b
     width: 250px;
     height: 100%;
     transition: 0.5s;
@@ -165,19 +139,11 @@ ul.navigation li.searchBox {
 label #sidebar_btn {
     z-index: 1;
     color: white;
-<<<<<<< HEAD
-    position:fixed;
-    cursor:pointer;
-    left:300px;
-    font-size:20px;
-    margin:5 px 0;
-=======
     position: fixed;
     cursor: pointer;
     left: 300px;
     font-size: 20px;
     margin: 5px 0;
->>>>>>> 961b7c31ab239b143ec0f05535910a58ea1e733b
     transition: 0.5s;
     transition-property: color;
 }
@@ -212,12 +178,4 @@ label #sidebar_btn:hover {
 
 #check:checked~.content {
     margin-left: 60px;
-<<<<<<< HEAD
-
-}
-
-#check{
-    dispaly:none;
-=======
->>>>>>> 961b7c31ab239b143ec0f05535910a58ea1e733b
 }
