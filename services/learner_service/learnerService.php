@@ -16,7 +16,7 @@
 		return $row;
 	}
 
-function getByID(){
+function getByID($id){
     $conn = dbConnection();
 
     if(!$conn){

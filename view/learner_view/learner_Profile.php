@@ -1,6 +1,6 @@
 <?php
        session_start();
-       require_once('../../services/learner_service/EditProfileService.php');
+       require_once('../../services/learner_service/learnerService.php');
 
        $id= $_SESSION['userid'];
        if(!isset($_SESSION['username'])){  
@@ -23,7 +23,7 @@
 </head>
 
 
-<body>
+<body >
     <header>
         <div class="left_area" >
             <h3> MNP <span>ACADEMY</span> </h3>  
@@ -53,14 +53,20 @@
        <div class="modal-content" >
            <div class="close" onclick="edit_popup_close()">+</div>
        
-           <form action="../../php/learner_php/edit_learner_profile.php" onsubmit=return validation() method="post">
+           <form action="" method="post">
+               <input type="text" id="learnerid" value="<?=$id?>" style="display:none;">
 					<table cellpadding="9"  style="color:white" cellspacing="0">
+                      
+                    <?php
+
+                        $learnersInfo = getById($id);
+                        ?> 
 						<tr>
                             
 							<td>Name</td>
                             <td>:</td>
                            
-							<td><input id="name" name="name"  type="text" onkeyup="nRemover()" onblur="neMpty()"></td>
+							<td><input type="text" id="name" name="name" value="<?=$learnersInfo['u_name']?>"  onkeyup="nRemover()" onblur="neMpty()"></td>
 							<td><i  id="nameMsg" style="color:white; font-size: 10px;"></i></td>
 						</tr>		
 						<tr><td colspan="4"><hr/></td></tr>
@@ -68,7 +74,7 @@
 							<td>Email</td>
 							<td>:</td>
 							<td>
-								<input type="text" id="email"  name="email"  onkeyup="eRemover()" onblur="eEMpty()">
+								<input type="text" id="email"  name="email" value="<?=$learnersInfo['email']?>"  onkeyup="eRemover()" onblur="eEMpty()">
 								<abbr title="hint: sample@example.com"><b>i</b></abbr>
 							</td>
 							<td ><i id="emailMsg" style="color:white;font-size: 10px; white-space: pre;"  ></i></td>
@@ -77,21 +83,21 @@
 						<tr>
 							<td>User Name</td>
 							<td>:</td>
-							<td><input id="uname" name="userName" type="text"  onkeyup="uRemover()" onblur="ueMpty()"></td>
+							<td><input type="text"  id="uname" name="userName" value="<?=$learnersInfo['username']?>"  onkeyup="uRemover()" onblur="ueMpty()"></td>
 							<td><i id="unameMsg"  style="color:white;font-size: 10px;"></i></td>
 						</tr>		
 						<tr><td colspan="4"><hr/></td></tr>
 						<tr>
-							<td>Password</td>
+							<td>New Password</td>
 							<td>:</td>
-							<td><input id="password" name="password" type="password" value=" onkeyup="pRemover()" onblur="PeMpty()"></td>
+							<td><input type="password"  id="password" name="password" onkeyup="pRemover()" onblur="PeMpty()"></td>
 							<td><i id="passMsg" style="color:white; font-size: 10px;"></i></td>
 						</tr>		
 						<tr><td colspan="4"><hr/></td></tr>
 						<tr>
 							<td>Confirm Password</td>
 							<td>:</td>
-							<td><input id="conpassword" name="confirmPassword" type="password"  onkeyup="pconRemover()" onblur="PconeMpty()"></td>
+							<td><input type="password"  id="conpassword" name="confirmPassword"  onkeyup="pconRemover()" onblur="PconeMpty()"></td>
 							<td><i id="conpassMsg" style="color:white; font-size: 10px;"></i></td>
                         </tr>
                         <tr>
@@ -105,12 +111,10 @@
 							</td>
 						</tr>	
 					 </table>
-                	  <input type="submit"  name="edit" value="Submit" class="Submitbtn" >
+                	  <input type="button"  name="edit" value="Submit" class="Submitbtn" onclick=editOk() >
             		</form>    
            
        </div>
-    
-    
     </div>
 
 
@@ -125,13 +129,16 @@
    
     <div class="lower-container">
       
+    <?php
 
+        $learnersInfo = getById($id);
+    ?>  
         <div>
-        <h3> Nila</h3> 
-        <h4>Username :nila1313</h4>
-
-        <h5>CSE Student</h5>
-        <h5>Email Adress :chaity13x@gmail.com</h5>
+        <h2><?=$learnersInfo['u_name']?></h2> 
+        <h4>Username:<?=$learnersInfo['username']?></h4>
+        <h4  style="color:#666;" >Email:<?=$learnersInfo['email']?></h4>
+        <h5 style="color:#666; font-weight:bold;">Gender:<?=$learnersInfo['gender']?></h5>
+        <h5 style="color:#666; font-weight:bold;">Date Of Birth :<?=$learnersInfo['date_of_birth']?></h5>
 
         
         </div>

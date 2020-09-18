@@ -19,9 +19,9 @@
           </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Tips</a></li>
+                <li><a href="dashboard.php">Home</a></li>
+                <li><a href="aboutUs.php">About Us</a></li>
+                <li><a href="tips.php">Tips</a></li>
                 <li><a href="#">Forum</a></li>
             
             </ul>
