@@ -1,0 +1,213 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background: white;
+    font-family: Arial;
+   box-sizing: border-box;
+   }
+   
+   header {
+    display: flex;
+    justify-content: space-between;
+    background: grey ;
+    align-items: center;
+    top: 0;
+    height: 10px;
+    padding: 20px;
+}
+
+.left_area h3{
+ 
+    color:white;
+    margin:0;
+    text-transform: uppercase;
+    font-size:22px;
+    font-weight: 900;
+
+}
+
+.left_area span{
+    color: #1DC4E7
+
+}
+
+
+.nav-links li {
+    list-style: none;
+    display: inline-block;
+}
+
+.nav-links li a {
+    margin: 0 15px;
+    color: white;
+    font-size: larger;
+    text-decoration: none;
+}
+
+.nav-links li a:hover {
+    color:black;
+    margin: 0 15px;
+}
+
+li {
+    list-style: none;
+    margin: 20px;
+}
+
+button {
+    border: none;
+    background: white;
+    padding: 6px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: black;
+}
+   
+   .card-container{
+       width: 100%;
+       height:90%;
+       background:rgb(78, 77, 77);
+       position: absolute;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%,-50%);
+       
+   
+   
+   }
+   
+   .upper-container{
+   
+     height:200px ;
+     background:rgb(78, 77, 77);
+     color: white;
+     text-align: center ;
+   
+   }
+   
+   
+  
+   
+   
+   
+   .lower-container{
+   
+       height:300px ;
+       background: #ffffff ;
+       padding: 20px;
+       padding-top: 60px;
+       
+       text-align: center ;
+   
+   }
+   .lower-container h2{
+   
+    box-sizing: border-box ;
+    line-height:.6;
+    font-weight:bold;
+
+}
+
+   
+   .lower-container h3, h4, h5{
+   
+       box-sizing: border-box ;
+       line-height:.6;
+       font-weight:lighter;
+   
+   }
+   
+   .lower-container h4{
+   
+      color: #7f00ff;
+      opacity: .6;
+      font-weight: bold;
+   
+   }
+   
+   .lower-container p{
+   
+       font-size: 16px;
+       color: gray;
+       margin-bottom:30px ;
+    
+    }
+   
+    .lower-container .btn1{
+   
+       padding: 10px 10px;
+       background: #807f81;
+       border:none;
+       color:white;
+       font-size: 12px;
+       text-decoration: none;
+       
+   
+   
+    
+    }
+   
+   
+   
+    .lower-container .btn{
+       margin-top: 12px;
+       padding: 10px 20px;
+       background: #7f00ff;
+       border:none;
+       color:white;
+       border-radius: 30px;
+       font-size: 12px;
+       text-decoration: none;
+       transition: all .3s ease-in ;
+      
+   
+    
+    }
+   
+    
+    .lower-container .btn:hover{
+       
+       background:transparent;
+       color: #7f00ff;
+       border: 2px solid #7f00ff;
+       font-size: 12px;
+       text-decoration: none;
+      
+   
+    
+    }
+    .logout_btn{
+        padding: 5px;
+        background: rgb(117, 137, 190);
+        text-decoration: none;
+        float: right;
+        margin-right: 10px;
+        margin-top: -10px;
+        border-radius: 2px;
+        font-size:15px;
+        font-weight: 600;
+        color: rgb(61, 79, 128);
+        transition: 0.5s;
+        transition-property: background;
+    
+    
+    }
+    
+    .logout_btn:hover{
+    background:  rgba(37, 114, 165, 0.349);
+    }
+    
+    .sidebar{
+    
+        background: rgb(42, 43, 51) ;
+        margin-top:70px;
+        padding-top:30px;
+        position:fixed;
+        left:0;
+        width: 250px;
+        height: 100%;
+        transition: 0.5s ;
+        transition-property: left;
+    
+    }
+    

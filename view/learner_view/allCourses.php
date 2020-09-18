@@ -55,7 +55,7 @@
 
 <div class="row">
   <div class="column" style="background-color:#aaa;">
-    <h2><a href="science.html">Science</a></h2>
+    <h2><a href="addCourses.php">Science</a></h2>
     <p>Some text..</p>
   </div>
   <div class="column" style="background-color:#bbb;">
