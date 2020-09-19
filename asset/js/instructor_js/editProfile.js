@@ -67,9 +67,11 @@ function nRemover() {
 //email validation
 function eEMpty() {
     var email = document.getElementById("email").value;
+    var instructorId = document.getElementById("instructorId").value;
 
     var email_datas = '' +
         'check_email=' + window.encodeURIComponent('ON') +
+        '&instructorId=' + window.encodeURIComponent(instructorId) +
         '&emailId=' + window.encodeURIComponent(email);
     let xhttp = new XMLHttpRequest();
     var pos = email.search("@");
@@ -77,23 +79,21 @@ function eEMpty() {
     if (email == "") {
         document.getElementById("emailMsg").innerHTML = "  *field can't be empty!";
         window.evalid = false;
-    }
-    //else if (email != "") {
-    //     xhttp.open('POST', '../../php/instructor_php/profileEditCheck.php', true);
-    //     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    //     xhttp.send(email_datas);
-    //     xhttp.onreadystatechange = function() {
-    //         if (this.readyState == 4 && this.status == 200) {
+    } else if (email != "") {
+        xhttp.open('POST', '../../php/instructor_php/profileEditCheck.php', true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(email_datas);
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
 
-    //             document.getElementById("emailMsg").innerHTML = this.responseText;
+                document.getElementById("emailMsg").innerHTML = this.responseText;
 
 
-    //         }
-    //     }
+            }
+        }
 
-    //     window.evalid = false;
-    //} 
-    else if (pos == -1 || pos1 == -1 || pos1 < pos) {
+        window.evalid = false;
+    } else if (pos == -1 || pos1 == -1 || pos1 < pos) {
         document.getElementById("emailMsg").innerHTML = "  *invalid email! must be like (sample@example.com)";
         window.evalid = false;
     } else {
@@ -110,8 +110,11 @@ function eRemover() {
 
 function ueMpty() {
     var uname = document.getElementById("username").value;
+    var instructorId = document.getElementById("instructorId").value;
+
     var username_datas = '' +
         'check_user=' + window.encodeURIComponent('ON') +
+        '&instructorId=' + window.encodeURIComponent(instructorId) +
         '&userName=' + window.encodeURIComponent(uname);
     let xhttp = new XMLHttpRequest();
 
@@ -119,20 +122,19 @@ function ueMpty() {
         document.getElementById("unameMsg").innerHTML = "  *field can't be empty!";
 
         window.uvalid = false;
-    } //else if (uname != "") {
-    //     xhttp.open('POST', '../../php/instructor_php/profileEditCheck.php', true);
-    //     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    //     xhttp.send(username_datas);
-    //     xhttp.onreadystatechange = function() {
-    //         if (this.readyState == 4 && this.status == 200) {
+    } else if (uname != "") {
+        xhttp.open('POST', '../../php/instructor_php/profileEditCheck.php', true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(username_datas);
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
 
-    //             document.getElementById("unameMsg").innerHTML = this.responseText;
+                document.getElementById("unameMsg").innerHTML = this.responseText;
 
 
-    //         }
-    //     }
-    // } 
-    else {
+            }
+        }
+    } else {
         window.uvalid = true;
     }
 
@@ -200,23 +202,23 @@ function profileEdit() {
     var password = document.getElementById("password").value;
     var conpassword = document.getElementById("conpassword").value;
 
-    var validCon = editValidation();
-    if (validCon == true) {
-        var myObj = {
-            instructorId: instructorId,
-            username: username,
-            lname: lname,
-            email: email,
-            password: password,
-            conpassword: conpassword
-        };
+    // var validCon = editValidation();
+    // if (validCon == true) {
+    var myObj = {
+        instructorId: instructorId,
+        username: username,
+        lname: lname,
+        email: email,
+        password: password,
+        conpassword: conpassword
+    };
 
-        var lernerInfo = JSON.stringify(myObj);
-        var xttp = new XMLHttpRequest();
-        xttp.open("POST", "../../php/instructor_php/profileEditCheck.php", true);
-        xttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xttp.send('check_info=' + lernerInfo);
-        xttp.onreadystatechange = function() {
+    var lernerInfo = JSON.stringify(myObj);
+    var xttp = new XMLHttpRequest();
+    xttp.open("POST", "../../php/instructor_php/profileEditCheck.php", true);
+    xttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xttp.send('check_info=' + lernerInfo);
+    xttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
 
                 alert(this.responseText);
@@ -225,17 +227,17 @@ function profileEdit() {
 
             }
         }
-    } else if (validCon == false) {
-        alert("Something Went Wrong!");
-    }
-    // var lernerInfo = '' +
-    //     'check_info=' + window.encodeURIComponent('ON') +
-    //     '&learnerId=' + window.encodeURIComponent(learnerId) +
-    //     '&username=' + window.encodeURIComponent(username) +
-    //     '&lname=' + window.encodeURIComponent(lname) +
-    //     '&email=' + window.encodeURIComponent(email) +
-    //     '&password=' + window.encodeURIComponent(password) +
-    //     '&conpassword=' + window.encodeURIComponent(conpassword);
+        // } else if (validCon == false) {
+        //     alert("Something Went Wrong!");
+        // }
+        // var lernerInfo = '' +
+        //     'check_info=' + window.encodeURIComponent('ON') +
+        //     '&learnerId=' + window.encodeURIComponent(learnerId) +
+        //     '&username=' + window.encodeURIComponent(username) +
+        //     '&lname=' + window.encodeURIComponent(lname) +
+        //     '&email=' + window.encodeURIComponent(email) +
+        //     '&password=' + window.encodeURIComponent(password) +
+        //     '&conpassword=' + window.encodeURIComponent(conpassword);
 
 
 }

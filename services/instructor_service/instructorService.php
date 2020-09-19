@@ -2,8 +2,37 @@
 	require_once('../../databaseConn/dbCon.php');
 	
 	
+	function getUsername($username, $id){
+		$conn = dbConnection();
 
-	//get users(instructor)
+		if(!$conn){
+			echo "DB connection error";
+		}
+
+		$sql = "SELECT username FROM users WHERE username LIKE '%{$username}%' AND id NOT IN ({$id})";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+		
+		return $row;
+		mysqli_close($conn);
+	}
+
+	function getEmail($email, $id)
+    {
+        $conn = dbConnection();
+
+		if(!$conn){
+			echo "DB connection error";
+		}
+
+	$sql = "SELECT email FROM users WHERE email LIKE'%{$email}%' AND id NOT IN ({$id})";
+		$result = mysqli_query($conn, $sql);
+        $userEmail = mysqli_fetch_assoc($result);
+        
+        return $userEmail;
+	}
+	
+
     function getByID($id){
 		$conn = dbConnection();
 
