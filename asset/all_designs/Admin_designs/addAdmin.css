@@ -71,12 +71,12 @@
     main {
         display: grid;
         grid-template-columns: 1fr 5fr;
-        background-color: rgb(211, 209, 205);
+        background-color: rgb(245, 244, 244);
         height: 600px;
     }
     
     main div.Gridviewdivodd {
-        background-color: rgb(211, 209, 205);
+        background-color: rgb(245, 244, 244);
         height: 600px;
         padding: 20px;
     }
@@ -106,7 +106,7 @@
     }
     
     main div.Gridviewdiv:nth-child(even) {
-        background-color: rgba(175, 172, 171, 0.034);
+        background-color: rgba(245, 244, 244);
     }
     
     .bg-modal {

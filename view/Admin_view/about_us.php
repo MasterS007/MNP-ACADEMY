@@ -120,7 +120,8 @@
 						<tr class= "Description">
 							<td>Descriptions</td>
 							<td>:</td>
-							<td><input id="descriptions"  name="descriptions" type="text" onkeyup="des_Remover()" onblur="des_eMpty()"></td>
+                            <td height="30px"><textarea id="descriptions"  name="descriptions" rows="8" cols="30" onkeyup="des_Remover()" onblur="des_eMpty()" ></textarea></td> 
+							<!-- <td><input type="text" id="descriptions"  name="descriptions"  onkeyup="des_Remover()" onblur="des_eMpty()"></td> -->
 							<td><i id="descriptionMsg"  style="color:white;font-size: 10px;"></i></td>
 						</tr>		
 						<tr><td colspan="4"><hr/></td></tr>
