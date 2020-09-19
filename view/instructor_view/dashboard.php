@@ -2,10 +2,15 @@
        session_start();
        require_once('../../services/courseService.php');
        require_once('../../services/instructor_service/course_instructorService.php');
+       require_once('../../services/instructor_service/instructorService.php');
        if(!isset($_SESSION['username'])){
    
            header('location: ../login.php?error=invalid_request');
        }
+
+       $indtId= $_SESSION['userid'];
+       $instinfo = getByID($indtId);
+       $instName =  $instinfo['u_name'];
 
  ?> 
  <!DOCTYPE html>
@@ -62,7 +67,7 @@
         <div class="verticleLine"></div>
     <main>
        
-        <h4 class="section-heading"><a href="dashboard.php"><?php echo $_SESSION['name'];?></a></h4>
+        <h4 class="section-heading"><a href="dashboard.php"><?php echo  $instName;?></a></h4>
         <div class="accountStuff">
                 <ul class="stuff">
                     <li><a href="profile.php">Profile</a></li>

@@ -89,7 +89,7 @@ div.verticleLine {
 main {
     background-color: white;
     background-size: 100%;
-    margin-left: 12%;
+    margin-left: 8%;
     margin-top: 35px;
     height: 750px;
     overflow: auto;
@@ -121,6 +121,8 @@ ul.stuff li a:hover {
     box-sizing: border-box;
 }
 
+
+/* 
 div.editcourse button {
     border: 1px solid #ddd;
     box-sizing: border-box;
@@ -135,12 +137,26 @@ div.editcourse button {
 
 div.editcourse button:hover {
     color: darkcyan;
+} */
+
+h3.heading {
+    margin-left: 17%;
+    position: relative;
+    top: -200px;
+    color: #658;
+}
+
+h4.someWords {
+    margin-left: 17%;
+    position: relative;
+    top: -200px;
+    color: #666;
 }
 
 div.myCources {
-    margin-left: 15%;
+    margin-left: 18%;
     top: -250px;
-    border: 1px dotted #ddd;
+    border: 0px dotted #ddd;
     box-sizing: border-box;
     border-radius: 8px;
     width: max-content;
@@ -149,16 +165,17 @@ div.myCources {
 }
 
 div.myCources ul li {
-    color: lightseagreen;
+    position: relative;
+    top: 50px;
+    color: darkslategrey;
     margin-left: -20px;
     list-style-type: square;
 }
 
-section h3.heading {
-    margin-left: 15%;
-    position: relative;
-    top: -250px;
-    color: #658;
+div.myCources ul li a {
+    text-decoration: none;
+    text-decoration-line: none;
+    color: lightseagreen;
 }
 
 

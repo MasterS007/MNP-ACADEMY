@@ -97,12 +97,14 @@ main {
 
 .section-heading a {
     color: #5899;
+    position: relative;
+    left: -5px;
     text-decoration-style: none;
     text-decoration-line: none;
 }
 
 ul.stuff li {
-    margin-left: -40px;
+    margin-left: -10px;
     position: relative;
     list-style-type: none;
     padding-bottom: 20px;
@@ -222,7 +224,6 @@ div.addingClass {
 }
 
 div.addingClass form fieldset {
-    
     margin-left: 36%;
     margin-top: -50px;
     margin-right: 8%;

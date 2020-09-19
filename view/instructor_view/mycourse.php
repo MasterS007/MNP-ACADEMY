@@ -71,60 +71,36 @@
                 </ul>
             </div>
 
-            <div class="row">
-
-                <div class="column" style="background-color:#aaa;">
-                    
-                            <!-- <?php
-
-                            //              $courseInfo =getAllCategory();
-
-                            //              for($i=0; $i<count($courseInfo); $i++)
-                            // {
-                                ?> -->
-                    
-                    <h2>EKhane Course Gula Categorywise thakbe</h2>
-                <!-- <h2><a href="addCourses.php?courseCategory=<?=$courseInfo[$i]['category_name']?>"><?=$courseInfo[$i]['category_name']?></a></h2> -->
-                <p>Some text..</p>
-
-                    <?php
-                // }
-                ?>
-                
-                </div> 
-            </div>
-
-            <!-- <div class="editcourse">
-                <button type="button" name="courcse">Edit Course</button>
-            </div> -->
+        
             <section>
-                <h3 class="heading">My Cources</h3>
+                <h3 class="heading">List of Courses</h3>
+                <h4 class="someWords">These are the course category available right now on MNP Academy</h4>
             </section>
+
             <div class="myCources">
-            <ul class="courses">
-                <?php
-                    $Cid=$_SESSION['userid'];
-                    $courseId=getInsCourse($Cid); //from course_instructorService.php
-                    for($i=0; $i<count($courseId); $i++)
-                    {
-                        $courseName =getByCourseId($courseId[$i]['course_id']);
-                        $courseCategory=$courseName['course_category'];
-                        $_SESSION['courseName']=$courseName['course_name'];
+                   <ul class="courses">
+                      <?php
+                    // $Cid=$_SESSION['userid'];
+                    // $courseId=getInsCourse($Cid); //from course_instructorService.php
+                    // for($i=0; $i<count($courseId); $i++)
+                    // {
+                    //     $courseName =getByCourseId($courseId[$i]['course_id']);
+                    //     $courseCategory=$courseName['course_category'];
+                   $courseInfo =getAllCategory();
+
+                for($i=0; $i<count($courseInfo); $i++)
+                {       //$_SESSION['courseName']=$courseName['course_name'];
                         ?>
-                        <li><?=$courseName['course_name']?></li></br>
-                    <?php }?>
+                        <li><a href="addCourses.php?courseCategory=<?=$courseInfo[$i]['category_name']?>"><?=$courseInfo[$i]['category_name']?></a>
+                        <p>Some text..</p>  
+                        </li>
+                       
+
+                <?php
+                }
+                ?>
                         
                 </ul>
-                <!-- <ul class="programming language">
-                    <h5>Programming Language</h5>
-                    <li>C/C++</li>
-                    <li>Python</li>
-                </ul>
-                <ul class="computer science">
-                    <h5>Computer Science</h5>
-                    <li>Introduction to Database</li>
-                    <li>Introdouction to Programming Language</li>
-                </ul> -->
             </div>
         </main> 
 
