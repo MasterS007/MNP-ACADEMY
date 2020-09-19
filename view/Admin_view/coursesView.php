@@ -10,7 +10,7 @@
 <html>
     <head>
     <meta charset = "UTF-8"/>
-    <link rel="stylesheet" type="text/css" href="../../asset/all_designs/Admin_designs/adminHome.css">
+    <link rel="stylesheet" type="text/css" href="../../asset/all_designs/Admin_designs/coursesStyle.css">
     <title>MY Page</title>
     </head>
     <body>
@@ -38,11 +38,30 @@
                 		<li><a href="#">Dashboard</a></li>
                 		<li><a href="Add_Admin.php">Admin Profile</a></li>
                 		<li>Manage Users</li>
-                		<li><a href="coursesView.php">Courses</a></li>
+                		<li>Courses</li>
                 		<li>Learners</li>
                 		<li><a href="about_us.php">About Us</a></li>
                 		<li><a href="Manage_Blog.php">Manage Blog</a></li>
                 	</ul>
+                </div>
+<!-- course design -->
+                <div>
+                    <div class="UpperContainer">
+                    <li><h2>Courses</h2></li>
+                	<li><h2><input type ="button" value="Add new course"> </h2></li>
+                    </div>
+
+                    <div class="TableContainer">
+                        <form>
+                    <table>
+                        <tr>
+                            <td width="10px">stsd</td>
+                            <td>tgjg</td>
+                            <td>rutgujgj</td>
+                        </tr>
+                    </table>
+    </form>
+                    </div>
                 </div>
             </main>
     </body>

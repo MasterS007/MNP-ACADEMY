@@ -1,0 +1,127 @@
+body {
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+a,
+p,
+li,
+button {
+    text-decoration: none;
+    color: white;
+}
+
+header {
+    background-color: grey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    height: 10px;
+    padding: 20px;
+}
+
+.logo {
+    font-weight: 500;
+    font-size: 20px;
+    padding: 10px, 20px;
+    cursor: pointer;
+    letter-spacing: .2em;
+}
+
+.nav-links li {
+    list-style: none;
+    display: inline-block;
+}
+
+.nav-links li a {
+    margin: 0 15px;
+}
+
+.nav-links li a:hover {
+    color: red;
+    margin: 0 15px;
+}
+
+li {
+    list-style: none;
+    margin: 20px;
+}
+
+button {
+    border: none;
+    background: white;
+    padding: 6px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: black;
+}
+
+.imgbtn {
+    background-color: white;
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    padding: 6px;
+    border-radius: 500px;
+    font-weight: bold;
+    color: black;
+}
+
+main {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 1fr 5fr;
+}
+
+main>div {
+    background-color: rgb(245, 244, 244);
+    height: 600px;
+    padding: 20px;
+}
+
+main>div:nth-child(odd) {
+    background-color: black;
+}
+
+.UpperContainer {
+    height: 50px;
+    padding-bottom: 50px;
+    border: 2px solid rgb(78, 112, 224);
+    /* border-top: none; */
+    border-left: none;
+    border-right: none;
+    position: relative;
+}
+
+.UpperContainer li {
+    display: inline-block;
+    /* margin-right: 250px; */
+}
+
+.UpperContainer li h2 {
+    color: black;
+}
+
+.TableContainer {
+    height: 100%;
+    background-color: rgb(253, 252, 249);
+    padding-bottom: 50px;
+    border: 2px solid rgb(78, 112, 224);
+    /* border-top: none; */
+    border-left: none;
+    border-right: none;
+    position: relative;
+    color: black;
+}
+
+.TableContainer table {
+    border-collapse: collapse;
+}
+
+.TableContainer table td {
+    border-collapse: collapse;
+    width: 100%;
+}
