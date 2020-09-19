@@ -97,7 +97,7 @@
 							<td>Course Category</td>
 							<td>:</td>
 							<td>
-                                <select name="course_category">
+                                <select name="course_category" id="course_category">
                                 <option value=""></option>
                                     <?php
                                     $course_category=getAllCategory();
@@ -114,7 +114,7 @@
 						</tr>		
 						
 					 </table>
-                	  <input type="submit"  name="submit" value="Submit"  >
+                     <input type="submit" name="submit" value="add-course"  id="add-course" onclick="add_course()">
             		</form> 
 
 
