@@ -66,17 +66,37 @@
                 <ul class="stuff">
                     <li><a href="profile.php">Profile</a></li>
                     <li><a href="mycourse.php">Courses</a></li>
-                    
                     <li><a href="blog.php">Blogs</a></li>
                     <li><a href="logout.php">Logout</a></li>
                 </ul>
             </div>
 
-           
+            <div class="row">
 
-            <div class="editcourse">
-                <button type="button" name="courcse">Edit Course</button>
+                <div class="column" style="background-color:#aaa;">
+                    
+                            <!-- <?php
+
+                            //              $courseInfo =getAllCategory();
+
+                            //              for($i=0; $i<count($courseInfo); $i++)
+                            // {
+                                ?> -->
+                    
+                    <h2>EKhane Course Gula Categorywise thakbe</h2>
+                <!-- <h2><a href="addCourses.php?courseCategory=<?=$courseInfo[$i]['category_name']?>"><?=$courseInfo[$i]['category_name']?></a></h2> -->
+                <p>Some text..</p>
+
+                    <?php
+                // }
+                ?>
+                
+                </div> 
             </div>
+
+            <!-- <div class="editcourse">
+                <button type="button" name="courcse">Edit Course</button>
+            </div> -->
             <section>
                 <h3 class="heading">My Cources</h3>
             </section>

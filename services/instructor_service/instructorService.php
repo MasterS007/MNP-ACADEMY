@@ -18,6 +18,21 @@
 		return $row;
 	}
 
+
+	function getAllFromInst($id){
+		$conn = dbConnection();
+
+		if(!$conn){
+			echo "DB connection error";
+		}
+
+		$sql = "select * from instructors where id={$id}";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+		mysqli_close($conn);
+		return $row;
+	}
+
 	// function getAllUser(){
 	// 	$conn = dbConnection();
 
@@ -35,20 +50,22 @@
 
 	// 	return $users;
     // }
-	function update($user){
-		$conn = dbConnection();
-		if(!$conn){
-			echo "DB connection error";
-		}
-
-		$sql = "update users set username='{$user['username']}', password='{$user['password']}', email='{$user['email']}' where id={$user['id']}";
-
-		if(mysqli_query($conn, $sql)){
-			return true;
-		}else{
-			return false;
-		}
+	
+function Instructor_update($user){
+	$conn = dbConnection();
+	if(!$conn){
+		echo "DB connection error";
 	}
+
+	$sql = "UPDATE users SET u_name='{$user['nameU']}', username='{$user['uname']}', u_password='{$user['password']}', email='{$user['email']}' where id={$user['instructorId']}";
+
+	if(mysqli_query($conn, $sql)){
+		return true;
+	}else{
+		return false;
+	}
+}
+
 
 	// function delete($id){
 	// 	$conn = dbConnection();

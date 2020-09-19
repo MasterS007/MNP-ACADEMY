@@ -73,13 +73,13 @@ $_SESSION['courseName']=$_GET['courseName'];
 
         <div class="class_materials">
             <ul>
-                <li><a href="insideClass.php?courseName=<?= $_SESSION['courseName']?>">Learnerss</a></li>
+            <li><a href="insideClass.php?courseName=<?= $_SESSION['courseName']?>">Learnerss</a></li>
                 <li><a href="postComment.php?courseName=<?= $_SESSION['courseName']?>">Post</a></li>
                 <li><a href="files.php?courseName=<?= $_SESSION['courseName']?>">Class Materials</a></li>
-                <li><a href="#">Assignments</a></li>
+                <li><a href="assignment.php?courseName=<?= $_SESSION['courseName']?>">Assignments</a></li>
                 <li><a href="grade.php?courseName=<?= $_SESSION['courseName']?>">Grades</a></li>
                 <li><a href="classSettings.php?courseName=<?= $_SESSION['courseName']?>">Settings</a></li>
-             
+    
             </ul>
         </div>
 

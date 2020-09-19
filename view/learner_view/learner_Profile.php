@@ -158,7 +158,6 @@
     </div>
     <div class="lower-container">
         <input type="button" class="btn " name="" style="cursor:pointer;"   value="Edit Profile" onclick="edit_popup_open()">
-        
         <a href ="dashboard.php" class="btn"> Go Back </a>
 
 
