@@ -13,14 +13,13 @@ button {
 }
 
 header {
-    background-color:grey;
+    background-color: grey;
     display: flex;
     justify-content: space-between;
     align-items: center;
     top: 0;
     height: 10px;
     padding: 20px;
-    
 }
 
 .logo {
@@ -60,7 +59,7 @@ button {
 }
 
 .imgbtn {
-    background-color:white;
+    background-color: white;
     height: 100px;
     width: 100px;
     margin: 10px;
@@ -83,4 +82,13 @@ main>div {
 
 main>div:nth-child(odd) {
     background-color: black;
+}
+
+.result {
+    display: grid;
+    background-color: blue;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-right: 2px solid rgb(105, 101, 101);
+    font-size: 100px;
+    color: black;
 }

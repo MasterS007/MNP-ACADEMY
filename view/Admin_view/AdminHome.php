@@ -1,5 +1,6 @@
 <?php
        session_start();
+       require_once('../../services/Admin_Service/admin_service.php');
        if(!isset($_SESSION['username'])){
    
            header('location: ../login.php?error=invalid_request');
@@ -33,7 +34,7 @@
             <main>
                 <div>
                 	<ul>
-                    <li class="imgbtn">jsbujruer</li>
+                    <li><img src="1.jpg" class="imgbtn" alt="" width="100px" height="100px"></li>
                     <li><?php echo $_SESSION['name'];?></li>
                 		<li><a href="#">Dashboard</a></li>
                 		<li><a href="Add_Admin.php">Admin Profile</a></li>
@@ -44,6 +45,34 @@
                 		<li><a href="Manage_Blog.php">Manage Blog</a></li>
                 	</ul>
                 </div>
+                <!-- RIght side -->
+                <div >
+                    <div class="result">
+                <div > 
+                    <?php
+                    $Learner=getAllLearner();
+                    $L_count=0;
+                    for($i=0;$i<count($Learner);$i++)
+                    {
+                        $L_count+=1;
+                    }
+                    ?>
+                    Total Student :<?=$L_count?>
+
+                </div>
+                <div >
+                <?php
+                    $Instructor=getAllInstructor();
+                    $I_count=0;
+                    for($i=0;$i<count($Instructor);$i++)
+                    {
+                        $I_count+=1;
+                    }
+                    ?> 
+                    Total Teacher :<?=$I_count?></div>
+                <div > Total Courses</div>
+                </div>
+    </div>
             </main>
     </body>
     
