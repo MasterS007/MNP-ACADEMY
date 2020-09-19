@@ -52,7 +52,7 @@
                    
                     <div class="UpperContainer">
                     <li><h2>Courses</h2></li>
-                	<li><h2><input type ="button" value="Add new course" style="cursor:pointer;" onclick="open_popup()"> </h2></li>
+                	<li><h2><input type ="button" value="Add new course" style="cursor:pointer;" onclick="popup_open()"> </h2></li>
                     </div>
                      
 
@@ -83,7 +83,41 @@
                     <!-- add course form -->
                     <div class="bg-modal" id="bg-modal">
                         <div class="modal-content">
-                     <div class="close" onclick="popup_close()">+<div>
+                        <div class="close" onclick="popup_close()">+</div>
+                     <form action="" onsubmit=return validation() method="post">
+					        <table>
+						    <tr>
+							<td>Course Name</td>
+							<td>:</td>
+							<td><input id="course_name" name="title" type="text" onkeyup="Title_Remover()" onblur="Title_empty()"></td>
+							<td><i  id="titleMsg" style="color:white; font-size: 10px;"></i></td>
+						</tr>		
+			
+						<tr>
+							<td>Course Category</td>
+							<td>:</td>
+							<td>
+                                <select name="course_category">
+                                <option value=""></option>
+                                    <?php
+                                    $course_category=getAllCategory();
+                                    for($i=0;$i<count($course_category);$i++)
+                                    {
+                                    ?>
+                                    <option value="<?=$course_category[$i]['category_name']?>"><?=$course_category[$i]['category_name']?></option>
+                                    <?php
+                                    }
+                                    ?>
+                                 </select>
+							</td>
+							<td ><i id="ST_Msg" style="color:white;font-size: 10px; white-space: pre;"  ></i></td>
+						</tr>		
+						
+					 </table>
+                	  <input type="submit"  name="submit" value="Submit"  >
+            		</form> 
+
+
                      </div>
                      </div>
                 </div>

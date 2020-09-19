@@ -4,6 +4,6 @@ function popup_open() {
 }
 
 function popup_close() {
-    var close = document.getElementById('bg-content');
+    var close = document.getElementById('bg-modal');
     close.style.display = 'none';
 }

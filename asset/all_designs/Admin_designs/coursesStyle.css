@@ -135,11 +135,12 @@ main>div:nth-child(odd) {
 }
 
 .bg-modal {
-    width: 100%;
+    width: 50%;
     height: 100%;
-    background-color: black;
+    background-color: rgb(247, 245, 245);
     position: absolute;
     top: 0;
+    opacity: .5px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -147,15 +148,18 @@ main>div:nth-child(odd) {
 }
 
 .modal-content {
-    margin-top: 50px;
-    margin-left: 10%;
-    width: 800px;
-    height: 400px;
-    background-color: rgba(243, 240, 240, 0.486);
+    width: 400px;
+    height: 500px;
+    margin-left: 50px;
+    background-color: rgba(219, 213, 213, 0.486);
     border-radius: 10px;
     text-align: center;
     padding: 20px;
     position: relative;
+}
+
+.modal-content table tr {
+    margin-bottom: 20px;
 }
 
 .close {
