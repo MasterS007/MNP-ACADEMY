@@ -133,3 +133,36 @@ main>div:nth-child(odd) {
     border-right: none;
     border-top: none;
 }
+
+.bg-modal {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.modal-content {
+    margin-top: 50px;
+    margin-left: 10%;
+    width: 800px;
+    height: 400px;
+    background-color: rgba(243, 240, 240, 0.486);
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 14px;
+    font-size: 30px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
