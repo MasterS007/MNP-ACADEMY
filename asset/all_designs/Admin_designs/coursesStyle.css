@@ -84,16 +84,19 @@ main>div {
 
 main>div:nth-child(odd) {
     background-color: black;
+    height: 100%;
 }
 
 .UpperContainer {
-    height: 50px;
+    height: 40px;
     padding-bottom: 50px;
     border: 2px solid rgb(78, 112, 224);
     /* border-top: none; */
     border-left: none;
+    border-top: none;
     border-right: none;
     position: relative;
+    margin-top: -40px;
 }
 
 .UpperContainer li {
@@ -108,9 +111,8 @@ main>div:nth-child(odd) {
 .TableContainer {
     height: 100%;
     background-color: rgb(253, 252, 249);
-    padding-bottom: 50px;
+    padding-bottom: 10px;
     border: 2px solid rgb(78, 112, 224);
-    /* border-top: none; */
     border-left: none;
     border-right: none;
     position: relative;
@@ -123,5 +125,11 @@ main>div:nth-child(odd) {
 
 .TableContainer table td {
     border-collapse: collapse;
-    width: 100%;
+    width: 60%;
+    padding-left: 2px;
+    padding-right: 2px;
+    border: 1px solid rgb(225, 225, 230);
+    border-left: none;
+    border-right: none;
+    border-top: none;
 }

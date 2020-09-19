@@ -35,10 +35,10 @@
                 	<ul>
                     <li class="imgbtn">jsbujruer</li>
                     <li><?php echo $_SESSION['name'];?></li>
-                		<li><a href="#">Dashboard</a></li>
+                		<li><a href="AdminHome.php">Dashboard</a></li>
                 		<li><a href="Add_Admin.php">Admin Profile</a></li>
                 		<li>Manage Users</li>
-                		<li>Courses</li>
+                		<li><a href="coursesView.php">Courses</a></li>
                 		<li>Learners</li>
                 		<li><a href="about_us.php">About Us</a></li>
                 		<li><a href="Manage_Blog.php">Manage Blog</a></li>
@@ -55,10 +55,21 @@
                         <form>
                     <table>
                         <tr>
-                            <td width="10px">stsd</td>
-                            <td>tgjg</td>
-                            <td>rutgujgj</td>
+                            <td><h3>Course Name</h3></td>
+                            <td><h3>Course Category</h3></td>
+                            <td></td>
                         </tr>
+                        <tr>
+                            <td><h4>Data Structure</h4></td>
+                            <td><h4>Computer Science</h4></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><h4>Programming Language 1</h4></td>
+                            <td><h4>Computer Science</h4></td>
+                            <td></td>
+                        </tr>
+                        
                     </table>
     </form>
                     </div>
