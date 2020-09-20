@@ -1,5 +1,7 @@
 <?php
        session_start();
+       require_once('../../services/courseService.php');
+       $id= $_SESSION['userid'];
        if(!isset($_SESSION['username'])){
    
            header('location: ../login.php?error=invalid_request');
@@ -11,7 +13,8 @@
     <head>
     <meta charset = "UTF-8"/>
     <link rel="stylesheet" type="text/css" href="../../asset/all_designs/Admin_designs/coursesStyle.css">
-    <title>MY Page</title>
+    <script type="text/javascript" src="../../asset/js/Admin_js/add_coursesScript.js"></script>
+    <title>All Courses</title>
     </head>
     <body>
             <header>
@@ -46,34 +49,83 @@
                 </div>
 <!-- course design -->
                 <div>
+                   
                     <div class="UpperContainer">
                     <li><h2>Courses</h2></li>
-                	<li><h2><input type ="button" value="Add new course"> </h2></li>
+                	<li><h2><input type ="button" value="Add new course" style="cursor:pointer;" onclick="popup_open()"> </h2></li>
                     </div>
+                     
 
                     <div class="TableContainer">
                         <form>
                     <table>
-                        <tr>
+                    
+                        <tr >
                             <td><h3>Course Name</h3></td>
                             <td><h3>Course Category</h3></td>
                             <td></td>
                         </tr>
+                        <?php 
+                    $course=getAllCourse();
+                       for($i=0;$i<count($course);$i++)
+                       {
+                        ?>
                         <tr>
-                            <td><h4>Data Structure</h4></td>
-                            <td><h4>Computer Science</h4></td>
+                            <td><h4><?=$course[$i]['course_name'];?></h4></td>
+                            <td><h4><?=$course[$i]['course_category'];?></h4></td>
                             <td></td>
                         </tr>
-                        <tr>
-                            <td><h4>Programming Language 1</h4></td>
-                            <td><h4>Computer Science</h4></td>
-                            <td></td>
-                        </tr>
+                       <?php } ?>
+                       
                         
                     </table>
-    </form>
-                    </div>
+                   </form>
+                    <!-- add course form -->
+                    <div class="bg-modal" id="bg-modal">
+                        <div class="modal-content">
+                        <div class="close" onclick="popup_close()">+</div>
+                     <form action="" onsubmit=return validation() method="post">
+					        <table>
+						    <tr>
+							<td>Course Name</td>
+							<td>:</td>
+							<td><input id="course_name" name="title" type="text" onkeyup="Title_Remover()" onblur="Title_empty()"></td>
+							<td><i  id="titleMsg" style="color:white; font-size: 10px;"></i></td>
+						</tr>		
+			
+						<tr>
+							<td>Course Category</td>
+							<td>:</td>
+							<td>
+                                <select name="course_category" id="course_category">
+                                <option value=""></option>
+                                    <?php
+                                    $course_category=getAllCategory();
+                                    for($i=0;$i<count($course_category);$i++)
+                                    {
+                                    ?>
+                                    <option value="<?=$course_category[$i]['category_name']?>"><?=$course_category[$i]['category_name']?></option>
+                                    <?php
+                                    }
+                                    ?>
+                                 </select>
+							</td>
+							<td ><i id="ST_Msg" style="color:white;font-size: 10px; white-space: pre;"  ></i></td>
+						</tr>		
+						
+					 </table>
+                     <input type="submit" name="submit" value="add-course"  id="add-course" onclick="add_course()">
+            		</form> 
+
+
+                     </div>
+                     </div>
                 </div>
+
+             </div>
+
+
+
             </main>
     </body>
     
