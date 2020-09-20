@@ -1,7 +1,21 @@
 <?php
 	require_once('../../databaseConn/dbCon.php');
 	
-	
+	function getByName($u_name)
+	{
+		$conn = dbConnection();
+
+		if(!$conn){
+			echo "DB connection error";
+		}
+
+		$sql = "SELECT id FROM users WHERE u_name LIKE '%{$u_name}%'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+		
+		return $row;
+		mysqli_close($conn);
+	}
 	function getUsername($username, $id){
 		$conn = dbConnection();
 
