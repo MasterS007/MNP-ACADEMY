@@ -48,7 +48,7 @@
                 <!-- RIght side -->
                 <div >
                     <div class="result">
-                <div > 
+                <div class="resultdiv" > 
                     <?php
                     $Learner=getAllLearner();
                     $L_count=0;
@@ -60,7 +60,7 @@
                     Total Student :<?=$L_count?>
 
                 </div>
-                <div >
+                <div class="resultdiv">
                 <?php
                     $Instructor=getAllInstructor();
                     $I_count=0;
@@ -70,7 +70,7 @@
                     }
                     ?> 
                     Total Teacher :<?=$I_count?></div>
-                <div > Total Courses</div>
+                <div class="resultdiv" > Total Courses</div>
                 </div>
     </div>
             </main>
