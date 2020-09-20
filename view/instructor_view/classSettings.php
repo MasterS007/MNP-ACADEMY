@@ -9,6 +9,7 @@ if(!isset($_SESSION['username'])){
     header('location: ../login.php?error=invalid_request');
 }
 
+
 $_SESSION['courseName']=$_GET['courseName'];
 
 
@@ -90,10 +91,13 @@ $_SESSION['courseName']=$_GET['courseName'];
                         <h4>See student data</h4>
                         <span style="color:#666;">See student assignments</span>
                         <input type="button" class="studentAssignment" value="See Assignment">
-                        <h4 >Danger Zone</h4>
+                        <h4 id="dd">Danger Zone</h4>
                         <span style="color:red;">Delete this class</span> 
                         <input id="className" value="<?=$_SESSION['courseName']?>" style="display:none;">
-                        <input type="button" id="deleteButton" class="deleteButton" value="Delete " onclick="confirmDelete(<?=$_SESSION['userid']?>) " > 
+                         
+                            <input type="button" id="deleteButton" class="deleteButton" value="Delete " onclick="confirmDelete(<?=$_SESSION['userid']?>) " >
+                            <!-- <a href="../../view/instructor_view/dashboard.php?>"> -->
+                        
                     </fieldset>  
                 </form>
         </div>

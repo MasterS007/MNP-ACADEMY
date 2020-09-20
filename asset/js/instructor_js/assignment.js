@@ -2,7 +2,6 @@ function UploadAssignment(instructorId) {
 
     //alert(instructorId);
     clickButton(instructorId);
-
 }
 
 
