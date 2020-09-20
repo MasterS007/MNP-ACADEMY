@@ -70,13 +70,13 @@ if(isset($_POST['checkInfo']))
    $valDeleteClass=  deleteInstrCourse($_SESSION['instructorId'], $courseId['course_id']); 
    if($valDeleteClass)
    {
-      //echo "course from instructor delete hyse";
+      echo "Delete SuccessFul!";
      // header("location:../../view/instructor_view/dashboard.php?Message:DeleteSuccessFul");
    }
  
    else 
    {
-      //echo "course from instructor delete hytese NA";
+      echo "Delete Unsuccessfull";
      // header("location:../../view/instructor_view/dashboard.php?Message:DeleteUnuccessFul");
     // header("location:../../php/instructor_php/classSettingCheck.php");
   }
