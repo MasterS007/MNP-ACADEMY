@@ -20,7 +20,7 @@
   <title>Science</title>
 <link rel="stylesheet" href="../../asset/all_designs/learner_designs/addCoursesStyle.css">
 <script type="text/javascript" src="../../asset/js/learner_js/addCoursesScript.js"></script>
-<script type="text/javascript" src="../../asset/js/learner_js/enroll_course.js"></script>
+
 
 </head>
 <body>

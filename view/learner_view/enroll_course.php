@@ -11,20 +11,18 @@
            header('location: ../login.php?error=invalid_request');
        }
 
-       $CourseName =$_GET['course_name'];
+       $courseName =$_GET['course_name'];
+      
 
  ?> 
 
 <!DOCTYPE html>
 <html>
 <head>
+     <link rel="stylesheet" type="text/css" href="../../asset/all_designs/learner_designs/aboutUsStyle.css"> 
+    <script type="text/javascript" src="../../asset/js/learner_js/enroll_course.js"></script>
     <title>Enroll Course</title>
-    
-    <link rel="stylesheet" type="text/css" href="../../asset/all_designs/learner_designs/aboutUsStyle.css"> 
-    
-    <link rel="stylesheet" type="text/css" href="Algo.css">
 </head>
-
 
 <body>
     <header>
@@ -53,7 +51,7 @@
     
     <div class="upper-container">
         
-            <h1><?= $CourseName?></h1> 
+            <h1><?=$courseName?></h1> 
             <h4>Intro</h4>
     
           
@@ -64,75 +62,48 @@
       
 
         <div>
-       
-
         <h2>Welcome MNP ACADEMY</h2>
-        
-        
         </div>
 
         <div>
         <h3>list of Instructor</h3>
-        <label>Choose a Instructor:</label>
+        <input id="learnerId" value=<?=$id?> style="display:none">
+        <label>Choose a Instructor: </label>
         <select name="List of instructor " id="listInstructor">
-        <?php
-
-      $courseInfo= getByCategory($categoryName); //from
-
-    
-
-      for($i=0; $i<count($courseInfo);$i++)
-      {
-        
-        ?>
-        <div class="row">
-        <div class="column" style="background-color:#aaa;">
-         <h2><?=$courseInfo[$i]['course_name']?> </h2>
-         <p>Some text..</p>
-         <label>Choose a Instructor:</label>
-        <select name="List of instructor ">
-        <?php
-
-        $getInstructor= courseidget($courseInfo[$i]['course_id']);//from course_instructorService.php
-          for($j=0; $j<count( $getInstructor); $j++)
-          {
-
-             $instructorId=$getInstructor[$j]['instructor_id']; 
-             $instructorInfo= getByID( $instructorId); //from userService.php
-            ?>
-
-                <option value="<?= $instructorInfo['u_name']?>"><?= $instructorInfo['u_name']?></option>
 
             <?php
-          }
-          ?>
-          
-      
-        </select>
-        <br><br>
-        <input type="submit" value="Enroll now">
-        </div>
-        <?php
-        
-      }
-    ?>  
+                $course_id=getByCourseName($courseName);
+                $_SESSION['courseId'] = $course_id['course_id'];
 
-        </div>
+                
+              
+                $insctructorId = courseidget( $course_id['course_id']);
+                for($i=0; $i<count( $insctructorId); $i++)
+                {
+                    $instructorName= getByID($insctructorId[$i]['instructor_id']);
+                    ?>
+
+                    <option value="<?=$instructorName['u_name']?>"> <?=$instructorName['u_name']?></option>
+                    <?php
+                }
+            
+            ?>
        
-        <div>
-        <h3><input type="button" value="Enroll now"   onclick="enrollClick() "></h3>
+        <!-- <option value="volvo">Volvo </option>
+        <option value="volvo">Volvo </option> -->
+        </select>
+       
+        
+
+       <input id="courseId" value="<?=$_SESSION['courseId']?>" style="display:none;" >
+
+        
+        <input type="button" value="Enroll now" onclick="enrollClick() ">
 
         </div>
       
     </div>
 
-    
-    
-        
-   
-
-
-    
 
     <div class="lower-container">
         

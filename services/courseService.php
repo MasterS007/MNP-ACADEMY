@@ -83,7 +83,8 @@
 		$row = mysqli_fetch_assoc($result);
 		return $row;
 	}
-
+	
+ 
 //INSERT METHOD
 	// function insert($course){
 	// 	$conn = dbConnection();
