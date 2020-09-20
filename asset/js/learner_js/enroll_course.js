@@ -5,14 +5,30 @@ function enrollClick() {
 
     var instructorName = instructorlist.options[instructorlist.selectedIndex].text;
 
-    var courseCheck = document.getElementById('courseName').checked;
-    var courseName = courseCheck.value;
+    var courseId = document.getElementById('courseId').value;
 
 
+    var myObj = {
+        learnerId: learnerId,
+        instructorName: instructorName,
+        courseId: courseId
 
+    };
 
+    var learnerCourse = JSON.stringify(myObj);
+    var xttp = new XMLHttpRequest();
+    xttp.open("POST", "../../php/learner_php/enrolCourseCheck.php", true);
+    xttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xttp.send("check_all=" + learnerCourse);
+    xttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
 
-    alert("instructor:" + instructorName + " CourseName: " + courseName + "lid:" + learnerId);
+            alert(this.responseText);
+
+        }
+    }
+
+    // alert("instructor:" + instructorName + " CourseName: " + courseId + "lid:" + learnerId);
 
 
 }
