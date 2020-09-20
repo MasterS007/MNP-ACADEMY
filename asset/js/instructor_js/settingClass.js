@@ -11,9 +11,10 @@ function confirmDelete(instructorId) {
 function classDelete(instructorId) {
     // alert(instructorId);
     var courseName = document.getElementById('className').value;
+    var loader = document.getElementById('dd');
     var allObj = {
-        'instructor_id': instructorId,
-        'courseName': courseName
+        instructor_id: instructorId,
+        courseName: courseName
     };
     // alert(instructorId);
     var allInfo = JSON.stringify(allObj);
@@ -24,11 +25,12 @@ function classDelete(instructorId) {
     xttps.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
 
-            //  document.getElementById("deleteMsg").
             alert(this.responseText);
-            // return true;
+            window.location.replace("../../view/instructor_view/dashboard.php");
 
         }
+
     }
+
 
 }

@@ -32,7 +32,7 @@
                     $courseN = getByCategory('Science');
                     for ($i=0; $i<count($courseN); $i++)
                     { ?>
-                        <option value="<?php echo $courseN[$i];?>"><?php echo $courseN[$i]['course_name'];?>
+                        <option value="<?php echo $courseN[$i]['course_name'];?>"><?php echo $courseN[$i]['course_name'];?>
                         </option>
                     <?php }?>
                     </optgroup>
@@ -41,7 +41,7 @@
                     $courseN = getByCategory('Computer Science');
                     for ($i=0; $i<count($courseN); $i++)
                     { ?>
-                        <option value="<?php echo $courseN[$i];?>"><?php echo$courseN[$i]['course_name'];?>
+                        <option value="<?php echo $courseN[$i]['course_name'];?>"><?php echo$courseN[$i]['course_name'];?>
                         </option>
                     <?php }?>
 
@@ -51,7 +51,7 @@
                     $courseN = getByCategory('Programming Language');
                     for ($i=0; $i<count($courseN); $i++)
                     { ?>
-                        <option value="<?php echo $courseN[$i];?>"><?php echo$courseN[$i]['course_name'];?>
+                        <option value="<?php echo $courseN[$i]['course_name'];?>"><?php echo$courseN[$i]['course_name'];?>
                         </option>
                     <?php }?>
 

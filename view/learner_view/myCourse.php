@@ -16,10 +16,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Science</title>
-<link rel="stylesheet" href="../../asset/all_designs/learner_designs/myCoursesStyle.css">
-
-<script type="text/javascript" src="../../asset/js/learner_js/addCoursesScript.js"></script>
+  <title>Courses</title>
+  <link rel="stylesheet" type="text/css" href="../../asset/all_designs/learner_designs/myCoursesStyle.css">
 
 </head>
 <body>
@@ -46,7 +44,7 @@
 </nav>
 </header>
 
-<h2><?= $categoryName?></h2>
+<h2>List Of Cousrses</h2>
 
 <p>These are the courses available right now on MNP Academy</p>
 
@@ -56,50 +54,27 @@
 </div>
 <br>
 
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2><a href="science.html">Science</a></h2>
+    <p>Some text..</p>
+  </div>
+  <div class="column" style="background-color:#bbb;">
+    <h2>Computer Science</h2>
+    <p>Some text..</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#ccc;">
+    <h2>Programming Language</h2>
+    <p>Some text..</p>
+  </div>
+  
+</div>
 
 
-    <?php
-
-      $courseInfo= getByCategory($categoryName); //from
-
-    
-
-      for($i=0; $i<count($courseInfo);$i++)
-      {
-        
-        ?>
-        <div class="row">
-        <div class="column" style="background-color:#aaa;">
-         <h2><?=$courseInfo[$i]['course_name']?> </h2>
-         <p>Some text..</p>
-         <label>Choose a Instructor:</label>
-        <select name="List of instructor ">
-        <?php
-
-        $getInstructor= courseidget($courseInfo[$i]['course_id']);//from course_instructorService.php
-          for($j=0; $j<count( $getInstructor); $j++)
-          {
-
-             $instructorId=$getInstructor[$j]['instructor_id']; 
-             $instructorInfo= getByID( $instructorId); //from userService.php
-            ?>
-
-                <option value="<?= $instructorInfo['u_name']?>"><?= $instructorInfo['u_name']?></option>
-
-            <?php
-          }
-          ?>
-          
-      
-        </select>
-        <br><br>
-        <input type="submit" value="Enroll now">
-        </div>
-        <?php
-        
-      }
-    ?>      
-
+<script type="text/javascript" src="script.js"></script>
 
 
 </body>
