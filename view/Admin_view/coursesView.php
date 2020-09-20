@@ -63,7 +63,7 @@
                         <tr >
                             <td><h3>Course Name</h3></td>
                             <td><h3>Course Category</h3></td>
-                            <td></td>
+                            <td>Action</td>
                         </tr>
                         <?php 
                     $course=getAllCourse();
@@ -73,7 +73,7 @@
                         <tr>
                             <td><h4><?=$course[$i]['course_name'];?></h4></td>
                             <td><h4><?=$course[$i]['course_category'];?></h4></td>
-                            <td></td>
+                            <td><input type="button" value="Delete"  onclick="deleteCourse(<?=$course[$i]['course_name'];?>)"></td>
                         </tr>
                        <?php } ?>
                        
@@ -84,13 +84,13 @@
                     <div class="bg-modal" id="bg-modal">
                         <div class="modal-content">
                         <div class="close" onclick="popup_close()">+</div>
-                     <form action="" onsubmit=return validation() method="post">
+                     <form>
 					        <table>
 						    <tr>
 							<td>Course Name</td>
 							<td>:</td>
-							<td><input id="course_name" name="title" type="text" onkeyup="Title_Remover()" onblur="Title_empty()"></td>
-							<td><i  id="titleMsg" style="color:white; font-size: 10px;"></i></td>
+							<td><input id="course_name" name="title" type="text" onblur="courseValidation()" onkeyup="C_Remover()" ></td>
+							<td><i  id="course_nameMsg" style="color:red; font-size: 10px;"></i></td>
 						</tr>		
 			
 						<tr>
@@ -114,7 +114,7 @@
 						</tr>		
 						
 					 </table>
-                     <input type="submit" name="submit" value="add-course"  id="add-course" onclick="add_course()">
+                     <input type="button" name="submit" value="add-course"  id="add-course" onclick="add_course()">
             		</form> 
 
 

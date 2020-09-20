@@ -2,7 +2,38 @@
     
     require_once('../../databaseConn/dbCon.php');
     
-   
+
+	function deleteByCoursename($course_name){
+			$conn = dbConnection();
+			if(!$conn){
+				echo "DB connection error";
+			}
+	
+			$sql = "DELETE FROM all_courses WHERE course_name='{$course_name}'";
+	
+			if(mysqli_query($conn, $sql)){
+				return true;
+			}else{
+				return false;
+			}
+		}
+
+function insertCourses($course){
+    $conn = dbConnection();
+	//echo $course['course_name'];
+    if(!$conn){
+        echo "DB connection error";
+    }
+    $sql = "INSERT INTO all_courses (course_name, course_category) VALUES ('{$course['course_name']}','{$course['course_category']}')";
+    if(mysqli_query($conn, $sql)){
+			
+        return true;
+    }else{
+        return false;
+    }
+      mysqli_close($conn);
+}
+
 	function getByCategory($category){
 		$conn = dbConnection();
 
@@ -83,54 +114,5 @@
 		$row = mysqli_fetch_assoc($result);
 		return $row;
 	}
-	
- 
-//INSERT METHOD
-	// function insert($course){
-	// 	$conn = dbConnection();
 
-	// 	if(!$conn){
-	// 		echo "DB connection error";
-	// 	}
-
-	// 	$sql = "INSERT INTO all_courses (course_name, course_category) VALUES ()";
-	// 	if(mysqli_query($conn, $sql)){
-
-	// 		return true;
-	// 	}else{
-	// 		return false;
-	// 	}
-	// 	  mysqli_close($conn);
-	// }
-
-
-	// function update($user){
-	// 	$conn = dbConnection();
-	// 	if(!$conn){
-	// 		echo "DB connection error";
-	// 	}
-
-	// 	$sql = "update users set username='{$user['username']}', password='{$user['password']}', email='{$user['email']}' where id={$user['id']}";
-
-	// 	if(mysqli_query($conn, $sql)){
-	// 		return true;
-	// 	}else{
-	// 		return false;
-	// 	}
-	// }
-
-	// function delete($id){
-	// 	$conn = dbConnection();
-	// 	if(!$conn){
-	// 		echo "DB connection error";
-	// 	}
-
-	// 	$sql = "DELETE FROM users WHERE id={$id}";
-
-	// 	if(mysqli_query($conn, $sql)){
-	// 		return true;
-	// 	}else{
-	// 		return false;
-	// 	}
-	// }
 ?>
