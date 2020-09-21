@@ -3,7 +3,8 @@
        require_once('../../services/courseService.php');
        require_once('../../services/instructor_service/course_instructorService.php');
        require_once('../../services/instructor_service/instructorService.php');
-       if(!isset($_SESSION['username'])){
+    
+if(!isset($_COOKIE['username']) ){
    
            header('location: ../login.php?error=invalid_request');
        }
@@ -77,7 +78,7 @@
                 </ul>
         </div>
         <section>
-                <h2 class="welcomeheading">Welcome <?php echo $_SESSION['name'];?></h2>
+                <h2 class="welcomeheading">Welcome <?php echo  $instName;?></h2>
                 
         </section>
 

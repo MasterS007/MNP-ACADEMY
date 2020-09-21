@@ -4,7 +4,7 @@
 
     if(isset($_POST['submit']))
     {
-
+       // $checkRemember = $_POST['checkRemember'];
         $uname 		= $_POST['userName'];
         $password 	= $_POST['password'];
 
@@ -23,10 +23,16 @@
 
         if($data!="No user found"){
 
+            if(isset($_POST['checkRemember']))
+            {   
+
+                setcookie("checkRemember",$_POST['checkRemember'],time()+(86400*30),"/");
+            }
+
             $_SESSION['username'] = $uname;
             $_SESSION['name']=$data['u_name'];
             $_SESSION['userid']=$data['id'];
-            setcookie('username',$uname,time()+86400);
+            setcookie("username",$uname,time()+(86400*30),"/");
             //echo $data['user_type'];
 
             if($data['user_type']=='Instructor')

@@ -1,30 +1,22 @@
 <?php
 
-session_start();
-require_once('../../services/courseService.php');
-require_once('../../services/instructor_service/course_instructorService.php');
-require_once('../../services/instructor_service/learner_instructorService.php');
-
-if(!isset($_COOKIE['username']) ){
-
+if(!isset($_COOKIE['username']) )
+{
     header('location: ../login.php?error=invalid_request');
 }
-
+$indtId= $_SESSION['userid'];
 
 $_SESSION['courseName']=$_GET['courseName'];
-
-
+     
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../asset/all_designs/instructor_designs/classSettingsDes.css">
-    <script type="text/javascript" src="../../asset/js/instructor_js/settingClass.js"></script>
+    <link rel="stylesheet" href="../../asset/all_designs/instructor_designs/insideclassdesign.css">
 
-    <title>Settings</title>
+    <title>Class Materials</title>
 </head>
 <body>
     <header>
@@ -67,42 +59,65 @@ $_SESSION['courseName']=$_GET['courseName'];
             </ul>
         </nav>
    </header>
-   <div class="verticleLine"></div>
-   <main>
+
+       <div class="verticleLine"></div>
+    <main>
         <div>
             <h4 class="class_headeing" id="class_heading">Class: <?= $_SESSION['courseName']?></h4>
         </div>
 
         <div class="class_materials">
             <ul>
-            <li><a href="insideClass.php?courseName=<?= $_SESSION['courseName']?>">Learnerss</a></li>
+                <li><a href="insideClass.php?courseName=<?= $_SESSION['courseName']?>">Learnerss</a></li>
                 <li><a href="postComment.php?courseName=<?= $_SESSION['courseName']?>">Post</a></li>
                 <li><a href="files.php?courseName=<?= $_SESSION['courseName']?>">Class Materials</a></li>
                 <li><a href="assignment.php?courseName=<?= $_SESSION['courseName']?>">Assignments</a></li>
                 <li><a href="grade.php?courseName=<?= $_SESSION['courseName']?>">Grades</a></li>
                 <li><a href="classSettings.php?courseName=<?= $_SESSION['courseName']?>">Settings</a></li>
-    
+             
             </ul>
         </div>
 
-        <div class="settings">
-            <form action="">
-                    <fieldset>
-                    <legend class="set-titile">Settings</legend>     
-                        <h4>See student data</h4>
-                        <span style="color:#666;">See student assignments</span>
-                        <input type="button" class="studentAssignment" value="See Assignment">
-                        <h4 id="dd">Danger Zone</h4>
-                        <span style="color:red;">Delete this class</span> 
-                        <input id="className" value="<?=$_SESSION['courseName']?>" style="display:none;">
-                         
-                            <input type="button" id="deleteButton" class="deleteButton" value="Delete " onclick="confirmDelete(<?=$_SESSION['userid']?>) " >
-                            <!-- <a href="../../view/instructor_view/dashboard.php?>"> -->
-                        
-                    </fieldset>  
-                </form>
+        <div class="students">
+            <form>
+                <fieldset>
+                   <legend class="title">Enrolled Learners List</legend>
+                   <table class="student_table">
+                    <tr>
+                        <td style="color:#589; font-size:17px; text-decoration: solid;">Learner Name</td>
+                        <td style="color:#589; font-size:17px;">Email</td>
+
+                    <tr>
+                    <tr>
+                        <td colspan="3"><hr></td>
+                    </tr>
+                    <?php
+                     $Insid=$_SESSION['userid'];
+                     $courseName=$_SESSION['courseName'];
+                     $learnersId=showLearners($Insid, $courseName);
+                     for($i=0; $i<count($learnersId);$i++)
+                     {
+                        $learners_info=getByID($learnersId[$i]['learner_id']);
+                        ?>
+                        <tr>
+                        <td><?=$learners_info['u_name']?></td>
+                        <td><?=$learners_info['email']?></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><hr></td>
+                    </tr>
+                    <?php
+                     }
+                    
+                    ?>
+                   </table>        
+                </fieldset>
+            </form>
         </div>
-        <input id="deleteMsg" style="display:none">
-        
+    </main>
+
+    <footer>
+    
+    </footer>
 </body>
 </html>

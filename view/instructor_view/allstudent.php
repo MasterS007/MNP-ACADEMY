@@ -4,7 +4,8 @@
      require_once('../../services/courseService.php');
      
      $instructor_id= $_SESSION['userid'];
-     if(!isset($_SESSION['username'])){
+    
+if(!isset($_COOKIE['username']) ){
  
          header('location: ../login.php?error=invalid_request');
      }
@@ -70,7 +71,7 @@
                     <li><a href="../view/profile.php">Profile</a></li>
                     <li><a href="../view/mycourse.php">Courses</a></li>
                     <li><a href="../view/blog.php">Blogs</a></li>
-                    <li><a href="./php_and_js/php/logout.php">Logout</a></li>
+                    <li><a href="../../php/logout.php">Logout</a></li>
                 </ul>
             </div>
             <div class="wel">  
