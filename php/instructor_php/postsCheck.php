@@ -1,5 +1,6 @@
 <?php
 require_once("../../services/instructor_service/postService.php");
+require_once("../../services/instructor_service/commentService.php");
 require_once("../../services/courseService.php");
 if(isset($_POST['check_post']))
 {
@@ -39,16 +40,18 @@ if(isset($_GET['statusId']))
 {   
     $status_id=$_GET['statusId'];
     $courseName =$_GET['courseName'];
+    $validDeleteComment = deleteComment($status_id);
     $validDelete =deleteStatus($status_id);
 
-    if($validDelete)
+    if($validDelete && $validDeleteComment)
     {
-        header("location:../../view/instructor_view/postStatus.php?courseName=.$courseName.&&Message:DeleteSuccessfull!");
+        header("location:../../view/instructor_view/postStatus.php?courseName={$courseName}&&Message:DeleteSuccessfull!");
     }
 
     else
     {
-        header("location:../../view/instructor_view/postStatus.phpourseName=.$courseName.?Message:DeleteUnsuccessfull!");
+        
+        header("location:../../view/instructor_view/postStatus.php?courseName={$courseName}&& Message:DeleteUnsuccessfull!");
     }
 }
 ?>

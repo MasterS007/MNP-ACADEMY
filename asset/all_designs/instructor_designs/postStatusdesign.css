@@ -273,10 +273,8 @@ div.mainDiv {
 }
 
 .commentBox {
-    position: relative;
-    top: -970px;
-    width: 55%;
-    height: 70px;
+    width: 60%;
+    height: 100px;
     resize: none;
     outline: none;
     /* direction:ltr; */
@@ -293,17 +291,48 @@ div.mainDiv {
     direction: initial;
     color: #666;
     white-space: pre-wrap;
+    /* position: relative;
+    top: 40px;
+    width: 74.5%;
+    height: auto;
+    resize: none;
+    outline: none;
+    /* direction:ltr; */
+    /* padding: 15px 10px 20px; */
+    /* padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 6px;
+    border-radius: 5px;
+    border: 1px solid #F7E98D;
+    font: 13px;
+    row-gap: 2;
+    transition: box-shadow 0.5s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    direction: initial;
+    color: #666;
+    white-space: pre-wrap; */
     /* display: none; */
 }
 
 .erMsg {
     position: relative;
-    top: -998px;
-    left: 57%;
+    top: -80px;
+    left: 27%;
 }
 
 .postCommentBtn {
     position: relative;
+    left: 72%;
+    top: 5px;
+    padding: 5px 12px;
+    box-sizing: border-box;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    color: #666;
+    cursor: pointer;
+    /* position: relative;
     top: -1000px;
     left: 58%;
     padding: 5px 12px;
@@ -313,7 +342,7 @@ div.mainDiv {
     border-radius: 5px;
     border: 1px solid #ddd;
     color: #666;
-    cursor: pointer;
+    cursor: pointer; */
     /* display: none; */
 }
 

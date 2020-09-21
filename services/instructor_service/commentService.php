@@ -40,5 +40,26 @@ function insertComment($commentInfo)
     return $allstatus;
     mysqli_close($conn);
 
+
+	}
+	
+	function deleteComment($status_id)
+    {
+        $conn = dbConnection();
+
+		if(!$conn){
+			echo "DB connection error";
+		}
+
+     $sql = "DELETE FROM comment_section WHERE status_id={$status_id}";
+        if(mysqli_query($conn, $sql)){
+			
+			return true;
+		}else{
+
+            echo " ".mysqli_error($conn);
+			return false;
+		}
+	mysqli_close($conn);
     }
 ?>

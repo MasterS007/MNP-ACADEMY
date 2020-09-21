@@ -24,7 +24,7 @@ function postStatus() {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
 
-            //alert(this.responseText);
+            // alert(this.responseText);
             window.location.reload();
 
         }
@@ -40,20 +40,21 @@ function commentReply() {
     var commenterId = document.getElementById('comenterId').value;
     var commentBox = document.getElementById('commentBox');
     var commentBtn = document.getElementById('postComment');
-    var statusText = document.getElementById('statusBox');
-    var post = document.getElementById('post');
+    var courseName = document.getElementById('courseName').value;
+    // var statusText = document.getElementById('statusBox');
+    // var post = document.getElementById('post');
     commentBox.style.display = 'none';
     commentBtn.style.display = 'none';
-    statusText.style.display = 'block';
-    post.style.display = 'block';
+    // statusText.style.display = 'block';
+    // post.style.display = 'block';
 
     if (commentBox.value == "") {
         document.getElementById('erMsg').innerHTML = "Please, write something first!";
         commentBox.style.display = 'block';
         commentBtn.style.display = 'block';
-        statusText.style.display = 'none';
-        post.style.display = 'none';
-        commentBtn.style.top = "-1050px";
+        // statusText.style.display = 'none';
+        // post.style.display = 'none';
+
     }
 
     var myObj = {
@@ -73,12 +74,13 @@ function commentReply() {
     xttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
 
-            alert(this.responseText);
-            commentBox.style.display = 'none';
-            commentBtn.style.display = 'none';
-            statusText.style.display = 'block';
-            post.style.display = 'block';
-            window.location.reload();
+            // alert(this.responseText);
+            // commentBox.style.display = 'none';
+            // commentBtn.style.display = 'none';
+            // statusText.style.display = 'block';
+            // post.style.display = 'block';
+            // window.location.reload();
+            window.location.replace("../../view/instructor_view/postStatus.php?courseName=" + courseName);
 
         }
     }
@@ -87,6 +89,8 @@ function commentReply() {
 
 function removeErr() {
     var commentBtn = document.getElementById('postComment');
-    commentBtn.style.top = "-1000px";
+    // commentBtn.style.top = "-40px";
     document.getElementById('erMsg').innerHTML = "";
+    commentBox.style.display = 'block';
+    commentBtn.style.display = 'block';
 }

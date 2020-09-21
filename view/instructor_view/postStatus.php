@@ -86,29 +86,31 @@ if(!isset($_COOKIE['username']) )
              
             </ul>
         </div>
-
+        <input type="text" value="<?=$_SESSION['courseName']?>" id="courseName" style="display:none;">
         <div class="mainDiv">
             <h4 class="titleConver">Start new conversation</h4>
             <form>
             <?php
              if(isset($_GET['statusId']))
-                { ?> 
-            <div class="status">
-                <input type="text" value="<?=$indtId?>" id="instructorId" style="display:none;">
-                <input type="text" value="<?=$_SESSION['courseName']?>" id="courseName" style="display:none;">
-    
-               <textarea name="statusBox" placeholder="write from here..." class="statusBox" id="statusBox" style="display:none" ></textarea>
-               <br>
-                <i id="errorMsg" style=" font-size:12px; color:red;"></i>
-                <input type="button"  value="Post" class="post" id="post" style="display:none;">
-            </div>
+                { 
+                     $statusId=$_GET['statusId'];
+                    ?>
+                   <input type="text" value="<?=$statusId?>" id="statusId" style="display:none;" >
+                   <input type="text" value="<?=$indtId?>" id="comenterId" style="display:none;">
+                        <textarea name="commentBox" placeholder="write from here..." class="commentBox" id="commentBox" onkeyup="removeErr()" ></textarea>
+                        <br>
+                         <i id="erMsg" style=" font-size:12px; color:red;"></i>
+                         
+                         <input type="button" value="Comment" class="postCommentBtn" id="postComment" onclick="commentReply()">  
+                      
+                
                 <?php
                 }
                 else
                 {?>
                 <div class="status">
                     <input type="text" value="<?=$indtId?>" id="instructorId" style="display:none;">
-                    <input type="text" value="<?=$_SESSION['courseName']?>" id="courseName" style="display:none;">
+                    <!-- <input type="text" value="<?=$_SESSION['courseName']?>" id="courseName" style="display:none;"> -->
         
                 <textarea name="statusBox" placeholder="write from here..." class="statusBox" id="statusBox" onkeyup="removeError()"></textarea>
                 <br>
@@ -120,7 +122,6 @@ if(!isset($_COOKIE['username']) )
                 }?>
              
            <form> 
-           <span id="comment_msg"></span>
            <br>
            <?php
            $statusAll=showPost($indtId);
@@ -156,7 +157,7 @@ if(!isset($_COOKIE['username']) )
                         {
                             ?>
                             <div class="commenterInfo">
-                            <h5>Posted By_<?=$getUsername['u_name']?></h5>
+                            <h5>Comment from_<?=$getUsername['u_name']?></h5>
                             <h6><?=$getAllComment[$j]['dateNtime'];?></h6>
                             </div>
                             <div class="allComments">
@@ -173,28 +174,6 @@ if(!isset($_COOKIE['username']) )
                 <?php
            }
            ?>
-           <form>
-           <?php
-
-                if(isset($_GET['statusId']))
-                {   
-                    $statusId=$_GET['statusId'];
-                    ?>
-                   <input type="text" value="<?=$statusId?>" id="statusId" style="display:none;" >
-                   <input type="text" value="<?=$indtId?>" id="comenterId" style="display:none;">
-                        <input type="hidden" value="<?=$i?>" id="commentNum">
-                        <textarea name="commentBox" placeholder="write from here..." class="commentBox" id="commentBox" onkeyup="removeErr()" ></textarea>
-                        <br>
-                         <i id="erMsg" class="erMsg" style=" font-size:12px; color:red;"></i>
-                         
-                         <input type="button" value="Comment" class="postCommentBtn" id="postComment" onclick="commentReply()">  
-                      
-                <?php
-                }?>
-                   
-          </form>
-           
-           
         </div>
     </main>
 
