@@ -64,13 +64,20 @@
     <div class="verticleLine"></div>
 
     <main>
+    <div class="image-profile">
+           <?php
+            $profilePic=getAllFromInst($id);
+           ?>
+        <img src="../../asset/instructor_profilepic/<?=$profilePic['picture']?> " class="profile_picture">
+     </div>
         <h4 class="section-heading"><a href="dashboard.php"><?=$_SESSION['name'] ?></a></h4>
             <div class="accountStuff">
                 <ul class="stuff">
                     <li><a href="profile.php">Profile</a></li>
                     <li><a href="mycourse.php">Courses</a></li>
                     <li><a href="blog.php">Blogs</a></li>
-                    <li><a href="logout.php">Logout</a></li>
+                    <li><a href="aboutus.php">About Us</a></li>
+                    <li><a href="../php/logout.php">Logout</a></li>
                 </ul>
             </div>
 

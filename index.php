@@ -16,8 +16,8 @@ function getByID($id){
 }
 if(isset($_COOKIE['checkRemember']))
 {
-    $id = $_SESSION['userid'];
-    $info =getByID($id);
+      $id = $_COOKIE['userid'];
+      $info =getByID($id);
 
     if($info['user_type']=="Instructor")
     {
@@ -34,10 +34,12 @@ if(isset($_COOKIE['checkRemember']))
         header("location:view/Admin_view/AdminHome.php");
     }
 
-    }
-   
+ }
 
-?>
+ else
+ {
+     ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -131,4 +133,5 @@ if(isset($_COOKIE['checkRemember']))
 
 </body>
 
-</html>
+</html><?php
+ }?>

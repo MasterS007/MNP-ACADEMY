@@ -33,6 +33,7 @@
             $_SESSION['name']=$data['u_name'];
             $_SESSION['userid']=$data['id'];
             setcookie("username",$uname,time()+(86400*30),"/");
+            setcookie("userid",$data['id'],time()+(86400*30),"/");
             //echo $data['user_type'];
 
             if($data['user_type']=='Instructor')

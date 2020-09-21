@@ -58,7 +58,7 @@
         mysqli_close($conn);
     }
 
-    function getByID($id){ //from users table
+    function getByLearnerID($id){ //from users table
 		$conn = dbConnection();
 
 		if(!$conn){
