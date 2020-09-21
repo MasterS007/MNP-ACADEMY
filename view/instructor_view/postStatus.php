@@ -1,10 +1,14 @@
 <?php
+ session_start();
+ require_once('../../services/courseService.php');
+ require_once('../../services/instructor_service/course_instructorService.php');
+ require_once('../../services/instructor_service/learner_instructorService.php');
 
 if(!isset($_COOKIE['username']) )
 {
     header('location: ../login.php?error=invalid_request');
 }
-$indtId= $_SESSION['userid'];
+  $indtId= $_COOKIE['userid'];
 
 $_SESSION['courseName']=$_GET['courseName'];
      
@@ -14,7 +18,7 @@ $_SESSION['courseName']=$_GET['courseName'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../asset/all_designs/instructor_designs/insideclassdesign.css">
+    <link rel="stylesheet" href="../../asset/all_designs/instructor_designs/postStatusdesign.css">
 
     <title>Class Materials</title>
 </head>
@@ -78,41 +82,12 @@ $_SESSION['courseName']=$_GET['courseName'];
             </ul>
         </div>
 
-        <div class="students">
-            <form>
-                <fieldset>
-                   <legend class="title">Enrolled Learners List</legend>
-                   <table class="student_table">
-                    <tr>
-                        <td style="color:#589; font-size:17px; text-decoration: solid;">Learner Name</td>
-                        <td style="color:#589; font-size:17px;">Email</td>
-
-                    <tr>
-                    <tr>
-                        <td colspan="3"><hr></td>
-                    </tr>
-                    <?php
-                     $Insid=$_SESSION['userid'];
-                     $courseName=$_SESSION['courseName'];
-                     $learnersId=showLearners($Insid, $courseName);
-                     for($i=0; $i<count($learnersId);$i++)
-                     {
-                        $learners_info=getByID($learnersId[$i]['learner_id']);
-                        ?>
-                        <tr>
-                        <td><?=$learners_info['u_name']?></td>
-                        <td><?=$learners_info['email']?></td>
-                    </tr>
-                    <tr>
-                        <td colspan="3"><hr></td>
-                    </tr>
-                    <?php
-                     }
-                    
-                    ?>
-                   </table>        
-                </fieldset>
-            </form>
+        <div class="mainDiv">
+            <h4 class="titleConver">Start new conversation</h4>
+            <div class="status">
+                <textarea class="statusBox">
+                    </textarea>
+            </div>
         </div>
     </main>
 
