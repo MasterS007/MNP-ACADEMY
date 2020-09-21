@@ -3,6 +3,8 @@
  require_once('../../services/courseService.php');
  require_once('../../services/instructor_service/course_instructorService.php');
  require_once('../../services/instructor_service/learner_instructorService.php');
+ require_once('../../services/instructor_service/instructorService.php');
+ require_once('../../services/instructor_service/postService.php');
 
 if(!isset($_COOKIE['username']) )
 {
@@ -10,7 +12,7 @@ if(!isset($_COOKIE['username']) )
 }
   $indtId= $_COOKIE['userid'];
 
-$_SESSION['courseName']=$_GET['courseName'];
+  $_SESSION['courseName']=$_GET['courseName'];
      
 ?>
 <!DOCTYPE html>
@@ -19,6 +21,7 @@ $_SESSION['courseName']=$_GET['courseName'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../asset/all_designs/instructor_designs/postStatusdesign.css">
+    <script type="text/javascript" src="../../asset/js/instructor_js/statusSection.js"></script>
 
     <title>Class Materials</title>
 </head>
@@ -84,10 +87,43 @@ $_SESSION['courseName']=$_GET['courseName'];
 
         <div class="mainDiv">
             <h4 class="titleConver">Start new conversation</h4>
+            <form>
             <div class="status">
-                <textarea class="statusBox">
-                    </textarea>
+                <input type="text" value="<?=$indtId?>" id="instructorId" style="display:none;">
+    
+               <textarea name="statusBox" placeholder="write from here..." class="statusBox" id="statusBox" onkeyup="removeError()"></textarea>
+               <br>
+                <i id="errorMsg" style=" font-size:12px; color:red;"></i>
+                <input type="button"  value="Post" class="post" id="post" onclick="postStatus()">
             </div>
+           <form> 
+           <span id="comment_msg"></span>
+           <br>
+           <?php
+           $statusAll=showPost($indtId);
+           $getUsername =getByInstructorsID($indtId);
+
+           for($i=0;$i<count($statusAll);$i++)
+           {
+               ?>
+               <div id="display_Status"> 
+                   <div class="posterInfo">
+                        <h5>Posted By_<?=$getUsername['u_name']?></h5>
+                        <h6><?=$statusAll[$i]['dateNtime'];?></h6>
+                        <a href="../../php/instructor_php/postCheck.php?statusId=<?=$statusAll[$i]['status_id']?>"><input type="button" value="Delete Post" ></a>
+                    </div>
+               
+                <div class="textStatus"> 
+               <p> <?php echo nl2br($statusAll[$i]['status_topic']);?></p>
+                </div>
+                <div class="reply">
+                    <input type="button" value="Reply" class="replyBtn">
+                </div><br><br>
+                <?php
+           }
+           ?>
+
+           
         </div>
     </main>
 

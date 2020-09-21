@@ -9,8 +9,8 @@ if(!isset($_COOKIE['username']) ){
            header('location: ../login.php?error=invalid_request');
        }
 
-       $indtId= $_SESSION['userid'];
-       $instinfo = getByID($indtId);
+       $indtId= $_COOKIE['userid'];
+       $instinfo =getByInstructorsID($indtId);
        $instName =  $instinfo['u_name'];
 
  ?> 
@@ -106,8 +106,8 @@ if(!isset($_COOKIE['username']) ){
         <div id="divClasses" class="divclasses">
            <ul class="myClass">
                 <?php
-                    $Cid=$_SESSION['userid'];
-                    $courseId=getInsCourse($Cid);
+       
+                    $courseId=getInsCourse( $indtId);
                     for($i=0; $i<count($courseId); $i++)
                     {
                         $courseName =getByCourseId($courseId[$i]['course_id']);
