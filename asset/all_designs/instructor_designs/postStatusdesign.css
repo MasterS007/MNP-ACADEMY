@@ -165,15 +165,9 @@ div.mainDiv {
     color: darkcyan;
 }
 
-.display_Status {
-    position: relative;
-    left: 74%;
-    top: 5px;
-}
-
 .posterInfo {
     position: relative;
-    top: 10px;
+    top: 40px;
     width: 77%;
     height: 50px;
     border: .5px solid #ddd;
@@ -197,9 +191,33 @@ div.mainDiv {
     color: #666;
 }
 
+.commenterInfo {
+    position: relative;
+    top: 45px;
+    left: 15px;
+    width: 73%;
+    height: 50px;
+    border: .5px solid #ddd;
+    border-bottom: none;
+}
+
+.commenterInfo h5 {
+    position: relative;
+    top: -18px;
+    left: 5px;
+    color: rgb(78, 105, 102);
+}
+
+.commenterInfo h6 {
+    position: relative;
+    top: -38px;
+    left: 5px;
+    color: #666;
+}
+
 .textStatus {
     position: relative;
-    top: 10px;
+    top: 40px;
     width: 74.5%;
     height: auto;
     padding: 20px;
@@ -210,9 +228,23 @@ div.mainDiv {
     font: 15px Serif;
 }
 
+.allComments {
+    position: relative;
+    top: 40px;
+    width: 70%;
+    left: 15px;
+    height: auto;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    transition: box-shadow 0.5s ease;
+    box-shadow: 0 4px 6px rgb(78, 105, 102);
+    font: 15px Serif;
+}
+
 .reply {
     position: relative;
-    top: 10px;
+    top: 40px;
     width: 74.5%;
     height: 20px;
     padding: 20px;
@@ -225,7 +257,7 @@ div.mainDiv {
 .replyBtn {
     position: relative;
     left: 96%;
-    top: -18px;
+    top: 2px;
     padding: 5px 12px;
     box-sizing: border-box;
     -webkit-border-radius: 5px;
@@ -242,9 +274,9 @@ div.mainDiv {
 
 .commentBox {
     position: relative;
-    top: -18px;
-    width: 88%;
-    height: 50px;
+    top: -530px;
+    width: 55%;
+    height: 30px;
     resize: none;
     outline: none;
     /* direction:ltr; */
@@ -261,18 +293,18 @@ div.mainDiv {
     direction: initial;
     color: #666;
     white-space: pre-wrap;
-    display: none;
+    /* display: none; */
 }
 
 .erMsg {
     position: relative;
-    top: -38px;
+    top: -540px;
 }
 
 .postCommentBtn {
     position: relative;
-    top: -80px;
-    left: 94%;
+    top: -567px;
+    left: 58%;
     padding: 5px 12px;
     box-sizing: border-box;
     -webkit-border-radius: 5px;
@@ -281,7 +313,7 @@ div.mainDiv {
     border: 1px solid #ddd;
     color: #666;
     cursor: pointer;
-    display: none;
+    /* display: none; */
 }
 
 .postCommentBtn:hover {

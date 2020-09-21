@@ -10,7 +10,7 @@ function insertPost($statusInfo)
 			echo "DB connection error";
 		}
 
-	$sql = "INSERT INTO post_status (users_id, status_topic, dateNtime) VALUES ('{$statusInfo['users_id']}','{$statusInfo['status_topic']}','{$statusInfo['dateNtime']}')";
+	$sql = "INSERT INTO post_status (users_id, status_topic, dateNtime,course_id) VALUES ('{$statusInfo['users_id']}','{$statusInfo['status_topic']}','{$statusInfo['dateNtime']}','{$statusInfo['course_id']}')";
 	if(mysqli_query($conn, $sql)){
 			
 			return true;

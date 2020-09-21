@@ -1,20 +1,24 @@
 <?php
 require_once("../../services/instructor_service/postService.php");
+require_once("../../services/courseService.php");
 if(isset($_POST['check_post']))
 {
     $allInfo = json_decode($_POST['check_post']);
     $statusText = $allInfo->statusText;
     $instructor_id=$allInfo->userId;
+    $courseName=$allInfo->courseName;
     $date = new DateTime('now', new DateTimeZone('Asia/Dhaka'));
     $dateNtime =$date->format('Y-m-d H:i:s ');
     //echo   $dateNtime;
-
+    $courseId=getByCourseName($courseName);
+    //echo  $courseId['course_id'];
     if(!empty($statusText) && !empty($instructor_id))
     {
         $statusInfo = [
             'status_topic'=> $statusText,
             'users_id'=> $instructor_id,
-            'dateNtime'=>$dateNtime
+            'dateNtime'=>$dateNtime,
+            'course_id'=>$courseId['course_id']
 
         ];
 

@@ -5,6 +5,7 @@
  require_once('../../services/instructor_service/learner_instructorService.php');
  require_once('../../services/instructor_service/instructorService.php');
  require_once('../../services/instructor_service/postService.php');
+ require_once('../../services/instructor_service/commentService.php');
 
 if(!isset($_COOKIE['username']) )
 {
@@ -25,6 +26,7 @@ if(!isset($_COOKIE['username']) )
 
     <title>Class Materials</title>
 </head>
+
 <body>
     <header>
         <nav>
@@ -76,7 +78,7 @@ if(!isset($_COOKIE['username']) )
         <div class="class_materials">
             <ul>
                 <li><a href="insideClass.php?courseName=<?= $_SESSION['courseName']?>">Learnerss</a></li>
-                <li><a href="postComment.php?courseName=<?= $_SESSION['courseName']?>">Post</a></li>
+                <li><a href="postStatus.php?courseName=<?= $_SESSION['courseName']?>">Post</a></li>
                 <li><a href="files.php?courseName=<?= $_SESSION['courseName']?>">Class Materials</a></li>
                 <li><a href="assignment.php?courseName=<?= $_SESSION['courseName']?>">Assignments</a></li>
                 <li><a href="grade.php?courseName=<?= $_SESSION['courseName']?>">Grades</a></li>
@@ -90,6 +92,7 @@ if(!isset($_COOKIE['username']) )
             <form>
             <div class="status">
                 <input type="text" value="<?=$indtId?>" id="instructorId" style="display:none;">
+                <input type="text" value="<?=$_SESSION['courseName']?>" id="courseName" style="display:none;">
     
                <textarea name="statusBox" placeholder="write from here..." class="statusBox" id="statusBox" onkeyup="removeError()"></textarea>
                <br>
@@ -106,7 +109,7 @@ if(!isset($_COOKIE['username']) )
            for($i=0;$i<count($statusAll);$i++)
            {
                ?>
-               <div id="display_Status"> 
+               <div id="display_Status" class="display_Status"> 
                    <div class="posterInfo">
                         <h5>Posted By_<?=$getUsername['u_name']?></h5>
                         <h6><?=$statusAll[$i]['dateNtime'];?></h6>
@@ -118,31 +121,59 @@ if(!isset($_COOKIE['username']) )
                     <p> <?php echo nl2br($statusAll[$i]['status_topic']);?></p>
                     </div>
                     <div class="reply">
-                        <?php
-                        if(current($statusAll))
-                        {?>
-                        <form>
-                        <!-- <div class="commentsArea"> -->
-                        <input type="text" value="<?=$indtId?>" id="comenterId" style="display:none;">
-                        <input type="hidden" value="<?=$i?>" id="commentNum">
-                        <textarea name="commentBox" placeholder="write from here..." class="commentBox" id="commentBox" ></textarea>
-                        <br>
-                         <i id="erMsg" class="erMsg" style=" font-size:12px; color:red; display:none;"></i>
-                         <input type="button" value="Comment" class="postCommentBtn" id="postComment" onclick="commentReply()">
-                        <!-- </div> -->
-                        </form>
-                         <input type="button" value="Reply" class="replyBtn" id="replyBtn" onclick="commentPopup()">
-                         <?php
-                        }
-                        ?>
+                        
+                      <?php
+                    //    for($j=0; $j<count())
+                      ?>
+                         <a href="postStatus.php?statusId=<?=$statusAll[$i]['status_id']?>&& courseName=<?=$_SESSION['courseName']?>"><input type="button" value="Reply" class="replyBtn" id="replyBtn"></a>
+                        
                     </div>
+                    <?php
+                        $getAllComment=getAllComments($statusAll[$i]['status_id']); //from commentService.php;
+                        if($getAllComment!=false)
+                        {
+                            for($j=0; $j<count($getAllComment);$j++)
+                        {
+                            ?>
+                            <div class="commenterInfo">
+                            <h5>Posted By_<?=$getUsername['u_name']?></h5>
+                            <h6><?=$getAllComment[$j]['dateNtime'];?></h6>
+                            </div>
+                            <div class="allComments">
+                            <p> <?php echo nl2br($getAllComment[$j]['comments']);?></p>
+                            </div>
+                            <?php
+                        }
+                    }
+                        
+                    ?>
                     
                </div>
                 <br><br>
                 <?php
            }
            ?>
+           <form>
+           <?php
 
+                if(isset($_GET['statusId']))
+                {   
+                    $statusId=$_GET['statusId'];
+                    ?>
+                   <input type="text" value="<?=$statusId?>" id="statusId" style="display:none;" >
+                   <input type="text" value="<?=$indtId?>" id="comenterId" style="display:none;">
+                        <input type="hidden" value="<?=$i?>" id="commentNum">
+                        <textarea name="commentBox" placeholder="write from here..." class="commentBox" id="commentBox" onkeyup="removeErr()" ></textarea>
+                        <br>
+                         <i id="erMsg" class="erMsg" style=" font-size:12px; color:red;"></i>
+                         
+                         <input type="button" value="Comment" class="postCommentBtn" id="postComment" onclick="commentReply()">  
+                      
+                <?php
+                }?>
+                   
+          </form>
+           
            
         </div>
     </main>
