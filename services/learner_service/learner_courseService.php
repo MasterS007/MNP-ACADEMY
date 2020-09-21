@@ -24,4 +24,29 @@ function insertCourse($infoCourse)
 }
 
 
-?>
+function getMyCourse()
+{
+	$conn = dbConnection();
+
+    if(!$conn){
+        echo "DB connection error";
+    }
+  
+	
+    $sql = "select * from learner_instructor ";
+	$result = mysqli_query($conn, $sql);
+	$courses = [];
+	while($row = mysqli_fetch_assoc($result)){
+		array_push($courses, $row);
+		
+	   
+	}
+	mysqli_close($conn);
+   
+	return $courses;
+}
+
+
+
+	
+	?>

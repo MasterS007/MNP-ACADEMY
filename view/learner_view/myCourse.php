@@ -1,9 +1,8 @@
 <?php
        session_start();
-       require_once('../../services/courseService.php');
-       require_once('../../services/instructor_service/course_instructorService.php');
-       require_once('../../services/instructor_service/instructorService.php');
-       
+       require_once('../../services/learner_service/learner_courseService.php');
+       require_once('../../services/learner_service/learnerService.php');
+         
 
        $id= $_SESSION['userid'];
        if(!isset($_SESSION['username'])){
@@ -44,32 +43,57 @@
 </nav>
 </header>
 
-<h2>List Of Cousrses</h2>
+<h2>List Of Cousrses you have taken</h2>
 
-<p>These are the courses available right now on MNP Academy</p>
+<p>Enjoy to learn your course!!!!</p>
 
 <div id="btnContainer">
-  <button class="btn" onclick="listView()"><i class="fa fa-bars"></i> List</button> 
-  <button class="btn active" onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+  
 </div>
 <br>
 
-<div class="row">
-  <div class="column" style="background-color:#aaa;">
-    <h2><a href="science.html">Science</a></h2>
-    <p>Some text..</p>
-  </div>
-  <div class="column" style="background-color:#bbb;">
-    <h2>Computer Science</h2>
-    <p>Some text..</p>
-  </div>
-</div>
+ <?php 
 
-<div class="row">
-  <div class="column" style="background-color:#ccc;">
-    <h2>Programming Language</h2>
-    <p>Some text..</p>
+$allMyCourse = getMyCourse();
+
+// echo $allMyCourse;
+ for($i=0; $i<count($allMyCourse); $i++)
+ {
+$Id=$allMyCourse[$i]['instructor_id'];
+//   echo $getInstructor;
+   //$Instructor=   getByID('$getInstructor');
+  //echo $Instructor;
+//   for($j=0;$j<count( $Instructor);$j++)
+//   {
+  ?> 
+  
+  
+  <div class="column" style="background-color:#aaa;">
+    
+  
+    <h2><a href="myCourseMaterial.php?courseid=<?=$allMyCourse[$i]['course_id']?> && instructorId=<?=$allMyCourse[$i]['instructor_id']?>"><?=$allMyCourse[$i]['course_id'] ?> </a><h2>
+    <h2><a href="">Instructor Id: <?=$Id ?></a></h2>
+    <h2><a href="">Course Id: <?=$allMyCourse[$i]['course_id']  ?></a></h2>
+    <h2><a href=""></a></h2>
+    
   </div>
+<?php
+//}
+}
+?>
+<?php
+// $Instructor=getByInsID('$Id');
+// for($i=0; $i<count($Instructor); $i++)
+// {
+?>
+<!-- <h2><a href="">Course Id: <?//=$Instructor[$i]['u_name']  ?></a></h2> -->
+
+<?php
+//}
+
+?>
+
+ 
   
 </div>
 

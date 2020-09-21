@@ -48,6 +48,27 @@ function Learner_update($user){
 			return false;
 		}
     }
-    
+	
+
+	function  getByInsID($id)
+	{
+		$conn = dbConnection();
+	
+		if(!$conn){
+			echo "DB connection error";
+		}
+	
+		$sql = "select * from users where id={$id}";
+		$result = mysqli_query($conn, $sql);
+		$courses = [];
+	
+		while($row = mysqli_fetch_assoc($result)){
+			array_push($courses, $row);
+		}
+	
+		return $courses;
+		mysqli_close($conn);
+	}
+
     
 ?>
