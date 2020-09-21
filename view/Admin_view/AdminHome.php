@@ -12,7 +12,7 @@
     <head>
     <meta charset = "UTF-8"/>
     <link rel="stylesheet" type="text/css" href="../../asset/all_designs/Admin_designs/adminHome.css">
-    <title>MY Page</title>
+    <title>Admin Home</title>
     </head>
     <body>
             <header>
@@ -27,7 +27,7 @@
                 <nav>
                     <ul class="nav-links">
                     <a  href="#"><button> </button></a>
-                    <a  href="#"><button>logout</button></a>
+                    <a  href="../../php/logout.php"><button>logout</button></a>
                    </ul>
                </nav>
             </header>

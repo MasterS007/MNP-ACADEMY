@@ -11,7 +11,7 @@
 <html>
     <head>
         <title>
-            MY Page
+            add About Us
         </title>
         <link rel="stylesheet" type="text/css" href="../../asset/all_designs/Admin_designs/about_us.css">
         <script type="text/javascript" src="../../asset/js/Admin_js/about_us.js"></script>
@@ -30,7 +30,7 @@
                 <nav>
                     <ul class="nav-links">
                     <a  href="#"><buttonp> </buttonp></a>
-                    <a  href="#"><button>logout</button></a>
+                    <a  href="../../php/logout.php"><button>logout</button></a>
                    </ul>
             </nav>
             </header>

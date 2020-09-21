@@ -22,14 +22,14 @@
                 <nav>
                     <ul class="nav-links">
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
+                        <li><a href="AboutView.php">About</a></li>
                         <li><a href="#">Service</a></li>
                     </ul>
                 </nav>
                 <nav>
                     <ul class="nav-links">
                     <a  href="#"><button> </button></a>
-                    <a  href="#"><button>logout</button></a>
+                    <a  href="../../php/logout.php"><button>logout</button></a>
                    </ul>
                </nav>
             </header>

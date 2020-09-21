@@ -1,0 +1,321 @@
+body {
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+a,
+p,
+li,
+button {
+    text-decoration: none;
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: grey;
+    align-items: center;
+    top: 0;
+    height: 10px;
+    padding: 20px;
+}
+
+.logo {
+    font-weight: 500;
+    font-size: 20px;
+    padding: 10px, 20px;
+    cursor: pointer;
+    letter-spacing: .2em;
+}
+
+.nav-links li {
+    list-style: none;
+    display: inline-block;
+}
+
+.nav-links li a {
+    margin: 0 15px;
+}
+
+.nav-links li a:hover {
+    color: black;
+    margin: 0 15px;
+}
+
+li {
+    list-style: none;
+    margin: 20px;
+}
+
+button {
+    border: none;
+    background: white;
+    padding: 6px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: black;
+}
+
+#buttonp {
+    border: none;
+    background: white;
+    margin: 10px;
+    padding: 6px;
+    border-radius: 500px;
+    font-weight: bold;
+    color: black;
+}
+
+
+/*Middle Part*/
+
+main {
+    background-color: white;
+    background-size: 100%;
+    background-position: center;
+    padding: 20px;
+    height: 750px;
+    overflow: auto;
+}
+
+div.verticleLine {
+    border-left: 2px solid #ddd;
+    height: 600px;
+    position: absolute;
+    left: 22%;
+    margin-left: -8px;
+    top: 88px;
+}
+
+h4.section-heading a {
+    color: #5899;
+    text-decoration-style: none;
+    text-decoration-line: none;
+    margin-left: 85px;
+}
+
+ul.stuff li {
+    margin-left: 50px;
+    position: relative;
+    list-style-type: none;
+    padding-bottom: 20px;
+}
+
+ul.stuff li a {
+    padding: 0px 20px;
+    color: darkgoldenrod;
+    text-decoration-style: none;
+    text-decoration-line: none;
+}
+
+ul.stuff li a:hover {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+
+/* 
+div form {
+    margin-left: 30%;
+    margin-top: -200px;
+}
+
+fieldset.profile_div {
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    width: max-content;
+    position: relative;
+}
+
+legend.mainLegend {
+    padding-bottom: 0px;
+    color: #666;
+}
+
+div form fieldset.profile_div table.profile_table {
+    padding-left: -10px;
+    margin-top: 12%;
+    border-collapse: collapse;
+    text-align: left;
+    border-color: white;
+    width: 100%;
+}
+
+table.profile_table td {
+    color: #555;
+    padding-right: 20px;
+    border: 2px;
+}
+
+a {
+    text-decoration-line: none;
+    color: darkcyan;
+}
+
+a.propic {
+    margin-left: 35px;
+} */
+
+.card-container {
+    width: 54%;
+    height: 85%;
+    background: rgb(253, 253, 253);
+    border-radius: 6px;
+    position: absolute;
+    top: 60%;
+    left: 58%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 1px 10px 1px #000;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.bg-modal {
+    width: 0%;
+    height: 100%;
+    opacity: 100%;
+    position: absolute;
+    background-color: black;
+    top: 0;
+    opacity: 0.9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+
+/*Edit Box*/
+
+.modal-content {
+    position: relative;
+    left: 100px;
+    margin-top: 220px;
+    margin-bottom: 20px;
+    margin-left: 80%;
+    width: 300px;
+    height: 60%;
+    background-color: rgba(28, 29, 29, 0.6);
+    opacity: 1;
+    border-radius: 8px;
+    text-align: center;
+    padding: 20px 20px;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 14px;
+    font-size: 30px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+.upper-container {
+    height: 200px;
+    /* background: rgb(78, 77, 77); */
+    background-color: rgb(110, 110, 110);
+}
+
+.Submitbtn {
+    position: relative;
+    top: -12px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #666;
+    background-color: #666;
+    color: white;
+    cursor: pointer;
+}
+
+.image-container {
+    background: white;
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    top: 120px;
+    padding: 5px;
+    margin-left: 43%;
+}
+
+.image-container img {
+    width: 120px;
+    height: 120px;
+    border-radius: 60%;
+    position: fixed;
+}
+
+
+/* 
+@media screen and (max-width:1700px) {
+    card-container {
+        width: 50%;
+    }
+} */
+
+.lower-container {
+    /* height: 300px; */
+    position: relative;
+    margin-top: 50px;
+    background: #ffffff;
+    padding: 20px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.profileInfo {
+    margin-top: 0px;
+}
+
+.lower-container h3,
+h4,
+h5 {
+    box-sizing: border-box;
+    line-height: .6;
+    font-weight: lighter;
+}
+
+.lower-container h4 {
+    color: #4b4a4d;
+    opacity: .6;
+    font-weight: bold;
+}
+
+.lower-container p {
+    font-size: 16px;
+    color: gray;
+    margin-bottom: 30px;
+}
+
+.lower-container .btn {
+    margin-top: -30px;
+    padding: 10px 20px;
+    background: rgb(94, 95, 95);
+    border: none;
+    color: white;
+    border-radius: 30px;
+    font-size: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .3s ease-in;
+}
+
+.lower-container .btn:hover {
+    background: transparent;
+    color: darkcyan;
+    border: 2px solid rgb(103, 105, 105);
+    font-size: 12px;
+    text-decoration: none;
+}
+
+
+/*Footer*/
