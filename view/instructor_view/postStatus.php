@@ -118,8 +118,25 @@ if(!isset($_COOKIE['username']) )
                     <p> <?php echo nl2br($statusAll[$i]['status_topic']);?></p>
                     </div>
                     <div class="reply">
-                         <input type="button" value="Reply" class="replyBtn">
+                        <?php
+                        if(current($statusAll))
+                        {?>
+                        <form>
+                        <!-- <div class="commentsArea"> -->
+                        <input type="text" value="<?=$indtId?>" id="comenterId" style="display:none;">
+                        <input type="hidden" value="<?=$i?>" id="commentNum">
+                        <textarea name="commentBox" placeholder="write from here..." class="commentBox" id="commentBox" ></textarea>
+                        <br>
+                         <i id="erMsg" class="erMsg" style=" font-size:12px; color:red; display:none;"></i>
+                         <input type="button" value="Comment" class="postCommentBtn" id="postComment" onclick="commentReply()">
+                        <!-- </div> -->
+                        </form>
+                         <input type="button" value="Reply" class="replyBtn" id="replyBtn" onclick="commentPopup()">
+                         <?php
+                        }
+                        ?>
                     </div>
+                    
                </div>
                 <br><br>
                 <?php

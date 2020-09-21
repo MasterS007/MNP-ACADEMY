@@ -32,3 +32,32 @@ function postStatus() {
 function removeError() {
     document.getElementById('errorMsg').innerHTML = "";
 }
+
+function commentReply() {
+    var commenterId = document.getElementById('comenterId').value;
+    var replyBtn = document.getElementById('replyBtn')
+    var commentBox = document.getElementById('commentBox');
+    var commentBtn = document.getElementById('postComment');
+    commentBox.style.display = 'none';
+    replyBtn.style.display = 'block';
+    commentBtn.style.display = 'none';
+
+    if (commentBox.value == "") {
+        document.getElementById('erMsg').innerHTML = "Please, write something first!";
+        commentBox.style.display = 'block';
+        commentBtn.style.display = 'block';
+    }
+
+}
+
+function commentPopup() {
+
+    var commentBox = document.getElementById('commentBox');
+    var replyBtn = document.getElementById('replyBtn');
+    var commentBtn = document.getElementById('postComment');
+    commentBox.style.display = 'block';
+    replyBtn.style.display = 'none';
+    commentBtn.style.display = 'block';
+
+
+}

@@ -214,7 +214,7 @@ div.mainDiv {
     position: relative;
     top: 10px;
     width: 74.5%;
-    height: 5px;
+    height: 20px;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -225,7 +225,7 @@ div.mainDiv {
 .replyBtn {
     position: relative;
     left: 96%;
-    top: -8px;
+    top: -18px;
     padding: 5px 12px;
     box-sizing: border-box;
     -webkit-border-radius: 5px;
@@ -234,6 +234,58 @@ div.mainDiv {
     border: 1px solid #ddd;
     color: #666;
     cursor: pointer;
+}
+
+.replyBtn:hover {
+    color: darkcyan;
+}
+
+.commentBox {
+    position: relative;
+    top: -18px;
+    width: 88%;
+    height: 50px;
+    resize: none;
+    outline: none;
+    /* direction:ltr; */
+    /* padding: 15px 10px 20px; */
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 6px;
+    border-radius: 5px;
+    border: 1px solid #F7E98D;
+    font: 13px;
+    row-gap: 2;
+    transition: box-shadow 0.5s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    direction: initial;
+    color: #666;
+    white-space: pre-wrap;
+    display: none;
+}
+
+.erMsg {
+    position: relative;
+    top: -38px;
+}
+
+.postCommentBtn {
+    position: relative;
+    top: -80px;
+    left: 94%;
+    padding: 5px 12px;
+    box-sizing: border-box;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    color: #666;
+    cursor: pointer;
+    display: none;
+}
+
+.postCommentBtn:hover {
+    color: darkcyan;
 }
 
 .deleteBtna {
@@ -252,4 +304,8 @@ div.mainDiv {
     border: 1px solid #ddd;
     color: #666;
     cursor: pointer;
+}
+
+.deleteBtn:hover {
+    color: darkcyan;
 }
