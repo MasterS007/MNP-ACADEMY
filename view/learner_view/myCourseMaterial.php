@@ -1,13 +1,26 @@
 <?php
-       session_start();
-       require_once('../../services/Admin_Service/about_us.php');
+    
+      session_start();
+      
+      require_once('../../services/instructor_service/classmaterialService.php');
+      require_once('../../services/courseService.php');
+
+      $id= $_SESSION['userid'];
+      if(!isset($_SESSION['username'])){
+  
+          header('location: ../login.php?error=invalid_request');
+      }
+      
+      $courseid=$_GET['courseid'];
+      $instructorId=$_GET['instructorId'];
+
 ?>
 
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>About Us</title>
+    <title>My Course Material</title>
     
     <link rel="stylesheet" type="text/css" href="../../asset/all_designs/learner_designs/aboutUsStyle.css">
     
@@ -43,8 +56,8 @@
     <div class="upper-container">
             
         <h2>Welcome MNP ACADEMY</h2>
-            <h1> About Us</h1> 
-            <h4>We envision a world where anyone, anywhere can transform their life by accessing the world’s best learning experience</h4>
+            <h1> Courses material for </h1> 
+            <h4> <?=$instructorId?></h4>
     
           
        
@@ -52,15 +65,17 @@
    
     <div class="lower-container">
         <?php
-       $about=getAboutUs();
-       for($i=0;$i<count($about);$i++)
+       
+       $getMaterial=getCourseMaterial($instructorId, $courseid);
+       for($i=0; $i<count($getMaterial); $i++)
        {
        ?>
 
         <div>
-        <h2><?=$about[$i]['Title']?></h2>
-        <h2><?=$about[$i]['SubTitle']?></h2>
-        <p><?=$about[$i]['Descriptions']?></p>
+        <h2><?=$getMaterial[$i]['items_name']?></h2>
+        
+        
+       
 
         </div>
        <?php 
