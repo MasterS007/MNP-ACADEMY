@@ -6,7 +6,7 @@
        
 
        $id= $_SESSION['userid'];
-       if(!isset($_SESSION['username'])){
+       if(!isset($_COOKIE['username']) ){
    
            header('location: ../login.php?error=invalid_request');
        }
