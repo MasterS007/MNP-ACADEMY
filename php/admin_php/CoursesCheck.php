@@ -2,18 +2,20 @@
 
     session_start();
      require_once('../../services/courseService.php');
-     if(isset($_POST['checkDelete']))
+     if(isset($_GET['courseName']))
      {
-        $course_name=$_POST['checkDelete'];
+        $course_name=$_GET['courseName'];
         $validDelete =deleteByCoursename($course_name);
 
         if($validDelete==true)
         {
-            echo "Delete Successful";
+            //echo "Delete Successful";
+            header("location:../../view/Admin_view/coursesView.php?Message:DeleteSuccessFul");
         }
         else
         {
-            echo "Delete Failed!";
+           // echo "Delete Failed!";
+           header("location:../../view/Admin_view/coursesView.php?Message:DeleteFailed");
         }
 
      }

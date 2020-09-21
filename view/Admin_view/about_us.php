@@ -23,7 +23,7 @@
                 <nav>
                     <ul class="nav-links">
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
+                        <li><a href="../learner_view/aboutUs.php">About Us</a></li>
                         <li><a href="#">Service</a></li>
                     </ul>
                 </nav>

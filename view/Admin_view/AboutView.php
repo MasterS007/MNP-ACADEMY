@@ -22,9 +22,9 @@
           </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="dashboard.php">Home</a></li>
+                <li><a href="AdminHome.php">Home</a></li>
                 <li><a href="aboutUs.php">About Us</a></li>
-                <li><a href="tips.php">Tips</a></li>
+                <!-- <li><a href="tips.php">Tips</a></li> -->
                 <li><a href="#">Forum</a></li>
             
             </ul>
@@ -33,7 +33,7 @@
             <ul class="nav-links">
            
             <div class="right_area"> 
-                <a href="#" class="logout_btn">Logout</a>
+            <a href="../../php/logout.php">Logout</a>
             </div>
            </ul>
     </nav>
@@ -59,7 +59,7 @@
 
         <div>
         <h2><?=$about[$i]['Title']?></h2>
-        <h2><?=$about[$i]['SubTitle']?></h2>
+        <h4><?=$about[$i]['SubTitle']?></h4>
         <p><?=$about[$i]['Descriptions']?></p>
 
         </div>
@@ -75,7 +75,7 @@
     </div>
     <div class="lower-container">
        
-        <a href ="dashboard.php" class="btn"> Go Back </a>
+        <a href ="AdminHome.php" class="btn"> Go Back </a>
 
 
     </div>
