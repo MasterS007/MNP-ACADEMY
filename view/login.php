@@ -49,6 +49,7 @@
                
                 <hr>
                 <input  type="checkbox" name="checkRemember"><i class="RememberMe">Remember Me</i>
+                <br><i style="font-size:10px; color:red;"> * For a month!</i>
                 <br><br>
                 <input type="submit" name="submit" value="Login"> <a href="registration.html">Register</a>
             </fieldset>

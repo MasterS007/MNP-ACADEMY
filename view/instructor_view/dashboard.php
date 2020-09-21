@@ -3,7 +3,8 @@
        require_once('../../services/courseService.php');
        require_once('../../services/instructor_service/course_instructorService.php');
        require_once('../../services/instructor_service/instructorService.php');
-       if(!isset($_SESSION['username'])){
+    
+if(!isset($_COOKIE['username']) ){
    
            header('location: ../login.php?error=invalid_request');
        }
@@ -32,7 +33,7 @@
                     $courseN = getByCategory('Science');
                     for ($i=0; $i<count($courseN); $i++)
                     { ?>
-                        <option value="<?php echo $courseN[$i];?>"><?php echo $courseN[$i]['course_name'];?>
+                        <option value="<?php echo $courseN[$i]['course_name'];?>"><?php echo $courseN[$i]['course_name'];?>
                         </option>
                     <?php }?>
                     </optgroup>
@@ -41,7 +42,7 @@
                     $courseN = getByCategory('Computer Science');
                     for ($i=0; $i<count($courseN); $i++)
                     { ?>
-                        <option value="<?php echo $courseN[$i];?>"><?php echo$courseN[$i]['course_name'];?>
+                        <option value="<?php echo $courseN[$i]['course_name'];?>"><?php echo$courseN[$i]['course_name'];?>
                         </option>
                     <?php }?>
 
@@ -51,7 +52,7 @@
                     $courseN = getByCategory('Programming Language');
                     for ($i=0; $i<count($courseN); $i++)
                     { ?>
-                        <option value="<?php echo $courseN[$i];?>"><?php echo$courseN[$i]['course_name'];?>
+                        <option value="<?php echo $courseN[$i]['course_name'];?>"><?php echo$courseN[$i]['course_name'];?>
                         </option>
                     <?php }?>
 
@@ -66,18 +67,25 @@
 
         <div class="verticleLine"></div>
     <main>
-       
+       <div class="image-container">
+           <?php
+            $proPic= getAllFromInst($indtId);
+           ?>
+        <img src="../../asset/instructor_profilepic/<?= $proPic['picture']?> " class="profile_picture">
+        </div>
         <h4 class="section-heading"><a href="dashboard.php"><?php echo  $instName;?></a></h4>
         <div class="accountStuff">
                 <ul class="stuff">
                     <li><a href="profile.php">Profile</a></li>
                     <li><a href="mycourse.php">Courses</a></li>
                     <li><a href="blog.php">Blogs</a></li>
+                    <li><a href="aboutus.php">About Us</a></li>
                     <li><a href="../../php/logout.php">Logout</a></li>
+
                 </ul>
         </div>
         <section>
-                <h2 class="welcomeheading">Welcome <?php echo $_SESSION['name'];?></h2>
+                <h2 class="welcomeheading">Welcome <?php echo  $instName;?></h2>
                 
         </section>
 

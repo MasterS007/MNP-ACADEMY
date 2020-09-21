@@ -2,9 +2,11 @@
      session_start();
      require_once('../../services/instructor_service/learner_instructorService.php');
      require_once('../../services/courseService.php');
+     require_once('../../services/instructor_service/instructorService.php');
      
      $instructor_id= $_SESSION['userid'];
-     if(!isset($_SESSION['username'])){
+    
+if(!isset($_COOKIE['username']) ){
  
          header('location: ../login.php?error=invalid_request');
      }
@@ -55,7 +57,7 @@
              </select>
              <ul class="navigation">
                  <li class="searchBox"><input type="text" name="search" placeholder="Search.."></li>
-                 <li class="logo"><a href="../view/dashboard.php">MNP Academy</a></li>
+                 <li class="logo"><a href="dashboard.php">MNP Academy</a></li>
              </ul>
          </nav>
     </header>
@@ -63,14 +65,19 @@
         <div class="verticleLine"></div>
 
     <main>
-       
-        <h4 class="section-heading"><a href="../view/dashboard.php"><?php echo $_SESSION['name'];?></a></h4>
+    <div class="image-profile">
+           <?php
+            $proPic= getAllFromInst($instructor_id);
+           ?>
+        <img src="../../asset/instructor_profilepic/<?= $proPic['picture']?> " class="profile_picture">
+    </div>
+        <h4 class="section-heading"><a href="dashboard.php"><?php echo $_SESSION['name'];?></a></h4>
             <div class="accountStuff">
                 <ul class="stuff">
-                    <li><a href="../view/profile.php">Profile</a></li>
-                    <li><a href="../view/mycourse.php">Courses</a></li>
-                    <li><a href="../view/blog.php">Blogs</a></li>
-                    <li><a href="./php_and_js/php/logout.php">Logout</a></li>
+                    <li><a href="profile.php">Profile</a></li>
+                    <li><a href="mycourse.php">Courses</a></li>
+                    <li><a href="blog.php">Blogs</a></li>
+                    <li><a href="../../php/logout.php">Logout</a></li>
                 </ul>
             </div>
             <div class="wel">  
@@ -100,7 +107,7 @@
                      <?php
                          $learners = getLearnerId($instructor_id);
                          for($i=0; $i< count($learners);$i++)
-                    {        $learners_info=getByID($learners[$i]['learner_id']); //from users table of learner_instructorService.php
+                    {        $learners_info=getByLearnerID($learners[$i]['learner_id']); //from users table of learner_instructorService.php
                              $courseName =getByCourseId($learners[$i]['course_id']);// from courseService.php?>
                         <tr>
                             <td><?= $learners_info['u_name'] ?></td>

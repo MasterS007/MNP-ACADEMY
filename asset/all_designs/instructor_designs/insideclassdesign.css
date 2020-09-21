@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-color: darkcyan;
+    background-color: gray;
     background-size: 100%;
     background-position: center;
     height: 30px;
@@ -93,7 +93,7 @@ main {
     margin-left: 40px;
     margin-top: 40px;
     height: 750px;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 h4.class_headeing {
@@ -128,6 +128,8 @@ div.students form fieldset {
     width: 75%;
     border: 1px solid #ddd;
     border-radius: 5px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 table.student_table td hr {
@@ -142,13 +144,15 @@ table.student_table td {
     padding-right: 50px;
     padding-bottom: 5px;
     color: #666;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 
 /*Footer*/
 
 footer {
-    background: darkcyan;
+    background: gray;
     padding: 40px;
     color: white;
     margin-top: 70px;

@@ -47,7 +47,7 @@
 			echo "DB connection error";
 		}
 
-    $sql = "SELECT * FROM `learner_instructor` WHERE instructor_id={$id} ORDER BY course_id";
+       $sql = "SELECT * FROM `learner_instructor` WHERE instructor_id={$id} ORDER BY course_id";
 		$result = mysqli_query($conn, $sql);
         $learners = [];
 
@@ -58,7 +58,7 @@
         mysqli_close($conn);
     }
 
-    function getByID($id){ //from users table
+    function getByLearnerID($id){ //from users table
 		$conn = dbConnection();
 
 		if(!$conn){

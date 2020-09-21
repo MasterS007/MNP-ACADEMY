@@ -1,7 +1,7 @@
 <?php
        session_start();
        require_once('../../services/Admin_Service/about_us.php');
-       if(!isset($_SESSION['username'])){
+       if(!isset($_COOKIE['username']) ){
    
            header('location: ../login.php?error=invalid_request');
        }

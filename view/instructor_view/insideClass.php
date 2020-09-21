@@ -3,7 +3,8 @@
      require_once('../../services/courseService.php');
      require_once('../../services/instructor_service/course_instructorService.php');
      require_once('../../services/instructor_service/learner_instructorService.php');
-     if(!isset($_SESSION['username'])){
+    
+if(!isset($_COOKIE['username']) ){
  
          header('location: ../login.php?error=invalid_request');
      }
@@ -71,7 +72,7 @@
         <div class="class_materials">
             <ul>
                 <li><a href="insideClass.php?courseName=<?= $_SESSION['courseName']?>">Learnerss</a></li>
-                <li><a href="postComment.php?courseName=<?= $_SESSION['courseName']?>">Post</a></li>
+                <li><a href="postStatus.php?courseName=<?= $_SESSION['courseName']?>">Post</a></li>
                 <li><a href="files.php?courseName=<?= $_SESSION['courseName']?>">Class Materials</a></li>
                 <li><a href="assignment.php?courseName=<?= $_SESSION['courseName']?>">Assignments</a></li>
                 <li><a href="grade.php?courseName=<?= $_SESSION['courseName']?>">Grades</a></li>

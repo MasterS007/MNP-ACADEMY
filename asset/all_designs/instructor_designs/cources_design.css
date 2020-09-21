@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-color: darkcyan;
+    background-color: gray;
     background-size: 100%;
     background-position: center;
     height: 30px;
@@ -81,7 +81,7 @@ div.verticleLine {
     border-left: 2px solid #ddd;
     height: 600px;
     position: absolute;
-    left: 22%;
+    left: 18%;
     margin-left: -3px;
     top: 88px;
 }
@@ -89,24 +89,49 @@ div.verticleLine {
 main {
     background-color: white;
     background-size: 100%;
-    margin-left: 8%;
+    margin-left: 4%;
     margin-top: 35px;
     height: 750px;
     overflow: auto;
 }
 
+
+.image-container {
+    background: white;
+    position: relative;
+    width: 10px;
+    height: 20px;
+    border-radius: 50%;
+    top: -4px;
+    padding: 5px;
+    margin-left:1%;
+}
+.profile_picture{
+
+    width: 120px;
+    height: 120px;
+    border-radius: 60%;
+    position: relative;
+}
+
+
 .section-heading a {
     color: #5899;
+    position: relative;
+    top:75px;
+    left: 8px;
     text-decoration-style: none;
     text-decoration-line: none;
 }
 
 ul.stuff li {
-    margin-left: -40px;
+    margin-left: -8px;
     position: relative;
+    top:75px;
     list-style-type: none;
     padding-bottom: 20px;
 }
+
 
 ul.stuff li a {
     padding: 0px 20px;
@@ -142,14 +167,14 @@ div.editcourse button:hover {
 h3.heading {
     margin-left: 17%;
     position: relative;
-    top: -200px;
+    top: -240px;
     color: #658;
 }
 
 h4.someWords {
     margin-left: 17%;
     position: relative;
-    top: -200px;
+    top: -240px;
     color: #666;
 }
 
@@ -166,7 +191,7 @@ div.myCources {
 
 div.myCources ul li {
     position: relative;
-    top: 50px;
+    top: 20px;
     color: darkslategrey;
     margin-left: -20px;
     list-style-type: square;

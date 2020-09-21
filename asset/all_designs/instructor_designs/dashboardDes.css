@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-color: darkcyan;
+    background-color: gray;
     background-size: 100%;
     background-position: center;
     height: 30px;
@@ -82,30 +82,50 @@ div.verticleLine {
     border-left: 2px solid #ddd;
     height: 600px;
     position: absolute;
-    left: 22%;
+    left: 18%;
     margin-left: -3px;
     top: 88px;
 }
 
 main {
     background-color: white;
-    margin-left: 12%;
+    margin-left: 3%;
     margin-top: 20px;
     height: 750px;
     overflow: auto;
 }
 
+.image-container {
+    background: white;
+    position: relative;
+    width: 10px;
+    height: 20px;
+    border-radius: 50%;
+    top: -4px;
+    padding: 5px;
+    margin-left:1%;
+}
+.profile_picture{
+
+    width: 120px;
+    height: 120px;
+    border-radius: 60%;
+    position: relative;
+}
+
 .section-heading a {
     color: #5899;
     position: relative;
-    left: -5px;
+    top:75px;
+    left: 8px;
     text-decoration-style: none;
     text-decoration-line: none;
 }
 
 ul.stuff li {
-    margin-left: -10px;
+    margin-left: -8px;
     position: relative;
+    top:75px;
     list-style-type: none;
     padding-bottom: 20px;
 }
@@ -125,8 +145,8 @@ ul.stuff li a:hover {
 
 h2.welcomeheading {
     position: relative;
-    margin-top: -210px;
-    margin-left: 75%;
+    margin-top: -290px;
+    margin-left: 70%;
     color: #589;
 }
 
@@ -142,13 +162,14 @@ div hr {
 }
 
 div.wel {
-    margin-left: 10%;
+    margin-left:14%;
 }
 
 ul.wlist li {
     display: inline-block;
     padding-right: 20px;
     position: relative;
+
 }
 
 ul.wlist li a {
@@ -160,12 +181,12 @@ ul.wlist li a:active {
 }
 
 div.titleb {
-    margin-left: 12%;
+    margin-left: 16%;
     margin-top: 20px;
 }
 
 div.classes {
-    margin-left: 11%;
+    margin-left: 18%;
     margin-top: 5px;
 }
 
@@ -192,12 +213,14 @@ h4.titleC {
 }
 
 .divclasses {
+    position:relative;
+    left:4%;
     margin-left: 10%;
 }
 
 ul.myClass li {
     border: 1px solid #ddd;
-    width: 95%;
+    width: 90%;
     height: 35px;
     top: -40px;
     display: block;
@@ -306,7 +329,7 @@ table.new_class td {
 /*Footer*/
 
 footer {
-    background: darkcyan;
+    background: gray;
     padding: 40px;
     color: white;
 }

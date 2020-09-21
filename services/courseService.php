@@ -115,5 +115,4 @@ function insertCourses($course){
 		return $row;
 	}
 
-
 ?>

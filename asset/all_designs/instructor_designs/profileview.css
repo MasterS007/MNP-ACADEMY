@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-color: darkcyan;
+    background-color: gray;
     background-size: 100%;
     background-position: center;
     height: 30px;
@@ -84,6 +84,24 @@ main {
     overflow: auto;
 }
 
+.image-profile {
+    background: white;
+    position: relative;
+    width: 10px;
+    height: 20px;
+    border-radius: 50%;
+    top: -5px;
+    left:35px;
+    padding: 5px;
+    margin-left:1%;
+}
+.profile_picture{
+    width: 120px;
+    height: 120px;
+    border-radius: 60%;
+    position: relative;
+}
+
 div.verticleLine {
     border-left: 2px solid #ddd;
     height: 600px;
@@ -93,16 +111,19 @@ div.verticleLine {
     top: 88px;
 }
 
-h4.section-heading a {
+.section-heading a {
     color: #5899;
+    position: relative;
+    top:75px;
+    left: 59px;
     text-decoration-style: none;
     text-decoration-line: none;
-    margin-left: 85px;
 }
 
 ul.stuff li {
-    margin-left: 50px;
+    margin-left: 8px;
     position: relative;
+    top:75px;
     list-style-type: none;
     padding-bottom: 20px;
 }
@@ -121,49 +142,6 @@ ul.stuff li a:hover {
 }
 
 
-/* 
-div form {
-    margin-left: 30%;
-    margin-top: -200px;
-}
-
-fieldset.profile_div {
-    background-color: white;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    box-sizing: border-box;
-    width: max-content;
-    position: relative;
-}
-
-legend.mainLegend {
-    padding-bottom: 0px;
-    color: #666;
-}
-
-div form fieldset.profile_div table.profile_table {
-    padding-left: -10px;
-    margin-top: 12%;
-    border-collapse: collapse;
-    text-align: left;
-    border-color: white;
-    width: 100%;
-}
-
-table.profile_table td {
-    color: #555;
-    padding-right: 20px;
-    border: 2px;
-}
-
-a {
-    text-decoration-line: none;
-    color: darkcyan;
-}
-
-a.propic {
-    margin-left: 35px;
-} */
 
 .card-container {
     width: 54%;
@@ -171,7 +149,7 @@ a.propic {
     background: rgb(253, 253, 253);
     border-radius: 6px;
     position: absolute;
-    top: 60%;
+    top: 55%;
     left: 58%;
     transform: translate(-50%, -50%);
     box-shadow: 0px 1px 10px 1px #000;
@@ -345,7 +323,7 @@ h5 {
 /*Footer*/
 
 footer {
-    background: darkcyan;
+    background: gray;
     padding: 40px;
     color: white;
     margin-top: 70px;
