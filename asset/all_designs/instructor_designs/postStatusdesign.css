@@ -274,9 +274,9 @@ div.mainDiv {
 
 .commentBox {
     position: relative;
-    top: -530px;
+    top: -970px;
     width: 55%;
-    height: 30px;
+    height: 70px;
     resize: none;
     outline: none;
     /* direction:ltr; */
@@ -298,12 +298,13 @@ div.mainDiv {
 
 .erMsg {
     position: relative;
-    top: -540px;
+    top: -998px;
+    left: 57%;
 }
 
 .postCommentBtn {
     position: relative;
-    top: -567px;
+    top: -1000px;
     left: 58%;
     padding: 5px 12px;
     box-sizing: border-box;

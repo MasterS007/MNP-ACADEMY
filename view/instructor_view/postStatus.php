@@ -90,15 +90,35 @@ if(!isset($_COOKIE['username']) )
         <div class="mainDiv">
             <h4 class="titleConver">Start new conversation</h4>
             <form>
+            <?php
+             if(isset($_GET['statusId']))
+                { ?> 
             <div class="status">
                 <input type="text" value="<?=$indtId?>" id="instructorId" style="display:none;">
                 <input type="text" value="<?=$_SESSION['courseName']?>" id="courseName" style="display:none;">
     
-               <textarea name="statusBox" placeholder="write from here..." class="statusBox" id="statusBox" onkeyup="removeError()"></textarea>
+               <textarea name="statusBox" placeholder="write from here..." class="statusBox" id="statusBox" style="display:none" ></textarea>
                <br>
                 <i id="errorMsg" style=" font-size:12px; color:red;"></i>
-                <input type="button"  value="Post" class="post" id="post" onclick="postStatus()">
+                <input type="button"  value="Post" class="post" id="post" style="display:none;">
             </div>
+                <?php
+                }
+                else
+                {?>
+                <div class="status">
+                    <input type="text" value="<?=$indtId?>" id="instructorId" style="display:none;">
+                    <input type="text" value="<?=$_SESSION['courseName']?>" id="courseName" style="display:none;">
+        
+                <textarea name="statusBox" placeholder="write from here..." class="statusBox" id="statusBox" onkeyup="removeError()"></textarea>
+                <br>
+                    <i id="errorMsg" style=" font-size:12px; color:red;"></i>
+                    <input type="button"  value="Post" class="post" id="post" onclick="postStatus()">
+                </div>
+                <?php
+
+                }?>
+             
            <form> 
            <span id="comment_msg"></span>
            <br>

@@ -40,14 +40,20 @@ function commentReply() {
     var commenterId = document.getElementById('comenterId').value;
     var commentBox = document.getElementById('commentBox');
     var commentBtn = document.getElementById('postComment');
+    var statusText = document.getElementById('statusBox');
+    var post = document.getElementById('post');
     commentBox.style.display = 'none';
     commentBtn.style.display = 'none';
+    statusText.style.display = 'block';
+    post.style.display = 'block';
 
     if (commentBox.value == "") {
         document.getElementById('erMsg').innerHTML = "Please, write something first!";
         commentBox.style.display = 'block';
         commentBtn.style.display = 'block';
-        commentBtn.style.top = "-600px";
+        statusText.style.display = 'none';
+        post.style.display = 'none';
+        commentBtn.style.top = "-1050px";
     }
 
     var myObj = {
@@ -68,7 +74,11 @@ function commentReply() {
         if (this.readyState == 4 && this.status == 200) {
 
             alert(this.responseText);
-            // window.location.reload();
+            commentBox.style.display = 'none';
+            commentBtn.style.display = 'none';
+            statusText.style.display = 'block';
+            post.style.display = 'block';
+            window.location.reload();
 
         }
     }
@@ -77,6 +87,6 @@ function commentReply() {
 
 function removeErr() {
     var commentBtn = document.getElementById('postComment');
-    commentBtn.style.top = "-578px";
+    commentBtn.style.top = "-1000px";
     document.getElementById('erMsg').innerHTML = "";
 }
