@@ -9,27 +9,27 @@ function popup_close() {
 }
 
 
-function deleteCourse() {
-    var course_name = document.getElementById("course_name").value;
-    let xttp = new XMLHttpRequest(); //USING AJAX
+// function deleteCourse() {
+//     var course_name = document.getElementById("course_name").value;
+//     let xttp = new XMLHttpRequest(); //USING AJAX
 
-    if (confirm("Are you sure you want to delete " + course_name + " ?")) {
-        xttp.open('POST', '../../php/admin_php/CoursesCheck.php', true);
-        xttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xttp.send('checkDelete=' + course_name);
-        xttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
+//     if (confirm("Are you sure you want to delete " + course_name + " ?")) {
+//         xttp.open('POST', '../../php/admin_php/CoursesCheck.php', true);
+//         xttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+//         xttp.send('checkDelete=' + course_name);
+//         xttp.onreadystatechange = function() {
+//             if (this.readyState == 4 && this.status == 200) {
 
-                alert(this.responseText);
+//                 alert(this.responseText);
 
-            }
+//             }
 
-        }
-    }
+//         }
+//     }
 
 
 
-}
+// }
 
 function courseValidation() {
     var course_name = document.getElementById("course_name").value;

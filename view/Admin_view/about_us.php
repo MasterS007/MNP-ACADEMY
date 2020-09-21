@@ -11,7 +11,7 @@
 <html>
     <head>
         <title>
-            MY Page
+            add About Us
         </title>
         <link rel="stylesheet" type="text/css" href="../../asset/all_designs/Admin_designs/about_us.css">
         <script type="text/javascript" src="../../asset/js/Admin_js/about_us.js"></script>
@@ -23,14 +23,14 @@
                 <nav>
                     <ul class="nav-links">
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
+                        <li><a href="../learner_view/aboutUs.php">About Us</a></li>
                         <li><a href="#">Service</a></li>
                     </ul>
                 </nav>
                 <nav>
                     <ul class="nav-links">
                     <a  href="#"><buttonp> </buttonp></a>
-                    <a  href="#"><button>logout</button></a>
+                    <a  href="../../php/logout.php"><button>logout</button></a>
                    </ul>
             </nav>
             </header>

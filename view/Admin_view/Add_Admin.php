@@ -23,14 +23,14 @@
 		<nav>
 			<ul class="nav-links">
 				<li><a href="#">Home</a></li>
-				<li><a href="#">About</a></li>
+				<li><a href="AboutView.php">About</a></li>
 				<li><a href="#">Service</a></li>
 			</ul>
 		</nav>
 		<nav>
 			<ul class="nav-links">
 			<a  href="#"></a>
-			<a  href="#"><button>logout</button></a>
+			<a  href="../../php/logout.php"><button>logout</button></a>
 			</ul>
             </nav>
     </header>
@@ -52,8 +52,8 @@
 		<div class="Gridviewdiv" >
 			
 			<div class="button_div">
-					
-					<input type="button" name="Admin_Profile" style="cursor:pointer;" class="button" value="Admin Profile">
+					<a href ="admin_profile.php">Edit My profile</a>
+					<!-- <input type="button" name="Admin_Profile" style="cursor:pointer;" class="button" value="Admin Profile"> -->
 					<input type="button" name="Add_New_Admin" style="cursor:pointer;" id="add_admin" class="button"  value="Add New Admin" onclick="add_admin_popup_open()">
 					<input type="button" name="View_Admin_List" style="cursor:pointer;" class="button"value="View Admin List" onclick="view_admin_popup_open()">
 

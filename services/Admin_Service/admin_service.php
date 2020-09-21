@@ -56,5 +56,68 @@
 		
 		return $allInstructor;
 	}
+
+
+	
+
+	function getEmail($email, $id)
+    {
+        $conn = dbConnection();
+
+		if(!$conn){
+			echo "DB connection error";
+		}
+
+	$sql = "SELECT email FROM users WHERE email LIKE'%{$email}%' AND id NOT IN ({$id})";
+		$result = mysqli_query($conn, $sql);
+        $userEmail = mysqli_fetch_assoc($result);
+        
+        return $userEmail;
+	}
+		
+	function getUsername($username, $id){
+		$conn = dbConnection();
+
+		if(!$conn){
+			echo "DB connection error";
+		}
+
+		$sql = "SELECT username FROM users WHERE username LIKE '%{$username}%' AND id NOT IN ({$id})";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+		
+		return $row;
+		mysqli_close($conn);
+	}
+
+	function admin_update($user){
+		$conn = dbConnection();
+		if(!$conn){
+			echo "DB connection error";
+		}
+	
+		$sql = "UPDATE users SET u_name='{$user['nameU']}', username='{$user['uname']}', u_password='{$user['password']}', email='{$user['email']}' where id={$user['adminId']}";
+	
+		if(mysqli_query($conn, $sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+
+	function getAllFromAdmin($id){
+		$conn = dbConnection();
+
+		if(!$conn){
+			echo "DB connection error";
+		}
+
+		$sql = "select * from users where id={$id}";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+		mysqli_close($conn);
+		return $row;
+	}
 	
 	

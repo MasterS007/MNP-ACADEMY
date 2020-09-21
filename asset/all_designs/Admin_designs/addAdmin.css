@@ -51,7 +51,7 @@
     
     button {
         border: none;
-        background: white;
+        background: rgb(107, 106, 106);
         padding: 6px;
         border-radius: 5px;
         font-weight: bold;
@@ -71,26 +71,30 @@
     main {
         display: grid;
         grid-template-columns: 1fr 5fr;
-        background-color: rgb(245, 244, 244);
-        height: 600px;
+        background-color: rgb(212, 207, 207);
+        height: 100%;
     }
     
     main div.Gridviewdivodd {
-        background-color: rgb(245, 244, 244);
-        height: 600px;
+        background-color: rgb(212, 207, 207);
+        height: 100%;
         padding: 20px;
     }
     
     .button_div {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        border: 2px solid #ddd;
+        border: 2px solid rgb(102, 101, 101);
         border-top: none;
         border-left: none;
         border-right: none;
         height: 80px;
         margin: 2px;
         padding: 10px;
+    }
+    
+    .button_div a {
+        color: black;
     }
     
     .button {

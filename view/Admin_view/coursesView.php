@@ -22,14 +22,14 @@
                 <nav>
                     <ul class="nav-links">
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
+                        <li><a href="AboutView.php">About</a></li>
                         <li><a href="#">Service</a></li>
                     </ul>
                 </nav>
                 <nav>
                     <ul class="nav-links">
                     <a  href="#"><button> </button></a>
-                    <a  href="#"><button>logout</button></a>
+                    <a  href="../../php/logout.php"><button>logout</button></a>
                    </ul>
                </nav>
             </header>
@@ -71,14 +71,14 @@
                        {
                         ?>
                         <tr>
-                            <td><h4><?=$course[$i]['course_name'];?></h4></td>
+                            <td><a href="#"><h4 style="color:black;"><?=$course[$i]['course_name'];?></h4></a></td>
                             <td><h4><?=$course[$i]['course_category'];?></h4></td>
-                            <td><input type="button" value="Delete"  onclick="deleteCourse(<?=$course[$i]['course_name'];?>)"></td>
+                            <td><a href="../../php/admin_php/CoursesCheck.php?courseName=<?=$course[$i]['course_name']?>"><input type="button" value="Delete"  onclick="return confirm('Are you want to delete<?=$course[$i]['course_name'];?>')"></a></td>
                         </tr>
                        <?php } ?>
                        
                         
-                    </table>
+                    </table> 
                    </form>
                     <!-- add course form -->
                     <div class="bg-modal" id="bg-modal">
