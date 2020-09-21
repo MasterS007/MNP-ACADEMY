@@ -110,15 +110,18 @@ if(!isset($_COOKIE['username']) )
                    <div class="posterInfo">
                         <h5>Posted By_<?=$getUsername['u_name']?></h5>
                         <h6><?=$statusAll[$i]['dateNtime'];?></h6>
-                        <a href="../../php/instructor_php/postCheck.php?statusId=<?=$statusAll[$i]['status_id']?>"><input type="button" value="Delete Post" ></a>
+                        <a href="../../php/instructor_php/postsCheck.php?statusId=<?=$statusAll[$i]['status_id']?>&& courseName=<?= $_SESSION['courseName']?>" class="deleteBtna">
+                        <input type="button" value="Delete Post" class="deleteBtn" onclick="return confirm('Are you sure you want to delete the post?')">
+                        </a>
                     </div>
-               
-                <div class="textStatus"> 
-               <p> <?php echo nl2br($statusAll[$i]['status_topic']);?></p>
-                </div>
-                <div class="reply">
-                    <input type="button" value="Reply" class="replyBtn">
-                </div><br><br>
+                     <div class="textStatus"> 
+                    <p> <?php echo nl2br($statusAll[$i]['status_topic']);?></p>
+                    </div>
+                    <div class="reply">
+                         <input type="button" value="Reply" class="replyBtn">
+                    </div>
+               </div>
+                <br><br>
                 <?php
            }
            ?>

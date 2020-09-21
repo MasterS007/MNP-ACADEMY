@@ -30,7 +30,7 @@ function insertPost($statusInfo)
 			echo "DB connection error";
 		}
 
-	$sql = "SELECT * FROM post_status WHERE users_id={$id}";
+	$sql = "SELECT * FROM post_status WHERE users_id={$id} ORDER BY dateNtime DESC";
     $result = mysqli_query($conn, $sql);
     $allstatus=[];
     while($row = mysqli_fetch_assoc($result)){

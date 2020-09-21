@@ -30,4 +30,21 @@ if(isset($_POST['check_post']))
         }
     }
 }
+
+if(isset($_GET['statusId']))
+{   
+    $status_id=$_GET['statusId'];
+    $courseName =$_GET['courseName'];
+    $validDelete =deleteStatus($status_id);
+
+    if($validDelete)
+    {
+        header("location:../../view/instructor_view/postStatus.php?courseName=.$courseName.&&Message:DeleteSuccessfull!");
+    }
+
+    else
+    {
+        header("location:../../view/instructor_view/postStatus.phpourseName=.$courseName.?Message:DeleteUnsuccessfull!");
+    }
+}
 ?>

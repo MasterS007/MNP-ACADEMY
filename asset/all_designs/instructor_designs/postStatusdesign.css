@@ -235,3 +235,21 @@ div.mainDiv {
     color: #666;
     cursor: pointer;
 }
+
+.deleteBtna {
+    text-decoration: none;
+    position: relative;
+    left: 91%;
+    top: -95px;
+}
+
+.deleteBtn {
+    padding: 5px 12px;
+    box-sizing: border-box;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    color: #666;
+    cursor: pointer;
+}
