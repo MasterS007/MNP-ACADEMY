@@ -78,9 +78,6 @@ for($i=0; $i<count($allMyCourseIns); $i++)
   
     <h2><a href="assignment.php?course_name=<?=$course?> && instructor_name=<?=$Id?> && instructorId=<?=$userId?> && courseId=<?=$courseId?>"><?=$course?> </a><h2>
     <h2><a href="">Instructor Name: <?=$Id ?></a></h2>
-    
-    
-    
   </div>
 <?php
 //}

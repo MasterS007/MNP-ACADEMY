@@ -4,7 +4,7 @@
      require_once('../../services/courseService.php');
      require_once('../../services/instructor_service/instructorService.php');
      
-     $instructor_id= $_SESSION['userid'];
+     $instructor_id= $_COOKIE['userid'];
     
 if(!isset($_COOKIE['username']) ){
  

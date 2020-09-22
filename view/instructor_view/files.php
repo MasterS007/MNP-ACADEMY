@@ -97,7 +97,7 @@
                         $courseId=  $courseId=getByCourseName($_SESSION['courseName']);
                         // echo $_SESSION['courseName'];
                         // echo $courseId['course_id'];
-                        $id =$_SESSION['userid'];
+                        $id =$_COOKIE['userid'];
 
                             $courseMaterials= getCourseMaterial($id, $courseId['course_id']);
                             //$file_dir=scandir("../../asset/Class_Materials");

@@ -75,6 +75,7 @@ $_SESSION['courseName']=$_GET['courseName'];
 
         <div class="class_materials">
             <ul>
+                <li><a href="dashboard.php">Dashboard</a></li>
                 <li><a href="insideClass.php?courseName=<?= $_SESSION['courseName']?>">Learnerss</a></li>
                 <li><a href="postStatus.php?courseName=<?= $_SESSION['courseName']?>">Post</a></li>
                 <li><a href="files.php?courseName=<?= $_SESSION['courseName']?>">Class Materials</a></li>
@@ -91,7 +92,7 @@ $_SESSION['courseName']=$_GET['courseName'];
                     <legend class="set-titile">Settings</legend>     
                         <h4>See student data</h4>
                         <span style="color:#666;">See student assignments</span>
-                        <input type="button" class="studentAssignment" value="See Assignment">
+                       <a href="../../view/instructor_view/learnerAssignment.php"> <input type="button" class="studentAssignment" value="See Assignment"></a>
                         <h4 id="dd">Danger Zone</h4>
                         <span style="color:red;">Delete this class</span> 
                         <input id="className" value="<?=$_SESSION['courseName']?>" style="display:none;">

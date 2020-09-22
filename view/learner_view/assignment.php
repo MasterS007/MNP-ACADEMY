@@ -68,7 +68,7 @@
                         <?php
                        
                         
-                        
+
 
                             $courseMaterials= getAssignment($instructor_id, $course_id);
                             //$file_dir=scandir("../../asset/Class_Materials");
