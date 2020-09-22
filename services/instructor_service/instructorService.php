@@ -1,7 +1,7 @@
 <?php
 	require_once('../../databaseConn/dbCon.php');
 	
-	function getByName($u_name)
+	function getByInstructorName($u_name)
 	{
 		$conn = dbConnection();
 
@@ -16,7 +16,7 @@
 		return $row;
 		mysqli_close($conn);
 	}
-	function getUsername($username, $id){
+	function getInstructorUsername($username, $id){
 		$conn = dbConnection();
 
 		if(!$conn){
