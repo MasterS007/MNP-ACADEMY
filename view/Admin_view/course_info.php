@@ -11,13 +11,13 @@
            header('location: ../login.php?error=invalid_request');
        }
        $course_id =$_GET['course_id'];
-     // echo "course id: ".$course_id;
+    // echo "course id: ".$course_id;
  ?> 
 <!DOCTYPE html>
 <html>
     <head>
     <meta charset = "UTF-8"/>
-    <link rel="stylesheet" type="text/css" href="../../asset/all_designs/Admin_designs/course_infoStyle.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../../asset/all_designs/Admin_designs/course_infoStyle.css"> -->
     <script type="text/javascript" src="../../asset/js/Admin_js/add_coursesScript.js"></script>
     <title>All Courses</title>
     </head>
@@ -71,6 +71,7 @@
                         <?php 
                          $course_info=getInstructor($course_id);
                          for($i=0;$i<count($course_info);$i++)
+<<<<<<< HEAD
                          {
                              $instructors=getByInstructorsID($course_info[$i]['instructor_id']); 
                              $instructor_name=$instructors['u_name'];
@@ -83,6 +84,21 @@
                         <tr>
                         
                             <td><a href="#"><h4 style="color:black;"><?=$instructor_name?></h4></a></td>
+=======
+                 
+                         {   
+                            echo $course_info[$i]['instructor_id'];
+                            $instructors=getByInstructorsID($course_info[$i]['instructor_id']);
+                             $instructor_name=  $instructors['u_name'];
+                            $learners =getByID($course_info[$i]['learner_id']);
+                            $learners_name=$learners['u_name'];
+                            echo $learners_name;
+                             $course_info=getInstructor($course_id);
+                            ?>
+                        <tr>
+                        
+                            <td><h4 style="color:black;"><?= $instructor_name;?></h4></td>
+>>>>>>> bd3dc4a700f0b547ca3886090e99d247ec402a4d
                             <td><a href="#"><h4 style="color:black;"><?=$learners_name?></h4></a></td>
                             
                             <td><a href="../../php/admin_php/CoursesCheck.php?courseName=<?=$course_info[$i]['u_name']?>"><input type="button" value="Delete"  onclick="return confirm('Are you want to delete<?=$course[$i]['course_name'];?>')"></a></td>
