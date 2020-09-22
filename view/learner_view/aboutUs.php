@@ -33,7 +33,7 @@
             <ul class="nav-links">
            
             <div class="right_area"> 
-                <a href="#" class="logout_btn">Logout</a>
+                <a href="../../php/logout.php" class="logout_btn">Logout</a>
             </div>
            </ul>
     </nav>
