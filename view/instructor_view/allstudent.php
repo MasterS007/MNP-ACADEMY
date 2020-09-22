@@ -108,7 +108,7 @@ if(!isset($_COOKIE['username']) ){
                          $learners = getLearnerId($instructor_id);
                          for($i=0; $i< count($learners);$i++)
                     {        $learners_info=getByLearnerID($learners[$i]['learner_id']); //from users table of learner_instructorService.php
-                             $courseName =getByCourseId($learners[$i]['course_id']);// from courseService.php?>
+                             $courseName=getByCourseId($learners[$i]['course_id']);// from courseService.php?>
                         <tr>
                             <td><?= $learners_info['u_name'] ?></td>
                             <td><?= $learners_info['email'] ?></td>
