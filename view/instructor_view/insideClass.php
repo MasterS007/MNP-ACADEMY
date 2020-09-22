@@ -95,7 +95,7 @@ if(!isset($_COOKIE['username']) ){
                         <td colspan="3"><hr></td>
                     </tr>
                     <?php
-                     $Insid=$_SESSION['userid'];
+                     $Insid=$_COOKIE['userid'];
                      $courseName=$_SESSION['courseName'];
                      $learnersId=showLearners($Insid, $courseName);
                      for($i=0; $i<count($learnersId);$i++)

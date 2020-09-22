@@ -47,7 +47,7 @@
 	}
 	
 
-    function getByID($id){
+    function getByInstructorsID($id){
 		$conn = dbConnection();
 
 		if(!$conn){
