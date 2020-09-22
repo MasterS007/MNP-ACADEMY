@@ -15,7 +15,7 @@
         // echo $course_id;
         // echo  $instructor_name;
 
-        $instructor_id = getByName($instructor_name);
+        $instructor_id = getByInstructorName($instructor_name);
         // echo $instructor_id['id'];
         $learneCourseInfo =[
             "learner_id"=>$learner_id,
@@ -23,7 +23,7 @@
             "instructor_id"=>  $instructor_id['id']
         ];
 
-        $validInsetrt= insertCourse( $learneCourseInfo);
+        $validInsetrt= insertCourse( $learneCourseInfo); //from learner_courseService.php
         if($validInsetrt)
         {
             echo "Insert Successful";
