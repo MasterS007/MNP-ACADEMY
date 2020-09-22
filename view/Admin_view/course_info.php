@@ -1,7 +1,9 @@
 <?php
        session_start();
-       require_once('../../services/courseService.php');
+       //require_once('../../services/courseService.php');
        require_once('../../services/Admin_Service/courseService.php');
+       require_once("../../services/instructor_service/instructorService.php");
+       require_once("../../services/learner_service/learnerService.php");
 
        $id= $_SESSION['userid'];
        if(!isset($_COOKIE['username']) ){
@@ -9,7 +11,7 @@
            header('location: ../login.php?error=invalid_request');
        }
        $course_id =$_GET['course_id'];
-
+     // echo "course id: ".$course_id;
  ?> 
 <!DOCTYPE html>
 <html>
@@ -57,27 +59,32 @@
                     <li><h2>Courses Taken By Instructor</h2></li>
                 	<li><h2><input type ="button" value="Add new course" style="cursor:pointer;" onclick="popup_open()"> </h2></li>
                     </div>
-                     
-
                     <div class="TableContainer">
                         <form>
                     <table>
                     
                         <tr >
                             <td><h3>Instructor Name</h3></td>
-                            <td><h3>Course Name</h3></td>
-
+                            <td><h3>Learner Name</h3></td>
                             <td>Action</td>
                         </tr>
                         <?php 
-                    $course_info=getInstructor($course_id);
-                       for($i=0;$i<count($course_info);$i++)
-                       {
+                         $course_info=getInstructor($course_id);
+                         for($i=0;$i<count($course_info);$i++)
+                         {
+                            $instructors=getByInstructorsID($course_info[$i]['instructor_id']);
+                             $instructor_name=  $instructors['u_name'];
+                             $learners =getByID($course_info[$i]['learner_id']);
+                             $learners_name=$learners['u_name'];
+                             //$course_info=getInstructor($course_id);
+                             //for($i=0;$i<count($instructor_name);$i++)
+                              //{
                         ?>
                         <tr>
                         
-                            <td><a href="#"><h4 style="color:black;"><?=$course_info[$i]['u_name'];?></h4></a><input type="button"></td>
-                            <td><h4><?=$course_info[$i]['course_name'];?></h4></td>
+                            <td><a href="#"><h4 style="color:black;"><?= $instructor_name;?></h4></a></td>
+                            <td><a href="#"><h4 style="color:black;"><?=$learners_name?></h4></a></td>
+                            
                             <td><a href="../../php/admin_php/CoursesCheck.php?courseName=<?=$course_info[$i]['u_name']?>"><input type="button" value="Delete"  onclick="return confirm('Are you want to delete<?=$course[$i]['course_name'];?>')"></a></td>
                         </tr>
                        <?php
