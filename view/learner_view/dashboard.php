@@ -96,7 +96,7 @@
         
 
          <a href="tips.php"></i><span>Tips</span></a>
-         <a href="#"></i><span>Forum</span></a>
+         <a href="postStatus.php"></i><span>Forum</span></a>
          <a href="aboutUs.php"></i><span>About us</span></a>
          
         </div>
