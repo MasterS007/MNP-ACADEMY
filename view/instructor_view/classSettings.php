@@ -92,7 +92,9 @@ $_SESSION['courseName']=$_GET['courseName'];
                     <legend class="set-titile">Settings</legend>     
                         <h4>See student data</h4>
                         <span style="color:#666;">See student assignments</span>
-                       <a href="../../view/instructor_view/learnerAssignment.php"> <input type="button" class="studentAssignment" value="See Assignment"></a>
+                       <a href="../../view/instructor_view/learnerAssignment.php?courseName=<?= $_SESSION['courseName']?>"> 
+                            <input type="button" class="studentAssignment" value="See Assignment">
+                        </a>
                         <h4 id="dd">Danger Zone</h4>
                         <span style="color:red;">Delete this class</span> 
                         <input id="className" value="<?=$_SESSION['courseName']?>" style="display:none;">
