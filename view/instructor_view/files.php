@@ -5,7 +5,7 @@
     require_once('../../services/instructor_service/course_instructorService.php');
     require_once('../../services/instructor_service/learner_instructorService.php');
     require_once('../../services/instructor_service/classmaterialService.php');
-    if(!isset($_SESSION['username'])){
+    if(!isset($_COOKIE['username'])){
 
         header('location: ../login.php?error=invalid_request');
     }
@@ -77,7 +77,7 @@
                 <li><a href="postStatus.php?courseName=<?= $_SESSION['courseName']?>">Post</a></li>
                 <li><a href="files.php?courseName=<?= $_SESSION['courseName']?>">Class Materials</a></li>
                 <li><a href="assignment.php?courseName=<?= $_SESSION['courseName']?>">Assignments</a></li>
-                <li><a href="grade.php?courseName=<?= $_SESSION['courseName']?>">Grades</a></li>
+                <!-- <li><a href="grade.php?courseName=<?= $_SESSION['courseName']?>">Grades</a></li> -->
                 <li><a href="classSettings.php?courseName=<?= $_SESSION['courseName']?>">Settings</a></li>
     
         </ul>

@@ -107,6 +107,7 @@ function insertAssignment($materials)
 			
 			return true;
 		}else{
+            echo mysqli_error($conn);
 			return false;
 		}
 	mysqli_close($conn);

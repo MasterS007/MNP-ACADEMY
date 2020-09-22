@@ -22,5 +22,26 @@ function insertLearnerAssignment()
 		  mysqli_close($conn);
 }
 
+function showLearnerAssignment($courseid,$learner_id) //ByCourseId and question_id
+{
+	$conn = dbConnection();
+
+    if(!$conn){
+        echo "DB connection error";
+	}
+	
+$sql = "SELECT * FROM learner_assignment  Where course_id={$courseid} AND learner_id={$learner_id}";
+    $result = mysqli_query($conn, $sql);
+	$courses = [];
+
+    while($row = mysqli_fetch_assoc($result)){
+        array_push($courses, $row);
+    }
+
+    return $courses;
+    mysqli_close($conn);
+
+}
+
 
 ?>

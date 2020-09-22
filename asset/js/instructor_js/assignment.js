@@ -22,16 +22,16 @@ function clickButton(instructor_id) {
     xttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
 
-            //alert(this.responseText);
+            alert(this.responseText);
 
         }
     }
 }
 
-function confirmDelete() {
-    if (confirm("Are you sure you want to delete?")) {
-        return true;
-    } else {
-        return false;
-    }
-}
+// function confirmDelete() {
+//     if (confirm("Are you sure you want to delete?")) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }

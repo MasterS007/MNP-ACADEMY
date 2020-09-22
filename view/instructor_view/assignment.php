@@ -78,7 +78,7 @@ if(!isset($_COOKIE['username']) ){
                 <li><a href="postStatus.php?courseName=<?= $_SESSION['courseName']?>">Post</a></li>
                 <li><a href="files.php?courseName=<?= $_SESSION['courseName']?>">Class Materials</a></li>
                 <li><a href="assignment.php?courseName=<?= $_SESSION['courseName']?>">Assignments</a></li>
-                <li><a href="grade.php?courseName=<?= $_SESSION['courseName']?>">Grades</a></li>
+                <!-- <li><a href="grade.php?courseName=<?= $_SESSION['courseName']?>">Grades</a></li> -->
                 <li><a href="classSettings.php?courseName=<?= $_SESSION['courseName']?>">Settings</a></li>
     
         </ul>
@@ -143,7 +143,7 @@ if(!isset($_COOKIE['username']) ){
             </fieldset>
             <input type="file" name="allassignments" class="uploadbox" id="uploadbox" >
             <input type="text" id="spnFilePath" value="<?= $_SESSION['courseName']?>" style="display:none" >
-             <input type="submit" name="submit" value="Upload" class="btn_upload" id="btn_upload" onclick="UploadAssignment(<?=$_SESSION['userid']?>)">
+             <input type="submit" name="submit" value="Upload" class="btn_upload" id="btn_upload" onclick="UploadAssignment(<?=$_COOKIE['userid']?>)">
         </form>
     </div>
 </main>
