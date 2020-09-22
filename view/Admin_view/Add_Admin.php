@@ -88,7 +88,7 @@
 							   <td><?=$allAdmin[$i]['gender']?></td>
 							   <td><?=$allAdmin[$i]['date_of_birth']?></td>
 							   <td> <a href="#">Edit></a>
-							   <a href="#">Delete></a>
+							   <td><a href="../../php/admin_php/delete_admin.php?u_name=<?=$allAdmin[$i]['u_name']?>"><input type="button" value="Delete"  onclick="return confirm('Are you want to delete <?=$allAdmin[$i]['u_name'];?> account?')"></a></td>
 							</td>
 							</tr><?php
 							}?>
