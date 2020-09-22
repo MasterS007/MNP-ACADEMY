@@ -107,7 +107,7 @@ if(!isset($_COOKIE['username']) ){
                 <ul class="wlist">
                     <li><a href="dashboard.php">Classes</a></li>
                     <li><a href="allstudent.php">Students</a></li>
-                    <li><a href="#">Tips</a></li>
+                    <li><a href="instructorTips.php">Tips</a></li>
                 </ul> 
                 <hr>
         </div>

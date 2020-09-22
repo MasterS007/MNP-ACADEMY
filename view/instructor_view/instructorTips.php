@@ -1,31 +1,30 @@
 <?php
-     session_start();
-     require_once('../../services/instructor_service/learner_instructorService.php');
-     require_once('../../services/courseService.php');
-     require_once('../../services/instructor_service/instructorService.php');
+       session_start();
+       require_once('../../services/courseService.php');
+       require_once('../../services/instructor_service/course_instructorService.php');
+       require_once('../../services/instructor_service/instructorService.php');
+       require_once('../../services/instructor_service/tipsService.php');
+       if(!isset($_COOKIE['username']) ){
+   
+           header('location: ../login.php?error=invalid_request');
+       }
+       $indtId= $_COOKIE['userid'];
+       $instinfo =getByInstructorsID($indtId);
+       $instName =  $instinfo['u_name'];
      
-     $indtId= $_COOKIE['userid'];
-     $instinfo =getByInstructorsID($indtId);
-     $instName =  $instinfo['u_name'];
-    
-if(!isset($_COOKIE['username']) ){
- 
-         header('location: ../login.php?error=invalid_request');
-     }
-
-?>
+ ?> 
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../asset/all_designs/instructor_designs/allstudents.css"> 
-    <title>Students</title>
+    <link rel="stylesheet" href="../../asset/all_designs/instructor_designs/tipsDesign.css"> <link rel>
+    <title>Video Lectures</title>
 </head>
 <body>
     <header>
          <nav>
-             <select class="comboBox">
+         <select class="comboBox">
                  <option value="Course" selected disabled hidden>Cources</option>
                  <optgroup label="Science">
                 <?php
@@ -64,10 +63,10 @@ if(!isset($_COOKIE['username']) ){
          </nav>
     </header>
 
-        <div class="verticleLine"></div>
+    <div class="verticleLine"></div>
 
     <main>
-    <div class="image-profile">
+    <div class="image-container">
            <?php
             $proPic= getAllFromInst($indtId);
             if($proPic['picture']!=NULL)
@@ -81,11 +80,11 @@ if(!isset($_COOKIE['username']) ){
                 <img src="../../asset/instructor_profilepic/profile.ico" class="profile_picture">
                     <?php
             }?>
-    </div>
-        <h4 class="section-heading"><a href="dashboard.php"><?php echo $instName;?></a></h4>
+        </div>
+        <h4 class="section-heading"><a href="dashboard.php"><?=$instName?></a></h4>
             <div class="accountStuff">
                 <ul class="stuff">
-                    <li><a href="profile.php">Profile</a></li>
+                <li><a href="profile.php">Profile</a></li>
                     <li><a href="mycourse.php">Courses</a></li>
                     <li><a href="blog.php">Blogs</a></li>
                     <li><a href="aboutus.php">About Us</a></li>
@@ -101,48 +100,38 @@ if(!isset($_COOKIE['username']) ){
                 </ul> 
                 <hr>
            </div>
+           
+            <section>
+            <h3 class="heading">Tips for instructors</h3>
+            </section>
 
-           <div class="students-list">
-            <form >
-                <fieldset>
-                    <legend class="title">Students List</legend>
-                   <table class="student_table">
-                    <tr >
-                        <th calss="sHeading">Student Name</th>
-                        <th calss="sHeading">Email</th>
-                        <th calss="sHeading">Class</th>
-                    </tr>
-                    <tr>
-                        <td colspan="3"><hr></td>
-                    </tr>
-                 
-                     <?php
-                         $learners = getLearnerId($indtId);
-                         for($i=0; $i< count($learners);$i++)
-                    {        $learners_info=getByLearnerID($learners[$i]['learner_id']); //from users table of learner_instructorService.php
-                             $courseName=getByCourseId($learners[$i]['course_id']);// from courseService.php?>
-                        <tr>
-                            <td><?= $learners_info['u_name'] ?></td>
-                            <td><?= $learners_info['email'] ?></td>
-                            <td><?=$courseName['course_name']?></td>
-                        </tr>
-                        <tr>
-                            <td colspan="3"><hr></td>
-                        </tr>
+<div class="myCources">
+         <ul class="courses">
 
-                  <?php  }
+    <?php
 
-                      
-                    ?> 
-                   </table>
-             </form>
-            
-    </main> 
-    <footer>
-    </footer>
+      $tips= getAllTipas(); //from tipsService.php;
 
-    </body>
+    
+
+      for($i=0; $i<count($tips);$i++)
+      {
+        
+        ?>
+       
+       <li style="color:darkcyan;"><?=$tips[$i]['tips']?>
+       
+       </li> 
+        <br>   
+        <?php
+        
+      }
+    ?> 
+</div>  
+    
+   
+
+</body>
 </html>
 
-
-
+            

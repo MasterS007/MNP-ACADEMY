@@ -79,7 +79,7 @@ ul.navigation li.searchBox input[type=text]:focus {
 
 div.verticleLine {
     border-left: 2px solid #ddd;
-    height: 700px;
+    height: 600px;
     position: absolute;
     left: 18%;
     margin-left: -3px;
@@ -88,21 +88,20 @@ div.verticleLine {
 
 main {
     background-color: white;
-    margin-left: 1%;
-    margin-top: 40px;
-    height: auto;
-    overflow-y: auto;
-    overflow-x: hidden;
+    background-size: 100%;
+    margin-left: 4%;
+    margin-top: 35px;
+    height: 750px;
+    overflow: auto;
 }
 
-.image-profile {
+.image-container {
     background: white;
     position: relative;
     width: 10px;
     height: 20px;
     border-radius: 50%;
-    top: -6px;
-    left: 35px;
+    top: -4px;
     padding: 5px;
     margin-left: 1%;
 }
@@ -118,13 +117,13 @@ main {
     color: #5899;
     position: relative;
     top: 75px;
-    left: 30px;
+    left: 8px;
     text-decoration-style: none;
     text-decoration-line: none;
 }
 
 ul.stuff li {
-    margin-left: 15px;
+    margin-left: -8px;
     position: relative;
     top: 75px;
     list-style-type: none;
@@ -134,6 +133,7 @@ ul.stuff li {
 ul.stuff li a {
     padding: 0px 20px;
     color: darkgoldenrod;
+    text-decoration-style: none;
     text-decoration-line: none;
 }
 
@@ -143,10 +143,6 @@ ul.stuff li a:hover {
     box-sizing: border-box;
 }
 
-a {
-    text-decoration-line: none;
-}
-
 div hr {
     width: 95%;
     border: 1px solid #ddd;
@@ -154,7 +150,7 @@ div hr {
 
 div.wel {
     position: relative;
-    margin-left: 15%;
+    margin-left: 13%;
     margin-top: -260px;
 }
 
@@ -165,6 +161,7 @@ ul.wlist li {
 }
 
 ul.wlist li a {
+    text-decoration: none;
     color: #666;
 }
 
@@ -172,45 +169,56 @@ ul.wlist li a:active {
     border-bottom: 3px solid darkcyan;
 }
 
-legend.title {
-    color: #567;
-    font-weight: bold;
-}
 
-div.students-list form fieldset {
-    margin-left: 20%;
-    margin-top: 40px;
-    height: 500px;
-    width: 75%;
+/* 
+div.editcourse button {
     border: 1px solid #ddd;
+    box-sizing: border-box;
     border-radius: 5px;
-}
-
-table.student_table td hr {
-    width: 123%;
-    margin-left: -50px;
-}
-
-table.student_table th {
-    padding-left: 55px;
-    border-collapse: collapse;
-    position: relative;
-    text-align: center;
-    top: 30px;
-    padding-right: 150px;
-    padding-bottom: 5px;
-    color: #579;
-}
-
-table.student_table td {
-    padding-left: 55px;
-    border-collapse: collapse;
-    position: relative;
-    top: 30px;
-    padding-right: 150px;
-    padding-bottom: 5px;
+    padding: 5px;
+    margin-left: 80%;
+    top: -220px;
     color: #666;
-    text-align: center;
+    font-size: 14px;
+    position: relative;
+}
+
+div.editcourse button:hover {
+    color: darkcyan;
+} */
+
+h3.heading {
+    margin-left: 16%;
+    position: relative;
+    top: 5px;
+    color: #658;
+    font-size: 22px;
+}
+
+div.myCources {
+    margin-left: 18%;
+    top: -10px;
+    border: 0px dotted #ddd;
+    box-sizing: border-box;
+    border-radius: 8px;
+    width: max-content;
+    padding-right: 20px;
+    position: relative;
+}
+
+div.myCources ul li {
+    position: relative;
+    top: 20px;
+    color: darkslategrey;
+    margin-left: -20px;
+    list-style-type: square;
+    font-size: 17px;
+}
+
+div.myCources ul li a {
+    text-decoration: none;
+    text-decoration-line: none;
+    color: lightseagreen;
 }
 
 
@@ -219,6 +227,6 @@ table.student_table td {
 footer {
     background: gray;
     padding: 40px;
-    margin-top: 100px;
     color: white;
+    margin-top: 70px;
 }
