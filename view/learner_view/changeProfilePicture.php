@@ -31,7 +31,7 @@
 				<tr>
 					<td></td>
 					<td>
-						<input type="submit" name="create" value="Create"> 
+						<input type="submit" name="Upload" value="upload"> 
 						<a href="home.php">Back</a>
 					</td>
 				</tr>

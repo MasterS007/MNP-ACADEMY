@@ -80,7 +80,7 @@
                 $insctructorId = courseidget( $course_id['course_id']);
                 for($i=0; $i<count( $insctructorId); $i++)
                 {
-                    $instructorName= getByID($insctructorId[$i]['instructor_id']);
+                    $instructorName=getByInstructorsID($insctructorId[$i]['instructor_id']);
                     ?>
 
                     <option value="<?=$instructorName['u_name']?>"> <?=$instructorName['u_name']?></option>
