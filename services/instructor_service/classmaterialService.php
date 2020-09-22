@@ -2,6 +2,23 @@
 
 require_once('../../databaseConn/dbCon.php');
 
+function deleteMaterialByCourseId($course_id)
+{
+    $conn = dbConnection();
+
+    if(!$conn){
+        echo "DB connection error";
+    }
+    $sql = "DELETE FROM class_materials  Where course_id = {$course_id}";
+    if(mysqli_query($conn, $sql)){
+			
+        return true;
+    }else{
+        return false;
+    }
+     mysqli_close($conn);
+
+}
 function deleteMaterials($instructorId, $courseId) //by course id and instructor id
 {
     $conn = dbConnection();

@@ -29,6 +29,7 @@ function insertCourses($course){
 			
         return true;
     }else{
+		echo "".mysql_error($conn);
         return false;
     }
       mysqli_close($conn);
