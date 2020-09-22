@@ -70,8 +70,21 @@ if(!isset($_COOKIE['username']) ){
        <div class="image-container">
            <?php
             $proPic= getAllFromInst($indtId);
+            if($proPic['picture']!=NULL)
+            {
+                ?>
+                <img src="../../asset/instructor_profilepic/<?= $proPic['picture']?> " class="profile_picture">
+                <?php
+            }
+            else
+            {?>
+                <img src="../../asset/instructor_profilepic/profile.ico" class="profile_picture">
+                    <?php
+            }
+
            ?>
-        <img src="../../asset/instructor_profilepic/<?= $proPic['picture']?> " class="profile_picture">
+           
+        
         </div>
         <h4 class="section-heading"><a href="dashboard.php"><?php echo  $instName;?></a></h4>
         <div class="accountStuff">

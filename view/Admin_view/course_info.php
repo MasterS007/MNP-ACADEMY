@@ -72,6 +72,20 @@
                         <?php 
                          $course_info=getInstructor($course_id);
                          for($i=0;$i<count($course_info);$i++)
+
+                         {
+                             $instructors=getByInstructorsID($course_info[$i]['instructor_id']); 
+                             $instructor_name=$instructors['u_name'];
+                             $learners =getByID($course_info[$i]['learner_id']);
+                             $learners_name=$learners['u_name'];
+                             //$course_info=getInstructor($course_id);
+                             //for($i=0;$i<count($instructor_name);$i++)
+                              //{
+                        ?>
+                        <tr>
+                        
+                            <td><a href="#"><h4 style="color:black;"><?=$instructor_name?></h4></a></td>
+
                  
                          {   
                             //echo $course_info[$i]['instructor_id'];
@@ -79,13 +93,14 @@
                              $instructor_name=  $instructors['u_name'];
                             $learners =getByID($course_info[$i]['learner_id']);
                             $learners_name=$learners['u_name'];
+
                             $learners_id=$learners['id'];
                             
                             $course_info=getInstructor($course_id);
                             ?>
                         <tr>
                         <td><a href="instructor_materials.php?course_id= <?=$_SESSION['course_id']?>  && Instructor_id=<?=$learners_id?>"><h4 style="color:black;"><?=$instructor_name;?></h4></a></td>
-                            <!-- <td><h4 style="color:black;"><?//= $instructor_name;?></h4></td> -->
+
                             <td><a href="#"><h4 style="color:black;"><?=$learners_name?></h4></a></td>
                             
                             <td><a href="../../php/admin_php/CoursesCheck.php?courseName=<?=$course_info[$i]['u_name']?>"><input type="button" value="Delete"  onclick="return confirm('Are you want to delete<?=$course[$i]['course_name'];?>')"></a></td>

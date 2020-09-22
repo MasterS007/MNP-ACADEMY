@@ -2,6 +2,8 @@
 
 require_once('../../databaseConn/dbCon.php');
 
+
+
 function deleteAssignmentByCourseid($course_id)
 {
     

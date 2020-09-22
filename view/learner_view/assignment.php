@@ -56,7 +56,7 @@
 
     <body>
     <div class="files">
-        <form action="../../php/instructor_php/assignmentCheck.php" method="POST" enctype="multipart/form-data">
+        <form action="../../php/learner_php/assignmentCheck.php" method="POST" enctype="multipart/form-data">
            <fieldset class="upload_files">  
                <legend class="title_file">Assignment Section</legend> 
                     <table class="materialsTable">
@@ -68,20 +68,28 @@
                         <?php
                        
                         
-                        
+
 
                             $courseMaterials= getAssignment($instructor_id, $course_id);
                             //$file_dir=scandir("../../asset/Class_Materials");
                             for($i=0; $i<count($courseMaterials); $i++)
                             {
+                                $assignmentId=$courseMaterials[$i]['question_id'];
                                 ?>
+                                   
                                 <tr>
-                                    <td><a href="../../asset/Class_Assignment/<?php echo $courseMaterials[$i]['assignment_name']?>" class="fileName" ><?php echo $courseMaterials[$i]['assignment_name']?></a></td>
+                                    <td><a href="../../asset/Class_Assignment/<?php echo $courseMaterials[$i]['assignment_name']?>" class="fileName" name="assignmentName"><?php echo $courseMaterials[$i]['assignment_name']?></a></td>
                                     <td><?php echo $courseMaterials[$i]['dateNtime']?></td>
                                     <td>
-                                        <a href="../../php/instructor_php/assignmentCheck.php?FileName=<?=$courseMaterials[$i]['assignment_name']?>&&courseName=<?= $_SESSION['courseName']?>">
                                          
-                
+                                        <!-- <a  href="../../php/learner_php/assignmentCheck.php?FileName=<?//=$courseMaterials[$i]['assignment_name']?>&&courseName=<?//= $_SESSION['courseName']?>" name="assignmentName">
+                                           select assignment
+                                        </a> -->
+                                        <input type="submit" name="assignmentUpload" value="Submit">
+                                        <input type="file" name="submitAssignment" value="Submit">
+                                        
+                                     
+            
                                         
                                     </td>
                                         
