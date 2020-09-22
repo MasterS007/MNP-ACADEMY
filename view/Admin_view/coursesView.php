@@ -101,7 +101,7 @@
                                 <select name="course_category" id="course_category">
                                 <option></option>
                                     <?php
-                                    $course_category=getAllCategory();
+                                    $course_category=getAllCategory(); //from courseService.php;
                                     for($i=0;$i<count($course_category);$i++)
                                     {
                                     ?>

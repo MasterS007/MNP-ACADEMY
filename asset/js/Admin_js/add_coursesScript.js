@@ -63,7 +63,7 @@ function add_course() {
         course_name: course_name,
         course_category: course_category
     };
-    // alert(course_category);
+    //alert(course_category);
     var allInfo = JSON.stringify(allobj); //using JSON
     let xttp = new XMLHttpRequest(); //USING AJAX
     xttp.open('POST', '../../php/admin_php/CoursesCheck.php', true);
