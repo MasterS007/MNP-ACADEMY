@@ -95,7 +95,6 @@ main {
     overflow: auto;
 }
 
-
 .image-container {
     background: white;
     position: relative;
@@ -104,21 +103,20 @@ main {
     border-radius: 50%;
     top: -4px;
     padding: 5px;
-    margin-left:1%;
+    margin-left: 1%;
 }
-.profile_picture{
 
+.profile_picture {
     width: 120px;
     height: 120px;
     border-radius: 60%;
     position: relative;
 }
 
-
 .section-heading a {
     color: #5899;
     position: relative;
-    top:75px;
+    top: 75px;
     left: 8px;
     text-decoration-style: none;
     text-decoration-line: none;
@@ -127,11 +125,10 @@ main {
 ul.stuff li {
     margin-left: -8px;
     position: relative;
-    top:75px;
+    top: 75px;
     list-style-type: none;
     padding-bottom: 20px;
 }
-
 
 ul.stuff li a {
     padding: 0px 20px;
@@ -207,7 +204,7 @@ div.myCources ul li a {
 /*Footer*/
 
 footer {
-    background: darkcyan;
+    background: gray;
     padding: 40px;
     color: white;
     margin-top: 70px;

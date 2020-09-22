@@ -7,7 +7,9 @@
    
            header('location: ../login.php?error=invalid_request');
        }
-       $indtId= $_SESSION['userid'];
+       $indtId= $_COOKIE['userid'];
+       $instinfo =getByInstructorsID($indtId);
+       $instName =  $instinfo['u_name'];
  ?> 
 <!DOCTYPE html>
 <html lang="en">
@@ -68,7 +70,7 @@
            ?>
         <img src="../../asset/instructor_profilepic/<?= $proPic['picture']?> " class="profile_picture">
         </div>
-        <h4 class="section-heading"><a href="dashboard.php"><?=$_SESSION['name'] ?></a></h4>
+        <h4 class="section-heading"><a href="dashboard.php"><?=$instName?></a></h4>
             <div class="accountStuff">
                 <ul class="stuff">
                 <li><a href="profile.php">Profile</a></li>

@@ -8,7 +8,7 @@
       header('location: ../login.php?error=invalid_request');
   }
   $id= $_COOKIE['userid'];
-  $instrInfo=getByID($id);
+  $instrInfo=getByInstructorsID($id);
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -95,7 +95,7 @@
                         
                         <?php
 
-                            $instructorInfo = getByID($id);
+                            $instructorInfo = getByInstructorsID($id);
                             ?> 
                             <tr>
                                 <td>Name</td>
@@ -159,7 +159,7 @@
       
     <?php
 
-      $instructorInfo = getByID($id);
+      $instructorInfo =getByInstructorsID($id);
     ?>  
         <div class="profileInfo">
         <h4 style="font-weight:bold;"><?=$instructorInfo['u_name']?></h4> 
