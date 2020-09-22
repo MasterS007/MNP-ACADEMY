@@ -75,7 +75,6 @@ $_SESSION['courseName']=$_GET['courseName'];
 
         <div class="class_materials">
             <ul>
-                <li><a href="dashboard.php">Dashboard</a></li>
                 <li><a href="insideClass.php?courseName=<?= $_SESSION['courseName']?>">Learnerss</a></li>
                 <li><a href="postStatus.php?courseName=<?= $_SESSION['courseName']?>">Post</a></li>
                 <li><a href="files.php?courseName=<?= $_SESSION['courseName']?>">Class Materials</a></li>
