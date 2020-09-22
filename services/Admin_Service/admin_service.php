@@ -1,6 +1,7 @@
 <?php
 	require_once('../../databaseConn/dbCon.php');
 
+	
 	function getAllAdmin(){
 		$conn = dbConnection();
 
@@ -119,5 +120,21 @@
 		mysqli_close($conn);
 		return $row;
 	}
+
+	function deleteByusername($u_name){   // Admin account delete by name 
+		$conn = dbConnection();
+		if(!$conn){
+			echo "DB connection error";
+		}
+
+		$sql = "DELETE FROM users WHERE u_name='{$u_name}'";
+
+		if(mysqli_query($conn, $sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 	
 	

@@ -1,0 +1,26 @@
+def checkKey(dict, key): 
+    if key in dict: 
+        return 1 
+    else: 
+        return 0 
+ 
+graph = {'WA': ['SA', 'NT'], 'Q': ['SA', 'NT', 'NSW'], 'T': [], 'V': ['SA', 'NSW'], 'SA': ['WA', 'NT', 'Q', 'NSW', 'V'], 'NT': ['Q', 'WA', 'SA'], 'NSW': ['Q', 'V', 'SA']} 
+sortingneighbors = ['WA','Q','T','V','SA','NT','NSW'] 
+for x in range(0,7): 
+    for y in range(x+1,7): 
+        if(len(graph[sortingneighbors[x]]) < len(graph[sortingneighbors[y]])): 
+            temp = sortingneighbors[x] 
+            sortingneighbors[x] = sortingneighbors[y] 
+            sortingneighbors[y] = temp 
+ 
+choosecolor = {'WA': ['red','green', 'blue'], 'Q': ['red','green', 'blue'], 'T': ['red', 'green', 'blue'],'V': ['red','green', 'blue'], 'NT': ['red','green', 'blue'], 'NSW': ['red','green', 'blue'],'SA': ['red','green','blue']} 
+showColor = {'WA': '', 'Q': '', 'T': '', 'V': '', 'SA': '', 'NT': '', 'NSW': ''} 
+ 
+for x in sortingneighbors: 
+    showColor[x] = choosecolor[x][0] 
+    for y in graph[x]: 
+        if checkKey(choosecolor, y) == 1: 
+            choosecolor[y].remove(showColor[x]) 
+    del choosecolor[x] 
+ 
+print(showColor) 

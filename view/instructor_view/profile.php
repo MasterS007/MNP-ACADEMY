@@ -8,7 +8,9 @@
       header('location: ../login.php?error=invalid_request');
   }
   $id= $_COOKIE['userid'];
+
   $instrInfo=getByInstructorsID($id);
+
 ?>
     <!DOCTYPE html>
     <html lang="en">
