@@ -18,7 +18,7 @@
     <title>Learner's dashboard</title>
     
 
-    <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+   
     
     <link rel="stylesheet" type="text/css" href="../../asset/all_designs/learner_designs/dashboardDes.css"> 
     
@@ -32,7 +32,7 @@
 <header> 
             <label for="check">
 
-                <i class="fa fa-bars" id="sidebar_btn" ></i>
+                
             </label>
         
             <div class="left_area" >
@@ -88,30 +88,22 @@
             </center>
          
 
-         <a href="dashboard.php"><i class="fa fa-desktop"></i><span>Dashboard</span></a>
-         <a href="learner_Profile.php"><i class="fa fa-desktop"></i><span>profile</span></a>
-         <a href="allCourses.php"><i class="fa fa-cogs"></i><span>Courses</span></a>
-         <a href="myCourse.php"><i class="fa fa-th"></i><span>My Course</span></a>
+         <a href="dashboard.php"><span>Dashboard</span></a>
+         <a href="learner_Profile.php"><span>profile</span></a>
+         <a href="allCourses.php"><span>Courses</span></a>
+         <a href="myCourse.php"><span>My Course</span></a>
 
         
 
-         <a href="tips.php"><i class="fa fa-table"></i><span>Tips</span></a>
-         <a href="#"><i class="fa fa-th"></i><span>Forum</span></a>
-         <a href="aboutUs.php"><i class="fa fa-info-circle"></i><span>About us</span></a>
+         <a href="tips.php"></i><span>Tips</span></a>
+         <a href="#"></i><span>Forum</span></a>
+         <a href="aboutUs.php"></i><span>About us</span></a>
          
         </div>
 
        <div class="content">
                     </div>
-        <!-- <main>
-        
-             <div >
-              <h1 style="margin-top:200px; margin-left:40%;">HELLO!</h1>               -->
-            
-<!--     
-                 </div>
-                 </main>
-         -->
+      
       
        
     
