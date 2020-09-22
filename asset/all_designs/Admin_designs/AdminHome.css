@@ -75,29 +75,29 @@ main {
 }
 
 main>div {
-    background-color: rgb(211, 209, 205);
+    background-color: rgb(238, 237, 236);
     height: 100%;
+    width: 100%;
     padding: 20px;
 }
 
 main>div:nth-child(odd) {
     background-color: rgb(48, 46, 46);
+    height: 100%;
 }
 
 .result {
     display: grid;
-    background-color: rgb(124, 124, 128);
     grid-template-columns: 1fr 1fr 1fr;
     border: 2px solid rgb(105, 101, 101);
-    margin: 20px;
+    margin: 5px;
     color: black;
 }
 
 .resultdiv {
     display: grid;
-    background-color: rgb(210, 210, 218);
-    grid-template-columns: 1fr 1fr 1fr;
-    border: 2px solid rgb(105, 101, 101);
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    border-bottom: 2px solid rgb(105, 101, 101);
     font-size: 30px;
     margin: 20px;
     color: black;

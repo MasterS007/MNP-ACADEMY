@@ -1,6 +1,8 @@
 <?php
        session_start();
        require_once('../../services/Admin_Service/admin_service.php');
+       
+      
        if(!isset($_COOKIE['username']) ){
    
            header('location: ../login.php?error=invalid_request');
@@ -70,8 +72,21 @@
                     }
                     ?> 
                     Total Teacher :<?=$I_count?></div>
-                <div class="resultdiv" > Total Courses</div>
+                
                 </div>
+                <div class="resultdiv"> 
+                <?php
+                    $course=getAllCourse();
+                    $I_count=0;
+                    for($i=0;$i<count($course);$i++)
+                    {
+                        $I_count+=1;
+                    }
+                    ?> 
+                    Total Courses :<?=$I_count?></div>
+                
+                </div>
+                
     </div>
             </main>
     </body>

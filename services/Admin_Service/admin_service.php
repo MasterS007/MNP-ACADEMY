@@ -136,5 +136,24 @@
 		}
 	}
 
+
+	function getAllCourse(){
+		$conn = dbConnection();
+
+		if(!$conn){
+			echo "DB connection error";
+		}
+
+		$sql = "select * from all_courses order by course_category";
+		$result = mysqli_query($conn, $sql);
+		$courses = [];
+
+		while($row = mysqli_fetch_assoc($result)){
+			array_push($courses, $row);
+		}
+
+		return $courses;
+	}
+
 	
 	
