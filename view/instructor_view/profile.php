@@ -69,9 +69,18 @@
     <main>
     <div class="image-profile">
            <?php
-            $profilePic=getAllFromInst($id);
-           ?>
-        <img src="../../asset/instructor_profilepic/<?=$profilePic['picture']?> " class="profile_picture">
+            $proPic=getAllFromInst($id);
+            if($proPic['picture']!=NULL)
+            {
+                ?>
+                <img src="../../asset/instructor_profilepic/<?= $proPic['picture']?> " class="profile_picture">
+                <?php
+            }
+            else
+            {?>
+                <img src="../../asset/instructor_profilepic/profile.ico" class="profile_picture">
+                    <?php
+            }?>
      </div>
         <h4 class="section-heading"><a href="dashboard.php"><?=$instrInfo['u_name']?></a></h4>
             <div class="accountStuff">
@@ -150,10 +159,18 @@
     <div class="upper-container">
         <div class ="image-container" id="imageContainer">
             <?php
-             $profilePic=getAllFromInst($id);
-             ?>
-           <img src="../../asset/instructor_profilepic/<?= $profilePic['picture']?>"/>
-
+            $proPic=getAllFromInst($id);
+             if($proPic['picture']!=NULL)
+             {
+                 ?>
+                 <img src="../../asset/instructor_profilepic/<?= $proPic['picture']?> " class="profile_picture">
+                 <?php
+             }
+             else
+             {?>
+                 <img src="../../asset/instructor_profilepic/profile.ico" class="profile_picture">
+                     <?php
+             }?>
         </div>
     </div>
    

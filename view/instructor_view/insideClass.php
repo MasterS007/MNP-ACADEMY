@@ -100,7 +100,7 @@ if(!isset($_COOKIE['username']) ){
                      $learnersId=showLearners($Insid, $courseName);
                      for($i=0; $i<count($learnersId);$i++)
                      {
-                        $learners_info=getByID($learnersId[$i]['learner_id']);
+                        $learners_info=getByLearnerID($learnersId[$i]['learner_id']);
                         ?>
                         <tr>
                         <td><?=$learners_info['u_name']?></td>

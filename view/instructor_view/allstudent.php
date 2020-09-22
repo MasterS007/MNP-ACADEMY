@@ -4,7 +4,7 @@
      require_once('../../services/courseService.php');
      require_once('../../services/instructor_service/instructorService.php');
      
-     $instructor_id= $_SESSION['userid'];
+     $instructor_id= $_COOKIE['userid'];
     
 if(!isset($_COOKIE['username']) ){
  
@@ -68,8 +68,17 @@ if(!isset($_COOKIE['username']) ){
     <div class="image-profile">
            <?php
             $proPic= getAllFromInst($instructor_id);
-           ?>
-        <img src="../../asset/instructor_profilepic/<?= $proPic['picture']?> " class="profile_picture">
+            if($proPic['picture']!=NULL)
+            {
+                ?>
+                <img src="../../asset/instructor_profilepic/<?= $proPic['picture']?> " class="profile_picture">
+                <?php
+            }
+            else
+            {?>
+                <img src="../../asset/instructor_profilepic/profile.ico" class="profile_picture">
+                    <?php
+            }?>
     </div>
         <h4 class="section-heading"><a href="dashboard.php"><?php echo $_SESSION['name'];?></a></h4>
             <div class="accountStuff">
@@ -77,6 +86,7 @@ if(!isset($_COOKIE['username']) ){
                     <li><a href="profile.php">Profile</a></li>
                     <li><a href="mycourse.php">Courses</a></li>
                     <li><a href="blog.php">Blogs</a></li>
+                    <li><a href="aboutus.php">About Us</a></li>
                     <li><a href="../../php/logout.php">Logout</a></li>
                 </ul>
             </div>
@@ -108,7 +118,7 @@ if(!isset($_COOKIE['username']) ){
                          $learners = getLearnerId($instructor_id);
                          for($i=0; $i< count($learners);$i++)
                     {        $learners_info=getByLearnerID($learners[$i]['learner_id']); //from users table of learner_instructorService.php
-                             $courseName =getByCourseId($learners[$i]['course_id']);// from courseService.php?>
+                             $courseName=getByCourseId($learners[$i]['course_id']);// from courseService.php?>
                         <tr>
                             <td><?= $learners_info['u_name'] ?></td>
                             <td><?= $learners_info['email'] ?></td>

@@ -97,7 +97,7 @@
                         $courseId=  $courseId=getByCourseName($_SESSION['courseName']);
                         // echo $_SESSION['courseName'];
                         // echo $courseId['course_id'];
-                        $id =$_SESSION['userid'];
+                        $id =$_COOKIE['userid'];
 
                             $courseMaterials= getCourseMaterial($id, $courseId['course_id']);
                             //$file_dir=scandir("../../asset/Class_Materials");
@@ -142,7 +142,7 @@
             </fieldset>
             <input type="file" name="allfiles" class="uploadbox" id="uploadbox" >
             <input type="text" id="spnFilePath" value="<?= $_SESSION['courseName']?>" style="display:none" >
-             <input type="submit" name="submit" value="Upload" class="btn_upload" id="btn_upload" onclick="UploadFile(<?=$_SESSION['userid']?>)">
+             <input type="submit" name="submit" value="Upload" class="btn_upload" id="btn_upload" onclick="UploadFile(<?=$_COOKIE['userid']?>)">
         </form>
     </div>
 </main>

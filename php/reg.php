@@ -162,10 +162,38 @@
               ];
 
               $validReg=insert($user);
+              
             if($validReg)
             {
+            
+              $userId= getByuserName($uname);
+              echo $userId['id'];
+               if($userId['user_type']=="Instructor")
+               {
+                  $validIns=insertInstructor($userId['id']);
+                  if($validIns)
+                  {
+                    header('location:../view/login.php');
+                  }
+                  
+               }
+
+               else if($userId['user_type']=="Learner")
+               {
+                  $validlns=insertLearner($userId['id']);
+                  if($validlns)
+                  {
+                    header('location:../view/login.php');
+                  }
+                 
+               }
+
+               else
+               {
+                echo "child table a dhuke nai";
+
+               }
                
-                header('location:../view/login.php');
                 //echo $user['DoB'];
                
             }

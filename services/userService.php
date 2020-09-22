@@ -1,5 +1,42 @@
 <?php
 	require_once('../databaseConn/dbCon.php');
+
+	function insertLearner($user)
+	{
+		$conn = dbConnection();
+
+		if(!$conn){
+			echo "DB connection error";
+		}
+
+		$sql = "INSERT INTO learners (learner_id) VALUES ($user)";
+		if(mysqli_query($conn, $sql)){
+			
+			return true;
+		}else{
+			return false;
+		}
+		  mysqli_close($conn);
+	}
+	function insertInstructor($user)
+	{
+		$conn = dbConnection();
+
+		if(!$conn){
+			echo "DB connection error";
+		}
+
+		$sql = "INSERT INTO instructors (instructorId) VALUES ('{$user}')";
+		if(mysqli_query($conn, $sql)){
+			
+			return true;
+		}else{
+			echo mysqli_errno($conn);
+			return false;
+		}
+		  mysqli_close($conn);
+	}
+
 	function getEmail($email)
     {
         $conn = dbConnection();
@@ -8,7 +45,7 @@
 			echo "DB connection error";
 		}
 
-		$sql = "select email from users where email like '%{$email}%'";
+		$sql = "select email from users where email='{$email}'";
 		$result = mysqli_query($conn, $sql);
         $userEmail = mysqli_fetch_assoc($result);
         
@@ -69,6 +106,24 @@
 	// 	return $users;
 	// }
 
+	function getByuserName($user)
+	{
+		$conn = dbConnection();
+
+		if(!$conn){
+			echo "DB connection error";
+		}
+		$sql = "select * from users where username='{$user}' ";
+		$result = mysqli_query($conn, $sql);
+		$user = mysqli_fetch_assoc($result);
+		mysqli_close($conn);
+
+		if(count($user) > 0 ){
+			return $user;
+		}else{
+			return "No user found";
+		}
+	}
 
 	function validate($user){
 		$conn = dbConnection();
