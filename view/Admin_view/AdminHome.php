@@ -42,7 +42,7 @@
                 		<li><a href="coursesView.php">Courses</a></li>
                 		<li>Learners</li>
                 		<li><a href="about_us.php">About Us</a></li>
-                		<li><a href="Manage_Blog.php">Manage Blog</a></li>
+                		<li><a href="tips.php">Tips</a></li>
                 	</ul>
                 </div>
                 <!-- RIght side -->

@@ -1,6 +1,7 @@
 <?php
 	require_once('../../databaseConn/dbCon.php');
 
+	
 	function getAllAdmin(){
 		$conn = dbConnection();
 

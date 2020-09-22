@@ -67,12 +67,12 @@
                             <td>Action</td>
                         </tr>
                         <?php 
-                    $course=getAllCourse();
+                       $course=getAllCourse();
                        for($i=0;$i<count($course);$i++)
                        {
                         ?>
                         <tr>
-                            <td><a href="course_info.php?course_id=<?=$course[$i]['course_id']?> && course_id=<?=$course[$i]['course_name']?>"><h4 style="color:black;"><?=$course[$i]['course_name'];?></h4></a></td>
+                            <td><a href="course_info.php?course_id=<?=$course[$i]['course_id']?> && course_name=<?=$course[$i]['course_name']?>"><h4 style="color:black;"><?=$course[$i]['course_name'];?></h4></a></td>
                             <td><h4><?=$course[$i]['course_category'];?></h4></td>
                             <td><a href="../../php/admin_php/CoursesCheck.php?courseName=<?=$course[$i]['course_name']?>"><input type="button" value="Delete"  onclick="return confirm('Are you want to delete<?=$course[$i]['course_name'];?>')"></a></td>
                         </tr>
