@@ -95,7 +95,7 @@ if(!isset($_COOKIE['username']) ){
                         </tr>
                         <tr><td colspan="2"><hr></td></tr>
                         <?php
-                        $courseId=  $courseId=getByCourseName($_SESSION['courseName']);
+                        $courseId= getByCourseName($_SESSION['courseName']);
                         // echo $_SESSION['courseName'];
                         // echo $courseId['course_id'];
                         $id =$_SESSION['userid'];

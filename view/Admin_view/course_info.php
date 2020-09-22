@@ -1,18 +1,21 @@
 <?php
        session_start();
        require_once('../../services/courseService.php');
+       require_once('../../services/Admin_Service/courseService.php');
+
        $id= $_SESSION['userid'];
        if(!isset($_COOKIE['username']) ){
    
            header('location: ../login.php?error=invalid_request');
        }
+       $course_id =$_GET['course_id'];
 
  ?> 
 <!DOCTYPE html>
 <html>
     <head>
     <meta charset = "UTF-8"/>
-    <link rel="stylesheet" type="text/css" href="../../asset/all_designs/Admin_designs/coursesStyle.css">
+    <link rel="stylesheet" type="text/css" href="../../asset/all_designs/Admin_designs/course_infoStyle.css">
     <script type="text/javascript" src="../../asset/js/Admin_js/add_coursesScript.js"></script>
     <title>All Courses</title>
     </head>
@@ -36,7 +39,7 @@
             <main>
                 <div>
                 	<ul>
-                    <li class="imgbtn">jsbujruer</li>
+                    <li class="imgbtn"></li>
                     <li><?php echo $_SESSION['name'];?></li>
                 		<li><a href="AdminHome.php">Dashboard</a></li>
                 		<li><a href="Add_Admin.php">Admin Profile</a></li>
@@ -51,7 +54,7 @@
                 <div>
                    
                     <div class="UpperContainer">
-                    <li><h2>Courses</h2></li>
+                    <li><h2>Courses Taken By Instructor</h2></li>
                 	<li><h2><input type ="button" value="Add new course" style="cursor:pointer;" onclick="popup_open()"> </h2></li>
                     </div>
                      
@@ -61,22 +64,25 @@
                     <table>
                     
                         <tr >
-                        
+                            <td><h3>Instructor Name</h3></td>
                             <td><h3>Course Name</h3></td>
-                            <td><h3>Course Category</h3></td>
+
                             <td>Action</td>
                         </tr>
                         <?php 
-                    $course=getAllCourse();
-                       for($i=0;$i<count($course);$i++)
+                    $course_info=getInstructor($course_id);
+                       for($i=0;$i<count($course_info);$i++)
                        {
                         ?>
                         <tr>
-                            <td><a href="course_info.php?course_id=<?=$course[$i]['course_id']?> && course_id=<?=$course[$i]['course_name']?>"><h4 style="color:black;"><?=$course[$i]['course_name'];?></h4></a></td>
-                            <td><h4><?=$course[$i]['course_category'];?></h4></td>
-                            <td><a href="../../php/admin_php/CoursesCheck.php?courseName=<?=$course[$i]['course_name']?>"><input type="button" value="Delete"  onclick="return confirm('Are you want to delete<?=$course[$i]['course_name'];?>')"></a></td>
+                        
+                            <td><a href="#"><h4 style="color:black;"><?=$course_info[$i]['u_name'];?></h4></a><input type="button"></td>
+                            <td><h4><?=$course_info[$i]['course_name'];?></h4></td>
+                            <td><a href="../../php/admin_php/CoursesCheck.php?courseName=<?=$course_info[$i]['u_name']?>"><input type="button" value="Delete"  onclick="return confirm('Are you want to delete<?=$course[$i]['course_name'];?>')"></a></td>
                         </tr>
-                       <?php } ?>
+                       <?php
+                        } 
+                       ?>
                        
                         
                     </table> 
