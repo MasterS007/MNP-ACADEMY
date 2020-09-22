@@ -76,13 +76,11 @@
                             echo $course_info[$i]['instructor_id'];
                             $instructors=getByInstructorsID($course_info[$i]['instructor_id']);
                              $instructor_name=  $instructors['u_name'];
-                            // $learners =getByID($course_info[$i]['learner_id']);
-                            // $learners_name=$learners['u_name'];
-                            // echo $learners_name;
-                             //$course_info=getInstructor($course_id);
-                             //for($i=0;$i<count($instructor_name);$i++)
-                              //{
-                        ?>
+                            $learners =getByID($course_info[$i]['learner_id']);
+                            $learners_name=$learners['u_name'];
+                            echo $learners_name;
+                             $course_info=getInstructor($course_id);
+                            ?>
                         <tr>
                         
                             <td><h4 style="color:black;"><?= $instructor_name;?></h4></td>
