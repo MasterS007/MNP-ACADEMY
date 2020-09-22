@@ -3,6 +3,7 @@
       session_start();
       
       require_once('../../services/instructor_service/classmaterialService.php');
+      require_once("../../services/learner_service/learnerAssignmentService.php");
       require_once('../../services/courseService.php');
 
       $id= $_SESSION['userid'];
@@ -22,7 +23,7 @@
 <head>
     <title>My Course Material</title>
     
-    <link rel="stylesheet" type="text/css" href="../../asset/all_designs/learner_designs/aboutUsStyle.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../../asset/all_designs/learner_designs/aboutUsStyle.css"> -->
     
    
 </head>
@@ -53,35 +54,27 @@
     </header>
     <div class="files">
         <form action="../../php/instructor_php/assignmentCheck.php" method="POST" enctype="multipart/form-data">
-           <fieldset class="upload_files">  
+           <fieldset class="upload_files" style="width:250px;">  
                <legend class="title_file">Assignment Section</legend> 
-                    <table class="materialsTable">
+                    <table class="materialsTable" width="100%">
                         <tr>
                             <th colspan="2">Files Name</th>
                             
                         </tr>
                         <tr><td colspan="2"><hr></td></tr>
                         <?php
-                        $courseId=  $courseId=getByCourseName($_SESSION['courseName']);
+                        $courseId= $courseId=getByCourseName($_SESSION['courseName']);
                         // echo $_SESSION['courseName'];
                         // echo $courseId['course_id'];
-                        $id =$_SESSION['userid'];
+                       // $id =$_SESSION['userid'];
 
-                            $courseMaterials= getAssignment($id, $courseId['course_id']);
+                            $courseMaterials= getAssignment($instructorId, $courseId['course_id']);
                             //$file_dir=scandir("../../asset/Class_Materials");
                             for($i=0; $i<count($courseMaterials); $i++)
                             {
                                 ?>
                                 <tr>
-                                    <td><a href="../../asset/Class_Assignment/<?php echo $courseMaterials[$i]['assignment_name']?>" class="fileName" ><?php echo $courseMaterials[$i]['assignment_name']?></a></td>
-                                    <td><?php echo $courseMaterials[$i]['dateNtime']?></td>
-                                    <td>
-                                        <a href="../../php/instructor_php/assignmentCheck.php?FileName=<?=$courseMaterials[$i]['assignment_name']?>&&courseName=<?= $_SESSION['courseName']?>">
-                                          <input type="button"  value="Delete" class="deleteFile" onclick="return confirm('Are you want to delete <?=$courseMaterials[$i]['assignment_name']?>?')" >
-                                          </a>
-                
-                                        
-                                    </td>
+                                    <td><input type="button" value="random"></td>
                                         
                                 </tr>
                                 <tr><td colspan="2"><hr></td>
@@ -108,9 +101,9 @@
                     </table>
               
             </fieldset>
-            <input type="file" name="allassignments" class="uploadbox" id="uploadbox" >
-            <input type="text" id="spnFilePath" value="<?= $_SESSION['courseName']?>" style="display:none" >
-             <input type="submit" name="submit" value="Upload" class="btn_upload" id="btn_upload" onclick="UploadAssignment(<?=$_SESSION['userid']?>)">
+            <!-- <input type="file" name="allassignments" class="uploadbox" id="uploadbox" >
+            <input type="text" id="spnFilePath" value="<?//= $_SESSION['courseName']?>" style="display:none" >
+             <input type="submit" name="submit" value="Upload" class="btn_upload" id="btn_upload" onclick="UploadAssignment(<?//=$_SESSION['userid']?>)"> -->
         </form>
     </div>
 </main>

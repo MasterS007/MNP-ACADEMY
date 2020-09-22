@@ -5,13 +5,14 @@
        require_once('../../services/instructor_service/instructorService.php');
        
 
-       $id= $_SESSION['userid'];
+       
        if(!isset($_COOKIE['username']) ){
    
            header('location: ../login.php?error=invalid_request');
        }
 
        $courseName =$_GET['course_name'];
+       $id= $_SESSION['userid'];
       
 
  ?> 

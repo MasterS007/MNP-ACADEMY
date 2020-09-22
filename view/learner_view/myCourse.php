@@ -47,24 +47,7 @@
 
 <p>Enjoy to learn your course!!!!</p>
 
-<?php 
 
-$allMyCourseIns = getInstructorCourse($id);
-
-// echo $allMyCourse;
- for($i=0; $i<count($allMyCourseIns); $i++)
- {
-   $Id=$allMyCourseIns[$i]['u_name'];
-
-  ?> 
-  
-
-
-<h2><?=$Id?></h2>
-<?php
-
-}
-?>
 
 
 
