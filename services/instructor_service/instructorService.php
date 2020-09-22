@@ -1,6 +1,21 @@
 <?php
 	require_once('../../databaseConn/dbCon.php');
 	
+	function updateProfilePic($pic)
+	{
+	  $conn = dbConnection();
+		if(!$conn){
+			echo "DB connection error";
+		}
+
+	$sql = "UPDATE instructors SET picture='{$pic['filesName']}' WHERE instructorId='{$pic['instructorId']}'";
+
+		if(mysqli_query($conn, $sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
 	function getByInstructorName($u_name)
 	{
 		$conn = dbConnection();

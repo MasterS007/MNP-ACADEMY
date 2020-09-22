@@ -12,7 +12,7 @@
 
     $_SESSION['courseName']=$_GET['courseName'];
     
-
+  
 ?>
 <!DOCTYPE html>
  <html lang="en">
@@ -85,7 +85,9 @@
 
     <div class="files">
         <form action="../../php/instructor_php/metarialCheck.php" method="POST" enctype="multipart/form-data">
-           <fieldset class="upload_files">  
+           <fieldset class="upload_files"> 
+              
+               
                <legend class="title_file">Class Materials</legend> 
                     <table class="materialsTable">
                         <tr>

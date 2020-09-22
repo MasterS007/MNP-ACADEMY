@@ -133,17 +133,18 @@
                                 <td><i id="unameMsg"  style="color:white;font-size: 10px;"></i></td>
                             </tr>		
                             <tr><td colspan="4"><hr/></td></tr>
+                        
                             <tr>
                                 <td>New Password</td>
                                 <td>:</td>
-                                <td><input type="password"  id="password" name="password" onkeyup="pRemover()" onblur="PeMpty()"></td>
+                                <td><input type="password"  id="password" name="password" value="<?=$instructorInfo['u_password']?>" onkeyup="pRemover()" onblur="PeMpty()"></td>
                                 <td><i id="passMsg" style="color:white; font-size: 10px;"></i></td>
                             </tr>		
                             <tr><td colspan="4"><hr/></td></tr>
                             <tr>
                                 <td>Confirm Password</td>
                                 <td>:</td>
-                                <td><input type="password"  id="conpassword" name="confirmPassword"  onkeyup="pconRemover()" onblur="PconeMpty()"></td>
+                                <td><input type="password"  id="conpassword" name="confirmPassword" value="<?=$instructorInfo['u_password']?>" onkeyup="pconRemover()" onblur="PconeMpty()"></td>
                                 <td><i id="conpassMsg" style="color:white; font-size: 10px;"></i></td>
                             </tr>
     
@@ -171,10 +172,22 @@
                  <img src="../../asset/instructor_profilepic/profile.ico" class="profile_picture">
                      <?php
              }?>
+            
         </div>
+        
     </div>
-   
+             
     <div class="lower-container" id="lower-container">
+            <div style="margin-left:20%;">
+                <form action="../../php/instructor_php/profileEditCheck.php" method="POST" enctype="multipart/form-data">
+                <input type="text" name="instructorId" value="<?=$id?>" style="display:none;">
+                <input type="file" name="profilePic" style="position:relative; top:-10px; left:-30px; font-size:12px; border-radius:5px;">
+                <br>
+                <input type="submit" name="changePicture" value="change picture" style="color:darkcyan; position:relative; top:5px; left:-70px; font-size:12px; border-radius:5px; cursor:pointer;">
+               
+                </form>
+                 
+        </div>
       
     <?php
 

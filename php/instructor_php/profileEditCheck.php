@@ -1,10 +1,14 @@
 <?php
  session_start();
  require_once('../../services/instructor_service/instructorService.php');
+ 
+
+ 
  if(isset($_POST['check_email']))
     {
         $email= $_POST['emailId'];
         $instructorId = $_POST['instructorId'];
+        $_SESSION['instructorId']=  $instructorId;
         if(isset($email) && isset($instructorId))
         {
             $getemail = getEmail($email,$instructorId);
@@ -146,9 +150,46 @@
         //echo $instructorName;
 
 
-   
-     
-
-
       }
+
+      if(isset($_POST['changePicture']))
+      {
+         $file_dir='../../asset/instructor_profilepic/'.$_FILES['profilePic']['name'];
+         $fileName=$_FILES['profilePic']['name'];
+          $instructor_id=$_POST['instructorId'];
+
+          echo $instructor_id;
+          if(move_uploaded_file($_FILES['profilePic']['tmp_name'], $file_dir))
+        {
+           
+           // echo $file_dir;
+            $profilePic=[
+                'filesName'=>  $fileName,
+                'instructorId'=>$instructor_id
+               
+            ];
+
+                $validInsert =updateProfilePic($profilePic);
+                        if( $validInsert)
+                        {
+                            header("location:../../view/instructor_view/profile.php?Message:PictureUploadSuccessful");
+                        }
+
+                        else
+                        {
+                            
+                            //echo "as";
+                            header("location:../../view/instructor_view/profile.php?Message:PictureUploadNOTSuccessful");
+           
+                         }
+       
+         //$fValid =false;
+      }
+      else
+      {
+          
+          header("location:../../view/instructor_view/profile.php?Message:Failed!");
+      }
+    }
+
 ?>
