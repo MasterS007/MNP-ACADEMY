@@ -65,7 +65,7 @@ $allMyCourseIns = getInstructorCourse($id);
 // echo $allMyCourse;
 for($i=0; $i<count($allMyCourseIns); $i++)
  {
-   $Id=$allMyCourseIns[$i]['u_name'];
+   $instructorName=$allMyCourseIns[$i]['u_name'];
    $course=$allMyCourseIns[$i]['course_name'];
 
    $userId=$allMyCourseIns[$i]['id'];
@@ -76,8 +76,13 @@ for($i=0; $i<count($allMyCourseIns); $i++)
   <div class="column" style="background-color:#aaa;">
     
   
-    <h2><a href="assignment.php?course_name=<?=$course?> && instructor_name=<?=$Id?> && instructorId=<?=$userId?> && courseId=<?=$courseId?>"><?=$course?> </a><h2>
-    <h2><a href="">Instructor Name: <?=$Id ?></a></h2>
+
+    <h2><a href="assignment.php?course_name=<?=$course?> && instructor_name=<?= $instructorName?> && instructorId=<?=$userId?> && courseId=<?=$courseId?>"><?=$course?> </a><h2>
+    <h2><a href="">Instructor Name: <?= $instructorName ?></a></h2>
+    
+    
+    
+
   </div>
 <?php
 //}

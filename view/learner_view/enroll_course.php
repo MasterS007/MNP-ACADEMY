@@ -96,7 +96,7 @@
        
         
 
-       <input id="courseId" value="<?=$_SESSION['courseId']?>" style="display:none;" >
+       <input id="courseId" value="<?=$_SESSION['courseId'] && $_SESSION['userid'] ?>" style="display:none;" >
 
         
         <input type="button" value="Enroll now" onclick="enrollClick() ">
@@ -110,7 +110,7 @@
 
     <div class="lower-container">
         
-        <a href ="#" class="btn"> Go Back </a>
+        <a href ="dashboard.php" class="btn"> Go Back </a>
 
 
     </div>
