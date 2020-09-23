@@ -10,6 +10,7 @@ if(!isset($_COOKIE['username']) ){
      }
 
      $_SESSION['courseName']=$_GET['courseName'];
+     $Insid=$_COOKIE['userid'];
      
 ?>
 <!DOCTYPE html>
@@ -75,7 +76,7 @@ if(!isset($_COOKIE['username']) ){
                 <li><a href="postStatus.php?courseName=<?= $_SESSION['courseName']?>">Post</a></li>
                 <li><a href="files.php?courseName=<?= $_SESSION['courseName']?>">Class Materials</a></li>
                 <li><a href="assignment.php?courseName=<?= $_SESSION['courseName']?>">Assignments</a></li>
-                <!-- <li><a href="grade.php?courseName=<?= $_SESSION['courseName']?>">Grades</a></li> -->
+                <!-- <li><a href="videoLecture.php?courseName=<?= $_SESSION['courseName']?>">Video Lectures</a></li>  -->
                 <li><a href="classSettings.php?courseName=<?= $_SESSION['courseName']?>">Settings</a></li>
              
             </ul>
@@ -95,7 +96,7 @@ if(!isset($_COOKIE['username']) ){
                         <td colspan="3"><hr></td>
                     </tr>
                     <?php
-                     $Insid=$_COOKIE['userid'];
+                    
                      $courseName=$_SESSION['courseName'];
                      $learnersId=showLearners($Insid, $courseName);
                      for($i=0; $i<count($learnersId);$i++)
