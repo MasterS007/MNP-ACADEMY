@@ -22,9 +22,9 @@
                 <p class="logo">MNP ACADEMY</p>
                 <nav>
                     <ul class="nav-links">
-                        <li><a href="#">Home</a></li>
+                        <li><a href="../index.php">Home</a></li>
                         <li><a href="../learner_view/aboutUs.php">About Us</a></li>
-                        <li><a href="#">Service</a></li>
+                        
                     </ul>
                 </nav>
                 <nav>
@@ -37,12 +37,12 @@
             <main >
                 <div class="Gridviewdiv" >
                 	<ul>
-                    <li class="imgbtn">jsbujruer</li>
+                    <li class="imgbtn"></li>
                     <li><?php echo $_SESSION['name'];?></li>
                 		<li><a href="#">Dashboard</a></li>
                 		<li><a href="Add_Admin.php">Admin Profile</a></li>
-                		<li>Manage Users</li>
-                		<li>Courses</li>
+                		
+                		<li><a href="coursesView.php">Courses</a></li>
                 		<li>Learners</li>
                 		<li><a href="about_us.php">About Us</a></li>
                 		<li><a href="Manage_Blog.php">Manage Blog</a></li>
@@ -84,7 +84,8 @@
                                                 <td><?=$aboutData[$i]['Descriptions']?></td>
                                                
                                           <td><input type="button" value="Edit" onclick="edit_popup_open()"> 
-                                          <a href="#">Delete</a>
+                                          <td><a href="../../php/admin_php/delete_about_us.php?about_id=<?=$aboutData[$i]['Id']?>"><input type="button" value="Delete"  onclick="return confirm('Are you want to delete <?=$aboutData[$i]['Title'];?> Topic?')"></a></td>
+                                          <!-- <a href="#">Delete</a> -->
                                           </td>
                                           </tr><?php
                                           }

@@ -26,7 +26,7 @@ if(isset($_COOKIE['checkRemember']))
 
     else if($info['user_type']=="Learner")
     {
-        header("location:view/ilearner_view/dashboard.php");
+        header("location:view/learner_view/dashboard.php");
     }
 
     else if($info['user_type']=="Admin")

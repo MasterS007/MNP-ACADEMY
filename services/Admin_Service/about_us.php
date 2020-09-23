@@ -58,3 +58,18 @@
 		}
 		  mysqli_close($conn);
 	}
+
+	function deleteByabout_us($Id){   // Admin account delete by name 
+		$conn = dbConnection();
+		if(!$conn){
+			echo "DB connection error";
+		}
+
+		$sql = "DELETE FROM about_us WHERE Id='{$Id}'";
+
+		if(mysqli_query($conn, $sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}

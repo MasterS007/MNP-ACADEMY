@@ -38,13 +38,20 @@
                 	<ul>
                     <li><img src="1.jpg" class="imgbtn" alt="" width="100px" height="100px"></li>
                     <li><?php echo $_SESSION['name'];?></li>
-                		<li><a href="#">Dashboard</a></li>
+                		<li><a href="AdminHome.php">Dashboard</a></li>
                 		<li><a href="Add_Admin.php">Admin Profile</a></li>
-                		<li>Manage Users</li>
+                		
                 		<li><a href="coursesView.php">Courses</a></li>
-                		<li>Learners</li>
+                		<!-- <li>Learners</li> -->
                 		<li><a href="about_us.php">About Us</a></li>
                 		<li><a href="tips.php">Tips</a></li>
+                        <!-- <li>Learners</li> -->
+                        <li></li>
+                        <li></li>
+                        
+
+                        
+
                 	</ul>
                 </div>
                 <!-- RIght side -->
